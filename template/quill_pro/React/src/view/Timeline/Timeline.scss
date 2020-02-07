@@ -1,0 +1,112 @@
+@import "./../../styles/quillpro/_quillpro-variables.scss";
+
+.timeline {
+  p {
+    color: $qp-color-white;
+  }
+  h2 {
+    background-color: $qp-color-secondary;
+    @include qp-border-radius();
+  }
+  .timeline-items {
+    padding-top: 30px;
+    .timeline-item {
+      left: auto;
+      margin-bottom: 60px;
+      padding: $qp-default-padding;
+      @include qp-border-radius();
+      @include qp-border-radius-top-right(0);
+      hr {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      h3 {
+        font-weight: 400;
+      }
+      time::before {
+        font-family: "Batch Icons";
+        content: "\f090";
+        font-weight: 400;
+        font-size: 1.3rem;
+      }
+    }
+    .timeline-item::after {
+      background-color: $qp-color-secondary;
+      left: calc(100% + 8.4%);
+    }
+    .timeline-item:nth-of-type(2n + 1) {
+      background-color: $qp-color-primary;
+    }
+    .timeline-item:nth-of-type(2n + 1)::before {
+      border-top: 1em solid $qp-color-primary;
+    }
+    .timeline-item:nth-of-type(2n) {
+      background-color: $qp-color-primary-gradient-2;
+    }
+    .timeline-item:nth-of-type(2n)::before {
+      border-top: 1em solid $qp-color-primary-gradient-2;
+    }
+    .timeline-item.centered:nth-of-type(2n + 1)::before {
+      border-top: 0;
+      border-bottom: 1em solid $qp-color-primary;
+    }
+    .timeline-item.centered:nth-of-type(2n)::before {
+      border-top: 0;
+      border-bottom: 1em solid $qp-color-primary-gradient-2;
+    }
+    .timeline-item.inverted {
+      text-align: left;
+      left: 54%;
+      @include qp-border-radius-top-right();
+    }
+    .timeline-item.inverted::after {
+      left: calc(-8.78% - 13px);
+    }
+    .timeline-item.centered {
+      margin-top: 100px;
+      @include qp-border-radius-top-right();
+    }
+    .timeline-item.centered::before {
+      left: calc(50% - 10px);
+    }
+    .timeline-item.centered::after {
+      display: block;
+      content: "";
+      background: #5b5555;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: -50px;
+      @include qp-border-radius(100%);
+      left: calc(50% - 12px);
+    }
+  }
+}
+.timeline::before {
+  background-color: $qp-color-secondary;
+}
+@media (max-width: 575px) {
+  .timeline {
+    .timeline-items {
+      .timeline-item {
+        width: 100%;
+        left: auto !important;
+        margin-top: 100px !important;
+        @include qp-border-radius-top-right();
+      }
+      .timeline-item::before {
+        display: none !important;
+      }
+      .timeline-item::after {
+        display: block !important;
+        content: "";
+        background: #5b5555 !important;
+        width: 30px !important;
+        height: 30px !important;
+        position: absolute !important;
+        top: -50px !important;
+        @include qp-border-radius(100% !important);
+        left: calc(50% - 12px) !important;
+      }
+    }
+  }
+}

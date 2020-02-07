@@ -1,0 +1,94 @@
+@import './../../styles/quillpro/_quillpro-variables.scss';
+
+.sisu.right-column{
+	.signin-left-column{
+		padding-top: 10vw;
+		padding-right: 3rem !important;
+		padding-left: 3rem !important;
+		.signin-logo{
+			display: inline-block;
+			margin-bottom: 30px;
+		}
+	}
+	.signin-right-column{
+		// min-height: 100vh !important;
+		background-position: center;
+		background-size: cover;
+		text-align: center;
+		padding-top: 10vw;
+		.signin-logo{
+			display: inline-block;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+
+// Small devices (Not Mobile-first approach) (landscape phones, 576px and up) 
+@media (max-width: 575px){
+	.sisu.right-column{
+		.signin-left-column{
+			.signin-logo{
+				display: none;
+			}
+		}
+	}
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px){
+	.sisu.right-column{
+		.signin-left-column{
+			min-height: 630px;
+			.signin-logo{
+			}
+		}
+		.signin-right-column{
+			padding-top: 5rem;
+			.signin-logo{
+			}
+		}
+	}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px){
+	.sisu.right-column{
+		.signin-left-column{
+			box-shadow: 9px 0 23px rgba(0,0,0,0.09), 5px 0 5px rgba(0,0,0,0.06);
+		}
+		.signin-right-column{
+			min-height: 630px;
+			text-align: left;
+			padding-top: 20rem;
+		}
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px){
+	.sisu.right-column{
+		.signin-left-column{
+			padding-right: 5rem !important;
+			padding-left: 5rem !important;
+		}
+		.signin-right-column{
+			padding-top: 20rem;
+			padding-right: 5rem !important;
+			padding-left: 5rem !important;
+		}
+	}
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px){
+	.sisu.right-column{
+		.signin-left-column{
+			padding-right: 10rem !important;
+			padding-left: 10rem !important;
+		}
+		.signin-right-column{
+			padding-top: 23rem;
+			padding-right: 10rem !important;
+			padding-left: 10rem !important;
+		}
+	}
+}

@@ -1,0 +1,235 @@
+/* 
+	DO NOT DELETE
+	THIS SCSS/CSS FILE IS USED BY SCSS FILES WITHING THE React/view AND React/layout folders
+	
+ */
+/* QUILLPRO VARIABLES */
+/* 
+	DO NOT DELETE
+	THIS SCSS/CSS FILE IS USED BY SCSS FILES WITHING THE React/view AND React/layout folders
+	
+ */
+/* QUILLPRO MIXINS */
+/* Colors */
+.card-mailbox {
+  padding: 0;
+  /* Email List */
+  /* Message View */
+  /* Mailbox - Compose */ }
+  .card-mailbox .mailbox-menu {
+    margin-bottom: 20px; }
+    .card-mailbox .mailbox-menu .mailbox-compose-outer .compose-message {
+      margin-top: 3px; }
+    .card-mailbox .mailbox-menu .mailbox-compose-outer .mailbox-mobile-menu-control {
+      margin-top: 10px;
+      text-transform: uppercase; }
+    .card-mailbox .mailbox-menu .list-group.mailbox-menu-actual {
+      display: none; }
+      .card-mailbox .mailbox-menu .list-group.mailbox-menu-actual .list-group-item {
+        text-transform: uppercase;
+        border: 0;
+        background-color: transparent; }
+        .card-mailbox .mailbox-menu .list-group.mailbox-menu-actual .list-group-item .batch-icon {
+          margin-right: 0.5rem; }
+      .card-mailbox .mailbox-menu .list-group.mailbox-menu-actual .list-group-item.active {
+        background-color: #07a7e3;
+        border-color: #07a7e3;
+        color: #ffffff; }
+        .card-mailbox .mailbox-menu .list-group.mailbox-menu-actual .list-group-item.active .batch-icon {
+          color: #ffffff;
+          margin-right: 0.5rem; }
+      .card-mailbox .mailbox-menu .list-group.mailbox-menu-actual .list-group-item:hover,
+      .card-mailbox .mailbox-menu .list-group.mailbox-menu-actual .list-group-item:focus {
+        background-color: #f7f7fa; }
+      .card-mailbox .mailbox-menu .list-group.mailbox-menu-actual .list-group-item.active:hover,
+      .card-mailbox .mailbox-menu .list-group.mailbox-menu-actual .list-group-item.active:focus {
+        background-color: #07a7e3;
+        border-color: #07a7e3;
+        opacity: 0.7; }
+    .card-mailbox .mailbox-menu .mailbox-tags {
+      padding-top: 10px; }
+      .card-mailbox .mailbox-menu .mailbox-tags .badge {
+        margin-bottom: 5px; }
+  .card-mailbox .mailbox-container {
+    padding: 2.083rem 0; }
+    .card-mailbox .mailbox-container .mailbox-controls {
+      margin-bottom: 20px; }
+      .card-mailbox .mailbox-container .mailbox-controls .email-pager-top .email-pager-count {
+        float: right;
+        margin-right: 10px;
+        margin-top: 10px; }
+      .card-mailbox .mailbox-container .mailbox-controls .email-pager-top .email-pager-container {
+        float: right;
+        margin-left: 6px; }
+      .card-mailbox .mailbox-container .mailbox-controls .email-select-all {
+        float: left;
+        margin: 14px 35px 5px 9px; }
+        .card-mailbox .mailbox-container .mailbox-controls .email-select-all label {
+          padding-left: 8px; }
+          .card-mailbox .mailbox-container .mailbox-controls .email-select-all label input {
+            display: none; }
+          .card-mailbox .mailbox-container .mailbox-controls .email-select-all label .checkbox-actual {
+            float: left; }
+          .card-mailbox .mailbox-container .mailbox-controls .email-select-all label .custom-control-description {
+            padding-left: 11px;
+            margin-top: 3px; }
+    .card-mailbox .mailbox-container .email-pager-bottom .email-pager-count {
+      margin-top: 10px;
+      float: left; }
+    .card-mailbox .mailbox-container .email-pager-bottom .email-pager-container {
+      float: right; }
+    .card-mailbox .mailbox-container tr {
+      cursor: pointer;
+      font-weight: 400; }
+      .card-mailbox .mailbox-container tr .email-checkbox {
+        max-width: 29px; }
+        .card-mailbox .mailbox-container tr .email-checkbox .custom-control {
+          margin-top: -2px; }
+          .card-mailbox .mailbox-container tr .email-checkbox .custom-control input {
+            display: none; }
+      .card-mailbox .mailbox-container tr .email-star .email-star-status {
+        display: block;
+        margin-top: 3px; }
+        .card-mailbox .mailbox-container tr .email-star .email-star-status .email-important {
+          color: #F5C400;
+          display: none; }
+        .card-mailbox .mailbox-container tr .email-star .email-star-status .email-normal {
+          display: block; }
+      .card-mailbox .mailbox-container tr .email-star .email-star-status.checked .email-important {
+        display: block; }
+      .card-mailbox .mailbox-container tr .email-star .email-star-status.checked .email-normal {
+        display: none; }
+      .card-mailbox .mailbox-container tr .email-sender {
+        max-width: 150px; }
+      .card-mailbox .mailbox-container tr .email-subject .email-extra-icons {
+        float: right; }
+        .card-mailbox .mailbox-container tr .email-subject .email-extra-icons span {
+          float: right;
+          margin-left: 3px; }
+      .card-mailbox .mailbox-container tr .email-subject .badge {
+        margin-right: 2px; }
+      .card-mailbox .mailbox-container tr .email-datetime {
+        text-align: right;
+        max-width: 110px; }
+    .card-mailbox .mailbox-container tr.highlighted {
+      background-color: #FFFFCC; }
+    .card-mailbox .mailbox-container tr.email-status-unread {
+      color: #384044;
+      font-weight: 500;
+      letter-spacing: 0.03em; }
+      .card-mailbox .mailbox-container tr.email-status-unread td {
+        font-weight: 500; }
+    .card-mailbox .mailbox-container tr.empty-list {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 400; }
+    .card-mailbox .mailbox-container tr + .empty-list {
+      display: none; }
+  .card-mailbox .mailbox-message-view tr {
+    cursor: auto; }
+  .card-mailbox .mailbox-message-view .message-subject {
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 13px;
+    padding: 0 10px 10px;
+    overflow: hidden;
+    clear: both; }
+    .card-mailbox .mailbox-message-view .message-subject .badge {
+      float: right;
+      margin: 7px 0 0 10px; }
+    .card-mailbox .mailbox-message-view .message-subject .email-extra-icons {
+      float: right;
+      margin-left: 10px;
+      margin-top: 9px; }
+      .card-mailbox .mailbox-message-view .message-subject .email-extra-icons span {
+        float: right;
+        margin-left: 3px; }
+  .card-mailbox .mailbox-message-view .message-general-info-container {
+    border-bottom: 1px solid #dddddd;
+    min-height: 68px;
+    padding: 0 10px 15px; }
+    .card-mailbox .mailbox-message-view .message-general-info-container .message-controls {
+      float: right; }
+    .card-mailbox .mailbox-message-view .message-general-info-container .message-general-info .message-sender-image {
+      float: left;
+      margin-top: 2px;
+      text-align: center;
+      width: 62px; }
+    .card-mailbox .mailbox-message-view .message-general-info-container .message-general-info .message-sender {
+      margin: 0 0 0 62px;
+      padding-top: 3px; }
+      .card-mailbox .mailbox-message-view .message-general-info-container .message-general-info .message-sender .sender-name {
+        font-weight: bold;
+        letter-spacing: 0.03em; }
+      .card-mailbox .mailbox-message-view .message-general-info-container .message-general-info .message-sender .sender-email {
+        color: #aaaaaa; }
+    .card-mailbox .mailbox-message-view .message-general-info-container .message-general-info .message-recepient {
+      margin: 5px 0 0 62px; }
+      .card-mailbox .mailbox-message-view .message-general-info-container .message-general-info .message-recepient .recepient-name {
+        font-weight: bold;
+        letter-spacing: 0.03em; }
+      .card-mailbox .mailbox-message-view .message-general-info-container .message-general-info .message-recepient .send-date {
+        color: #aaaaaa; }
+    .card-mailbox .mailbox-message-view .message-general-info-container .message-general-info .message-recepient-others {
+      display: none;
+      margin: 5px 0 0 62px; }
+      .card-mailbox .mailbox-message-view .message-general-info-container .message-general-info .message-recepient-others ul {
+        padding: 0;
+        list-style: none; }
+        .card-mailbox .mailbox-message-view .message-general-info-container .message-general-info .message-recepient-others ul li {
+          margin-bottom: 5px;
+          font-weight: 400; }
+  .card-mailbox .mailbox-message-view .message-body-container {
+    padding: 10px; }
+    .card-mailbox .mailbox-message-view .message-body-container .message-body {
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #dddddd; }
+    .card-mailbox .mailbox-message-view .message-body-container .message-attachment-gallery {
+      margin-bottom: 20px; }
+      .card-mailbox .mailbox-message-view .message-body-container .message-attachment-gallery .gallery-preview .gallery-item {
+        display: inline-block;
+        margin-bottom: 15px;
+        margin-right: 10px;
+        max-width: 300px;
+        min-width: 150px;
+        max-height: 175px;
+        width: 30%; }
+        .card-mailbox .mailbox-message-view .message-body-container .message-attachment-gallery .gallery-preview .gallery-item .gallery-item-image {
+          border: 1px solid #dddddd;
+          margin-bottom: 5px; }
+          .card-mailbox .mailbox-message-view .message-body-container .message-attachment-gallery .gallery-preview .gallery-item .gallery-item-image img {
+            padding: 7px;
+            width: 100% !important;
+            height: auto !important; }
+        .card-mailbox .mailbox-message-view .message-body-container .message-attachment-gallery .gallery-preview .gallery-item .gallery-item-image:hover {
+          border: 1px solid #bbbbbb; }
+        .card-mailbox .mailbox-message-view .message-body-container .message-attachment-gallery .gallery-preview .gallery-item .gallery-item-controls a {
+          padding: 5px 10px; }
+    .card-mailbox .mailbox-message-view .message-body-container .message-attachment-list .attachment-action {
+      text-align: right; }
+      .card-mailbox .mailbox-message-view .message-body-container .message-attachment-list .attachment-action a {
+        padding: 5px 10px; }
+  .card-mailbox .mailbox-message-compose .email-recepient-main-container #add-bcc,
+  .card-mailbox .mailbox-message-compose .email-recepient-main-container #add-cc {
+    display: none; }
+  .card-mailbox .mailbox-message-compose .email-recepient-bcc-container,
+  .card-mailbox .mailbox-message-compose .email-recepient-cc-container {
+    display: block; }
+  .card-mailbox .mailbox-message-compose .message-attachment-list .attachment-action {
+    text-align: right; }
+    .card-mailbox .mailbox-message-compose .message-attachment-list .attachment-action a {
+      padding: 5px 10px; }
+
+@media (min-width: 768px) {
+  .card .card-mailbox .mailbox-container .mailbox-controls {
+    float: none !important;
+    text-align: left !important; } }
+
+@media (min-width: 992px) {
+  .card .card-mailbox .mailbox-menu {
+    padding: 0 0 2.083rem 0; }
+  .card .card-mailbox .mailbox-compose-outer {
+    margin-bottom: 20px;
+    padding-bottom: 20px; }
+  .card .card-mailbox .mailbox-tags {
+    border-top: 1px solid #DDDDDD; } }

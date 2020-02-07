@@ -1,0 +1,145 @@
+/* 
+	DO NOT DELETE
+	THIS SCSS/CSS FILE IS USED BY SCSS FILES WITHING THE React/view AND React/layout folders
+	
+ */
+/* QUILLPRO VARIABLES */
+/* 
+	DO NOT DELETE
+	THIS SCSS/CSS FILE IS USED BY SCSS FILES WITHING THE React/view AND React/layout folders
+	
+ */
+/* QUILLPRO MIXINS */
+/* Colors */
+/* Price Lists */
+.card-price-list {
+  display: flex;
+  flex-direction: column; }
+  .card-price-list * {
+    text-align: center;
+    text-transform: uppercase; }
+  .card-price-list .pricing-plan {
+    padding: 25px; }
+  .card-price-list .pricing-plan:last-child {
+    border-bottom: none; }
+  .card-price-list .pricing-img {
+    margin-bottom: 25px;
+    max-width: 100%; }
+  .card-price-list .pricing-header {
+    color: #4f5b60;
+    letter-spacing: 1px; }
+  .card-price-list .pricing-features {
+    letter-spacing: 1px;
+    margin: 50px 0 25px;
+    padding: 0;
+    list-style: none; }
+  .card-price-list .pricing-features-item {
+    border-top: 1px solid #f7f7fa;
+    line-height: 1.5;
+    padding: 15px 0; }
+  .card-price-list .pricing-features-item:last-child {
+    border-bottom: 1px solid #e1f1ff; }
+  .card-price-list .pricing-price {
+    color: #07a7e3;
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 300; }
+
+.price-list-type-2 {
+  text-align: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto 0; }
+  .price-list-type-2 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+  .price-list-type-2 .plan {
+    padding-left: 0;
+    margin: 0 0 55px;
+    width: 100%;
+    position: relative;
+    float: left;
+    background-color: #ffffff;
+    color: #4f5b60;
+    box-shadow: 0 9px 23px rgba(0, 0, 0, 0.09), 0 5px 5px rgba(0, 0, 0, 0.06);
+    -webkit-transition: box-shadow 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+    -moz-transition: box-shadow 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+    -o-transition: box-shadow 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: box-shadow 0.7s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .price-list-type-2 .plan:hover,
+  .price-list-type-2 .plan:focus {
+    box-shadow: 0 9px 23px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12); }
+  .price-list-type-2 header {
+    position: relative; }
+  .price-list-type-2 .plan-title {
+    position: relative;
+    top: 0;
+    padding: 5px 15px;
+    margin: 0 auto;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin: 0;
+    display: inline-block;
+    background-color: #66767c;
+    color: #ffffff;
+    text-transform: uppercase;
+    box-shadow: 0 7px 23px 0 rgba(0, 0, 0, 0.1), 0 13px 49px 0 rgba(0, 0, 0, 0.06) !important; }
+  .price-list-type-2 .plan-cost {
+    padding: 0px 10px 20px; }
+  .price-list-type-2 .plan-price {
+    font-size: 2.5rem;
+    color: #07a7e3; }
+  .price-list-type-2 .plan-type {
+    opacity: 0.6; }
+  .price-list-type-2 .plan-features {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    list-style: outside none none; }
+    .price-list-type-2 .plan-features li {
+      padding: 10px 5%; }
+    .price-list-type-2 .plan-features li:nth-child(even) {
+      background: rgba(0, 0, 0, 0.08); }
+    .price-list-type-2 .plan-features i {
+      margin-right: 8px;
+      opacity: 0.4; }
+  .price-list-type-2 .plan-select {
+    padding: 10px; }
+  .price-list-type-2 .featured {
+    margin-top: -10px;
+    background-color: #07a7e3;
+    color: #ffffff;
+    z-index: 1; }
+    .price-list-type-2 .featured .plan-title,
+    .price-list-type-2 .featured .plan-price {
+      color: #ffffff; }
+    .price-list-type-2 .featured .plan-cost {
+      padding: 10px 10px 20px; }
+    .price-list-type-2 .featured .plan-select {
+      padding: 10px; }
+
+/* Responsiveness */
+@media (min-width: 576px) {
+  .price-list-type-2 .plan {
+    width: 100%; } }
+
+@media (min-width: 768px) {
+  .price-list-type-2 .plan {
+    width: 49%; }
+  .price-list-type-2 .plan:not(:last-child) {
+    margin-right: 1%; } }
+
+@media (min-width: 992px) {
+  .pricing-plan {
+    border-bottom: none;
+    border-right: 1px solid #e1f1ff;
+    flex-basis: 100%;
+    padding: 25px 50px; }
+  .pricing-plan:last-child {
+    border-right: none; } }
+
+@media (min-width: 1200px) {
+  .price-list-type-2 .plan {
+    width: 24%; }
+  .price-list-type-2 .plan:not(:last-child) {
+    margin-right: 1%; } }

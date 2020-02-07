@@ -1,0 +1,150 @@
+@import "./../../styles/quillpro/_quillpro-variables.scss";
+
+.card {
+  .card-task-list {
+    height: 100%;
+    padding: 1rem 0 2.083rem;
+    .task-manager .task-list {
+      height: 470px;
+    }
+    .task-list {
+      overflow: hidden;
+      // max-height: 470px;
+      padding: 0;
+      .task-list-item {
+        padding: 0;
+        position: relative;
+        .custom-control {
+          margin: 0;
+          padding: 0;
+          .custom-control-wrap {
+            @include qp-transition(opacity 0.225s ease-in-out);
+          }
+          label.custom-control-label {
+            background-color: $qp-color-white;
+            display: block;
+            padding: 10px 2.083rem 10px 4.6rem;
+            margin: 0;
+            @include qp-transition(opacity 0.225s ease-in-out);
+            .badge {
+              margin-right: 5px;
+            }
+          }
+          label.custom-control-label::before {
+            // top: 1.1rem;
+            // left: 2.083rem;
+            top: 12px;
+            left: 25px;
+          }
+          label.custom-control-label::after {
+            // top: 1.2rem;
+            // left: 2.2rem;
+            top: 13px;
+            left: 27px;
+          }
+          label.custom-control-label:hover,
+          label.custom-control-label:focus {
+            background-color: $qp-hover-highlight;
+          }
+          label:after {
+            // content: '\a0';
+          }
+        }
+        .custom-control.active {
+          .custom-control-wrap {
+            opacity: 0.5;
+            color: $qp-color-secondary-light-3;
+            text-decoration: line-through;
+          }
+        }
+        .custom-control.active.anti-active {
+          .custom-control-wrap {
+            opacity: 1 !important;
+            color: $qp-color-text !important;
+            text-decoration: none !important;
+          }
+        }
+        .task-item-details {
+          padding: 15px 10px 15px 4.583rem;
+          display: none;
+        }
+        .task-item-details:empty {
+          display: none;
+        }
+        .task-item-details:empty + .task-item-controls .show-task {
+          display: none !important;
+        }
+        .task-item-controls {
+          position: absolute;
+          // right: 9px;
+          right: 2.083rem;
+          top: 0;
+          // top: 7px;
+          opacity: 0;
+          @include qp-transition(opacity 0.225s ease-in-out);
+        }
+        .task-item-users {
+          position: absolute;
+          right: calc(55px + 2.083rem);
+          top: 3px;
+          @include qp-transition(opacity 0.225s ease-in-out);
+          .assigned-user {
+            display: inline-block;
+            opacity: 0.7;
+            margin-right: 0.1em;
+            @include qp-transition(opacity 0.225s ease-in-out);
+            .profile-picture {
+              width: 34px;
+              height: 34px;
+              img.list-thumbnail {
+                width: 30px;
+                height: 30px;
+              }
+            }
+            .profile-picture.has-message::after {
+              top: -8px;
+              left: -11px;
+            }
+          }
+        }
+        .task-item-users:empty {
+          display: none;
+        }
+      }
+      .task-list-item:nth-child(even) {
+        .custom-control {
+          margin: 0;
+          label.custom-control-label {
+            background-color: $qp-hover-highlight;
+          }
+          label.custom-control-label:hover,
+          label.custom-control-label:focus {
+            background-color: darken($qp-hover-highlight, 3%);
+          }
+        }
+      }
+      .task-list-item:hover,
+      .task-list-item:focus {
+        .task-item-controls {
+          opacity: 1;
+        }
+        .task-item-users {
+          .assigned-user {
+            opacity: 1;
+            margin-right: 0.1em;
+          }
+        }
+      }
+      .task-list-item.checked {
+        background-color: darken($qp-hover-highlight, 3%);
+      }
+    }
+    .task-manager-list-container {
+      border-left: 1px solid #dddddd;
+      border-right: 1px solid #dddddd;
+      border-bottom: 1px solid #dddddd;
+      padding: 20px 15px;
+      border-top: 2px solid #1f91f3;
+    }
+  }
+}

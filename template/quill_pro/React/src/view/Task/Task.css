@@ -1,0 +1,125 @@
+/* 
+	DO NOT DELETE
+	THIS SCSS/CSS FILE IS USED BY SCSS FILES WITHING THE React/view AND React/layout folders
+	
+ */
+/* QUILLPRO VARIABLES */
+/* 
+	DO NOT DELETE
+	THIS SCSS/CSS FILE IS USED BY SCSS FILES WITHING THE React/view AND React/layout folders
+	
+ */
+/* QUILLPRO MIXINS */
+/* Colors */
+.card .card-task-list {
+  height: 100%;
+  padding: 1rem 0 2.083rem; }
+  .card .card-task-list .task-manager .task-list {
+    height: 470px; }
+  .card .card-task-list .task-list {
+    overflow: hidden;
+    padding: 0; }
+    .card .card-task-list .task-list .task-list-item {
+      padding: 0;
+      position: relative; }
+      .card .card-task-list .task-list .task-list-item .custom-control {
+        margin: 0;
+        padding: 0; }
+        .card .card-task-list .task-list .task-list-item .custom-control .custom-control-wrap {
+          -webkit-transition: opacity 0.225s ease-in-out;
+          -moz-transition: opacity 0.225s ease-in-out;
+          -o-transition: opacity 0.225s ease-in-out;
+          transition: opacity 0.225s ease-in-out; }
+        .card .card-task-list .task-list .task-list-item .custom-control label.custom-control-label {
+          background-color: #ffffff;
+          display: block;
+          padding: 10px 2.083rem 10px 4.6rem;
+          margin: 0;
+          -webkit-transition: opacity 0.225s ease-in-out;
+          -moz-transition: opacity 0.225s ease-in-out;
+          -o-transition: opacity 0.225s ease-in-out;
+          transition: opacity 0.225s ease-in-out; }
+          .card .card-task-list .task-list .task-list-item .custom-control label.custom-control-label .badge {
+            margin-right: 5px; }
+        .card .card-task-list .task-list .task-list-item .custom-control label.custom-control-label::before {
+          top: 12px;
+          left: 25px; }
+        .card .card-task-list .task-list .task-list-item .custom-control label.custom-control-label::after {
+          top: 13px;
+          left: 27px; }
+        .card .card-task-list .task-list .task-list-item .custom-control label.custom-control-label:hover,
+        .card .card-task-list .task-list .task-list-item .custom-control label.custom-control-label:focus {
+          background-color: #f7f7fa; }
+      .card .card-task-list .task-list .task-list-item .custom-control.active .custom-control-wrap {
+        opacity: 0.5;
+        color: #7e7e7e;
+        text-decoration: line-through; }
+      .card .card-task-list .task-list .task-list-item .custom-control.active.anti-active .custom-control-wrap {
+        opacity: 1 !important;
+        color: #72848c !important;
+        text-decoration: none !important; }
+      .card .card-task-list .task-list .task-list-item .task-item-details {
+        padding: 15px 10px 15px 4.583rem;
+        display: none; }
+      .card .card-task-list .task-list .task-list-item .task-item-details:empty {
+        display: none; }
+      .card .card-task-list .task-list .task-list-item .task-item-details:empty + .task-item-controls .show-task {
+        display: none !important; }
+      .card .card-task-list .task-list .task-list-item .task-item-controls {
+        position: absolute;
+        right: 2.083rem;
+        top: 0;
+        opacity: 0;
+        -webkit-transition: opacity 0.225s ease-in-out;
+        -moz-transition: opacity 0.225s ease-in-out;
+        -o-transition: opacity 0.225s ease-in-out;
+        transition: opacity 0.225s ease-in-out; }
+      .card .card-task-list .task-list .task-list-item .task-item-users {
+        position: absolute;
+        right: calc(55px + 2.083rem);
+        top: 3px;
+        -webkit-transition: opacity 0.225s ease-in-out;
+        -moz-transition: opacity 0.225s ease-in-out;
+        -o-transition: opacity 0.225s ease-in-out;
+        transition: opacity 0.225s ease-in-out; }
+        .card .card-task-list .task-list .task-list-item .task-item-users .assigned-user {
+          display: inline-block;
+          opacity: 0.7;
+          margin-right: 0.1em;
+          -webkit-transition: opacity 0.225s ease-in-out;
+          -moz-transition: opacity 0.225s ease-in-out;
+          -o-transition: opacity 0.225s ease-in-out;
+          transition: opacity 0.225s ease-in-out; }
+          .card .card-task-list .task-list .task-list-item .task-item-users .assigned-user .profile-picture {
+            width: 34px;
+            height: 34px; }
+            .card .card-task-list .task-list .task-list-item .task-item-users .assigned-user .profile-picture img.list-thumbnail {
+              width: 30px;
+              height: 30px; }
+          .card .card-task-list .task-list .task-list-item .task-item-users .assigned-user .profile-picture.has-message::after {
+            top: -8px;
+            left: -11px; }
+      .card .card-task-list .task-list .task-list-item .task-item-users:empty {
+        display: none; }
+    .card .card-task-list .task-list .task-list-item:nth-child(even) .custom-control {
+      margin: 0; }
+      .card .card-task-list .task-list .task-list-item:nth-child(even) .custom-control label.custom-control-label {
+        background-color: #f7f7fa; }
+      .card .card-task-list .task-list .task-list-item:nth-child(even) .custom-control label.custom-control-label:hover,
+      .card .card-task-list .task-list .task-list-item:nth-child(even) .custom-control label.custom-control-label:focus {
+        background-color: #eeeef4; }
+    .card .card-task-list .task-list .task-list-item:hover .task-item-controls,
+    .card .card-task-list .task-list .task-list-item:focus .task-item-controls {
+      opacity: 1; }
+    .card .card-task-list .task-list .task-list-item:hover .task-item-users .assigned-user,
+    .card .card-task-list .task-list .task-list-item:focus .task-item-users .assigned-user {
+      opacity: 1;
+      margin-right: 0.1em; }
+    .card .card-task-list .task-list .task-list-item.checked {
+      background-color: #eeeef4; }
+  .card .card-task-list .task-manager-list-container {
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    padding: 20px 15px;
+    border-top: 2px solid #1f91f3; }

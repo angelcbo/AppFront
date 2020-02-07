@@ -1,0 +1,129 @@
+/* 
+	DO NOT DELETE
+	THIS SCSS/CSS FILE IS USED BY SCSS FILES WITHING THE React/view AND React/layout folders
+	
+ */
+/* QUILLPRO VARIABLES */
+/* 
+	DO NOT DELETE
+	THIS SCSS/CSS FILE IS USED BY SCSS FILES WITHING THE React/view AND React/layout folders
+	
+ */
+/* QUILLPRO MIXINS */
+/* Colors */
+.timeline p {
+  color: #ffffff; }
+
+.timeline h2 {
+  background-color: #4f5b60;
+  -webkit-border-radius: 0.4167rem;
+  -moz-border-radius: 0.4167rem;
+  -ms-border-radius: 0.4167rem;
+  -o-border-radius: 0.4167rem;
+  border-radius: 0.4167rem; }
+
+.timeline .timeline-items {
+  padding-top: 30px; }
+  .timeline .timeline-items .timeline-item {
+    left: auto;
+    margin-bottom: 60px;
+    padding: 2.083rem;
+    -webkit-border-radius: 0.4167rem;
+    -moz-border-radius: 0.4167rem;
+    -ms-border-radius: 0.4167rem;
+    -o-border-radius: 0.4167rem;
+    border-radius: 0.4167rem;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-top-right-radius: 0;
+    -ms-border-top-right-radius: 0;
+    -o-border-top-right-radius: 0;
+    border-top-right-radius: 0; }
+    .timeline .timeline-items .timeline-item hr {
+      border-top: 1px solid rgba(255, 255, 255, 0.2); }
+    .timeline .timeline-items .timeline-item h3 {
+      font-weight: 400; }
+    .timeline .timeline-items .timeline-item time::before {
+      font-family: "Batch Icons";
+      content: "\f090";
+      font-weight: 400;
+      font-size: 1.3rem; }
+  .timeline .timeline-items .timeline-item::after {
+    background-color: #4f5b60;
+    left: calc(100% + 8.4%); }
+  .timeline .timeline-items .timeline-item:nth-of-type(2n + 1) {
+    background-color: #07a7e3; }
+  .timeline .timeline-items .timeline-item:nth-of-type(2n + 1)::before {
+    border-top: 1em solid #07a7e3; }
+  .timeline .timeline-items .timeline-item:nth-of-type(2n) {
+    background-color: #32dac3; }
+  .timeline .timeline-items .timeline-item:nth-of-type(2n)::before {
+    border-top: 1em solid #32dac3; }
+  .timeline .timeline-items .timeline-item.centered:nth-of-type(2n + 1)::before {
+    border-top: 0;
+    border-bottom: 1em solid #07a7e3; }
+  .timeline .timeline-items .timeline-item.centered:nth-of-type(2n)::before {
+    border-top: 0;
+    border-bottom: 1em solid #32dac3; }
+  .timeline .timeline-items .timeline-item.inverted {
+    text-align: left;
+    left: 54%;
+    -webkit-border-top-right-radius: 0.4167rem;
+    -moz-border-top-right-radius: 0.4167rem;
+    -ms-border-top-right-radius: 0.4167rem;
+    -o-border-top-right-radius: 0.4167rem;
+    border-top-right-radius: 0.4167rem; }
+  .timeline .timeline-items .timeline-item.inverted::after {
+    left: calc(-8.78% - 13px); }
+  .timeline .timeline-items .timeline-item.centered {
+    margin-top: 100px;
+    -webkit-border-top-right-radius: 0.4167rem;
+    -moz-border-top-right-radius: 0.4167rem;
+    -ms-border-top-right-radius: 0.4167rem;
+    -o-border-top-right-radius: 0.4167rem;
+    border-top-right-radius: 0.4167rem; }
+  .timeline .timeline-items .timeline-item.centered::before {
+    left: calc(50% - 10px); }
+  .timeline .timeline-items .timeline-item.centered::after {
+    display: block;
+    content: "";
+    background: #5b5555;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -50px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+    left: calc(50% - 12px); }
+
+.timeline::before {
+  background-color: #4f5b60; }
+
+@media (max-width: 575px) {
+  .timeline .timeline-items .timeline-item {
+    width: 100%;
+    left: auto !important;
+    margin-top: 100px !important;
+    -webkit-border-top-right-radius: 0.4167rem;
+    -moz-border-top-right-radius: 0.4167rem;
+    -ms-border-top-right-radius: 0.4167rem;
+    -o-border-top-right-radius: 0.4167rem;
+    border-top-right-radius: 0.4167rem; }
+  .timeline .timeline-items .timeline-item::before {
+    display: none !important; }
+  .timeline .timeline-items .timeline-item::after {
+    display: block !important;
+    content: "";
+    background: #5b5555 !important;
+    width: 30px !important;
+    height: 30px !important;
+    position: absolute !important;
+    top: -50px !important;
+    -webkit-border-radius: 100% !important;
+    -moz-border-radius: 100% !important;
+    -ms-border-radius: 100% !important;
+    -o-border-radius: 100% !important;
+    border-radius: 100% !important;
+    left: calc(50% - 12px) !important; } }

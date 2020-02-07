@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="Base 5 Builder">
+
+	<title>Documentation | QuillPro - Multipurpose Bootstrap 4 Admin Dashboard Template</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Add custom CSS here -->
+	<link href="css/style.css" rel="stylesheet">
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link type="text/css" href="css/prettify.css" rel="stylesheet" />
+	<link type="text/css" href="css/prettify-bootstrap.min.css" rel="stylesheet" />
+
+	<!-- Unslider -->
+	<link type="text/css" href="js/unslider/css/unslider.css" rel="stylesheet" />
+	<link type="text/css" href="js/unslider/css/unslider-dots.css" rel="stylesheet" />
+
+	<!-- Fav and touch icons -->
+	<link rel="shortcut icon" href="image/ico/favicon.png">
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li class="sidebar-brand">
+					<a href="#top">
+						<img src="image/logo.png" alt="Logo" />
+					</a>
+				</li>
+				<li><a href="#introduction">Introduction</a></li>
+				<li><a href="#getting-started">Getting Started</a></li>
+				<li><a href="#required-files">Required Files</a></li>
+				<li><a href="#rtl">Required Files - RTL</a></li>
+				<li><a href="#layouts">Layouts</a></li>
+				<li><a href="#header-elements">Header Elements</a></li>
+				<li><a href="#ui-cards">UI Cards</a></li>
+				<li><a href="#charts">Charts</a></li>
+				<li><a href="#buttons">Buttons</a></li>
+				<li><a href="#icons">Icons</a></li>
+				<li><a href="#gallery">Gallery</a></li>
+				<li><a href="#misc-items">Misc. Items</a></li>
+				<li><a href="#animation">Animation</a></li>
+				<li><a href="#support">Support</a></li>
+				<li><a href="#changelog">Changelog</a></li>
+			</ul>
+		</div>
+
+		<!-- Page content -->
+		<div id="page-content-wrapper">
+			<div class="content-header" id="top">
+				<h1>
+					<a id="menu-toggle" href="#" class="btn btn-default">
+						<img src="image/icon-menu.png" alt="Menu" />
+					</a>
+					QuillPro - Responsive Bootstrap 4 Admin Dashboard Template
+				</h1>
+			</div>
+			<!-- Keep all page content within the page-content inset div! -->
+			<div class="page-content inset">
+				<div class="row">
+					<div class="col-md-12" id="introduction">
+						<p class="lead first-lead">Thanks for purchasing QuillPro! This document contains everything you need to know about QuillPro. Keep reading...</p>
+						<p class="lead first-lead">React Documentation: <a href="react.html">Click here</a>.</p>
+						<p>
+							QuillPro was built with a simple structure so you can spend less time figuring out how to use the template and focus on building and launching your project.
+						</p>
+						<h2>Introduction To QuillPro</h2>
+						<p>
+							QuillPro was built using both Bootstrap 4, so if you understand how to use Bootstrap 4, you will have no trouble understanding QuillPro.
+						</p>
+						<p>
+							That's why this documentation will only cover aspects of QuillPro that have either added news features or updated the way Bootstrap 4 works.
+						</p>
+						<p>
+							Here's a quick link to <a href="https://getbootstrap.com">Bootstap 4</a> to help you out.
+						</p>
+						<p class="img">
+							<img src="image/feature-image.jpg" border="0" alt="Desktop View"/>
+						</p>
+						<p style="text-align:center">
+							<b>Demo:</b> <a href="$?click_source=documentation" target="_blank">http://base5builder.com/livedemo/quillpro</a>
+						</p>
+					</div>
+					<div class="col-md-12" id="update-bootstrap-4">
+						<h2>Updating to QuillPro v1.4 (Boostrap 4.0.0 - Stable Release)</h2>
+						<p>
+							<span class="label label-danger">IMPORTANT</span> If you are updating your code from QuillPro 1.3 and below, then this section is important!
+						</p>
+						<br>
+						<p>
+							<a href="#getting-started">Skip ahead</a> if you are not upgrading from QuillPro 1.3 or below.
+						</p>
+						<br>
+						<p>
+							From QuillPro 1.4, we are using Bootstrap 4.0.0 instead of the beta release. With this version of Bootstrap, there are a bunch of code changes that have been made which may break your project if you do not update your code where necessary.
+						</p>
+						<br>
+						<p>
+							To make it easier for you, we have done the following:
+						</p>
+						<ol>
+							<li><a href="#upgraded-files-to-1-4">Created a list</a> of all items changed/modified</li>
+							<li>We left in the old Bootstrap code and only commented them out within the necessary files. You can find them within the files listed below by doing a search of "DEPRECATED CODE:"</li>
+						</ol>
+						<h4 id="upgraded-files-to-1-4">FILES CHANGED IN QUILLPRO 1.4</h4>
+						<ul>
+							<li>Forms - <code>Files/forms.html</code></li>
+							<li>Tables - <code>Files/tables.html</code></li>
+							<li>Navbar - <code>Files/ui-other-bootstrap-elements.html</code></li>
+						</ul>	
+					</div>
+					<div class="col-md-12" id="getting-started">
+						<h2>Getting A Head Start</h2>
+						<p>
+							If you want to just jump in and start using QuillPro, then you can just open <code>Files/starter-kit.html</code> and get to work. All you need is knowledge of Bootstrap 4 in order to get started.
+						</p>
+						<p>
+							But, if you want to know what QuillPro can really do or you want to start from scratch, then keep reading. Both ways lead to an awesome final design. 
+						</p>
+						<p>
+							<span class="label label-success">NOTE</span> If a layout or element or feature is not listen within this documentation, that means it's cosidered, basic HTML knowledge, already in the <a href="https://getbootstrap.com">Bootstrap documentation</a> or it is easier for you just to copy it direclt from the HTML file within the <code>Files</code> folder.
+						</p>
+					</div>
+					<div class="col-md-12" id="required-files">
+						<h2>Required Files</h2>
+						<p>
+							QuillPro requires certain files in order to work as intended. You can look within each file in <code>Files</code> to see the requirements properly commented, but you can also just copy paste the code below.
+						</p>
+						<p>
+							Both CSS/SASS and Javascript files are commented with the necessary code for you to alter them as needed.
+						</p>
+						<p>
+							<a href="#required-frontend-css">Click here</a> to see the CSS files required by the frontend template.
+						</p>
+						<h3>CSS/SASS</h3>
+						<p>
+							Place these within the <code>head</code> of the file.
+						</p>
+<pre class="prettyprint linenums">
+&lt;head&gt;
+	&lt;!-- Fonts --&gt;
+	&lt;link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&amp;subset=latin-ext" rel="stylesheet"&gt;
+
+	&lt;!-- CSS - REQUIRED - START --&gt;
+	&lt;!-- Batch Icons --&gt;
+	&lt;link rel="stylesheet" href="assets/fonts/batch-icons/css/batch-icons.css"&gt;
+	&lt;!-- Bootstrap core CSS --&gt;
+	&lt;link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css"&gt;
+	&lt;!-- Material Design Bootstrap --&gt;
+	&lt;link rel="stylesheet" href="assets/css/bootstrap/mdb.min.css"&gt;
+	&lt;!-- Custom Scrollbar --&gt;
+	&lt;link rel="stylesheet" href="assets/plugins/custom-scrollbar/jquery.mCustomScrollbar.min.css"&gt;
+	&lt;!-- Hamburger Menu --&gt;
+	&lt;link rel="stylesheet" href="assets/css/hamburgers/hamburgers.css"&gt;
+
+	&lt;!-- CSS - REQUIRED - END --&gt;
+
+	&lt;!-- CSS - OPTIONAL - START --&gt;
+	&lt;!-- Place optional styles here --&gt;
+	&lt;!-- CSS - OPTIONAL - END --&gt;
+
+	&lt;!-- QuillPro Styles --&gt;
+	&lt;link rel="stylesheet" href="assets/css/quillpro/quillpro.css"&gt;
+&lt;/head&gt;
+</pre>
+<br>
+						<h4 id="required-frontend-css">Frontend</h4>
+						<ul>
+							<li>
+								Add the following CSS file just after the <code>&lt;!-- CSS - OPTIONAL - START --&gt;</code>: <br>
+								<code>&lt;link rel="stylesheet" href="assets/plugins/baguettebox/baguetteBox.min.css"&gt;</code> <br><br>
+							</li>
+							<li>
+								If you need a gallery, then you will need to add this.
+								<br>
+								Add the following CSS file just after the QuillPro Stylesheet: <br>
+								<code>&lt;link rel="stylesheet" href="assets/css/quillpro/quillpro-frontend.css"&gt;</code>
+							</li>
+						</ul>
+						<br>
+
+						<h3>Javascript</h3>
+						<p>
+							Place these just before the end of the <code>body</code> tag.
+						</p>
+						<p>
+							<a href="#required-frontend-js">Click here</a> to see the Javascript files required by the frontend template.
+						</p>
+<pre class="prettyprint linenums">
+&lt;!-- SCRIPTS - REQUIRED START --&gt;
+	&lt;!-- Placed at the end of the document so the pages load faster --&gt;
+	&lt;!-- Bootstrap core JavaScript --&gt;
+	&lt;!-- JQuery --&gt;
+	&lt;script type="text/javascript" src="assets/js/jquery/jquery-3.1.1.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Popper.js - Bootstrap tooltips --&gt;
+	&lt;script type="text/javascript" src="assets/js/bootstrap/popper.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Bootstrap core JavaScript --&gt;
+	&lt;script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"&gt;&lt;/script&gt;
+	&lt;!-- MDB core JavaScript --&gt;
+	&lt;script type="text/javascript" src="assets/js/bootstrap/mdb.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Velocity --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/velocity/velocity.min.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="assets/plugins/velocity/velocity.ui.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Custom Scrollbar --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"&gt;&lt;/script&gt;
+	&lt;!-- jQuery Visible --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/jquery_visible/jquery.visible.min.js"&gt;&lt;/script&gt;
+	&lt;!-- jQuery Visible --&gt;
+	&lt;!-- IE10 viewport hack for Surface/desktop Windows 8 bug --&gt;
+	&lt;script type="text/javascript" src="assets/js/misc/ie10-viewport-bug-workaround.js"&gt;&lt;/script&gt;
+
+	&lt;!-- SCRIPTS - REQUIRED END --&gt;
+	&lt;!-- SCRIPTS - OPTIONAL START --&gt;
+		&lt;!-- Input Addon Scripts &amp; Plugins here --&gt;
+	&lt;!-- SCRIPTS - OPTIONAL END --&gt;
+	&lt;!-- QuillPro Script --&gt;
+		&lt;script type="text/javascript" src="assets/js/scripts.js"&gt;&lt;/script&gt;
+	&lt;!-- QuillPro Script --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<br>
+						<h4 id="required-frontend-js">Frontend</h4>
+						<ul>
+							<li>
+								If you need a gallery, then you will need to add this.
+								<br>
+								Add the following JS file just after the <code>&lt;!-- SCRIPTS - OPTIONAL START --&gt;</code>: <br>
+								<code>&lt;script type="text/javascript" src="assets/plugins/baguettebox/baguetteBox.min.js"&gt;&lt;/script&gt;</code> <br><br>
+							</li>
+							<li>
+								If you use videos, this plugin will allow your video resize to fit the with of it's parent container. Think "Responsive Videos".
+								<br>
+								Also add this JS file: <br>
+								<code>&lt;script type="text/javascript" src="assets/plugins/fitvids/jquery.fitvids.min.js"&gt;&lt;/script&gt;</code>
+							</li>
+						</ul>
+						<br>
+					</div>
+					<div class="col-md-12" id="rtl">
+						<h2>Required Files - RTL</h2>
+						<p>
+							QuillPro supports RTL languages (Arabic, Hebrew, etc). All you have to do is to replace certain files. These files are listed below.
+						</p>
+						<p>
+							<span class="label label-success">NOTE</span> All HTML files come with an RTL duplicate. So <code>index.html</code> has <code>index-rtl.html</code> as its RTL counterpart, <code>ui-cards.html</code> has <code>ui-cards-rtl.html</code>... and so on.
+						</p>
+						<p>
+							<span class="label label-success">NOTE</span> These changes also apply to the SASS files too.
+						</p>
+						<br>
+						<p>
+							Link to the following files if you want to build an RTL page.
+						</p>
+						<ul>
+							<li><b>CSS:</b> <code>&lt;link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css"&gt;</code> becomes <code>&lt;link rel="stylesheet" href="assets/css/bootstrap/bootstrap-rtl.min.css"&gt;</code> <br><br></li>
+							<li><b>CSS:</b> <code>&lt;link rel="stylesheet" href="assets/css/bootstrap/mdb.min.css"&gt;</code> becomes <code>&lt;link rel="stylesheet" href="assets/css/bootstrap/mdb-rtl.min.css"&gt;</code> <br><br></li>
+							<li><b>CSS:</b> <code>&lt;link rel="stylesheet" href="assets/css/quillpro/quillpro.css"&gt;</code> becomes <code>&lt;link rel="stylesheet" href="assets/css/quillpro-rtl/quillpro-rtl.css"&gt;</code> <br><br></li>
+							<li><b>Javascript:</b> <code>&lt;script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"&gt;&lt;/script&gt;</code> becomes <code>&lt;script type="text/javascript" src="assets/js/bootstrap/bootstrap-rtl.min.js"&gt;&lt;/script&gt;</code> <br><br></li>
+						</ul>
+					</div>
+					<div class="col-md-12" id="layouts">
+						<h2>Layouts</h2>
+						<p>
+							There are 4 main layout types. You can see them in action in the demos below. 
+						</p>
+						<ul>
+							<li><a href="../Files/layout-left-menu-normal.html" target="_blank">Left Menu - Normal</a></li>
+							<li><a href="../Files/layout-left-menu-hidden.html" target="_blank">Left Menu - Hidden</a></li>
+							<li><a href="../Files/layout-top-menu-fixed.html" target="_blank">Top Menu - Fixed</a></li>
+							<li><a href="../Files/layout-top-menu-normal.html" target="_blank">Top Menu - Normal</a></li>
+						</ul>
+						<p>
+							Below are the general layouts of each layout type.
+						</p>
+						<h3>Left Menu - Normal</h3>
+<pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;!-- Header Styles & Scripts --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class="container-fluid"&gt;
+		&lt;div class="row"&gt;
+			&lt;nav id="sidebar" class="px-0 bg-dark bg-gradient sidebar"&gt;
+				&lt;button class="hamburger hamburger--slider" type="button" data-target=".sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Sidebar"&gt;&lt;span class="hamburger-box"&gt;&lt;span class="hamburger-inner"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+				&lt;ul class="nav nav-pills flex-column"&gt;
+					&lt;li class="logo-nav-item"&gt;
+						&lt;a class="navbar-brand" href="#"&gt;
+							&lt;img src="assets/img/logo-white.png" width="145" height="32.3" alt="QuillPro"&gt;
+						&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li&gt;General&lt;/li&gt; &lt;!-- Sub Heading Does Not Have A Class. --&gt;
+					&lt;li class="nav-item"&gt;Menu Item 1&lt;/li&gt;
+					&lt;li class="nav-item"&gt;Menu Item 2&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/nav&gt;
+			&lt;div class="right-column"&gt;
+				&lt;nav class="navbar navbar-expand-lg navbar-light bg-white"&gt;
+					&lt;a class="navbar-brand d-block d-sm-block d-md-block d-lg-none" href="#"&gt;
+						&lt;img src="assets/img/logo-dark.png" width="145" height="32.3" alt="QuillPro"&gt;
+					&lt;/a&gt;
+					&lt;button class="hamburger hamburger--slider" type="button" data-target=".sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Sidebar"&gt;
+						&lt;span class="hamburger-box"&gt;
+							&lt;span class="hamburger-inner"&gt;&lt;/span&gt;
+						&lt;/span&gt;
+					&lt;/button&gt;
+
+					&lt;!--
+					-- Start --
+					Optional: Mobile-Only Menu (See Header Elements section for details)
+					-- End --
+					--&gt;
+
+					&lt;div class="collapse navbar-collapse" id="navbar-header-content"&gt;
+						&lt;!-- Header Content --&gt;
+					&lt;/div&gt;
+				&lt;/nav&gt;
+				&lt;main class="main-content p-4"&gt;
+					&lt;!-- Main Content --&gt;
+				&lt;/main&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- Footer Scripts --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<br>
+						<h3>Left Menu - Hidden</h3>
+<pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;!-- Header Styles & Scripts --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class="container-fluid"&gt;
+		&lt;div class="row"&gt;
+			&lt;nav id="sidebar" class="px-0 bg-dark bg-gradient sidebar sidebar-hidden"&gt;
+				&lt;button class="hamburger hamburger--slider" type="button" data-target=".sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Sidebar"&gt;&lt;span class="hamburger-box"&gt;&lt;span class="hamburger-inner"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+				&lt;ul class="nav nav-pills flex-column"&gt;
+					&lt;li class="logo-nav-item"&gt;
+						&lt;a class="navbar-brand" href="#"&gt;
+							&lt;img src="assets/img/logo-white.png" width="145" height="32.3" alt="QuillPro"&gt;
+						&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li&gt;General&lt;/li&gt; &lt;!-- Sub Heading Does Not Have A Class. --&gt;
+					&lt;li class="nav-item"&gt;Menu Item 1&lt;/li&gt;
+					&lt;li class="nav-item"&gt;Menu Item 2&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/nav&gt;
+			&lt;div class="right-column"&gt;
+				&lt;nav class="navbar navbar-expand-lg navbar-light bg-white"&gt;
+					&lt;a class="navbar-brand" href="#"&gt;
+						&lt;img src="assets/img/logo-dark.png" width="145" height="32.3" alt="QuillPro"&gt;
+					&lt;/a&gt;
+					&lt;button class="hamburger hamburger--slider" type="button" data-target=".sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Sidebar"&gt;
+						&lt;span class="hamburger-box"&gt;
+							&lt;span class="hamburger-inner"&gt;&lt;/span&gt;
+						&lt;/span&gt;
+					&lt;/button&gt;
+					
+					&lt;!--
+					-- Start --
+					Optional: Mobile-Only Menu (See Header Elements section for details)
+					-- End --
+					--&gt;
+
+					&lt;div class="collapse navbar-collapse" id="navbar-header-content"&gt;
+						&lt;!-- Header Content --&gt;
+					&lt;/div&gt;
+				&lt;/nav&gt;
+				&lt;main class="main-content p-4"&gt;
+					&lt;!-- Main Content --&gt;
+				&lt;/main&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- Footer Scripts --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<br>
+						<h3>Top Menu - Fixed</h3>
+<pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;!-- Header Styles & Scripts --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class="container-fluid"&gt;
+		&lt;div class="row"&gt;
+			&lt;nav class="navbar-sidebar-horizontal navbar navbar-expand-lg navbar-light bg-white fixed-top"&gt;
+				&lt;a class="navbar-brand" href="#"&gt;
+					&lt;img src="assets/img/logo-dark.png" width="145" height="32.3" alt="QuillPro"&gt;
+				&lt;/a&gt;
+				&lt;button class="hamburger hamburger--slider" type="button" data-target=".sidebar-horizontal" aria-controls="sidebar-horizontal" aria-expanded="false" aria-label="Toggle Main Menu"&gt;
+					&lt;span class="hamburger-box"&gt;
+						&lt;span class="hamburger-inner"&gt;&lt;/span&gt;
+					&lt;/span&gt;
+				&lt;/button&gt;
+					
+				&lt;!--
+				-- Start --
+				Optional: Mobile-Only Menu (See Header Elements section for details)
+				-- End --
+				--&gt;
+
+				&lt;div class="collapse navbar-collapse" id="navbar-header-content"&gt;
+					&lt;!-- Header Content --&gt;
+				&lt;/div&gt;
+			&lt;/nav&gt;
+			&lt;div class="right-column"&gt;
+				&lt;nav class="sidebar-horizontal navbar navbar-expand-lg navbar-dark bg-dark fixed-top"&gt;
+					&lt;div class="navbar-collapse" id="navbar-header-menu-outer"&gt;
+						&lt;ul class="navbar-nav navbar-header-menu mr-auto" data-qp-animate-type="fadeInDown"&gt;
+							&lt;li class="nav-item"&gt;
+								&lt;a class="nav-link" href="index.html"&gt;
+									&lt;i class="batch-icon batch-icon-browser-alt"&gt;&lt;/i&gt;
+									Dashboard
+								&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class="nav-item dropdown"&gt;
+								&lt;a class="nav-link dropdown-toggle" id="navbar-dropdown-dashboard-link" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false"&gt;
+									&lt;i class="batch-icon batch-icon-layout-content-left"&gt;&lt;/i&gt;
+									Layout &lt;span class="sr-only"&gt;(current)&lt;/span&gt;
+								&lt;/a&gt;
+								&lt;ul class="dropdown-menu" aria-labelledby="navbar-dropdown-dashboard-link"&gt;
+									&lt;li&gt;&lt;a class="dropdown-item" href="layout-left-menu-hidden.html"&gt;Left Menu - Hidden&lt;/a&gt;&lt;/li&gt;
+									&lt;li&gt;&lt;a class="dropdown-item" href="layout-left-menu-normal.html"&gt;Left Menu - Normal&lt;/a&gt;&lt;/li&gt;
+									&lt;li&gt;&lt;a class="dropdown-item" href="layout-top-menu-fixed.html"&gt;Top Menu - Fixed&lt;/a&gt;&lt;/li&gt;
+									&lt;li&gt;&lt;a class="dropdown-item" href="layout-top-menu-normal.html"&gt;Top Menu - Normal&lt;/a&gt;&lt;/li&gt;
+								&lt;/ul&gt;
+							&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/div&gt;
+				&lt;/nav&gt;
+				&lt;main class="main-content p-4"&gt;
+					&lt;!-- Main Content --&gt;
+				&lt;/main&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- Footer Scripts --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<br>
+						<h3>Top Menu - Normal</h3>
+<pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;!-- Header Styles & Scripts --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class="container-fluid"&gt;
+		&lt;div class="row"&gt;
+			&lt;nav class="navbar-sidebar-horizontal navbar navbar-expand-lg navbar-light bg-white"&gt;
+				&lt;a class="navbar-brand" href="#"&gt;
+					&lt;img src="assets/img/logo-dark.png" width="145" height="32.3" alt="QuillPro"&gt;
+				&lt;/a&gt;
+				&lt;button class="hamburger hamburger--slider" type="button" data-target=".sidebar-horizontal" aria-controls="sidebar-horizontal" aria-expanded="false" aria-label="Toggle Main Menu"&gt;
+					&lt;span class="hamburger-box"&gt;
+						&lt;span class="hamburger-inner"&gt;&lt;/span&gt;
+					&lt;/span&gt;
+				&lt;/button&gt;
+					
+				&lt;!--
+				-- Start --
+				Optional: Mobile-Only Menu (See Header Elements section for details)
+				-- End --
+				--&gt;
+
+				&lt;div class="collapse navbar-collapse" id="navbar-header-content"&gt;
+					&lt;!-- Header Content --&gt;
+				&lt;/div&gt;
+			&lt;/nav&gt;
+			&lt;div class="right-column"&gt;
+				&lt;nav class="sidebar-horizontal navbar navbar-expand-lg navbar-dark bg-dark"&gt;
+					&lt;div class="navbar-collapse" id="navbar-header-menu-outer"&gt;
+						&lt;ul class="navbar-nav navbar-header-menu mr-auto" data-qp-animate-type="fadeInDown"&gt;
+							&lt;li class="nav-item"&gt;
+								&lt;a class="nav-link" href="index.html"&gt;
+									&lt;i class="batch-icon batch-icon-browser-alt"&gt;&lt;/i&gt;
+									Dashboard
+								&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class="nav-item dropdown"&gt;
+								&lt;a class="nav-link dropdown-toggle" id="navbar-dropdown-dashboard-link" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false"&gt;
+									&lt;i class="batch-icon batch-icon-layout-content-left"&gt;&lt;/i&gt;
+									Layout &lt;span class="sr-only"&gt;(current)&lt;/span&gt;
+								&lt;/a&gt;
+								&lt;ul class="dropdown-menu" aria-labelledby="navbar-dropdown-dashboard-link"&gt;
+									&lt;li&gt;&lt;a class="dropdown-item" href="layout-left-menu-hidden.html"&gt;Left Menu - Hidden&lt;/a&gt;&lt;/li&gt;
+									&lt;li&gt;&lt;a class="dropdown-item" href="layout-left-menu-normal.html"&gt;Left Menu - Normal&lt;/a&gt;&lt;/li&gt;
+									&lt;li&gt;&lt;a class="dropdown-item" href="layout-top-menu-fixed.html"&gt;Top Menu - Fixed&lt;/a&gt;&lt;/li&gt;
+									&lt;li&gt;&lt;a class="dropdown-item" href="layout-top-menu-normal.html"&gt;Top Menu - Normal&lt;/a&gt;&lt;/li&gt;
+								&lt;/ul&gt;
+							&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/div&gt;
+				&lt;/nav&gt;
+				&lt;main class="main-content p-4"&gt;
+					&lt;!-- Main Content --&gt;
+				&lt;/main&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- Footer Scripts --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<br>
+					</div>
+					<div class="col-md-12" id="header-elements">
+						<h2>Header Elements</h2>
+						<p>
+							These reside in the area marked "Header Content" in the <code>.navbar-header-content</code> class in the layouts above.
+						</p>
+						<h3>Mobile-Only Menu</h3>
+						<p>
+							THe Mobile-Only Menu contains notification items that will only be present on mobile devices/small screens.
+						</p>
+						<p>
+							 First add the following bit of code to the <code>.navbar-header-content</code> class.
+						</p>
+						<p>
+							<span class="label label-success">NOTE</span> If you have already added the code below to your header, you do not need to add it again.
+						</p>
+<pre class="prettyprint linenums">
+&lt;ul class="navbar-nav ml-auto mobile-only-control d-block d-sm-block d-md-block d-lg-none"&gt;
+	// Other code will go here
+&lt;/ul&gt;
+</pre>
+<br>
+					<p>
+						Then add the following code into the code above.
+					</p>
+<pre class="prettyprint linenums">
+&lt;li class="nav-item dropdown"&gt;
+	&lt;a class="nav-link dropdown-toggle" id="navbar-notification-search-mobile" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false"&gt;
+		&lt;i class="batch-icon batch-icon-search"&gt;&lt;/i&gt;
+	&lt;/a&gt;
+	&lt;ul class="dropdown-menu dropdown-menu-fullscreen" aria-labelledby="navbar-notification-search-mobile"&gt;
+		&lt;li&gt;
+			&lt;form class="form-inline my-2 my-lg-0 no-waves-effect"&gt;
+				&lt;div class="input-group"&gt;
+					&lt;input type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." aria-describedby="basic-addon2"&gt;
+					&lt;div class="input-group-append"&gt;
+						&lt;button class="btn btn-primary btn-gradient waves-effect waves-light" type="button"&gt;
+							&lt;i class="batch-icon batch-icon-search"&gt;&lt;/i&gt;
+						&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/form&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/li&gt;
+</pre>
+						<h3>Language Selection</h3>
+<pre class="prettyprint linenums">
+&lt;ul class="navbar-nav navbar-language-translation mr-auto" data-qp-animate-type="fadeInDown"&gt;
+	&lt;li class="nav-item dropdown"&gt;
+		&lt;a class="nav-link dropdown-toggle" id="navbar-dropdown-menu-link" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false"&gt;
+			&lt;i class="batch-icon batch-icon-book-alt-"&gt;&lt;/i&gt;
+			English
+		&lt;/a&gt;
+		&lt;ul class="dropdown-menu" aria-labelledby="navbar-dropdown-menu-link"&gt;
+			&lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Français&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Deutsche&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Español&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<br>
+						<h3>Header Search Bar</h3>
+						<p>
+							First add the following bit of code to the <code>.navbar-header-content</code> class.
+						</p>
+						<p>
+							<span class="label label-success">NOTE</span> If you have already added the code below to your header, you do not need to add it again.
+						</p>
+<pre class="prettyprint linenums">
+&lt;ul class="navbar-nav navbar-notifications float-right" data-qp-animate-type="fadeInDown"&gt;
+	// Other code will go here
+&lt;/ul&gt;
+</pre>
+<br>
+					<p>
+						Then add the following code into the code above.
+					</p>
+<pre class="prettyprint linenums">
+&lt;li class="nav-item dropdown"&gt;
+	&lt;a class="nav-link dropdown-toggle" id="navbar-notification-search" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false"&gt;
+		&lt;i class="batch-icon batch-icon-search"&gt;&lt;/i&gt;
+	&lt;/a&gt;
+	&lt;ul class="dropdown-menu dropdown-menu-fullscreen" aria-labelledby="navbar-notification-search"&gt;
+		&lt;li&gt;
+			&lt;form class="form-inline my-2 my-lg-0 no-waves-effect"&gt;
+				&lt;div class="input-group"&gt;
+					&lt;input type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." aria-describedby="basic-addon2"&gt;
+					&lt;div class="input-group-append"&gt;
+						&lt;button class="btn btn-primary btn-gradient waves-effect waves-light" type="button"&gt;Search&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/form&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/li&gt;
+</pre>
+<br>
+						<h3>General Notifications</h3>
+						<p>
+							First add the following bit of code to the <code>.navbar-header-content</code> class.
+						</p>
+						<p>
+							<span class="label label-success">NOTE</span> If you have already added the code below to your header, you do not need to add it again.
+						</p>
+<pre class="prettyprint linenums">
+&lt;ul class="navbar-nav navbar-notifications float-right" data-qp-animate-type="fadeInDown"&gt;
+	// Other code will go here
+&lt;/ul&gt;
+</pre>
+<br>
+					<p>
+						Then add the following code into the code above.
+					</p>
+<pre class="prettyprint linenums">
+&lt;li class="nav-item dropdown"&gt;
+	&lt;a class="nav-link dropdown-toggle no-waves-effect" id="navbar-notification-misc" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false"&gt;
+		&lt;i class="batch-icon batch-icon-bell"&gt;&lt;/i&gt;
+		&lt;span class="notification-number"&gt;4&lt;/span&gt;
+	&lt;/a&gt;
+	&lt;ul class="dropdown-menu dropdown-menu-right dropdown-menu-md" aria-labelledby="navbar-notification-misc"&gt;
+		&lt;li class="media"&gt;
+			&lt;a href="task-list.html" class=""&gt;
+				&lt;i class="batch-icon batch-icon-bell batch-icon-xl d-flex mr-3"&gt;&lt;/i&gt;
+				&lt;div class="media-body"&gt;
+					&lt;h6 class="mt-0 mb-1 notification-heading"&gt;General Notification&lt;/h6&gt;
+					&lt;div class="notification-text"&gt;
+						Cras sit amet nibh libero
+					&lt;/div&gt;
+					&lt;span class="notification-time"&gt;Just now&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/a&gt;
+		&lt;/li&gt;
+		// Other List Items
+	&lt;/ul&gt;
+&lt;/li&gt;
+</pre>
+<br>
+						<h3>Header Profile</h3>
+						<p>
+							Add the following bit of code to the <code>.navbar-header-content</code> class.
+						</p>
+<pre class="prettyprint linenums">
+&lt;ul class="navbar-nav ml-5 navbar-profile" data-qp-animate-type="fadeInDown"&gt;
+	&lt;li class="nav-item dropdown"&gt;
+		&lt;a class="nav-link dropdown-toggle" id="navbar-dropdown-navbar-profile" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false"&gt;
+			&lt;div class="profile-name"&gt;
+				Johanna Quinn
+			&lt;/div&gt;
+			&lt;div class="profile-picture bg-gradient bg-primary has-message float-right"&gt;
+				&lt;img src="assets/img/profile-pic.jpg" width="44" height="44"&gt;
+			&lt;/div&gt;
+		&lt;/a&gt;
+		&lt;ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-dropdown-navbar-profile"&gt;
+			&lt;li&gt;&lt;a class="dropdown-item" href="profiles-member-profile.html"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a class="dropdown-item" href="mail-inbox.html"&gt;
+					Messages 
+					&lt;span class="badge badge-danger badge-pill float-right"&gt;3&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			// Other List Items
+		&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<br>
+					</div>
+					<div class="col-md-12" id="ui-cards">
+						<h2>UI - Cards</h2>
+						<p>See demos for <a href="../Files/ui-cards.html" target="_blank">Cards</a> and <a href="../Files/ui-cards-special.html" target="_blank">Special Cards</a> for more.</p>
+						<p>
+							Since Bootstrap 4's content resides primarily within Cards, that's the first place we will start.
+						</p>
+						<h3 id="mini-cards">Mini Cards</h3>
+						<p>
+							Mini Cards are used to display quick yet important information to the user and have a fixed height. This information is usually to small to be place anywhere else, to a Mini Card is used.
+						</p>
+						<p>
+							Just add the class <code>.card-xs</code> to the <code>.card</code> class and you will get a mini card.
+						</p>
+<pre class="prettyprint linenums">
+&lt;div class="card card-xs"&gt;
+	&lt;div class="card-body"&gt;
+	Your cotent here
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<br>
+						<p>
+							Mini Cards are best used when you give them a background color using the normal Bootstrap 4 background classes: <code>.bg-primary</code>, <code>.bg-success</code>, etc. Just add them to the <code>.card</code> class like below.
+						</p>
+<pre class="prettyprint linenums">
+&lt;div class="card card-xs bg-primary bg-gradient"&gt;
+	&lt;div class="card-body"&gt;
+	Your cotent here
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<br>
+						<h4>Mini Card - Tiles</h4>
+						<p>
+							You can use Mini Cards to create Tiles. See below
+						</p>
+<pre class="prettyprint linenums">
+&lt;div class="card card-xs bg-primary bg-gradient"&gt;
+	&lt;div class="card-body px-4 py-3"&gt;
+		&lt;div class="tile-left"&gt;
+			&lt;i class="batch-icon batch-icon-user-alt batch-icon-xxl"&gt;&lt;/i&gt;
+		&lt;/div&gt;
+		&lt;div class="tile-right"&gt;
+			&lt;div class="tile-number"&gt;1,359&lt;/div&gt;
+			&lt;div class="tile-description"&gt;Customers Online&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<br>
+						<h3>Small Cards</h3>
+						<p>
+							Small Cards are created just like Mini Cards, above, but they only differ in their height and function. Small Cards are slightly larger the Mini Cards and can hold more information, including charts. See <a href="#charts">Chart</a> for more.
+						</p>
+						<p>
+							Just add the class <code>.card-sm</code> to the <code>.card</code> class and you will get a Small Card. You can also add background colors to them just like mini cards. See <a href="#mini-cards">Mini Cards</a> for more.
+						</p>
+<pre class="prettyprint linenums">
+&lt;div class="card card-sm"&gt;
+	&lt;div class="card-body"&gt;
+	Your cotent here
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<br>
+						<h3>Medium Cards</h3>
+						<p>
+							Medium Cards are used to display any type of content that you wish. They are best used when you want to control the height of your content.
+						</p>
+						<p>
+							They are larger than Small Cards and are created just like Mini &amp; Small Cards. If you want to create a Special Card (see <a href="../Files/ui-cards-special.html">demo</a>), then it's best to use a Medium Card as it will give it the best layout and size.
+						</p>
+						<p>
+							Just add the class <code>.card-md</code> to the <code>.card</code> class and you will get a Medium Card. You can also add background colors to them just like mini cards <b>but only use backgrounds when creating Special Cards</b>. See <a href="#mini-cards">Mini Cards</a> for more.
+						</p>
+<pre class="prettyprint linenums">
+&lt;div class="card card-md"&gt;
+	&lt;div class="card-body"&gt;
+	Your cotent here
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<br>
+						<h4>Medium Card - Custom Data Card</h4>
+						<p>
+							You can use Medium Cards to create Custom Data Cards. For Example, to track your goals to an event.
+						</p>
+<pre class="prettyprint linenums">
+&lt;div class="card card-md bg-danger text-center"&gt;
+	&lt;div class="card-body"&gt;
+		&lt;h6 class="my-5"&gt;Goal Reached&lt;/h6&gt;
+		&lt;i class="batch-icon batch-icon-bullhorn batch-icon-xxl"&gt;&lt;/i&gt;
+		&lt;div class="display-4 mt-3"&gt;4,294&lt;/div&gt;
+		&lt;p&gt;of 4,000 Target Downloads&lt;/p&gt;
+		&lt;p&gt;Congratulations! You surpassed your target goal.&lt;/p&gt;
+		&lt;a class="btn btn-warning"&gt;See Details&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<br>
+						<h3>Large Cards</h3>
+						<p>
+							Large Cards are the largest height preset for cards and are used to display any type of content that you wish. They are best used when you want to control the height of your content.
+						</p>
+						<p>
+							They are created just like Medium Cards. <b>Do not use background colors with Large Cards</b>, instead stick to Medium , Small and Mini Cards.
+						</p>
+						<p>
+							Just add the class <code>.card-lg</code> to the <code>.card</code> class and you will get a Large Card.
+						</p>
+<pre class="prettyprint linenums">
+&lt;div class="card card-lg"&gt;
+	&lt;div class="card-body"&gt;
+	Your cotent here
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<br>
+						<h3>App Cards</h3>
+						<p>
+							App Cards are created specifically to display information for an app. They also have some of the functionality for the app.
+						</p>
+						<p>
+							For exmaples, you need to check the <a href="../Files/ui-cards-special.html" target="_blank">Special Cards</a> page and look at the code in <code>Files/ui-cards-special.html</code>
+						</p>
+						<br>
+						<h3>Additional Card Info</h3>
+						<h4>Card Header Button</h4>
+						<p>
+							You can add buttons to the header of your card by using the following code. Just create a <code>div</code> element with class <code>.header-btn-block</code>. Within this <code>div</code> element, you can create your buttons.
+						</p>
+<pre class="prettyprint linenums">
+&lt;div class="card"&gt;
+	&lt;div class="card-header"&gt;
+		Card Header
+		&lt;div class="header-btn-block"&gt;
+			&lt;a href="task-manager.html" class="btn btn-primary"&gt;
+				&lt;i class="batch-icon batch-icon-add"&gt;&lt;/i&gt;
+			&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<br>
+					</div>
+					<div class="col-md-12" id="charts">
+						<h2>Charts</h2>
+						<h3>ChartJS</h3>
+						<p>
+							Using charts in QuillPro is extremely easy. All you have to do is follow the structure below, then call the relevant Javascript function and you are set.
+						</p>
+						<p>
+							First, follow the structure below. You chart can reside in the <code>.card-body</code> like any other content as long as you encapsulate it within <code>.card-chart</code>
+						</p>
+<pre class="prettyprint linenums">
+&lt;div class="card"&gt;
+	&lt;div class="card-body"&gt;
+		&lt;div class="card-chart" data-chart-color-1="#07a7e3" data-chart-color-2="#32dac3" data-chart-legend-1="Sales ($)" data-chart-legend-2="Orders" data-chart-height="281"&gt;
+			&lt;canvas id="chart-id"&gt;&lt;/canvas&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<br>
+					<p>
+						After you have the code above, follow the steps below.
+					</p>
+					<ul>
+						<li>
+							Open <code>../Files/assets/js/script.js</code>
+						</li>
+						<li>Scroll down to the section that says <code>REQUIRED FUNCTIONS - START</code>. </li>
+						<li>
+							Then call the chart function. In this example, we will call the Line Chart function. (It's the same way to call other charts. Just use their appropirate name)
+						</li>
+						<li>
+							<span class="label label-success">NOTE</span> Line Charts and Bar Charts must be called twice. One in the area mentioned above and also in the "window resize" section.
+						</li>
+					</ul>
+<pre class="prettyprint linenums">
+$(document).ready(function() {
+
+	/**
+	 * REQUIRED FUNCTIONS - START
+	 */
+
+	// Line Chart
+	qp_line_chart('#chart-id');
+
+	// Bar Chart
+	// This accepts 2 more optional arguments
+	// 		chartType: bar, horizontalBar (default is bar)
+	// 		isStacked: true, false (default is false)
+	qp_bar_chart('#chart-id');
+
+	// Doughnut, Pie or Radar Chart
+	// This accepts a second argument: chartType
+	// 		chartType: pie, doughnut, polarArea (for radar)
+	qp_doughnut_pie_chart('#chart-id');
+
+	$(window).resize(function () {
+		waitForFinalEvent(function(){
+			// functions here...
+			
+		}, 500, 'thisstringisunsdsaique');
+	});
+
+	/* REQUIRED FUNCTIONS - END */
+});
+</pre>
+<br>
+					<p>
+						As you can see from the code above, you will need to tell QuillPro what the colors and chart labels you want to use. This must be set in the <code>.card-chart</code> NOT <code>canvas</code>. The <code>canvas</code> only accepts the ID of the chart you want to create.
+					</p>
+					<ul>
+						<li><code>data-chart-color-1</code>: This is the color of the first dataset you want to chart.</li>
+						<li><code>data-chart-color-2</code>: This is the color of the second dataset you want to chart.</li>
+						<li><code>data-chart-legend-1</code>: This is the legend of the first dataset you want to chart.</li>
+						<li><code>data-chart-legend-2</code>: This is the legend of the second dataset you want to chart.</li>
+						<li><span class="label label-primary">Optional</span> <code>data-chart-height</code>: This is the height you want your chart to be.</li>
+						<li><span class="label label-success">NOTE</span> There is no <code>data-chart-width</code></li>
+						<li><span class="label label-success">NOTE</span> You can have up to 2 datasets for the <b>Line, Bar and Horizontal Charts</b>. The <b>Pie, Doughnut and Radar Charts</b> has up to 5 datasets by default. If you would like more datasets, you will need to edit the Javascript code. Don't worry, it's quite easy.</li>
+						<li><span class="label label-success">NOTE</span> Within the <code>../Files/assets/js/script.js</code> file, you must edit the section that says <code>/* DEMO DATA - START */</code>. You will have to add your own data here.</li>
+					</ul>
+					<br>
+					<h4>Card-SM Charts</h4>
+					<p>
+						<b>DO NOT</b> set the <code>data-chart-height</code> of the chart when you are using the <code>.card-sm</code> class.
+					</p>
+					<br>
+					<h3>Easy Pie Charts</h3>
+					<p>
+						It's easier to just copy the code directly from the <code>../Files/ui-chart.html</code> file, then follow the documentation of the Easy Pie Charts explains how it works better than this documentation can. <a href="https://github.com/rendro/easy-pie-chart" target="_blank">https://github.com/rendro/easy-pie-chart</a>
+					</p>
+					</div>
+					<div class="col-md-12" id="buttons">
+						<h2>Buttons</h2>
+						<h3>Gradient Buttons</h3>
+						<p>
+							Gradient Buttons add an extra level of style to your page. This can be achieved by just adding <code>.btn-gradient</code> to your <code>.btn</code> class. It works on all buttons sizes.
+						</p>
+<pre class="prettyprint linenums">
+&lt;a class="btn btn-primary btn-gradient"&gt;Primary Button&lt;/a&gt;
+&lt;button class="btn btn-primary btn-gradient"&gt;Primary Button&lt;/button&gt;
+</pre>
+<br>
+						<h3>Outline Buttons</h3>
+						<p>
+							To make a button an outline button, just replace the default Bootstrap button style like so: <code>.btn-primary</code> becomes <code>.btn-outline-primary</code>, <code>.btn-success</code> becomes <code>.btn-outline-success</code>
+						</p>
+						<p>
+							Outline Buttons are best used when they are the secondary button and are not the action you'd like for the user to take. For example, you may have an "Accept" button which is <code>.btn-primary</code> and "Decline" which is an outline button.
+						</p>
+						<p>
+							<span class="label label-danger">IMPORTANT</span> Outline Buttons do not work with gradient background.
+						</p>
+					</div>
+					<div class="col-md-12" id="icons">
+						<h2>Icons</h2>
+						<p>
+							QuillPro uses Batch Icons and it's extremely easy to use.
+						</p>
+						<p>
+							Just create an element like so: <code>&lt;i class="batch-icon batch-icon-*"&gt;&lt;/i&gt;</code>, where <code>batch-icon-*</code> is taken from the list on the <a href="../Files/ui-icons-batch-icons.html">Icon List</a> page.
+						</p>
+						<br>
+						<h4>Icon Sizes</h4>
+						<p>
+							You can use the size presets to change the size of the icons. Just add any of the following classes to your <code>.batch-icon</code> element.
+						</p>
+						<p>
+							<code>.batch-icon-sm</code> , <code>.batch-icon-md</code> , <code>.batch-icon-lg</code> , <code>.batch-icon-xl</code> or <code>.batch-icon-xxl</code>
+						</p>
+<pre class="prettyprint linenums">
+&lt;i class="batch-icon batch-icon-user"&gt;&lt;/i&gt; &lt;!-- Normal --&gt;
+&lt;i class="batch-icon batch-icon-user batch-icon-sm"&gt;&lt;/i&gt;
+&lt;i class="batch-icon batch-icon-user batch-icon-md"&gt;&lt;/i&gt;
+&lt;i class="batch-icon batch-icon-user batch-icon-lg"&gt;&lt;/i&gt;
+&lt;i class="batch-icon batch-icon-user batch-icon-xl"&gt;&lt;/i&gt;
+&lt;i class="batch-icon batch-icon-user batch-icon-xxl"&gt;&lt;/i&gt;
+</pre>
+<br>
+					</div>
+					<div class="col-md-12" id="gallery">
+						<h2>Gallery</h2>
+						<p>
+							QuillPro's Gallery s extremely easy to you. It uses Bootstrap 4's card layouts to handle the gallery layout for both Image-only Galleries and Image Galleries with Captions.
+						</p>
+						<p>
+							<span class="label label-success">NOTE</span> The gallery is dependant on baguetteBox. You must link to the plugin's JS and CSS files for it to work properly. See <code>../Files/gallery.html</code> for more.
+						</p>
+						<p>
+							Add a class name to the parent <code>div</code> that contains all image elements that you want to be part for your gallery. In the sample code below, we use <code>.qp-gallery-one</code>. You can name you're whatever you want.
+						</p>
+<pre class="prettyprint linenums">
+&lt;i class="batch-icon batch-icon-user"&gt;&lt;/i&gt; &lt;!-- Normal --&gt;
+&lt;div class="row mb-5 pb-5 clearfix qp-gallery-one"&gt;
+	&lt;!-- Gallery image elements will be placed here --&gt;
+&lt;/div&gt;
+</pre>
+<br>
+					<p>
+						Next, you want to follow the structure of the gallery. While you can create any layout you want, below is the most basic layout.
+					</p>
+					<p>
+						Use <code>.lightbox</code> on each <code>.card</code> in the gallery. Also make sure the thumbnail links to the image that you want to display when the thumbnail is clicked.
+					</p>
+<pre class="prettyprint linenums">
+&lt;div class="col-sm-6 col-md-4 mb-5"&gt;
+	&lt;div class="card lightbox"&gt;
+		&lt;a href="assets/img/gallery-image-1.jpg"&gt;
+			&lt;img class="card-img" src="assets/img/gallery-image-1.jpg" alt="Gallery Image 1"&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<br>
+					<ul>
+						<li>
+							Finally, open <code>../Files/assets/js/script.js</code>
+						</li>
+						<li>Scroll down to the section that says <code>REQUIRED FUNCTIONS - START</code>. </li>
+						<li>
+							Look for the function <code>qp_gallery</code>
+						</li>
+						<li>
+							Now add the class name of the gallery. Remember we used, <code>.qp-gallery-one</code>.
+						</li>
+						<li>
+							That's it!
+						</li>
+						<li>
+							<span class="label label-success">NOTE</span> Line Charts and Bar Charts must be called twice. One in the area mentioned above and also in the "window resize" section.
+						</li>
+					</ul>
+					</div>
+					<div class="col-md-12" id="filterizr">
+						<h2>Filterizr - Filter &amp; Sort</h2>
+						<p>
+							The Filterizr plugin gives you the ability to filter and sort cards based on whatever criteria you wish.
+						</p>
+						<p>
+							We won't go into all the settings here since the <a href="http://yiotis.net/filterizr/">Filterizr documentation</a> covers all that, but what we will cover are the changes that we've made to the layout for it to merge with QuillPro's style.
+						</p>
+						<p>
+							<span class="label label-success">NOTE</span> You can check <code>../Files/ui-filterizr.html</code> for a detailed sample.
+						</p>
+					</div>
+					<div class="col-md-12" id="misc-items">
+						<h2>Miscellaneous Items</h2>
+						<h3>Profile Image</h3>
+						<p>
+							The profile image can be used anywhere you wish wihtout having to change any CSS code. Just use the code below. You can also increase the size of the Profile image by adding the <code>.profile-picture-lg</code> class to the <code>.profile-picture</code> class
+						</p>
+<pre class="prettyprint linenums">
+&lt;div class="profile-picture bg-gradient bg-primary"&gt;
+	&lt;img src="assets/img/profile-pic.jpg"&gt;
+&lt;/div&gt;
+</pre>
+<br>
+<pre class="prettyprint linenums">
+&lt;div class="profile-picture profile-picture-lg bg-gradient bg-primary"&gt;
+	&lt;img src="assets/img/profile-pic.jpg"&gt;
+&lt;/div&gt;
+</pre>
+<br>
+						<p>
+							You can also add the <code>.has-message</code> class to the <code>.profile-picture</code> class to signify that there is a message from the user. Or if used for the logged in profile for your app, it will denote the logged in profile has a message. It can also be used with the <code>.profile-picture-lg</code> class.
+						</p>
+<pre class="prettyprint linenums">
+&lt;div class="profile-picture has-message bg-gradient bg-primary"&gt;
+	&lt;img src="assets/img/profile-pic.jpg"&gt;
+&lt;/div&gt;
+</pre>
+<br>
+						<h3>Gradient Background</h3>
+						<p>
+							Gradient Backgrounds are easy to achieve. Just add the <code>.bg-gradient</code> to any bootstrap background class and it will become a gradient. See code below:
+						</p>
+<pre class="prettyprint linenums">
+&lt;div class="card card-md bg-primary bg-gradient"&gt;
+	// Card content
+&lt;/div&gt;
+</pre>
+<br>
+						<h3>Wave Effect On Click</h3>
+						<p>
+							By default, most buttons and clickable elements come with a wave effect when clicked. This effect allows the user know that their interaction with the element was successful.
+						</p>
+						<p>
+							You don't really have to make any changes or additions in order to see the effect, but sometimes you might want to have a wave effect on a custom element or you may want a light wave instead of a dark one or vice versa. You can do that by using the following classes on that particular element.
+						</p>
+						<ul>
+							<li>
+								<b>Light Wave Effect:</b> <code>.waves-effect</code> <code>.waves-light</code>
+							</li>
+							<li>
+								<b>Dark Wave Effect:</b> <code>.waves-effect</code> <code>.waves-dark</code>
+							</li>
+						</ul>
+						<p>
+							You may find yourself in a situation when a wave effect is used on an element that you prefer to be waveless or the wave effect affects the way your design works (because the wave class adds a <code>overflow: hidden</code> to wave elements). In these cases you can just use <code>.no-waves-effect</code> on the element and the wave effect will not be used on that element.
+						</p>
+<pre class="prettyprint linenums">
+&lt;button type="button" class="btn btn-primary waves-effect waves-light"&gt;Primary&lt;/button&gt; &lt;!-- Light Wave Effect (Default) --&gt;
+&lt;button type="button" class="btn btn-primary waves-effect waves-dark"&gt;Primary&lt;/button&gt; &lt;!-- Dark Wave Effect --&gt;
+&lt;button type="button" class="btn btn-primary no-waves-effect"&gt;Primary&lt;/button&gt; &lt;!-- No Wave Effect --&gt;
+</pre>
+<br>
+						<h3>Ecommerce - Color Selection</h3>
+						<p>
+							The color selection on the <a href="../Files/ecommerce-product-page.html" target="_blank">Ecommerce Product Page</a> uses a modified version of Bootstrap's custom checkbox. To modify it to get the color options, just add <code>.custom-color-control</code> to the <code>.custom-control</code> element and add <code>data-qp-color="#fce418"</code> (change <code>#fce418</code> to your color of choice). The rest is automated. Check out the code below.
+						</p>
+<pre class="prettyprint linenums">
+&lt;label class="custom-control custom-radio custom-color-control" data-qp-color="#fce418"&gt;
+	&lt;input id="radio1" name="radio" type="radio" class="custom-control-input" value="yellow" checked&gt;
+	&lt;span class="custom-control-indicator"&gt;&lt;/span&gt;
+	&lt;span class="sr-only"&gt;Yellow&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+<br>
+						<h3>Utilities</h3>
+						<p>
+							These classes allow you to add or remove effects in your project. Go through each one to see their effects and how to use them.
+						</p>
+						<ul>
+							<li>
+								<code>.no-shadow</code>: This allows you to remove the shadow effect from an element. It also prevents shadow on hover.
+							</li>
+							<li>
+								<code>.boldness-light</code>: Makes the text the least bold value possible.
+							</li>
+							<li>
+								<code>.boldness-medium</code>: Makes the text a little bolder than normal text
+							</li>
+							<li>
+								<code>.boldness-heavy</code>: Makes the text the boldest it can be
+							</li>
+							<code>.scrollto</code>: (Frontend Template Only) Makes your links smooth scroll to an anchor on the page. Usage: <code>&lt;a href="#top"&gt;Top&lt;/a&gt;</code>, smooth scrolls to <code>#top</code>
+						</ul>
+						<br>
+					</div>
+					<div class="col-md-12" id="animation">
+						<h2>Animation</h2>
+						<p>
+							Animation adds another level of awesomeness to QuillPro. The animation uses Animate.css and is extremely easy to use. Here's how to use it.
+						</p>
+						<p>
+							There are 3 ways to use the animation:
+						</p>
+						<ol>
+							<li>
+								To animate an element
+							</li>
+							<li>
+								To animate an element's direct children elements
+							</li>
+							<li>
+								To animate an element's direct children elements when there is a custom scrollbar on that particular element.
+							</li>
+							<li>
+								<span class="label label-success">NOTE</span> Visit <a href="https://daneden.github.io/animate.css/">https://daneden.github.io/animate.css/</a> for all animation types
+							</li>
+						</ol>
+						<h3>Animate An Element</h3>
+						<ol>
+							<li>Add <code>.invisible</code> to the class of the element.</li>
+							<li>Add the attribute <code>data-qp-animate-type="fadeInDown"</code> to the element.</li>
+							<li><span class="label label-primary">Optional</span> You can also add a delay on the element. This will delay the element by as long as you wish. Add the attribute <code>data-qp-animate-delay="300"</code> to the element. The number used should be in milliseconds. The default delay is zero, so the item will be reveal once you scroll into view.</li>
+							<li><span class="label label-success">NOTE</span> It is adviced that you use animate classes on items <b>within</b> <code>.card</code> like <code>.card-body</code> and other sub-classes. This give a better and sleeker animation.</li>
+						</ol>
+<pre class="prettyprint linenums">
+&lt;div class="card"&gt;
+	&lt;div class="card-body invisible" data-qp-animate-type="fadeInDown" data-qp-animate-delay="300"&gt;
+		Card Content
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<br>
+						<h3>Animate An Element's Direct Children Elements</h3>
+						<ol>
+							<li>Add <code>.invisible-children</code> to the class of the element.</li>
+							<li>Add the attribute <code>data-qp-animate-type="fadeInDown"</code> to the element.</li>
+							<li><span class="label label-primary">Optional</span> You can also add a delay on the element. This will delay the element by as long as you wish. Add the attribute <code>data-qp-animate-delay="300"</code> to the element. The number used should be in milliseconds. The default delay is zero, so the item will be reveal once you scroll into view.</li>
+							<li><span class="label label-success">NOTE</span> It is adviced that you use animate classes on items <b>within</b> <code>.card</code> like <code>.card-body</code> and other sub-classes. This give a better and sleeker animation.</li>
+						</ol>
+<pre class="prettyprint linenums">
+&lt;div class="card"&gt;
+	&lt;div class="card-body"&gt;
+		&lt;ul class="invisible-children" data-qp-animate-type="fadeInDown" data-qp-animate-delay="300"&gt;
+			&lt;li&gt;Item 1&lt;/li&gt;
+			&lt;li&gt;Item 2&lt;/li&gt;
+			&lt;li&gt;Item 3&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<br>
+						<h3>Animate An Element's Direct Children Elements (when there is a custom scrollbar on that particular element)</h3>
+						<p>
+							If you call the <code>qp_add_scrollbar()</code> function (See <a href="#js-functions">Javascript Functions</a>) on an element, and you also want to animate the children of that element, then use this section.
+						</p>
+						<ol>
+							<li>Add <code>.invisible-children-with-scrollbar</code> to the class of the element.</li>
+							<li>Add the attribute <code>data-qp-animate-type="fadeInDown"</code> to the element.</li>
+							<li><span class="label label-primary">Optional</span> You can also add a delay on the element. This will delay the element by as long as you wish. Add the attribute <code>data-qp-animate-delay="300"</code> to the element. The number used should be in milliseconds. The default delay is zero, so the item will be reveal once you scroll into view.</li>
+							<li><span class="label label-success">NOTE</span> It is adviced that you use animate classes on items <b>within</b> <code>.card</code> like <code>.card-body</code> and other sub-classes. This give a better and sleeker animation.</li>
+						</ol>
+						<p>
+							The sample code is just like Animating Direct Children
+						</p>
+					</div>
+					<div class="col-md-12" id="support">
+						<h2>Support</h2>
+						<p>
+							All support requests will be responded by our Customer Service Department.
+						</p>
+						<p>
+							Please state the name of the theme (QuillPro HTML) in the subject of your email.
+						</p>
+						<p>
+							Support Center: <a href="https://base5builder.com/support" target="_blank">https://base5builder.com/support</a> <br>
+							Email <a href="mailto:support@base5builder.com">support@base5builder.com</a> <br>
+							Behance: <a href="https://behance.net/TheInterlop3r">behance.net/TheInterlop3r</a>
+						</p>
+					</div>
+					<div class="col-md-12" id="dependencies">
+						<h2>Dependencies</h2>
+						<ul>
+							<li>Animate.css - https://daneden.github.io/animate.css/</li>
+							<li>baguetteBox.js - https://feimosi.github.io/baguetteBox.js/</li>
+							<li>Bootstrap Wizard</li>
+							<li>ChartJS - http://www.chartjs.org/</li>
+							<li>CKEditor - ckeditor.com</li>
+							<li>Custom Scrollbar - http://manos.malihu.gr/jquery-custom-content-scroller/</li>
+							<li>Datatables - https://datatables.net/</li>
+							<li>Easy Pie Chart - https://github.com/rendro/easy-pie-chart</li>
+							<li>Filterizr - http://yiotis.net/filterizr/</li>
+							<li>FitVids.js - http://fitvidsjs.com/</li>
+							<li>Full Calendar - https://fullcalendar.io/</li>
+							<li>Jquery Visible - https://github.com/customd/jquery-visible/</li>
+							<li>Jquery Mask - https://igorescobar.github.io/jQuery-Mask-Plugin/</li>
+							<li>JQVMaps - https://jqvmap.com/</li>
+							<li>Prettify - https://github.com/google/code-prettify</li>
+							<li>TagsInput - https://github.com/xoxco/jQuery-Tags-Input</li>
+							<li>Timelify - https://github.com/Liinkiing/jquery-timelify</li>
+							<li>Toastr - https://github.com/CodeSeven/toastr</li>
+							<li>Typeahead - https://twitter.github.io/typeahead.js/</li>
+							<li>Velocity - velocityjs.org/</li>
+						</ul>
+					</div>
+					<div class="col-md-12" id="changelog">
+						<h2>Changelog</h2>
+						<p><a href="../changelog.txt" target="_blank">See changes</a></p>
+					</div>
+				</div>
+				<br><br><br>
+			</div>
+
+			<!-- JavaScript -->
+			<script src="js/jquery-1.10.2.min.js"></script>
+			<script src="js/bootstrap.js"></script>
+			<script type="text/javascript" src="js/prettify.js"></script>
+			<script type="text/javascript" src="js/unslider/js/unslider-min.js"></script>
+
+			<script>
+			// Prettify Code
+			prettyPrint();
+
+			// Custom JavaScript for the Menu Toggle
+			$("#menu-toggle").click(function(e) {
+				e.preventDefault();
+				$("#wrapper").toggleClass("active");
+			});
+
+			// Unslider
+			$('#installation-images').unslider();
+		</script>
+</body>
+</html>

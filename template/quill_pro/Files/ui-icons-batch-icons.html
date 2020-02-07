@@ -1,0 +1,4422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="assets/img/favicon.png">
+
+	<title>QuillPro - Bootstrap 4 Dashboard Template</title>
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+
+	<!-- CSS - REQUIRED - START -->
+	<!-- Batch Icons -->
+	<link rel="stylesheet" href="assets/fonts/batch-icons/css/batch-icons.css">
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+	<!-- Material Design Bootstrap -->
+	<link rel="stylesheet" href="assets/css/bootstrap/mdb.min.css">
+	<!-- Custom Scrollbar -->
+	<link rel="stylesheet" href="assets/plugins/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+	<!-- Hamburger Menu -->
+	<link rel="stylesheet" href="assets/css/hamburgers/hamburgers.css">
+
+	<!-- CSS - REQUIRED - END -->
+
+	<!-- CSS - DEMO - START -->
+	<link rel="stylesheet" href="assets/demo/css/ui-icons-batch-icons.css">
+	<!-- CSS - DEMO - END -->
+
+	<!-- CSS - OPTIONAL - START -->
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+
+	<!-- CSS - OPTIONAL - END -->
+
+	<!-- QuillPro Styles -->
+	<link rel="stylesheet" href="assets/css/quillpro/quillpro.css">
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav id="sidebar" class="px-0 bg-dark bg-gradient sidebar">
+				<ul class="nav nav-pills flex-column">
+					<li class="logo-nav-item">
+						<a class="navbar-brand" href="#">
+							<img src="assets/img/logo-white.png" width="145" height="32.3" alt="QuillPro">
+						</a>
+
+					</li>
+					<li>
+						<h6 class="nav-header">General</h6>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">
+							<i class="batch-icon batch-icon-browser-alt"></i>
+							Dashboard <span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-parent" href="#">
+							<i class="batch-icon batch-icon-layout-content-left"></i>
+							Layout
+						</a>
+						<ul class="nav nav-pills flex-column">
+							<li class="nav-item">
+								<a class="nav-link" href="layout-left-menu-hidden.html">Left Menu - Hidden</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="layout-left-menu-normal.html">Left Menu - Normal</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="layout-top-menu-fixed.html">Top Menu - Fixed</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="layout-top-menu-normal.html">Top Menu - Normal</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="starter-kit.html">
+							<i class="batch-icon batch-icon-star"></i>
+							Starter Kit
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav nav-pills flex-column">
+					<li>
+						<h6 class="nav-header">Apps</h6>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-parent" href="#">
+							<i class="batch-icon batch-icon-store"></i>
+							eCommerce
+						</a>
+						<ul class="nav nav-pills flex-column">
+							<li class="nav-item">
+								<a class="nav-link" href="ecommerce-dashboard.html">Dashboard</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ecommerce-product-page.html">Product Page</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ecommerce-category-page.html">Category Page</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ecommerce-cart.html">Cart</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ecommerce-checkout-page.html">Checkout Page</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-parent" href="#">
+							<i class="batch-icon batch-icon-search"></i>
+							Search Results
+						</a>
+						<ul class="nav nav-pills flex-column">
+							<li class="nav-item">
+								<a class="nav-link" href="search-results-normal.html">Normal Search</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="search-results-media.html">Media Search</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-parent" href="#">
+							<i class="batch-icon batch-icon-mail"></i>
+							Mail
+						</a>
+						<ul class="nav nav-pills flex-column">
+							<li class="nav-item">
+								<a class="nav-link" href="mail-inbox.html">Inbox</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="mail-message.html">Message</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="mail-compose.html">Compose</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="calendar.html">
+							<i class="batch-icon batch-icon-calendar"></i>
+							Calendar
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-parent" href="#">
+							<i class="batch-icon batch-icon-list"></i>
+							Tasks
+						</a>
+						<ul class="nav nav-pills flex-column">
+							<li class="nav-item">
+								<a class="nav-link" href="task-list.html">Task List</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="task-manager.html">Task Manager</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="timeline.html">
+							<i class="batch-icon batch-icon-timeline"></i>
+							Timeline
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="gallery.html">
+							<i class="batch-icon batch-icon-image"></i>
+							Gallery <span class="badge badge-danger">New *</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="price-list.html">
+							<i class="batch-icon batch-icon-tag-alt-2"></i>
+							Price List
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="invoice.html">
+							<i class="batch-icon batch-icon-list-alt"></i>
+							Invoice
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-parent" href="#">
+							<i class="batch-icon batch-icon-browser-alt-close"></i>
+							Error Pages
+						</a>
+						<ul class="nav nav-pills flex-column">
+							<li class="nav-item">
+								<a class="nav-link" href="error-pages-404.html">404 Page</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="error-pages-500.html">500 Page</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-parent" href="#">
+							<i class="batch-icon batch-icon-locked"></i>
+							Sign In &amp; Sign Up
+						</a>
+						<ul class="nav nav-pills flex-column">
+							<li class="nav-item">
+								<a class="nav-link" href="sisu-signin.html">Sign In</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="sisu-signin-2.html">Sign In 2</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="sisu-signup.html">Sign Up</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="sisu-signup-2.html">Sign Up 2</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="sisu-forgot-password.html">Forgot Password</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="sisu-forgot-password-2.html">Forgot Password 2</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="sisu-lock-screen.html">Lock Screen</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="sisu-lock-screen-2.html">Lock Screen 2</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="profiles-member-profile.html">
+							<i class="batch-icon batch-icon-users"></i>
+							Profile
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav nav-pills flex-column">
+					<li>
+						<h6 class="nav-header">Components</h6>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-parent active" href="#">
+							<i class="batch-icon batch-icon-unite"></i>
+							UI Kit <span class="badge badge-danger">New *</span>
+						</a>
+						<ul class="nav nav-pills flex-column">
+							<li class="nav-item">
+								<a class="nav-link" href="ui-cards.html">Cards</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ui-cards-special.html">Special Cards</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ui-filterizr.html">Filterizr (Filter &amp; Sort) <span class="badge badge-danger">*</span></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ui-charts.html">Charts</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ui-buttons.html">Buttons</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ui-typography.html">Typography</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ui-tabs-accordions.html">Tabs &amp; Accordions</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ui-tooltips-popovers.html">Tooltips &amp; Popovers</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ui-modal-boxes.html">Modal Boxes</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ui-notifications.html">Notifications (Toastr)</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link nav-parent active" href="#">Icons</a>
+								<ul class="nav nav-pills flex-column">
+									<li class="nav-item">
+										<a class="nav-link active" href="ui-icons-batch-icons.html">Batch Icons</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="ui-other-bootstrap-elements.html">Other Bootstrap 4 Elements</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-parent">
+							<i class="batch-icon batch-icon-compose-alt-2"></i>
+							Forms
+						</a>
+						<ul class="nav nav-pills flex-column">
+							<li class="nav-item">
+								<a class="nav-link" href="forms.html">Form Elements</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="forms-extras.html">Form Extras</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="forms-validation.html">Form Validation</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="forms-wizard.html">Form Wizard</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="tables.html">
+							<i class="batch-icon batch-icon-layout-center-column"></i>
+							Tables
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-parent" href="#">
+							<i class="batch-icon batch-icon-menu"></i>
+							Menu Levels
+						</a>
+						<ul class="nav nav-pills flex-column">
+							<li class="nav-item">
+								<a class="nav-link" href="#">Level 1 - Item 1</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link nav-parent" href="#">Level 1 - Item 2</a>
+								<ul class="nav nav-pills flex-column">
+									<li class="nav-item">
+										<a class="nav-link" href="#">Level 2 - Item 1</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Level 2 - Item 2</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link nav-parent" href="#">Level 2 - Item 3</a>
+										<ul class="nav nav-pills flex-column">
+											<li class="nav-item">
+												<a class="nav-link" href="#">Level 3 - Item 1</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Level 3 - Item 2</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Level 3 - Item 3</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Level 3 - Item 4</a>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Level 2 - Item 4</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Level 1 - Item 3</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Level 1 - Item 4</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<div class="right-column">
+				<nav class="navbar navbar-expand-lg navbar-light bg-white">
+					<a class="navbar-brand d-block d-sm-block d-md-block d-lg-none" href="#">
+						<img src="assets/img/logo-dark.png" width="145" height="32.3" alt="QuillPro">
+					</a>
+					<button class="hamburger hamburger--slider" type="button" data-target=".sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Sidebar">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+					<!-- Added Mobile-Only Menu -->
+					<ul class="navbar-nav ml-auto mobile-only-control d-block d-sm-block d-md-block d-lg-none">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" id="navbar-notification-search-mobile" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
+								<i class="batch-icon batch-icon-search"></i>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-fullscreen" aria-labelledby="navbar-notification-search-mobile">
+								<li>
+									<form class="form-inline my-2 my-lg-0 no-waves-effect">
+										<div class="input-group">
+											<input type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." aria-describedby="basic-addon2">
+											<div class="input-group-append">
+												<button class="btn btn-primary btn-gradient waves-effect waves-light" type="button">
+													<i class="batch-icon batch-icon-search"></i>
+												</button>
+											</div>
+										</div>
+									</form>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+					<!--  DEPRECATED CODE:
+						<div class="navbar-collapse" id="navbarSupportedContent">
+					-->
+					<!-- USE THIS CODE Instead of the Commented Code Above -->
+					<!-- .collapse added to the element -->
+					<div class="collapse navbar-collapse" id="navbar-header-content">
+						<ul class="navbar-nav navbar-language-translation mr-auto">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" id="navbar-dropdown-menu-link" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
+									<i class="batch-icon batch-icon-book-alt-"></i>
+									English
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="navbar-dropdown-menu-link">
+									<li><a class="dropdown-item" href="#">Français</a></li>
+									<li><a class="dropdown-item" href="#">Deutsche</a></li>
+									<li><a class="dropdown-item" href="#">Español</a></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="navbar-nav navbar-notifications float-right">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" id="navbar-notification-search" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
+									<i class="batch-icon batch-icon-search"></i>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-fullscreen" aria-labelledby="navbar-notification-search">
+									<li>
+										<form class="form-inline my-2 my-lg-0 no-waves-effect">
+											<div class="input-group">
+												<input type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." aria-describedby="basic-addon2">
+												<div class="input-group-append">
+													<button class="btn btn-primary btn-gradient waves-effect waves-light" type="button">Search</button>
+												</div>
+											</div>
+										</form>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle no-waves-effect" id="navbar-notification-calendar" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
+									<i class="batch-icon batch-icon-calendar"></i>
+									<span class="notification-number">6</span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right dropdown-menu-md" aria-labelledby="navbar-notification-calendar">
+									<li class="media">
+										<a href="task-list.html">
+											<i class="batch-icon batch-icon-calendar batch-icon-xl d-flex mr-3"></i>
+											<div class="media-body">
+												<h6 class="mt-0 mb-1 notification-heading">Meeting with Project Manager</h6>
+												<div class="notification-text">
+													Cras sit amet nibh libero
+												</div>
+												<span class="notification-time">Right now</span>
+											</div>
+										</a>
+									</li>
+									<li class="media">
+										<a href="task-list.html">
+											<i class="batch-icon batch-icon-calendar batch-icon-xl d-flex mr-3"></i>
+											<div class="media-body">
+												<h6 class="mt-0 mb-1 notification-heading">Sales Call</h6>
+												<div class="notification-text">
+													Nibh amet cras sit libero
+												</div>
+												<span class="notification-time">One hour from now</span>
+											</div>
+										</a>
+									</li>
+									<li class="media">
+										<a href="task-list.html">
+											<i class="batch-icon batch-icon-calendar batch-icon-xl d-flex mr-3"></i>
+											<div class="media-body">
+												<h6 class="mt-0 mb-1 notification-heading">Email CEO new expansion proposal</h6>
+												<div class="notification-text">
+													Cras sit amet nibh libero
+												</div>
+												<span class="notification-time">In 3 days</span>
+											</div>
+										</a>
+									</li>
+									<li class="media">
+										<a href="task-list.html">
+											<i class="batch-icon batch-icon-calendar batch-icon-xl d-flex mr-3"></i>
+											<div class="media-body">
+												<h6 class="mt-0 mb-1 notification-heading">Team building exercise</h6>
+												<div class="notification-text">
+													Cras sit amet nibh libero
+												</div>
+												<span class="notification-time">In one week</span>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle no-waves-effect" id="navbar-notification-misc" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
+									<i class="batch-icon batch-icon-bell"></i>
+									<span class="notification-number">4</span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right dropdown-menu-md" aria-labelledby="navbar-notification-misc">
+									<li class="media">
+										<a href="task-list.html">
+											<i class="batch-icon batch-icon-bell batch-icon-xl d-flex mr-3"></i>
+											<div class="media-body">
+												<h6 class="mt-0 mb-1 notification-heading">General Notification</h6>
+												<div class="notification-text">
+													Cras sit amet nibh libero
+												</div>
+												<span class="notification-time">Just now</span>
+											</div>
+										</a>
+									</li>
+									<li class="media">
+										<a href="task-list.html">
+											<i class="batch-icon batch-icon-cloud-download batch-icon-xl d-flex mr-3"></i>
+											<div class="media-body">
+												<h6 class="mt-0 mb-1 notification-heading">Your Download Is Ready</h6>
+												<div class="notification-text">
+													Nibh amet cras sit libero
+												</div>
+												<span class="notification-time">5 minutes ago</span>
+											</div>
+										</a>
+									</li>
+									<li class="media">
+										<a href="task-list.html">
+											<i class="batch-icon batch-icon-tag-alt-2 batch-icon-xl d-flex mr-3"></i>
+											<div class="media-body">
+												<h6 class="mt-0 mb-1 notification-heading">New Order</h6>
+												<div class="notification-text">
+													Cras sit amet nibh libero
+												</div>
+												<span class="notification-time">Yesterday</span>
+											</div>
+										</a>
+									</li>
+									<li class="media">
+										<a href="task-list.html">
+											<i class="batch-icon batch-icon-pull batch-icon-xl d-flex mr-3"></i>
+											<div class="media-body">
+												<h6 class="mt-0 mb-1 notification-heading">Pull Request</h6>
+												<div class="notification-text">
+													Cras sit amet nibh libero
+												</div>
+												<span class="notification-time">3 day ago</span>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="navbar-nav ml-5 navbar-profile">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" id="navbar-dropdown-navbar-profile" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
+									<div class="profile-name">
+										Johanna Quinn
+									</div>
+									<div class="profile-picture bg-gradient bg-primary has-message float-right">
+										<img src="assets/img/profile-pic.jpg" width="44" height="44">
+									</div>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-dropdown-navbar-profile">
+									<li><a class="dropdown-item" href="profiles-member-profile.html">Profile</a></li>
+									<li>
+										<a class="dropdown-item" href="mail-inbox.html">
+											Messages 
+											<span class="badge badge-danger badge-pill float-right">3</span>
+										</a>
+									</li>
+									<li><a class="dropdown-item" href="profiles-member-profile.html">Settings</a></li>
+									<li><a class="dropdown-item" href="sisu-lock-screen.html">Logout</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<main class="main-content p-5" role="main">
+					<div class="row">
+						<div class="col-md-12">
+							<h1>Icons - Batch Icons</h1>
+						</div>
+					</div>
+					<div class="row mb-5">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-body">
+									<p class="lead">
+										<h4>There are 2 ways of using these icons</h4>
+										1. You can use the following classes: <code>.batch-icon</code> plus the class name of the icon you wish to use. Like this: <code>&lt;i class="batch-icon batch-icon-speech-bubble-left-tip"&gt;&lt;/i&gt;</code><br><br>
+										2. You can use the glyph code in addition to the <code>.batch-icon</code> class. Like this: <code>&lt;i class="batch-icon"&gt;F000&lt;/i&gt;</code>
+									</p>
+									<ul class="batch-icons-demo-list">
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-speech-bubble-left-tip"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F000
+											</div>
+											<span class="class-name">
+												batch-icon-speech-bubble-left-tip
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-speech-bubble-middle-tip"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F001
+											</div>
+											<span class="class-name">
+												batch-icon-speech-bubble-middle-tip
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-speech-bubble-right-tip"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F002
+											</div>
+											<span class="class-name">
+												batch-icon-speech-bubble-right-tip
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-speech-bubble-left-tip-text"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F003
+											</div>
+											<span class="class-name">
+												batch-icon-speech-bubble-left-tip-text
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-speech-bubble-middle-tip-text"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F004
+											</div>
+											<span class="class-name">
+												batch-icon-speech-bubble-middle-tip-text
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-speech-bubble-right-tip-text"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F005
+											</div>
+											<span class="class-name">
+												batch-icon-speech-bubble-right-tip-text
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-speech-bubble-left-tip-solid-text"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F006
+											</div>
+											<span class="class-name">
+												batch-icon-speech-bubble-left-tip-solid-text
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-speech-bubble-middle-tip-solid-text"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F007
+											</div>
+											<span class="class-name">
+												batch-icon-speech-bubble-middle-tip-solid-text
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-speech-bubble-right-tip-solid-text"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F008
+											</div>
+											<span class="class-name">
+												batch-icon-speech-bubble-right-tip-solid-text
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-speech-bubble-left-tip-chat"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F009
+											</div>
+											<span class="class-name">
+												batch-icon-speech-bubble-left-tip-chat
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-speech-bubble-right-tip-chat"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F00A
+											</div>
+											<span class="class-name">
+												batch-icon-speech-bubble-right-tip-chat
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F00B
+											</div>
+											<span class="class-name">
+												batch-icon-browser
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser-new-window"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F00C
+											</div>
+											<span class="class-name">
+												batch-icon-browser-new-window
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser-minimise"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F00D
+											</div>
+											<span class="class-name">
+												batch-icon-browser-minimise
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser-close"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F00E
+											</div>
+											<span class="class-name">
+												batch-icon-browser-close
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser-upload"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F010
+											</div>
+											<span class="class-name">
+												batch-icon-browser-upload
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser-download"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F011
+											</div>
+											<span class="class-name">
+												batch-icon-browser-download
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-terminal"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F012
+											</div>
+											<span class="class-name">
+												batch-icon-terminal
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser-windows"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F013
+											</div>
+											<span class="class-name">
+												batch-icon-browser-windows
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F014
+											</div>
+											<span class="class-name">
+												batch-icon-browser-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser-alt-new-window"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F015
+											</div>
+											<span class="class-name">
+												batch-icon-browser-alt-new-window
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser-alt-minimise"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F016
+											</div>
+											<span class="class-name">
+												batch-icon-browser-alt-minimise
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser-alt-close"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F017
+											</div>
+											<span class="class-name">
+												batch-icon-browser-alt-close
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser-alt-upload"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F018
+											</div>
+											<span class="class-name">
+												batch-icon-browser-alt-upload
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser-alt-download"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F019
+											</div>
+											<span class="class-name">
+												batch-icon-browser-alt-download
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-terminal-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F01A
+											</div>
+											<span class="class-name">
+												batch-icon-terminal-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-browser-alt-windows"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F01B
+											</div>
+											<span class="class-name">
+												batch-icon-browser-alt-windows
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-windows"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F01C
+											</div>
+											<span class="class-name">
+												batch-icon-windows
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-plus"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F01D
+											</div>
+											<span class="class-name">
+												batch-icon-plus
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-minus"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F01E
+											</div>
+											<span class="class-name">
+												batch-icon-minus
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-marquee"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F020
+											</div>
+											<span class="class-name">
+												batch-icon-marquee
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-marquee-plus"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F021
+											</div>
+											<span class="class-name">
+												batch-icon-marquee-plus
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-marquee-minus"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F022
+											</div>
+											<span class="class-name">
+												batch-icon-marquee-minus
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-marquee-upload"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F023
+											</div>
+											<span class="class-name">
+												batch-icon-marquee-upload
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-marquee-download"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F024
+											</div>
+											<span class="class-name">
+												batch-icon-marquee-download
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-crate"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F025
+											</div>
+											<span class="class-name">
+												batch-icon-crate
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-grid"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F026
+											</div>
+											<span class="class-name">
+												batch-icon-grid
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-grid-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F027
+											</div>
+											<span class="class-name">
+												batch-icon-grid-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-list"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F028
+											</div>
+											<span class="class-name">
+												batch-icon-list
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-list-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F029
+											</div>
+											<span class="class-name">
+												batch-icon-list-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-in"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F02A
+											</div>
+											<span class="class-name">
+												batch-icon-in
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-out"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F02B
+											</div>
+											<span class="class-name">
+												batch-icon-out
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-inbox"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F02C
+											</div>
+											<span class="class-name">
+												batch-icon-inbox
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-outbox"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F02D
+											</div>
+											<span class="class-name">
+												batch-icon-outbox
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-outgoing"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F02E
+											</div>
+											<span class="class-name">
+												batch-icon-outgoing
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-paragraph-justify"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F030
+											</div>
+											<span class="class-name">
+												batch-icon-paragraph-justify
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-paragraph-left"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F031
+											</div>
+											<span class="class-name">
+												batch-icon-paragraph-left
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-paragraph-center"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F032
+											</div>
+											<span class="class-name">
+												batch-icon-paragraph-center
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-paragraph-right"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F033
+											</div>
+											<span class="class-name">
+												batch-icon-paragraph-right
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-paragraph-alt-justify"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F034
+											</div>
+											<span class="class-name">
+												batch-icon-paragraph-alt-justify
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-paragraph-alt-left"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F035
+											</div>
+											<span class="class-name">
+												batch-icon-paragraph-alt-left
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-paragraph-alt-center"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F036
+											</div>
+											<span class="class-name">
+												batch-icon-paragraph-alt-center
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-paragraph-alt-right"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F037
+											</div>
+											<span class="class-name">
+												batch-icon-paragraph-alt-right
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-audio-mute"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F038
+											</div>
+											<span class="class-name">
+												batch-icon-audio-mute
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-audio-low"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F039
+											</div>
+											<span class="class-name">
+												batch-icon-audio-low
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-audio-mid"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F03A
+											</div>
+											<span class="class-name">
+												batch-icon-audio-mid
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-audio-high"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F03B
+											</div>
+											<span class="class-name">
+												batch-icon-audio-high
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-brightness-high"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F03C
+											</div>
+											<span class="class-name">
+												batch-icon-brightness-high
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-brightness-low"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F03D
+											</div>
+											<span class="class-name">
+												batch-icon-brightness-low
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-contrast"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F03E
+											</div>
+											<span class="class-name">
+												batch-icon-contrast
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-image"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F040
+											</div>
+											<span class="class-name">
+												batch-icon-image
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-video"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F041
+											</div>
+											<span class="class-name">
+												batch-icon-video
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-video-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F042
+											</div>
+											<span class="class-name">
+												batch-icon-video-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-user"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F043
+											</div>
+											<span class="class-name">
+												batch-icon-user
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-user-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F044
+											</div>
+											<span class="class-name">
+												batch-icon-user-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-users"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F045
+											</div>
+											<span class="class-name">
+												batch-icon-users
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-user-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F046
+											</div>
+											<span class="class-name">
+												batch-icon-user-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-polaroid"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F047
+											</div>
+											<span class="class-name">
+												batch-icon-polaroid
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-polaroid-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F048
+											</div>
+											<span class="class-name">
+												batch-icon-polaroid-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-heart-full"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F049
+											</div>
+											<span class="class-name">
+												batch-icon-heart-full
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-heart-half"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F04A
+											</div>
+											<span class="class-name">
+												batch-icon-heart-half
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-heart-empty"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F04B
+											</div>
+											<span class="class-name">
+												batch-icon-heart-empty
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-settings"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F04C
+											</div>
+											<span class="class-name">
+												batch-icon-settings
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-settings-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F04D
+											</div>
+											<span class="class-name">
+												batch-icon-settings-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-settings-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F04E
+											</div>
+											<span class="class-name">
+												batch-icon-settings-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-flask-full"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F050
+											</div>
+											<span class="class-name">
+												batch-icon-flask-full
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-flask-empty"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F051
+											</div>
+											<span class="class-name">
+												batch-icon-flask-empty
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-switch-on"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F052
+											</div>
+											<span class="class-name">
+												batch-icon-switch-on
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-switch-off"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F053
+											</div>
+											<span class="class-name">
+												batch-icon-switch-off
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-toggle-on"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F054
+											</div>
+											<span class="class-name">
+												batch-icon-toggle-on
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-toggle-off"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F055
+											</div>
+											<span class="class-name">
+												batch-icon-toggle-off
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-bin"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F056
+											</div>
+											<span class="class-name">
+												batch-icon-bin
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-bin-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F057
+											</div>
+											<span class="class-name">
+												batch-icon-bin-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-stiffy"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F058
+											</div>
+											<span class="class-name">
+												batch-icon-stiffy
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-floppy"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F059
+											</div>
+											<span class="class-name">
+												batch-icon-floppy
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-notes"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F05A
+											</div>
+											<span class="class-name">
+												batch-icon-notes
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-calendar"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F05B
+											</div>
+											<span class="class-name">
+												batch-icon-calendar
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-reminder"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F05C
+											</div>
+											<span class="class-name">
+												batch-icon-reminder
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-clipboard"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F05D
+											</div>
+											<span class="class-name">
+												batch-icon-clipboard
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-clipboard-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F05E
+											</div>
+											<span class="class-name">
+												batch-icon-clipboard-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-terminal-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F060
+											</div>
+											<span class="class-name">
+												batch-icon-terminal-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-code"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F061
+											</div>
+											<span class="class-name">
+												batch-icon-code
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-curlybrace"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F062
+											</div>
+											<span class="class-name">
+												batch-icon-curlybrace
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-curlybrace-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F063
+											</div>
+											<span class="class-name">
+												batch-icon-curlybrace-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-square-brackets"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F064
+											</div>
+											<span class="class-name">
+												batch-icon-square-brackets
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-cmd"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F065
+											</div>
+											<span class="class-name">
+												batch-icon-cmd
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-section"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F066
+											</div>
+											<span class="class-name">
+												batch-icon-section
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-infinity"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F067
+											</div>
+											<span class="class-name">
+												batch-icon-infinity
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-tilde"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F068
+											</div>
+											<span class="class-name">
+												batch-icon-tilde
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-power"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F069
+											</div>
+											<span class="class-name">
+												batch-icon-power
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-keys"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F06A
+											</div>
+											<span class="class-name">
+												batch-icon-keys
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-mixer"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F06B
+											</div>
+											<span class="class-name">
+												batch-icon-mixer
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-wave"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F06C
+											</div>
+											<span class="class-name">
+												batch-icon-wave
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-wave-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F06D
+											</div>
+											<span class="class-name">
+												batch-icon-wave-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-vinyl"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F06E
+											</div>
+											<span class="class-name">
+												batch-icon-vinyl
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-spool"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F070
+											</div>
+											<span class="class-name">
+												batch-icon-spool
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-casette"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F071
+											</div>
+											<span class="class-name">
+												batch-icon-casette
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-voicemail"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F072
+											</div>
+											<span class="class-name">
+												batch-icon-voicemail
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-microphone"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F073
+											</div>
+											<span class="class-name">
+												batch-icon-microphone
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-microphone-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F074
+											</div>
+											<span class="class-name">
+												batch-icon-microphone-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-bullhorn"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F075
+											</div>
+											<span class="class-name">
+												batch-icon-bullhorn
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-bullhorn-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F076
+											</div>
+											<span class="class-name">
+												batch-icon-bullhorn-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-headphones"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F077
+											</div>
+											<span class="class-name">
+												batch-icon-headphones
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-camera"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F078
+											</div>
+											<span class="class-name">
+												batch-icon-camera
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-camera-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F079
+											</div>
+											<span class="class-name">
+												batch-icon-camera-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-camera-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F07A
+											</div>
+											<span class="class-name">
+												batch-icon-camera-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-pin"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F07B
+											</div>
+											<span class="class-name">
+												batch-icon-pin
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-pin-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F07C
+											</div>
+											<span class="class-name">
+												batch-icon-pin-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-map"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F07D
+											</div>
+											<span class="class-name">
+												batch-icon-map
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-map-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F07E
+											</div>
+											<span class="class-name">
+												batch-icon-map-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-user-card"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F080
+											</div>
+											<span class="class-name">
+												batch-icon-user-card
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-full"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F081
+											</div>
+											<span class="class-name">
+												batch-icon-battery-full
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-80"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F082
+											</div>
+											<span class="class-name">
+												batch-icon-battery-80
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-60"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F083
+											</div>
+											<span class="class-name">
+												batch-icon-battery-60
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-40"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F084
+											</div>
+											<span class="class-name">
+												batch-icon-battery-40
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-20"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F085
+											</div>
+											<span class="class-name">
+												batch-icon-battery-20
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-empty"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F086
+											</div>
+											<span class="class-name">
+												batch-icon-battery-empty
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-charge"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F087
+											</div>
+											<span class="class-name">
+												batch-icon-battery-charge
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-alt-100"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F088
+											</div>
+											<span class="class-name">
+												batch-icon-battery-alt-100
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-alt-80"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F089
+											</div>
+											<span class="class-name">
+												batch-icon-battery-alt-80
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-alt-60"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F08A
+											</div>
+											<span class="class-name">
+												batch-icon-battery-alt-60
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-alt-40"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F08B
+											</div>
+											<span class="class-name">
+												batch-icon-battery-alt-40
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-alt-20"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F08C
+											</div>
+											<span class="class-name">
+												batch-icon-battery-alt-20
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-alt--empty"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F08D
+											</div>
+											<span class="class-name">
+												batch-icon-battery-alt--empty
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-battery-alt-charge"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F08E
+											</div>
+											<span class="class-name">
+												batch-icon-battery-alt-charge
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-clock"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F090
+											</div>
+											<span class="class-name">
+												batch-icon-clock
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-flux"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F091
+											</div>
+											<span class="class-name">
+												batch-icon-flux
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-sleep"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F092
+											</div>
+											<span class="class-name">
+												batch-icon-sleep
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-nope"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F093
+											</div>
+											<span class="class-name">
+												batch-icon-nope
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-search"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F094
+											</div>
+											<span class="class-name">
+												batch-icon-search
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-zoom-in"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F095
+											</div>
+											<span class="class-name">
+												batch-icon-zoom-in
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-zoom-out"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F096
+											</div>
+											<span class="class-name">
+												batch-icon-zoom-out
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-search-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F097
+											</div>
+											<span class="class-name">
+												batch-icon-search-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-zoom-in-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F098
+											</div>
+											<span class="class-name">
+												batch-icon-zoom-in-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-zoom-out-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F099
+											</div>
+											<span class="class-name">
+												batch-icon-zoom-out-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-eye"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F09A
+											</div>
+											<span class="class-name">
+												batch-icon-eye
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-eye-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F09B
+											</div>
+											<span class="class-name">
+												batch-icon-eye-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-wifi-low"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F09C
+											</div>
+											<span class="class-name">
+												batch-icon-wifi-low
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-wifi-half"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F09D
+											</div>
+											<span class="class-name">
+												batch-icon-wifi-half
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-wifi-full"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F09E
+											</div>
+											<span class="class-name">
+												batch-icon-wifi-full
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-expand"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0A0
+											</div>
+											<span class="class-name">
+												batch-icon-expand
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-contract"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0A1
+											</div>
+											<span class="class-name">
+												batch-icon-contract
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-expand-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0A2
+											</div>
+											<span class="class-name">
+												batch-icon-expand-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-contract-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0A3
+											</div>
+											<span class="class-name">
+												batch-icon-contract-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-expand-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0A4
+											</div>
+											<span class="class-name">
+												batch-icon-expand-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-maximise"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0A5
+											</div>
+											<span class="class-name">
+												batch-icon-maximise
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-contract-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0A6
+											</div>
+											<span class="class-name">
+												batch-icon-contract-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-menu-pull-down"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0A7
+											</div>
+											<span class="class-name">
+												batch-icon-menu-pull-down
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-menu-pull-up"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0A8
+											</div>
+											<span class="class-name">
+												batch-icon-menu-pull-up
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-menu"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0A9
+											</div>
+											<span class="class-name">
+												batch-icon-menu
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-menu-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0AA
+											</div>
+											<span class="class-name">
+												batch-icon-menu-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-tag"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0AB
+											</div>
+											<span class="class-name">
+												batch-icon-tag
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-tag-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0AC
+											</div>
+											<span class="class-name">
+												batch-icon-tag-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-tag-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0AD
+											</div>
+											<span class="class-name">
+												batch-icon-tag-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-tag-alt-3"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0AE
+											</div>
+											<span class="class-name">
+												batch-icon-tag-alt-3
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-refresh"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0B0
+											</div>
+											<span class="class-name">
+												batch-icon-refresh
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-repeat"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0B1
+											</div>
+											<span class="class-name">
+												batch-icon-repeat
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-repeat-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0B2
+											</div>
+											<span class="class-name">
+												batch-icon-repeat-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-shuffle"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0B3
+											</div>
+											<span class="class-name">
+												batch-icon-shuffle
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-return"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0B4
+											</div>
+											<span class="class-name">
+												batch-icon-return
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-wiggle"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0B5
+											</div>
+											<span class="class-name">
+												batch-icon-wiggle
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-split"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0B6
+											</div>
+											<span class="class-name">
+												batch-icon-split
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-split-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0B7
+											</div>
+											<span class="class-name">
+												batch-icon-split-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-converge"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0B8
+											</div>
+											<span class="class-name">
+												batch-icon-converge
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-swap"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0B9
+											</div>
+											<span class="class-name">
+												batch-icon-swap
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-swap-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0BA
+											</div>
+											<span class="class-name">
+												batch-icon-swap-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-transfer"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0BB
+											</div>
+											<span class="class-name">
+												batch-icon-transfer
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-tray"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0BC
+											</div>
+											<span class="class-name">
+												batch-icon-tray
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-inbox-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0BD
+											</div>
+											<span class="class-name">
+												batch-icon-inbox-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-outbox-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0BE
+											</div>
+											<span class="class-name">
+												batch-icon-outbox-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-key"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0C0
+											</div>
+											<span class="class-name">
+												batch-icon-key
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-key-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0C1
+											</div>
+											<span class="class-name">
+												batch-icon-key-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-locked"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0C2
+											</div>
+											<span class="class-name">
+												batch-icon-locked
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-unlocked"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0C3
+											</div>
+											<span class="class-name">
+												batch-icon-unlocked
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-safe"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0C4
+											</div>
+											<span class="class-name">
+												batch-icon-safe
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-spinner"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0C5
+											</div>
+											<span class="class-name">
+												batch-icon-spinner
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-spinner-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0C6
+											</div>
+											<span class="class-name">
+												batch-icon-spinner-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-spinner-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0C7
+											</div>
+											<span class="class-name">
+												batch-icon-spinner-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-stamp"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0C8
+											</div>
+											<span class="class-name">
+												batch-icon-stamp
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-stamp-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0C9
+											</div>
+											<span class="class-name">
+												batch-icon-stamp-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-mail"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0CA
+											</div>
+											<span class="class-name">
+												batch-icon-mail
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-mail-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0CB
+											</div>
+											<span class="class-name">
+												batch-icon-mail-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-mail-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0CC
+											</div>
+											<span class="class-name">
+												batch-icon-mail-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-address-book"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0CD
+											</div>
+											<span class="class-name">
+												batch-icon-address-book
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-address-book-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0CE
+											</div>
+											<span class="class-name">
+												batch-icon-address-book-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-book"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0D0
+											</div>
+											<span class="class-name">
+												batch-icon-book
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-book-lines"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0D1
+											</div>
+											<span class="class-name">
+												batch-icon-book-lines
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-book-alt-"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0D2
+											</div>
+											<span class="class-name">
+												batch-icon-book-alt-
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-book-alt-lines"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0D3
+											</div>
+											<span class="class-name">
+												batch-icon-book-alt-lines
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-paper-roll"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0D4
+											</div>
+											<span class="class-name">
+												batch-icon-paper-roll
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-paper-roll-ripped"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0D5
+											</div>
+											<span class="class-name">
+												batch-icon-paper-roll-ripped
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-paper-ripped"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0D6
+											</div>
+											<span class="class-name">
+												batch-icon-paper-ripped
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-database"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0D7
+											</div>
+											<span class="class-name">
+												batch-icon-database
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-database-add"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0D8
+											</div>
+											<span class="class-name">
+												batch-icon-database-add
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-database-remove"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0D9
+											</div>
+											<span class="class-name">
+												batch-icon-database-remove
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-support"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0DA
+											</div>
+											<span class="class-name">
+												batch-icon-support
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-support-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0DB
+											</div>
+											<span class="class-name">
+												batch-icon-support-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-support-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0DC
+											</div>
+											<span class="class-name">
+												batch-icon-support-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-podcast"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0DD
+											</div>
+											<span class="class-name">
+												batch-icon-podcast
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-podcast-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0DE
+											</div>
+											<span class="class-name">
+												batch-icon-podcast-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-folder"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0E0
+											</div>
+											<span class="class-name">
+												batch-icon-folder
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-folder-add"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0E1
+											</div>
+											<span class="class-name">
+												batch-icon-folder-add
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-folder-remove"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0E2
+											</div>
+											<span class="class-name">
+												batch-icon-folder-remove
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-folder-duplicate"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0E3
+											</div>
+											<span class="class-name">
+												batch-icon-folder-duplicate
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-folder-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0E4
+											</div>
+											<span class="class-name">
+												batch-icon-folder-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-folder-alt-add"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0E5
+											</div>
+											<span class="class-name">
+												batch-icon-folder-alt-add
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-folder-alt-remove"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0E6
+											</div>
+											<span class="class-name">
+												batch-icon-folder-alt-remove
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-folder-alt-duplicate"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0E7
+											</div>
+											<span class="class-name">
+												batch-icon-folder-alt-duplicate
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-cloud"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0E8
+											</div>
+											<span class="class-name">
+												batch-icon-cloud
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-cloud-upload"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0E9
+											</div>
+											<span class="class-name">
+												batch-icon-cloud-upload
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-cloud-download"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0EA
+											</div>
+											<span class="class-name">
+												batch-icon-cloud-download
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-cloud-add"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0EB
+											</div>
+											<span class="class-name">
+												batch-icon-cloud-add
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-cloud-remove"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0EC
+											</div>
+											<span class="class-name">
+												batch-icon-cloud-remove
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-cloud-alt-add"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0ED
+											</div>
+											<span class="class-name">
+												batch-icon-cloud-alt-add
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-cloud-alt-remove"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0EE
+											</div>
+											<span class="class-name">
+												batch-icon-cloud-alt-remove
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-store"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F100
+											</div>
+											<span class="class-name">
+												batch-icon-store
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-store-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F101
+											</div>
+											<span class="class-name">
+												batch-icon-store-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-credit-card"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F102
+											</div>
+											<span class="class-name">
+												batch-icon-credit-card
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-credit-card-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F103
+											</div>
+											<span class="class-name">
+												batch-icon-credit-card-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-credit-card-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F104
+											</div>
+											<span class="class-name">
+												batch-icon-credit-card-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-credit-card-alt-3"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F105
+											</div>
+											<span class="class-name">
+												batch-icon-credit-card-alt-3
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-wallet"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F106
+											</div>
+											<span class="class-name">
+												batch-icon-wallet
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-wallet-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F107
+											</div>
+											<span class="class-name">
+												batch-icon-wallet-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-newspaper"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F108
+											</div>
+											<span class="class-name">
+												batch-icon-newspaper
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-newspaper-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F109
+											</div>
+											<span class="class-name">
+												batch-icon-newspaper-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-document"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F10A
+											</div>
+											<span class="class-name">
+												batch-icon-document
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-document-add"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F11B
+											</div>
+											<span class="class-name">
+												batch-icon-document-add
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-document-remove"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F10C
+											</div>
+											<span class="class-name">
+												batch-icon-document-remove
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-attachment"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F10D
+											</div>
+											<span class="class-name">
+												batch-icon-attachment
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-attachment-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F10E
+											</div>
+											<span class="class-name">
+												batch-icon-attachment-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-align-top-edges"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F110
+											</div>
+											<span class="class-name">
+												batch-icon-align-top-edges
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-align-vertical-centers"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F111
+											</div>
+											<span class="class-name">
+												batch-icon-align-vertical-centers
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-align-bottom-edges"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F112
+											</div>
+											<span class="class-name">
+												batch-icon-align-bottom-edges
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-align-left-edges"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F113
+											</div>
+											<span class="class-name">
+												batch-icon-align-left-edges
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-align-horizontal-centers"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F114
+											</div>
+											<span class="class-name">
+												batch-icon-align-horizontal-centers
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-align-right-edges"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F115
+											</div>
+											<span class="class-name">
+												batch-icon-align-right-edges
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-distribute-top-edges"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F116
+											</div>
+											<span class="class-name">
+												batch-icon-distribute-top-edges
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-distribute-vertical-centers"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F117
+											</div>
+											<span class="class-name">
+												batch-icon-distribute-vertical-centers
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-distribute-bottom-edges"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F118
+											</div>
+											<span class="class-name">
+												batch-icon-distribute-bottom-edges
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-distribute-left-edges"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F119
+											</div>
+											<span class="class-name">
+												batch-icon-distribute-left-edges
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-distribute-right-edges"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F11A
+											</div>
+											<span class="class-name">
+												batch-icon-distribute-right-edges
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-distribute-horizontal-centers"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F11B
+											</div>
+											<span class="class-name">
+												batch-icon-distribute-horizontal-centers
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-unite"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F11C
+											</div>
+											<span class="class-name">
+												batch-icon-unite
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-subtract"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F11D
+											</div>
+											<span class="class-name">
+												batch-icon-subtract
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-intersect"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F11E
+											</div>
+											<span class="class-name">
+												batch-icon-intersect
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-exclude"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F120
+											</div>
+											<span class="class-name">
+												batch-icon-exclude
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-layout-left-sidebar"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F121
+											</div>
+											<span class="class-name">
+												batch-icon-layout-left-sidebar
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-layout-center-column"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F122
+											</div>
+											<span class="class-name">
+												batch-icon-layout-center-column
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-layout-right-sidebar"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F123
+											</div>
+											<span class="class-name">
+												batch-icon-layout-right-sidebar
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-layout-content-left"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F124
+											</div>
+											<span class="class-name">
+												batch-icon-layout-content-left
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-layout-content-right"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F125
+											</div>
+											<span class="class-name">
+												batch-icon-layout-content-right
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-layout-alt-content-left"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F126
+											</div>
+											<span class="class-name">
+												batch-icon-layout-alt-content-left
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-layout-alt-content-right"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F127
+											</div>
+											<span class="class-name">
+												batch-icon-layout-alt-content-right
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-rulers"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F128
+											</div>
+											<span class="class-name">
+												batch-icon-rulers
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-swatch"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F129
+											</div>
+											<span class="class-name">
+												batch-icon-swatch
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-swatches"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F12A
+											</div>
+											<span class="class-name">
+												batch-icon-swatches
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-crop"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F12B
+											</div>
+											<span class="class-name">
+												batch-icon-crop
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-bulb"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F12C
+											</div>
+											<span class="class-name">
+												batch-icon-bulb
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-bulb-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F12D
+											</div>
+											<span class="class-name">
+												batch-icon-bulb-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-droplet"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F12E
+											</div>
+											<span class="class-name">
+												batch-icon-droplet
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-print"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F0130
+											</div>
+											<span class="class-name">
+												batch-icon-print
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-shred"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F131
+											</div>
+											<span class="class-name">
+												batch-icon-shred
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-bell"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F132
+											</div>
+											<span class="class-name">
+												batch-icon-bell
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-bell-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F133
+											</div>
+											<span class="class-name">
+												batch-icon-bell-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-bell-mute"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F134
+											</div>
+											<span class="class-name">
+												batch-icon-bell-mute
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-bell-mute-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F135
+											</div>
+											<span class="class-name">
+												batch-icon-bell-mute-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-nib"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F136
+											</div>
+											<span class="class-name">
+												batch-icon-nib
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-quill"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F137
+											</div>
+											<span class="class-name">
+												batch-icon-quill
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-quill-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F138
+											</div>
+											<span class="class-name">
+												batch-icon-quill-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-pencil"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F139
+											</div>
+											<span class="class-name">
+												batch-icon-pencil
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-pen"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F13A
+											</div>
+											<span class="class-name">
+												batch-icon-pen
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-compose"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F13B
+											</div>
+											<span class="class-name">
+												batch-icon-compose
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-compose-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F13C
+											</div>
+											<span class="class-name">
+												batch-icon-compose-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-compose-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F13D
+											</div>
+											<span class="class-name">
+												batch-icon-compose-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-compose-alt-3"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F13E
+											</div>
+											<span class="class-name">
+												batch-icon-compose-alt-3
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-bullet"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F140
+											</div>
+											<span class="class-name">
+												batch-icon-bullet
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-ellipsis"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F141
+											</div>
+											<span class="class-name">
+												batch-icon-ellipsis
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-timeline"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F142
+											</div>
+											<span class="class-name">
+												batch-icon-timeline
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-link"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F143
+											</div>
+											<span class="class-name">
+												batch-icon-link
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-link-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F144
+											</div>
+											<span class="class-name">
+												batch-icon-link-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-anchor"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F145
+											</div>
+											<span class="class-name">
+												batch-icon-anchor
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-asterisk"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F146
+											</div>
+											<span class="class-name">
+												batch-icon-asterisk
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-compass"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F147
+											</div>
+											<span class="class-name">
+												batch-icon-compass
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-arrow-up"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F148
+											</div>
+											<span class="class-name">
+												batch-icon-arrow-up
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-arrow-down"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F149
+											</div>
+											<span class="class-name">
+												batch-icon-arrow-down
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-arrow-left"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F14A
+											</div>
+											<span class="class-name">
+												batch-icon-arrow-left
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-arrow-right"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F14B
+											</div>
+											<span class="class-name">
+												batch-icon-arrow-right
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-add"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F14C
+											</div>
+											<span class="class-name">
+												batch-icon-add
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-remove"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F14D
+											</div>
+											<span class="class-name">
+												batch-icon-remove
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-delete"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F14E
+											</div>
+											<span class="class-name">
+												batch-icon-delete
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-mail-alt-3"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F150
+											</div>
+											<span class="class-name">
+												batch-icon-mail-alt-3
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-at"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F151
+											</div>
+											<span class="class-name">
+												batch-icon-at
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-envelope"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F152
+											</div>
+											<span class="class-name">
+												batch-icon-envelope
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-mail-outgoing"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F153
+											</div>
+											<span class="class-name">
+												batch-icon-mail-outgoing
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-mail-incoming"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F154
+											</div>
+											<span class="class-name">
+												batch-icon-mail-incoming
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-bin-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F155
+											</div>
+											<span class="class-name">
+												batch-icon-bin-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-outgoing-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F156
+											</div>
+											<span class="class-name">
+												batch-icon-outgoing-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-reply-all"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F157
+											</div>
+											<span class="class-name">
+												batch-icon-reply-all
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-reply"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F158
+											</div>
+											<span class="class-name">
+												batch-icon-reply
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-options"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F159
+											</div>
+											<span class="class-name">
+												batch-icon-options
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-spam"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F15A
+											</div>
+											<span class="class-name">
+												batch-icon-spam
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-spam-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F15B
+											</div>
+											<span class="class-name">
+												batch-icon-spam-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-star"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F15C
+											</div>
+											<span class="class-name">
+												batch-icon-star
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-star-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F15D
+											</div>
+											<span class="class-name">
+												batch-icon-star-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-flag"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F15E
+											</div>
+											<span class="class-name">
+												batch-icon-flag
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-flag-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F160
+											</div>
+											<span class="class-name">
+												batch-icon-flag-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-home"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F161
+											</div>
+											<span class="class-name">
+												batch-icon-home
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-home-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F162
+											</div>
+											<span class="class-name">
+												batch-icon-home-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-home-alt-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F163
+											</div>
+											<span class="class-name">
+												batch-icon-home-alt-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-tick"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F164
+											</div>
+											<span class="class-name">
+												batch-icon-tick
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-cross"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F165
+											</div>
+											<span class="class-name">
+												batch-icon-cross
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-alarm-clock"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F166
+											</div>
+											<span class="class-name">
+												batch-icon-alarm-clock
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-stopwatch"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F167
+											</div>
+											<span class="class-name">
+												batch-icon-stopwatch
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-previous"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F168
+											</div>
+											<span class="class-name">
+												batch-icon-previous
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-rewind"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F169
+											</div>
+											<span class="class-name">
+												batch-icon-rewind
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-stop"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F16A
+											</div>
+											<span class="class-name">
+												batch-icon-stop
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-play"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F16B
+											</div>
+											<span class="class-name">
+												batch-icon-play
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-pause"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F16C
+											</div>
+											<span class="class-name">
+												batch-icon-pause
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-fast-forward"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F16D
+											</div>
+											<span class="class-name">
+												batch-icon-fast-forward
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-next"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F16E
+											</div>
+											<span class="class-name">
+												batch-icon-next
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-user-alt-3"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F170
+											</div>
+											<span class="class-name">
+												batch-icon-user-alt-3
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-user-alt-add"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F171
+											</div>
+											<span class="class-name">
+												batch-icon-user-alt-add
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-user-alt-remove"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F172
+											</div>
+											<span class="class-name">
+												batch-icon-user-alt-remove
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-user-alt-add-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F173
+											</div>
+											<span class="class-name">
+												batch-icon-user-alt-add-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-user-alt-remove-2"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F174
+											</div>
+											<span class="class-name">
+												batch-icon-user-alt-remove-2
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-fork"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F175
+											</div>
+											<span class="class-name">
+												batch-icon-fork
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-pull"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F176
+											</div>
+											<span class="class-name">
+												batch-icon-pull
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-commit"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F177
+											</div>
+											<span class="class-name">
+												batch-icon-commit
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-watch"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F178
+											</div>
+											<span class="class-name">
+												batch-icon-watch
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-watch-alt"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F179
+											</div>
+											<span class="class-name">
+												batch-icon-watch-alt
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-unwatch"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F17A
+											</div>
+											<span class="class-name">
+												batch-icon-unwatch
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-settings-alt-3"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F17B
+											</div>
+											<span class="class-name">
+												batch-icon-settings-alt-3
+											</span>
+										</li>
+										<li>
+											<div class="icon">
+												<span class="batch-icon batch-icon-revert"></span>
+											</div>
+											<div class="glyph batch-icon">
+												<span class="glyph-caption">Glyph:</span> F17C
+											</div>
+											<span class="class-name">
+												batch-icon-revert
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mb-5">
+						<div class="col-md-12">
+							<footer>
+								Powered by - <a href="http://base5builder.com/?click_source=quillpro_footer_link" target="_blank" style="font-weight:300;color:#ffffff;background:#1d1d1d;padding:0 3px;">Base<span style="color:#ffa733;font-weight:bold">5</span>Builder</a>
+							</footer>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+	</div>
+
+	<!-- SCRIPTS - REQUIRED START -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- Bootstrap core JavaScript -->
+	<!-- JQuery -->
+	<script type="text/javascript" src="assets/js/jquery/jquery-3.1.1.min.js"></script>
+	<!-- Popper.js - Bootstrap tooltips -->
+	<script type="text/javascript" src="assets/js/bootstrap/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="assets/js/bootstrap/mdb.min.js"></script>
+	<!-- Velocity -->
+	<script type="text/javascript" src="assets/plugins/velocity/velocity.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/velocity/velocity.ui.min.js"></script>
+	<!-- Custom Scrollbar -->
+	<script type="text/javascript" src="assets/plugins/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+	<!-- jQuery Visible -->
+	<script type="text/javascript" src="assets/plugins/jquery_visible/jquery.visible.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script type="text/javascript" src="assets/js/misc/ie10-viewport-bug-workaround.js"></script>
+
+	<!-- SCRIPTS - REQUIRED END -->
+
+	<!-- SCRIPTS - OPTIONAL START -->
+	<!-- Image Placeholder -->
+	<script type="text/javascript" src="assets/js/misc/holder.min.js"></script>
+	<!-- SCRIPTS - OPTIONAL END -->
+
+	<!-- QuillPro Scripts -->
+	<script type="text/javascript" src="assets/js/scripts.js"></script>
+</body>
+</html>

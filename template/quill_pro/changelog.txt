@@ -1,0 +1,42 @@
+CHANGELOG
+================
+
+v1.7 - 05/08/2018
+- ADDED: React QuillPro
+- UPDATED: Form Validation now removes error messages when the input field validates
+- UPDATED: Pricing table now on frontend template
+
+v1.6 - 12/04/2018
+- ADDED: New landing page added to QuillPro (Also used as the demo page)
+- ADDED: New custom content card - User Profile (See special cards page)
+- UPDATED: Added new section to documentation call "Utilities" which covers all utility classes that QuillPro adds
+
+v1.5 - 26/03/2018
+- ADDED: Filterizr Filter & Sort (Alternative to Isotope)
+- ADDED: Gallery
+- ADDED: RTL Compatibility
+
+v1.4 - 05/03/2018
+- UPDATE: Updated all form fields to Bootstrap 4.0.0 (Stable)
+- FIXED: table responsiveness: '.table-responsive' class now added to class containing table
+- UPDATE:Changed scroll speed for CustomScrollbar within the "qp_add_scrollbar" function in script.js
+- UPDATE:Left menu item with sub-menu doesn't remain highlighted on :focus
+- FIXED: header menu on small screens
+- ADDED: new title to Dropdown Sub-menus
+- ADDED: minor aesthetic improvements
+- UPDATE: updated necessary documentation explaining how to update from Bootstrap 4 beta to 4.0.0 (Please see documentation)
+
+v1.3 - 25/01/2018
+- Uncommented the js code that allows horizontal sub-menu work
+
+v1.2 - 30/12/2017
+- Updated tabs and are now functional
+
+v1.1 - 04/12/2017
+- Removed default animation but can still be enabled. See documentation
+- Massive design update. Design is now more sleek and modern.
+- Added Font Awesome
+- Added 3 new Mini Cards
+
+v1.0 - 13/11/2017
+- Initial Release

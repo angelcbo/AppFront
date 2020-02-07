@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="Base 5 Builder">
+
+	<title>Documentation | QuillPro (React) - Multipurpose Bootstrap 4 Admin Dashboard Template</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Add custom CSS here -->
+	<link href="css/style.css" rel="stylesheet">
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link type="text/css" href="css/prettify.css" rel="stylesheet" />
+	<link type="text/css" href="css/prettify-bootstrap.min.css" rel="stylesheet" />
+
+	<!-- Unslider -->
+	<link type="text/css" href="js/unslider/css/unslider.css" rel="stylesheet" />
+	<link type="text/css" href="js/unslider/css/unslider-dots.css" rel="stylesheet" />
+
+	<!-- Fav and touch icons -->
+	<link rel="shortcut icon" href="image/ico/favicon.png">
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li class="sidebar-brand">
+					<a href="#top">
+						<img src="image/logo.png" alt="Logo" />
+					</a>
+				</li>
+				<li><a href="#introduction">Introduction</a></li>
+				<li><a href="#getting-started">Getting Started</a></li>
+				<li><a href="#required-files">Required Files</a></li>
+				<li><a href="#support">Support</a></li>
+				<li><a href="#changelog">Changelog</a></li>
+			</ul>
+		</div>
+
+		<!-- Page content -->
+		<div id="page-content-wrapper">
+			<div class="content-header" id="top">
+				<h1>
+					<a id="menu-toggle" href="#" class="btn btn-default">
+						<img src="image/icon-menu.png" alt="Menu" />
+					</a>
+					QuillPro (React) - Responsive Bootstrap 4 Admin Dashboard Template
+				</h1>
+			</div>
+			<!-- Keep all page content within the page-content inset div! -->
+			<div class="page-content inset">
+				<div class="row">
+					<div class="col-md-12" id="introduction">
+						<p class="lead first-lead">This is the documentation of the React version of QuillPro. If you need the documentation for the HTML version, then <a href="index.html">click here to open it</a>.</p>
+						<h2>Introduction To QuillPro (React)</h2>
+						<p>
+							This documentation assumes that you are well versed in React so it will not go over the basics. Instead, it will show you how QuillPro React files are arranged and connected so you will be able to integrate it into your own project without issue.
+						</p>
+						<p>
+							<span class="label label-primary">NOTE:</span> If you want to know the HTML structure of each page, you should check out the <a href="index.html">HTML Documentation</a> for a better understanding. Here's a link to <a href="https://getbootstrap.com">Bootstap 4</a> to also help you out.
+						</p>
+						<p class="img">
+							<img src="image/feature-image.jpg" border="0" alt="Desktop View"/>
+						</p>
+					</div>
+					<div class="col-md-12" id="required-files">
+						<h2>Quick Installation/Setup</h2>
+						<p>
+							If you want to get QuillPro (React) up and running and you can figure things out on your own, just follow the steps below. 
+						</p>
+						<ol>
+							<li>
+								Copy the React folder within your zip file into your project folder
+							</li>
+							<li>
+								Open terminal, then 'cd' into your project folder
+							</li>
+							<li>
+								Still in the terminal type 'yarn install' and press enter to install dependencies. You can do 'npm install' if you want.
+							</li>
+							<li>
+								Type 'yarn start' or 'npm start' to start up the project.
+							</li>
+							<li>
+								Visit the url provided in the terminal on your browser.
+							</li>
+							<li>
+								That's it! If you don't need further help, then that's it! If you <b>DO</b> need help understanding QuillPro React, then continue reading this documentation.
+							</li>
+						</ol>
+					</div>
+					<div class="col-md-12" id="required-files">
+						<h2>Overall Folder Layout</h2>
+						<p>
+							QuillPro React is arranged like any simple React app. The folder structure below shows this. Below, we will go into the folders &amp; files needed for you to get QuillPro React up and running.
+						</p>
+						<p>
+							The 2 main folders (and their contents) that you need to concern yourself about are the:
+						</p>
+						<ul>
+							<li><code>React/public</code></li>
+							<li><code>React/src</code></li>
+						</ul>
+					</div>
+					<div class="col-md-12" id="react-public-folder">
+						<h2>React/public Folder</h2>
+						<p>
+							This older contains the only HTML file you need: <code>React/public/index.html</code>. This file links to all the CSS, JS and jQuery dependencies that you need to make QuillPro React work right. Look through the file to get a better understanding of what dependencies QuillPro uses.
+						</p>
+						<p>
+							If you plan on drastically changing the way QuillPro looks, you should add your CSS file link to this <code>index.html</code> file.
+						</p>
+						<p>
+							The CSS files are separeted into:
+						</p>
+						<ul>
+							<li><b>Required Files:</b> These are the code QuillPro style files.</li>
+							<li><b>Optional Files:</b> These files are optional and only required if you want to use a particular plugin that comes with QuillPro.</li>
+						</ul>
+						<p>
+							The JavaScript files are separeted into:
+						</p>
+						<ul>
+							<li><b>Required Files:</b> QuillPro requires these files to do their JS magic.</li>
+							<li><b>Optional Files:</b> These files are optional and only required if you want to use a particular plugin that comes with QuillPro.</li>
+						</ul>
+						<br>
+						<h3>CSS Dependencies</h3>
+						<p>
+							Here is a look at the file <code>&lt;head&gt;</code> content.
+						</p>
+<pre class="prettyprint linenums">
+&lt;head&gt;
+	&lt;meta charset="utf-8"&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+	&lt;meta name="description" content=""&gt;
+	&lt;meta name="author" content=""&gt;
+	&lt;link rel="icon" href="assets/img/favicon.png"&gt;
+
+	&lt;title&gt;QuillPro - Bootstrap 4 Dashboard Template&lt;/title&gt;
+
+	&lt;!-- Fonts --&gt;
+	&lt;link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&amp;subset=latin-ext" rel="stylesheet"&gt;
+
+	&lt;!-- CSS - REQUIRED - START --&gt;
+	&lt;!-- Batch Icons --&gt;
+	&lt;link rel="stylesheet" href="assets/fonts/batch-icons/css/batch-icons.css"&gt;
+	&lt;!-- Bootstrap core CSS --&gt;
+	&lt;link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css"&gt;
+	&lt;!-- Material Design Bootstrap --&gt;
+	&lt;link rel="stylesheet" href="assets/css/bootstrap/mdb.min.css"&gt;
+	&lt;!-- Custom Scrollbar --&gt;
+	&lt;link rel="stylesheet" href="assets/plugins/custom-scrollbar/jquery.mCustomScrollbar.min.css"&gt;
+	&lt;!-- Hamburger Menu --&gt;
+	&lt;link rel="stylesheet" href="assets/css/hamburgers/hamburgers.css"&gt;
+	&lt;!-- Tags Input --&gt;
+	&lt;link rel="stylesheet" href="assets/plugins/tagsinput/bootstrap-tagsinput.min.css"&gt;
+	&lt;!-- Timelify --&gt;
+	&lt;link  rel="stylesheet" href="assets/plugins/timelify/css/timelify.css"&gt;
+
+	&lt;!-- CSS - REQUIRED - END --&gt;
+
+	&lt;!-- CSS - DEMO - START --&gt;
+	&lt;link rel="stylesheet" href="assets/demo/css/ui-icons-batch-icons.css"&gt;
+	&lt;!-- CSS - DEMO - END --&gt;
+
+	&lt;!-- CSS - OPTIONAL - START --&gt;
+	&lt;!-- Font Awesome --&gt;
+	&lt;link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css"&gt;
+	&lt;!-- JVMaps --&gt;
+	&lt;link rel="stylesheet" href="assets/plugins/jvmaps/jqvmap.min.css"&gt;
+	&lt;link type="text/css" href="assets/css/quillpro/quillpro-print.css" media="print" rel="stylesheet" /&gt;
+	&lt;link rel="stylesheet" href="assets/plugins/datatables/css/responsive.dataTables.min.css"&gt;
+	&lt;link rel="stylesheet" href="assets/plugins/datatables/css/responsive.bootstrap4.min.css"&gt;
+	&lt;!-- Prettify --&gt;
+	&lt;link rel="stylesheet" href="assets/plugins/prettify/css/prettify.css"&gt;
+	&lt;link rel="stylesheet" href="assets/plugins/prettify/css/prettify-bootstrap.min.css"&gt;
+	&lt;!-- CSS - OPTIONAL - END --&gt;
+&lt;/head&gt;
+</pre>
+						<br>
+						<h3>Javascript Dependencies</h3>
+						<p>
+							Here is a look at the file <code>&lt;head&gt;</code> content.
+						</p>
+						<p>
+							<span class="label label-primary">NOTE</span> Place this just above the closing <code>&lt;/body&gt;</code> tag.
+						</p>
+<pre class="prettyprint linenums">
+	&lt;!-- SCRIPTS - REQUIRED START --&gt;
+	&lt;!-- Placed at the end of the document so the pages load faster --&gt;
+	&lt;!-- Bootstrap core JavaScript --&gt;
+	&lt;!-- JQuery --&gt;
+	&lt;script type="text/javascript" src="assets/js/jquery/jquery-3.1.1.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Popper.js - Bootstrap tooltips --&gt;
+	&lt;script type="text/javascript" src="assets/js/bootstrap/popper.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Bootstrap core JavaScript --&gt;
+	&lt;script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"&gt;&lt;/script&gt;
+	&lt;!-- MDB core JavaScript --&gt;
+	&lt;script type="text/javascript" src="assets/js/bootstrap/mdb.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Velocity --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/velocity/velocity.min.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="assets/plugins/velocity/velocity.ui.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Custom Scrollbar --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"&gt;&lt;/script&gt;
+	&lt;!-- jQuery Visible --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/jquery_visible/jquery.visible.min.js"&gt;&lt;/script&gt;
+	&lt;!-- IE10 viewport hack for Surface/desktop Windows 8 bug --&gt;
+	&lt;script type="text/javascript" src="assets/js/misc/ie10-viewport-bug-workaround.js"&gt;&lt;/script&gt;
+	&lt;!-- SCRIPTS - REQUIRED END --&gt;
+
+
+	&lt;!-- SCRIPTS - OPTIONAL START --&gt;
+	&lt;!-- ChartJS --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/chartjs/chart.bundle.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Easy Pie Chart --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/easypiechart/jquery.easypiechart.min.js"&gt;&lt;/script&gt;
+	&lt;!-- JVMaps --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/jvmaps/jquery.vmap.min.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="assets/plugins/jvmaps/maps/jquery.vmap.usa.js"&gt;&lt;/script&gt;
+	&lt;!-- Timelify --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/timelify/js/jquery.timelify.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Form Wizard --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Form Validation --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/jquery-mask/jquery.mask.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Type Ahead --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/typeahead/typeahead.bundle.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Tags Input --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/tagsinput/bootstrap-tagsinput.min.js"&gt;&lt;/script&gt;
+	&lt;!-- Prettify --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/prettify/js/prettify.js"&gt;&lt;/script&gt;
+	&lt;!-- CKEditor --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/ckeditor/ckeditor.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="assets/plugins/ckeditor/adapters/jquery.js"&gt;&lt;/script&gt; &lt;!-- This jQuery Adapter is REQUIRED for CKEditor to function properly --&gt;
+	&lt;!-- Datatables --&gt;
+	&lt;script type="text/javascript" src="assets/plugins/datatables/js/jquery.dataTables.min.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="assets/plugins/datatables/js/dataTables.bootstrap4.min.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="assets/plugins/datatables/js/dataTables.responsive.min.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="assets/plugins/datatables/js/responsive.bootstrap4.min.js"&gt;&lt;/script&gt;
+	&lt;!-- SCRIPTS - OPTIONAL END --&gt;
+&lt;/body&gt;
+</pre>
+					</div>
+					<div class="col-md-12" id="react-src-folder">
+						<h2>React/src Folder</h2>
+					</div>
+					<div class="col-md-12" id="support">
+						<h2>Support</h2>
+						<p>
+							All support requests will be responded by our Customer Service Department.
+						</p>
+						<p>
+							Please state the name of the theme (QuillPro HTML) in the subject of your email.
+						</p>
+						<p>
+							Support Center: <a href="https://base5builder.com/support" target="_blank">https://base5builder.com/support</a> <br>
+							Email <a href="mailto:support@base5builder.com">support@base5builder.com</a> <br>
+							Behance: <a href="https://behance.net/TheInterlop3r">behance.net/TheInterlop3r</a>
+						</p>
+					</div>
+					<div class="col-md-12" id="changelog">
+						<h2>Changelog</h2>
+						<p><a href="../changelog.txt" target="_blank">See changes</a></p>
+					</div>
+				</div>
+				<br><br><br>
+			</div>
+
+			<!-- JavaScript -->
+			<script src="js/jquery-1.10.2.min.js"></script>
+			<script src="js/bootstrap.js"></script>
+			<script type="text/javascript" src="js/prettify.js"></script>
+			<script type="text/javascript" src="js/unslider/js/unslider-min.js"></script>
+
+			<script>
+			// Prettify Code
+			prettyPrint();
+
+			// Custom JavaScript for the Menu Toggle
+			$("#menu-toggle").click(function(e) {
+				e.preventDefault();
+				$("#wrapper").toggleClass("active");
+			});
+
+			// Unslider
+			$('#installation-images').unslider();
+		</script>
+</body>
+</html>
