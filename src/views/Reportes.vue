@@ -64,15 +64,25 @@
                                             <tr :key="i+10" v-for="(item, i) in platillos">
                                                 <th scope="row">{{i+1}}</th>
                                                 <td v-if="!item.editando">{{ item.platillo.nombre }}</td>
-                                                <td v-else><input type="text" class="form-control in-table" placeholder="Nombre" id = "mod-nombre" :value="item.platillo.nombre"/></td>
+                                                <td v-else><div class="in-table"><input type="text" class="form-control" placeholder="Nombre" :id="'mod-nombre-'+i" :value="item.platillo.nombre"/></div></td>
                                                 <td v-if="!item.editando">{{ item.platillo.descripcion }}</td>
-                                                <td v-else><input type="text" class="form-control in-table" placeholder="Descripción" id = "mod-desc" :value="item.platillo.descripcion"/></td>
+                                                <td v-else><div class="in-table"><input type="text" class="form-control" placeholder="Descripción" :id="'mod-desc-'+i" :value="item.platillo.descripcion"/></div></td>
                                                 <td v-if="!item.editando">{{ item.platillo.precio }}</td>
-                                                <td v-else><input type="number" class="form-control in-table" placeholder="Precio" id = "mod-precio" :value="item.platillo.precio"/></td>
-                                                <td>{{item.platillo.categoria}}</td>
+                                                <td v-else><div class="in-table"><input type="number" class="form-control" placeholder="Precio" :id="'mod-precio-'+i" :value="item.platillo.precio"/></div></td>
+                                                <td v-if="!item.editando">{{item.platillo.categoria}}</td>
+                                                <td v-else>
+                                                    <div class="in-table"> 
+                                                        <div class="input-group">
+                                                            <select class="custom-select" :id="'mod-cat-'+i" size="1" :value="item.platillo.categoria">
+                                                                <option>Categoría</option>
+                                                                <option :key="i" v-for="(item, i) in categorias">{{item.nombre}}</option>
+                                                            </select>
+                                                        </div> 
+                                                    </div>
+                                                </td>
                                                 <td>
                                                     <div class="cont" v-if="!item.editando">
-                                                        <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;" @click="eliminarPlatillo(item.platillos.id)"><i class="fa fa-trash"></i></button>
+                                                        <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;" @click="eliminarPlatillo(item.platillo.alimentoId)"><i class="fa fa-trash"></i></button>
                                                         <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;" @click="function(){item.editando = true}"><i class="fa fa-edit"></i></button>                                             
                                                     </div>
                                                     <div class="cont" v-else>
@@ -184,21 +194,19 @@ export default {
   },
   methods: {
       actualizarPlatillos(){
-          let _this = this;
+        let _this = this;
         console.log('mounted');
         Platillo.loadAll()
         .then(function (response) {
           console.log(response);
-          _this.platillos.length = new Array(response.data.length);
-          var x = 0;
-          _this.platillos.forEach(element => {
-              element = {
-                  platillo: response.data[x], 
-                  editando: false,
-              }
-              console.log('element');
-              x = x+1;
-          });
+          for(var i = 0; i < response.data.length; i++) {
+            _this.platillos.push(
+                {
+                    platillo: response.data[i], 
+                    editando: false,
+                }
+            );
+          }
         })
         .catch(function (error) {
           console.log(error);
@@ -252,11 +260,11 @@ export default {
         this.platPrecio = '';
         this.platCategoria = 'Categoría';
       },
-      eliminarPlatillo(id){
-          console.log('del platillo ',id);
+      eliminarPlatillo(idAlimento){
+          console.log('del platillo ',idAlimento);
           let params = {
             model: "",
-            data:{ id: id }
+            data:{ id: idAlimento }
           };
           let _this = this;
           Platillo.delete(params)
@@ -305,4 +313,37 @@ export default {
     td > .form-control{
         line-height: 1;
     }
+
+    .xp{
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 120px; 
+        overflow: auto;
+      }
+
+      .cont{
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-around;
+        min-width: 150px;
+      }
+
+      .in-table{
+        display: grid;
+        grid-template-columns: auto;
+      }
+
+      .in-table > .form-control, .in-table > .input-group > .custom-select{
+        width: 100%;
+        line-height: 1;
+      }
+
+      .btn.btn-primary.agregar{
+        height: 34px;
+        width: 25%;
+        min-width: 75px;
+        max-width: 150px;
+      }
 </style>

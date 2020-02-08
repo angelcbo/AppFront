@@ -132,7 +132,6 @@ export default {
     }
 
     .ordenes-leave-to{
-        transform: translateY(-30px);
         opacity: 0;
     }
 
@@ -144,4 +143,18 @@ export default {
         from{opacity: 0%}
         to{opacity: 100%;}
     }
+
+    .order-flex{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 15px;
+      }
+
+      .btn.btn-primary.agregar{
+        height: 34px;
+        width: 25%;
+        min-width: 75px;
+        max-width: 150px;
+      }
 </style>
