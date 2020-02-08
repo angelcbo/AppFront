@@ -26,7 +26,7 @@ export default {
     msg: String,
   },
   data() {
-    return {
+    let NominaMenu = {
       title: 'Industrial Pinos Altos',
       logo: '/img/logo_ipa.png',
       mainMenu: [
@@ -81,7 +81,35 @@ export default {
           icono: 'batch-icon-users',
         },
       ],
-    };
+    }; // end nomina menu
+
+    let RestaurantMenu = {
+      title: 'Tacos Heris',
+      logo: '/img/logo.png',
+      mainMenu: [
+        {
+          link: '/',
+          slug: 'inicio',
+          icono: 'batch-icon-home',
+        },
+        {
+          link: '/catalogos',
+          slug: 'catalogos',
+          icono: 'batch-icon-folder-add',
+        },
+        {
+          link: '/ordenes',
+          slug: 'Ordenes',
+          icono: 'batch-icon-users',
+        },
+        {
+          link: '/usuarios',
+          slug: 'Usuarios',
+          icono: 'batch-icon-users',
+        },
+      ],
+    }; // end restaurant menu
+    return RestaurantMenu;
   },
 };
 </script>

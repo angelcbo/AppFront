@@ -58,13 +58,18 @@
 <script>
 import MasterModel from '@/modules/core/MasterModel.js';
 export default {
-  data() {
-    return {
-		Sistema: 'Nombre Sistema',
-      Username: 'root',
-      Password: 'root',
-    };
-  },
+	data() {
+		let res = {
+			Sistema: 'Nombre Sistema',
+			Username: '',
+			Password: '',
+		};
+		if( MasterModel.isDev ){
+			res.Username = "root";
+			res.Password = "root";
+		}
+		return res;
+	},
   methods: {
 	showToken(){
 		// console.log('token ', MasterModel.getAuthToken())

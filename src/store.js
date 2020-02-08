@@ -5,7 +5,7 @@ import axios from 'axios';
 Vue.use(Vuex);
 
 const API_URL = process.env.VUE_APP_API_URL;
-const API_AUTH_ROUTE = process.env.VUE_APP_API_URL+'/api/authenticate';
+const API_AUTH_ROUTE = API_URL+'/api/authenticate';
 
 export default new Vuex.Store({
   state: {
@@ -39,9 +39,10 @@ export default new Vuex.Store({
           .then((resp) => {
             // console.log('resp', resp);
             const { token } = resp.data;
-            localStorage.setItem('token', token);
-            axios.defaults.headers.common.Authorization = token;
-            commit('auth_success', token, user);
+            let bToken = "Bearer "+token;
+            localStorage.setItem('token', bToken);
+            axios.defaults.headers.common.Authorization = bToken;
+            commit('auth_success', bToken, user);
             resolve(resp);
           })
           .catch((err) => {
@@ -60,7 +61,7 @@ export default new Vuex.Store({
             const { token } = resp.data;
             const { user } = resp.data;
             localStorage.setItem('token', token);
-            axios.defaults.headers.common.Authorization ="Bearer "+token;
+            axios.defaults.headers.common.Authorization = token;
             commit('auth_success', token, user);
             resolve(resp);
           })

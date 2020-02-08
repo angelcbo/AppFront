@@ -10,10 +10,13 @@ import Empleados from './views/Empleados.vue';
 import Mantenimiento from './views/Mantenimiento.vue';
 import Folios from './views/Folios.vue';
 import vNomEmpleado from './views/vNomEmpleado.vue';
-
+import FormUsuario from './views/FormUsuarios.vue';
+import Reportes from './views/Reportes.vue';
+import Ordenes from './views/Ordenes.vue';
 import Login from './components/Login.vue';
 import Secure from './components/Secure.vue';
 import Register from './components/Register.vue';
+import Usuarios from './views/Usuarios.vue';
 
 Vue.use(Router);
 
@@ -80,6 +83,26 @@ const router = new Router({
       path: '/about',
       name: 'about',
       component: About,
+    },
+    {
+      path: '/reportes',
+      name: 'reportes',
+      component: Reportes,
+    },
+    {
+      path: '/ordenes',
+      name: 'ordenes',
+      component: Ordenes,
+    },
+    {
+      path: '/formusuario',
+      name: 'formusuario',
+      component: FormUsuario,
+    },
+    {
+      path: '/usuarios',
+      name: 'usuarios',
+      component: Usuarios,
     },
   ],
 });

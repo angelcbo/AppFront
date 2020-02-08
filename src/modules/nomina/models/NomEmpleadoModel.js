@@ -2,7 +2,8 @@ import MasterModel from '@/modules/core/MasterModel.js';
 let model = "NomEmpleado";
 export default {
   test(item) {
-    MasterModel.test(item);
+    // MasterModel.test(item);
+    MasterModel.privatePing();
   },
   testpost(item){
     MasterModel.post({model:model, data: item});

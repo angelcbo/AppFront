@@ -229,7 +229,8 @@ export default {
     },
     save() {
       console.log('save', this.empleado);
-      NomEmpleadoM.testpost(this.empleado);
+      // NomEmpleadoM.testpost(this.empleado);
+      NomEmpleadoM.test(this.empleado);
     },
     agregarTelefono() {
       this.empleado.telefonos.push(this.telefono);

@@ -32,7 +32,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link"  @click="logout" >
+                    <a class="nav-link" @click="logout" >
                        logout
                     </a>
                 </li>
