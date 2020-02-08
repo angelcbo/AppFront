@@ -35,8 +35,8 @@
               </thead>
               <tbody>
                 <tr v-for="empleado in empleados" :key="empleado.id">
-                  <td>{{empleado.nombre}}</td>
-                  <td>{{empleado.password}}</td>
+                  <td>{{empleado.username}}</td>
+                  <td></td>
                   <td>
                     <i class="fa fa-edit"></i>
                     <i class="fa fa-trash"></i>
@@ -71,14 +71,10 @@ export default {
   methods: {},
   mounted() {
         let _this = this;
-        console.log('mounted');
-        FormUserModel.loadAll()
-        .then(function (response) {
+        // console.log('mounted');
+        FormUserModel.loadAll(function (response) {
             console.log(response);
             _this.empleados = response.data;
-        })
-        .catch(function (error) {
-            console.log(error);
         });
   },
 };

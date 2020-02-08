@@ -1,4 +1,5 @@
 import MasterModel from '@/modules/core/MasterModel.js';
+const model = "ApiUser";
 
 export default {
     save(params){
@@ -9,9 +10,9 @@ export default {
         params.model = "ApiUser/"+params.data.id;
         return MasterModel.delete(params)
     },
-    loadAll(){
+    loadAll(callback){
         let params = {};
-        params.model = "ApiUser";
-        return MasterModel.get(params)
+        params.model = model;
+        MasterModel.get(params, callback)
     }
 }
