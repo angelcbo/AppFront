@@ -202,7 +202,7 @@
 
             <div class="col-md-3">
                 <div class="card_menu p-4">
-                    <a href="">
+                    <a href="/ReporteCURP">
                         <div class="row">
                             <div class="col-md-3">
                                 <i class="batch-icon batch-icon-address-book"></i>

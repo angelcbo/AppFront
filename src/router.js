@@ -18,6 +18,12 @@ import Secure from './components/Secure.vue';
 import Register from './components/Register.vue';
 import Usuarios from './views/Usuarios.vue';
 
+import RCURP from './views/ReporteCURP.vue';
+import RO from './views/Restaurant_Orden.vue';
+import RO2 from './views/Restaurant_Orden2.vue';
+import HistorialAPI from './views/HistorialApi.vue';
+import OrdenV2 from './views/OrdenV2.vue';
+
 Vue.use(Router);
 
 const router = new Router({
@@ -103,6 +109,30 @@ const router = new Router({
       path: '/usuarios',
       name: 'usuarios',
       component: Usuarios,
+    },
+    {
+      path: '/ReporteCURP',
+      name: 'ReporteCURP',
+      component: RCURP,
+    },
+    {
+      path: '/RestaurantOrden',
+      name: 'Restaurant_Orden',
+      component: RO,
+    },
+    {
+      path: '/RestaurantOrden2',
+      name: 'Restaurant_Orden2',
+      component: RO2,
+    },{
+      path:'/HistorialApi',
+      name: 'HistorialApi',
+      component: HistorialAPI,
+    },
+    {
+      path:'/Ordenv2',
+      name:'Orden2',
+      component:OrdenV2,
     },
   ],
 });
