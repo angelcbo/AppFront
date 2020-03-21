@@ -48,8 +48,12 @@ export default {
     msg: String,
   },
   data() {
+      let username = localStorage.getItem('username');
+      if(!username){
+          username = "N/A"
+      }
     return {
-      username: 'John Doe',
+      username: username,
     };
   },
   methods: {
