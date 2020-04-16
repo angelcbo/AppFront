@@ -55,15 +55,15 @@ export default {
     .then(callback)
     .catch(catchError);
   },
-  get(params, callback) {
+  get(model, params, callback) {
     let _this = this;
-    return Axios.get(baseURI+"/api/"+params.model)
+    return Axios.get(baseURI+"/api/"+model, {params: params})
     .then(callback)
     .catch(catchError);
   },
-  post(params, callback) {
+  post(model, data, callback) {
     let _this = this;
-    return Axios.post(baseURI+"/api/"+params.model, params.data)
+    return Axios.post(baseURI+"/api/"+model, data)
     .then(callback)
     .catch(catchError);
   },

@@ -24,6 +24,18 @@ import RO2 from './views/Restaurant_Orden2.vue';
 import HistorialAPI from './views/HistorialApi.vue';
 import OrdenV2 from './views/OrdenV2.vue';
 
+// views Restaurant
+import ResAlimentosEdit from './views/Restaurant/AlimentosEdit'
+import ResAlimentosList from './views/Restaurant/AlimentosList'
+import ResClientesEdit from './views/Restaurant/ClientesEdit'
+import ResClientesList from './views/Restaurant/ClientesList'
+import ResDomiciliosEdit from './views/Restaurant/DomiciliosEdit'
+import ResDomiciliosList from './views/Restaurant/DomiciliosList'
+import ResOrdenesEdit from './views/Restaurant/OrdenesEdit'
+import ResOrdenesList from './views/Restaurant/OrdenesList'
+import ResRepartidoresEdit from './views/Restaurant/RepartidoresEdit'
+import ResRepartidoresList from './views/Restaurant/RepartidoresList'
+
 Vue.use(Router);
 
 const router = new Router({
@@ -133,6 +145,75 @@ const router = new Router({
       path:'/Ordenv2',
       name:'Orden2',
       component:OrdenV2,
+    },
+    // Restaurant
+    {
+      name: 'ResAlimentosEdit',
+      path:'/restaurant/alimento/:alimentoId',
+      props: true,
+      component:ResAlimentosEdit,
+    },
+    {
+      name: 'ResAlimentosCreate',
+      path:'/restaurant/alimento',
+      component:ResAlimentosEdit,
+    },
+    {
+      path:'/restaurant/alimentos',
+      name:'ResAlimentosList',
+      component:ResAlimentosList,
+    },
+    {
+      path:'/restaurant/cliente',
+      name:'ResClientesEdit',
+      component:ResClientesEdit,
+    },
+    {
+      path:'/restaurant/clientes',
+      name:'ResClientesList',
+      component:ResClientesList,
+    },
+    {
+      path:'/restaurant/domicilios',
+      name:'ResDomiciliosEdit',
+      component:ResDomiciliosEdit,
+    },
+    {
+      path:'/restaurant/domicilios',
+      name:'ResDomiciliosList',
+      component:ResDomiciliosList,
+    },
+    {
+      path:'/restaurant/orden/:ordenId',
+      name:'ResOrdenesEdit',
+      component:ResOrdenesEdit,
+      props: true
+    },
+    {
+      path:'/restaurant/orden/',
+      name:'ResOrdenesCreate',
+      component:ResOrdenesEdit,
+    },
+    {
+      path:'/restaurant/ordenes',
+      name:'ResOrdenesList',
+      component:ResOrdenesList,
+    },
+    {
+      path:'/restaurant/repartidor/:repartidorId',
+      name:'ResRepartidoresEdit',
+      component:ResRepartidoresEdit,
+      props: true
+    },
+    {
+      path:'/restaurant/repartidor',
+      name:'ResRepartidoresCreate',
+      component:ResRepartidoresEdit,
+    },
+    {
+      path:'/restaurant/repartidores',
+      name:'ResRepartidoresList',
+      component:ResRepartidoresList,
     },
   ],
 });
