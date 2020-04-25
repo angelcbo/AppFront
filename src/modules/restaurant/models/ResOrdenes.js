@@ -25,7 +25,7 @@ export default {
             status: '',
             tipoPago: '',
             consumo: '',
-            repartidor: {},
+            repartidorId: 0,
             resPlatos:[]
         }
     },

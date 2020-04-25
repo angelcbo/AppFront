@@ -16,20 +16,35 @@
                 <div class="row mb-3">
                   <div class="form-group col-md-4">
                     <label>Mesa</label>
-                    <input type="text" class="form-control" placeholder="1" v-model="item.mesa">
+                    <input type="number" class="form-control" placeholder="1" v-model="item.mesa">
                   </div>
-                  <div class="form-group col-md-4">
-                    <label> status </label>
-                    <input type="text" class="form-control" placeholder="" v-model="item.status">
+                  
+                  <div class="form-group  col-md-4">
+                    <label for="itemStatus"> Status </label>
+                    <select class="form-control" id="itemStatus" v-model="item.status">
+                      <option> abierta </option>
+                      <option> cerrada </option>
+                    </select>
                   </div>
-                  <div class="form-group col-md-4">
-                    <label> tipo pago </label>
-                    <input type="text" class="form-control" placeholder="" v-model="item.tipoPago">
+
+                  <div class="form-group  col-md-4">
+                    <label for="itemTipoPago"> Tipo de pago </label>
+                    <select class="form-control" id="itemTipoPago" v-model="item.tipoPago">
+                      <option> efectivo </option>
+                      <option> tarjeta </option>
+                    </select>
                   </div>
-                  <div class="form-group col-md-4">
-                    <label> consumo </label>
-                    <input type="text" class="form-control" placeholder="" v-model="item.consumo">
+
+                  <div class="form-group  col-md-4">
+                    <label for="itemConsumo"> Consumo </label>
+                    <select class="form-control" id="itemConsumo" v-model="item.consumo">
+                      <option> sucursal </option>
+                      <option> domicilio </option>
+                      <option> llevar </option>
+                      <option> recoger </option>
+                    </select>
                   </div>
+                  
                 </div>
                 
                 <div class="col-md-6 pb-5">
@@ -51,7 +66,13 @@
                           <tr>
                             <td> </td>
                             <td> <input type="text" v-model="iPlato.comensal"  /> </td>
-                            <td> <input type="text" v-model="iPlato.alimentoId"  /> </td>
+                            <td> 
+                                <select  v-model="iPlato.alimentoId">
+                                  <option v-for="rAlimento in lAlimentos" v-bind:value="rAlimento.alimentoId" >
+                                      {{rAlimento.nombre}}
+                                  </option>
+                                </select> 
+                            </td>
                             <td> <input type="text" v-model="iPlato.cantidad"  /> </td>
                             <td> 
                               <div class="btn-group" role="group" aria-label="Basic example">
@@ -62,7 +83,13 @@
                           <tr v-for="row in item.resPlatos" v-bind:key="item.platoId" >
                           <td></td>
                           <td> <input type="text" v-model="row.comensal"  /> </td>
-                            <td> <input type="text" v-model="row.alimentoId"  /> </td>
+                            <td> 
+                                <select  v-model="row.alimentoId">
+                                  <option v-for="rAlimento in lAlimentos" v-bind:value="rAlimento.alimentoId" >
+                                      {{rAlimento.nombre}}
+                                  </option>
+                                </select> 
+                            </td>
                             <td> <input type="text" v-model="row.cantidad"  /> </td>
 
                           <td>
@@ -103,6 +130,7 @@ import SideMenu from '@/components/SideMenu.vue';
 import TopBar from '@/components/TopBar.vue';
 import ResOrdenes from '@/modules/restaurant/models/ResOrdenes.js';
 import ResPlatos from '@/modules/restaurant/models/ResPlatos.js';
+import ResAlimentos from '@/modules/restaurant/models/ResAlimentos.js';
 // import Faker from 'faker';
 
 export default {
@@ -111,17 +139,18 @@ export default {
     'ordenId'
   ],
   data() {
+    let _this = this;
+    ResAlimentos.list({}, function(res){
+      console.log('resalimentos', res);
+      _this.lAlimentos = res.data.items;
+    });
     return {
         title: 'Orden',
         debug: process.env.VUE_APP_DEV,
         isNew: this.alimentoId ? false : true,
         item: ResOrdenes.init(this.ordenId, this.loadItem),
-        iPlato:{
-          platoId: 0,
-          alimentoId: 0,
-          comensal: 1,
-          cantidad: 0,
-        }
+        lAlimentos: [],
+        iPlato: ResPlatos.init()
       };
   },
   components: {
@@ -131,6 +160,7 @@ export default {
   methods: {
     loadItem(res){
       this.item = res.data.item;
+      this.iPlato.ordenId = this.item.ordenId;
     },
     randomFill(){
       this.item = ResOrdenes.random();
@@ -139,10 +169,15 @@ export default {
       console.log('save', this.item);
       // NomEmpleadoM.testpost(this.empleado);
       ResOrdenes.save(this.item);
+      // if(this.isNew){
+      //     ResPlatos.save(this.item.resPlatos);
+      // }
+      
     },
     addPlato(){
       let plato = this.iPlato;
       this.item.resPlatos.push( Object.assign({}, plato) );
+      this.iPlato = ResPlatos.init();
     },
     deletePlato(id){
 
