@@ -137,7 +137,34 @@ export default {
       ],
     }; // end dev menu
 
-    return DevMenu;
+    let Ipa = {
+      title: 'Cuentas por pagar',
+      logo: '/img/logo.png',
+      mainMenu: [
+        {
+          link: '/',
+          slug: 'inicio',
+          icono: 'batch-icon-home',
+        },
+        {
+          link: '/restaurant/alimentos',
+          slug: 'Bancos',
+          icono: 'batch-icon-folder-add',
+        },
+        {
+          link: '/restaurant/ordenes',
+          slug: 'Proveedores',
+          icono: 'batch-icon-users',
+        },
+        {
+          link: '/restaurant/repartidores',
+          slug: 'Respartidores',
+          icono: 'batch-icon-users',
+        },
+      ],
+    }; // end dev menu
+
+    return Ipa;
   },
 };
 </script>
