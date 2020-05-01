@@ -9,8 +9,8 @@ export default {
     save(data, callback){
         MasterModel.post(model, data, callback)
     },
-    delete(params){
-        
+    delete(repartidorId, callback){
+        MasterModel.delete(model, repartidorId, callback)
     },
     loadAll(){
         

@@ -97,7 +97,11 @@ export default {
 		this.$router.push({ name: 'ResRepartidoresEdit', params: { repartidorId: id } });
 	},
 	delet(id){
-		ResRepartidores.delete(id);
+		let _this = this;
+		ResRepartidores.delete(id, function(res){
+			alert('elemento borrado');
+			_this.loadItems();
+		});
 	}
    
   },
