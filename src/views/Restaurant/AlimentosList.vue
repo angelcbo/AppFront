@@ -101,7 +101,11 @@ export default {
 		this.$router.push({ name: 'ResAlimentosEdit', params: { alimentoId: id } });
 	},
 	delet(id){
-		ResAlimentos.delete(id);
+		let _this = this;
+		ResAlimentos.delete(id, function(res){
+			alert('elemento borrado');
+			_this.loadItems();
+		});
 	}
   },
 };

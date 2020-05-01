@@ -9,8 +9,8 @@ export default {
     save(params, callback){
         MasterModel.post(model, params, callback)
     },
-    delete(params){
-        
+    delete(ordenId, callback){
+        MasterModel.delete(model, ordenId, callback)
     },
     loadAll(){
         

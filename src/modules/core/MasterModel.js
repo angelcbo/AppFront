@@ -67,8 +67,8 @@ export default {
     .then(callback)
     .catch(catchError);
   },
-  delete(params, callback) {
-    return Axios.delete(baseURI+"/api/"+params.model)
+  delete(model, id, callback) {
+    return Axios.delete(baseURI+"/api/"+model+"/"+id)
     .then(callback)
     .catch(catchError);
   },

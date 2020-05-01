@@ -9,8 +9,8 @@ export default {
     save(data, callback){
         MasterModel.post(model, data, callback)
     },
-    delete(alimentoId){
-        
+    delete(alimentoId, callback){
+        MasterModel.delete(model, alimentoId, callback)
     },
     loadAll(){
         

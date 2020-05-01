@@ -100,7 +100,11 @@ export default {
 		this.$router.push({ name: 'ResOrdenesEdit', params: { ordenId: id } });
 	},
 	delet(id){
-		ResOrdenes.delete(id);
+		let _this = this;
+		ResOrdenes.delete(id, function(res){
+			alert('elemento borrado');
+			_this.loadItems();
+		});
 	}
    
   },
