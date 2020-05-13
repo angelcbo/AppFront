@@ -5,9 +5,9 @@ import axios from 'axios';
 Vue.use(Vuex);
 
 const API_URL = process.env.VUE_APP_API_URL;
-const API_AUTH_ROUTE = API_URL+'/api/authenticate';
+const API_AUTH_ROUTE = `${API_URL}/api/authenticate`;
 
-function setUserMeta(data){
+function setUserMeta(data) {
   localStorage.setItem('username', data.username);
   localStorage.setItem('apiCliente', data.apiCliente);
   localStorage.setItem('apiClienteId', data.apiClienteId);
@@ -15,7 +15,7 @@ function setUserMeta(data){
   localStorage.setItem('apiSucursalId', data.apiSucursalId);
 }
 
-function removeUserMeta(){
+function removeUserMeta() {
   localStorage.removeItem('username');
   localStorage.removeItem('apiCliente');
   localStorage.removeItem('apiClienteId');
@@ -56,7 +56,7 @@ export default new Vuex.Store({
             // console.log('resp', resp);
             const { token } = resp.data;
             setUserMeta(resp.data);
-            let bToken = "Bearer "+token;
+            const bToken = `Bearer ${token}`;
             localStorage.setItem('token', bToken);
             axios.defaults.headers.common.Authorization = bToken;
             commit('auth_success', bToken, user);

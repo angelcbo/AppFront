@@ -58,7 +58,7 @@
 
             </div>
           </div>
-					
+
 				</main>
 			</div>
 		</div>
@@ -75,38 +75,38 @@ import ResAlimentos from '@/modules/restaurant/models/ResAlimentos.js';
 export default {
   name: 'viewResAlimentos',
   data() {
-	this.loadItems();
+    this.loadItems();
     return {
-		title: "Alimentos",
-		items:[],
-        debug: process.env.VUE_APP_DEV,
-      };
+      title: 'Alimentos',
+      items: [],
+      debug: process.env.VUE_APP_DEV,
+    };
   },
   components: {
 	  SideMenu,
 	  TopBar,
   },
   methods: {
-	loadItems(){
-		let _this = this;
-		ResAlimentos.list({}, function(res){
-			console.log(res);
-			_this.items = res.data.items;
-		});
-	},
-	create(){
-		this.$router.push({ name: 'ResAlimentosCreate'});
-	},
-	edit(id){
-		this.$router.push({ name: 'ResAlimentosEdit', params: { alimentoId: id } });
-	},
-	delet(id){
-		let _this = this;
-		ResAlimentos.delete(id, function(res){
-			alert('elemento borrado');
-			_this.loadItems();
-		});
-	}
+    loadItems() {
+      const _this = this;
+      ResAlimentos.list({}, (res) => {
+        console.log(res);
+        _this.items = res.data.items;
+      });
+    },
+    create() {
+      this.$router.push({ name: 'ResAlimentosCreate' });
+    },
+    edit(id) {
+      this.$router.push({ name: 'ResAlimentosEdit', params: { alimentoId: id } });
+    },
+    delet(id) {
+      const _this = this;
+      ResAlimentos.delete(id, (res) => {
+        alert('elemento borrado');
+        _this.loadItems();
+      });
+    },
   },
 };
 </script>

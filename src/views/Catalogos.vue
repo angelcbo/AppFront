@@ -22,7 +22,7 @@
 					</div>
                     <ul class="list-group list-group-flush text-left">
                         <li v-for="item in lstNacionalidad" class="list-group-item">
-                            <span> {{item.nombre}} </span> 
+                            <span> {{item.nombre}} </span>
                             <i class="fa fa-trash"></i>
                             <i class="fa fa-edit"></i>
                         </li>
@@ -45,7 +45,7 @@
 					</div>
                     <ul class="list-group list-group-flush text-left">
                         <li v-for="item in lstDepartamento" class="list-group-item">
-                            <span> {{item.nombre}} </span> 
+                            <span> {{item.nombre}} </span>
                             <i class="fa fa-trash"></i>
                             <i class="fa fa-edit"></i>
                         </li>
@@ -68,7 +68,7 @@
 					</div>
                     <ul class="list-group list-group-flush text-left">
                         <li v-for="item in lstNomina" class="list-group-item">
-                            <span> {{item.nombre}} </span> 
+                            <span> {{item.nombre}} </span>
                             <i class="fa fa-trash"></i>
                             <i class="fa fa-edit"></i>
                         </li>
@@ -91,7 +91,7 @@
 					</div>
                     <ul class="list-group list-group-flush text-left">
                         <li v-for="item in lstSalario" class="list-group-item">
-                            <span> {{item.nombre}} </span> 
+                            <span> {{item.nombre}} </span>
 
                             <a @click="delSalario(item.id)" class="radio_btn"><i class="fa fa-trash"></i></a>
                             <a @click="editSalario" class="radio_btn"><i class="fa fa-edit"></i></a>
@@ -115,7 +115,7 @@
 					</div>
                     <ul class="list-group list-group-flush text-left">
                         <li v-for="item in lstPuesto" class="list-group-item">
-                            <span> {{item.nombre}} </span> 
+                            <span> {{item.nombre}} </span>
                             <i class="fa fa-trash"></i>
                             <i class="fa fa-edit"></i>
                         </li>
@@ -137,132 +137,132 @@
 import SideMenu from '@/components/SideMenu.vue';
 import TopBar from '@/components/TopBar.vue';
 
-import  NomCatalogo from '@/modules/nomina/models/NomCatalogoModel.js';
+import NomCatalogo from '@/modules/nomina/models/NomCatalogoModel.js';
 
 export default {
   name: 'catalogos',
   data() {
-      return {
-        nuNacionalidad: "",
-        nuDepartamento: "",
-        nuNomina: "",
-        nuSalario: "",
-        nuPuesto: "",
-        lstNacionalidad: [],
-        lstNomina: [],
-        lstDepartamento: [],
-        lstSalario: [],
-        lstPuesto: []
-      }; 
+    return {
+      nuNacionalidad: '',
+      nuDepartamento: '',
+      nuNomina: '',
+      nuSalario: '',
+      nuPuesto: '',
+      lstNacionalidad: [],
+      lstNomina: [],
+      lstDepartamento: [],
+      lstSalario: [],
+      lstPuesto: [],
+    };
   },
   mounted() {
-        let _this = this;
-        console.log('mounted');
-        NomCatalogo.loadAll()
-        .then(function (response) {
-            console.log(response);
-            _this.lstNacionalidad = response.data.nacionalidad;
-            _this.lstNomina = response.data.nomina;
-            _this.lstDepartamento = response.data.departamento;
-            _this.lstSalario = response.data.salario;
-            _this.lstPuesto = response.data.puesto;
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+    const _this = this;
+    console.log('mounted');
+    NomCatalogo.loadAll()
+      .then((response) => {
+        console.log(response);
+        _this.lstNacionalidad = response.data.nacionalidad;
+        _this.lstNomina = response.data.nomina;
+        _this.lstDepartamento = response.data.departamento;
+        _this.lstSalario = response.data.salario;
+        _this.lstPuesto = response.data.puesto;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
   components: {
 	  SideMenu,
 	  TopBar,
   },
-  methods:{
-    saveNacionalidad(){
-        console.log("nacionalidad", this.nuNacionalidad);
-        let params = {
-            model: "nacionalidad",
-            data:{ nombre: this.nuNacionalidad }
-        };
-        NomCatalogo.save(params)
-        .then(function (response) {
-            console.log(response);
+  methods: {
+    saveNacionalidad() {
+      console.log('nacionalidad', this.nuNacionalidad);
+      const params = {
+        model: 'nacionalidad',
+        data: { nombre: this.nuNacionalidad },
+      };
+      NomCatalogo.save(params)
+        .then((response) => {
+          console.log(response);
         })
-        .catch(function (error) {
-            console.log(error);
+        .catch((error) => {
+          console.log(error);
         });
     },
-    saveDepartamento(){
-        console.log("departamento", this.nuDepartamento);
-        let params = {
-            model: "departamento",
-            data:{ nombre: this.nuDepartamento }
-        };
-        NomCatalogo.save(params)
-        .then(function (response) {
-            console.log(response);
+    saveDepartamento() {
+      console.log('departamento', this.nuDepartamento);
+      const params = {
+        model: 'departamento',
+        data: { nombre: this.nuDepartamento },
+      };
+      NomCatalogo.save(params)
+        .then((response) => {
+          console.log(response);
         })
-        .catch(function (error) {
-            console.log(error);
+        .catch((error) => {
+          console.log(error);
         });
     },
-    saveNomina(){
-        console.log("nomina", this.nuNomina);
-        let params = {
-            model: "nomina",
-            data:{ nombre: this.nuNomina }
-        };
-        NomCatalogo.save(params)
-        .then(function (response) {
-            console.log(response);
+    saveNomina() {
+      console.log('nomina', this.nuNomina);
+      const params = {
+        model: 'nomina',
+        data: { nombre: this.nuNomina },
+      };
+      NomCatalogo.save(params)
+        .then((response) => {
+          console.log(response);
         })
-        .catch(function (error) {
-            console.log(error);
+        .catch((error) => {
+          console.log(error);
         });
     },
-    saveSalario(){
-        console.log("salario", this.nuSalario);
-        let params = {
-            model: "salario",
-            data:{ nombre: this.nuSalario }
-        };
-        NomCatalogo.save(params)
-        .then(function (response) {
-            console.log(response);
+    saveSalario() {
+      console.log('salario', this.nuSalario);
+      const params = {
+        model: 'salario',
+        data: { nombre: this.nuSalario },
+      };
+      NomCatalogo.save(params)
+        .then((response) => {
+          console.log(response);
         })
-        .catch(function (error) {
-            console.log(error);
+        .catch((error) => {
+          console.log(error);
         });
     },
-    delSalario(id){
-        console.log('del salario ',id);
-        let params = {
-            model: "salario",
-            data:{ id: id }
-        };
-        NomCatalogo.delete(params)
-        .then(function (response) {
-            console.log(response);
+    delSalario(id) {
+      console.log('del salario ', id);
+      const params = {
+        model: 'salario',
+        data: { id },
+      };
+      NomCatalogo.delete(params)
+        .then((response) => {
+          console.log(response);
         })
-        .catch(function (error) {
-            console.log(error);
+        .catch((error) => {
+          console.log(error);
         });
     },
-    editSalario(){
+    editSalario() {
 
     },
-    savePuesto(){
-        console.log("puesto", this.nuPuesto);
-        let params = {
-            model: "puesto",
-            data:{ nombre: this.nuPuesto }
-        };
-        NomCatalogo.save(params)
-        .then(function (response) {
-            console.log(response);
+    savePuesto() {
+      console.log('puesto', this.nuPuesto);
+      const params = {
+        model: 'puesto',
+        data: { nombre: this.nuPuesto },
+      };
+      NomCatalogo.save(params)
+        .then((response) => {
+          console.log(response);
         })
-        .catch(function (error) {
-            console.log(error);
+        .catch((error) => {
+          console.log(error);
         });
-    }
-  }
+    },
+  },
 };
 </script>

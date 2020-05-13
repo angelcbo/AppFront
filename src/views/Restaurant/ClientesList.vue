@@ -56,7 +56,7 @@
 
             </div>
           </div>
-					
+
 				</main>
 			</div>
 		</div>
@@ -73,25 +73,25 @@ import ResClientes from '@/modules/restaurant/models/ResClientes.js';
 export default {
   name: 'viewResClientes',
   data() {
-	this.loadItems();
+    this.loadItems();
     return {
-		title: "Clientes",
-		items: [],
-		debug: true,
-	}
+      title: 'Clientes',
+      items: [],
+      debug: true,
+    };
   },
   components: {
 	  SideMenu,
 	  TopBar,
   },
   methods: {
-	loadItems(){
-		let _this = this;
-		ResClientes.list({}, function(res){
-			console.log(res);
-			_this.items = res.data.items;
-		});
-	},  
+    loadItems() {
+      const _this = this;
+      ResClientes.list({}, (res) => {
+        console.log(res);
+        _this.items = res.data.items;
+      });
+    },
   },
 };
 </script>

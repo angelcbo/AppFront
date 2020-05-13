@@ -18,7 +18,7 @@
                     <label>Nombre</label>
                     <input type="text" class="form-control" placeholder="Nombre" v-model="item.nombre">
                   </div>
-                  
+
                 </div>
 
                 <div class="row mb-5">
@@ -36,7 +36,7 @@
 
             </div>
           </div>
-					
+
 				</main>
 			</div>
 		</div>
@@ -52,26 +52,26 @@ import ResRepartidores from '@/modules/restaurant/models/ResRepartidores.js';
 
 export default {
   name: 'viewResRepartidoresEdit',
-  props:[
-    'repartidorId'
+  props: [
+    'repartidorId',
   ],
   data() {
     return {
-        title: 'Repartidor',
-        debug: process.env.VUE_APP_DEV,
-        item: ResRepartidores.init(this.repartidorId, this.loadItem),
-        isNew: this.repartidorId ? false : true
-      };
+      title: 'Repartidor',
+      debug: process.env.VUE_APP_DEV,
+      item: ResRepartidores.init(this.repartidorId, this.loadItem),
+      isNew: !this.repartidorId,
+    };
   },
   components: {
 	  SideMenu,
 	  TopBar,
   },
   methods: {
-    loadItem(res){
+    loadItem(res) {
       this.item = res.data.item;
     },
-    randomFill(){
+    randomFill() {
       this.item = ResRepartidores.random();
     },
     save() {
@@ -79,7 +79,7 @@ export default {
       // NomEmpleadoM.testpost(this.empleado);
       ResRepartidores.save(this.item);
     },
-   
+
   },
 };
 </script>

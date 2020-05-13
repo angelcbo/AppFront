@@ -26,7 +26,7 @@ export default {
     msg: String,
   },
   data() {
-    let NominaMenu = {
+    const NominaMenu = {
       title: 'Industrial Pinos Altos',
       logo: '/img/logo_ipa.png',
       mainMenu: [
@@ -83,7 +83,7 @@ export default {
       ],
     }; // end nomina menu
 
-    let RestaurantMenu = {
+    const RestaurantMenu = {
       title: 'Tacos Heris',
       logo: '/img/logo.png',
       mainMenu: [
@@ -110,7 +110,7 @@ export default {
       ],
     }; // end restaurant menu
 
-    let DevMenu = {
+    const DevMenu = {
       title: 'Tacos Heris',
       logo: '/img/logo.png',
       mainMenu: [
@@ -137,7 +137,7 @@ export default {
       ],
     }; // end dev menu
 
-    let Ipa = {
+    const Ipa = {
       title: 'Cuentas por pagar',
       logo: '/img/logo.png',
       mainMenu: [
@@ -147,19 +147,9 @@ export default {
           icono: 'batch-icon-home',
         },
         {
-          link: '/restaurant/alimentos',
-          slug: 'Bancos',
+          link: '/cxp/CtasBancosProveedores',
+          slug: 'Cuentas Bancos Proveedores',
           icono: 'batch-icon-folder-add',
-        },
-        {
-          link: '/restaurant/ordenes',
-          slug: 'Proveedores',
-          icono: 'batch-icon-users',
-        },
-        {
-          link: '/restaurant/repartidores',
-          slug: 'Respartidores',
-          icono: 'batch-icon-users',
         },
       ],
     }; // end dev menu

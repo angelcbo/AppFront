@@ -70,17 +70,17 @@
 </template>
 
 
-
 <script>
-import SideMenu from "@/components/SideMenu.vue";
-import TopBar from "@/components/TopBar.vue";
-import NomEmpleadoM from "@/modules/nomina/models/NomEmpleadoModel.js";
+import SideMenu from '@/components/SideMenu.vue';
+import TopBar from '@/components/TopBar.vue';
+import NomEmpleadoM from '@/modules/nomina/models/NomEmpleadoModel.js';
+
 export default {
-  name: "Restaurant_Orden",
+  name: 'Restaurant_Orden',
   components: {
     SideMenu,
-    TopBar
+    TopBar,
   },
-  methods: {}
+  methods: {},
 };
 </script>

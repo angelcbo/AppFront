@@ -18,14 +18,14 @@
 
 export default {
 
-    props:['value'],
-    
-    methods: {
-        atenderOrden(){
-            this.value.atendido = true;
-        },
-    }
-}
+  props: ['value'],
+
+  methods: {
+    atenderOrden() {
+      this.value.atendido = true;
+    },
+  },
+};
 
 </script>
 
@@ -45,7 +45,7 @@ export default {
         transition-property: box-shadow;
         transition-duration: .7s;
       }
-      
+
       .btn.btn-primary.agregar{
         height: 34px;
         width: 25%;
@@ -64,8 +64,8 @@ export default {
       }
 
       .row.order-body{
-        justify-content: space-between; 
-        margin: 15px 0; 
+        justify-content: space-between;
+        margin: 15px 0;
         font-size: 16px
       }
 

@@ -57,7 +57,7 @@
 
             </div>
           </div>
-					
+
 				</main>
 			</div>
 		</div>
@@ -74,39 +74,39 @@ import ResOrdenes from '@/modules/restaurant/models/ResOrdenes.js';
 export default {
   name: 'viewResOrdenes',
   data() {
-	this.loadItems();
+    this.loadItems();
     return {
-        title: "Ordenes",
-		debug: true,
-		items: [],
-      };
+      title: 'Ordenes',
+      debug: true,
+      items: [],
+    };
   },
   components: {
 	  SideMenu,
 	  TopBar,
   },
   methods: {
-	loadItems(){
-		let _this = this;
-		ResOrdenes.list({}, function(res){
-			console.log(res);
-			_this.items = res.data.items;
-		});
-	},
-	create(){
-		this.$router.push({ name: 'ResOrdenesCreate'});
-	},
-	edit(id){
-		this.$router.push({ name: 'ResOrdenesEdit', params: { ordenId: id } });
-	},
-	delet(id){
-		let _this = this;
-		ResOrdenes.delete(id, function(res){
-			alert('elemento borrado');
-			_this.loadItems();
-		});
-	}
-   
+    loadItems() {
+      const _this = this;
+      ResOrdenes.list({}, (res) => {
+        console.log(res);
+        _this.items = res.data.items;
+      });
+    },
+    create() {
+      this.$router.push({ name: 'ResOrdenesCreate' });
+    },
+    edit(id) {
+      this.$router.push({ name: 'ResOrdenesEdit', params: { ordenId: id } });
+    },
+    delet(id) {
+      const _this = this;
+      ResOrdenes.delete(id, (res) => {
+        alert('elemento borrado');
+        _this.loadItems();
+      });
+    },
+
   },
 };
 </script>

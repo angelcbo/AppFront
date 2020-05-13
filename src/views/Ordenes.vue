@@ -58,7 +58,7 @@
 
 <script>
 
-/*imports*/
+/* imports */
 
 import SideMenu from '@/components/SideMenu.vue';
 import TopBar from '@/components/TopBar.vue';
@@ -68,54 +68,56 @@ import OrderBoxEntrega from '@/components/OrderBoxEntrega.vue';
 export default {
   name: 'catalogos',
   data() {
-      return {
-          ordenesLocal:[
-              {
-                  mesa: 1,
-                  total: 3500,
-                  atendido: false,
-              },
-          ],
-          ordenesEntrega: [
-              {
-                  id: 3,
-                  colonia: 'Jardines',
-                  calle: 'Blvd. de las Rosas',
-                  total: 6000,
-                  atendido: false,
-              },
-          ],
-          pendientesLocal: 0,
-          pendientesEntrega: 0,
-      };
+    return {
+      ordenesLocal: [
+        {
+          mesa: 1,
+          total: 3500,
+          atendido: false,
+        },
+      ],
+      ordenesEntrega: [
+        {
+          id: 3,
+          colonia: 'Jardines',
+          calle: 'Blvd. de las Rosas',
+          total: 6000,
+          atendido: false,
+        },
+      ],
+      pendientesLocal: 0,
+      pendientesEntrega: 0,
+    };
   },
   components: {
-      SideMenu,
-      TopBar,
-      OrderBoxLocal,
-      OrderBoxEntrega,
+    SideMenu,
+    TopBar,
+    OrderBoxLocal,
+    OrderBoxEntrega,
   },
-  computed:{
-      localFaltantes(){
-          let c = this.ordenesLocal.filter(exp => !exp.atendido);
-          this.pendientesLocal = c.length; 
-          return c;
-      },
-      entregasFaltantes(){
-          let c = this.ordenesEntrega.filter(exp => !exp.atendido);
-          this.pendientesEntrega = c.length; 
-          return c;
-      }
+  computed: {
+    localFaltantes() {
+      const c = this.ordenesLocal.filter(exp => !exp.atendido);
+      this.pendientesLocal = c.length;
+      return c;
+    },
+    entregasFaltantes() {
+      const c = this.ordenesEntrega.filter(exp => !exp.atendido);
+      this.pendientesEntrega = c.length;
+      return c;
+    },
   },
-  methods:{
-      agregarMesa(){
-          this.ordenesLocal.push({ mesa: Math.floor(Math.random()*100), total: 2500, atendido: false});
-      },
-      agregarEntrega(){
-          this.ordenesEntrega.push({ id: Math.floor(Math.random()*100), colonia: 'Centro', calle: '20 de Noviembre', total: 2500, atendido: false});
-      },
-  }
-}
+  methods: {
+    agregarMesa() {
+      this.ordenesLocal.push({ mesa: Math.floor(Math.random() * 100), total: 2500, atendido: false });
+    },
+    agregarEntrega() {
+      this.ordenesEntrega.push({
+        id: Math.floor(Math.random() * 100), colonia: 'Centro', calle: '20 de Noviembre', total: 2500, atendido: false,
+      });
+    },
+  },
+};
 </script>
 
 <style scoped>

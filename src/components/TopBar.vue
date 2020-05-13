@@ -48,21 +48,21 @@ export default {
     msg: String,
   },
   data() {
-      let username = localStorage.getItem('username');
-      if(!username){
-          username = "N/A"
-      }
+    let username = localStorage.getItem('username');
+    if (!username) {
+      username = 'N/A';
+    }
     return {
-      username: username,
+      username,
     };
   },
   methods: {
-	logout(){
-		this.$store.dispatch('logout')
+    logout() {
+      this.$store.dispatch('logout')
         .then(
-			() => this.$router.push('/')
-		).catch(err => console.log(err));
-	}
+          () => this.$router.push('/'),
+        ).catch(err => console.log(err));
+    },
   },
 };
 </script>

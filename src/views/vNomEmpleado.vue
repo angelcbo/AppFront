@@ -213,18 +213,18 @@ export default {
   name: 'new_empleado',
   data() {
     return {
-        debug: true,
-        empleado: NomEmpleadoM.init(),
-        telefono: '',
-        cuenta: '',
-      };
+      debug: true,
+      empleado: NomEmpleadoM.init(),
+      telefono: '',
+      cuenta: '',
+    };
   },
   components: {
 	  SideMenu,
 	  TopBar,
   },
   methods: {
-    randomFill(){
+    randomFill() {
       this.empleado = NomEmpleadoM.random();
     },
     save() {

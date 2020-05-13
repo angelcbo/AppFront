@@ -18,7 +18,7 @@
                     <label>Mesa</label>
                     <input type="number" class="form-control" placeholder="1" v-model="item.mesa">
                   </div>
-                  
+
                   <div class="form-group  col-md-4">
                     <label for="itemStatus"> Status </label>
                     <select class="form-control" id="itemStatus" v-model="item.status">
@@ -44,9 +44,9 @@
                       <option> recoger </option>
                     </select>
                   </div>
-                  
+
                 </div>
-                
+
                 <div class="col-md-6 pb-5">
 											<h2> Platos </h2>
 											<p>
@@ -66,15 +66,15 @@
                           <tr>
                             <td> </td>
                             <td> <input type="text" v-model="iPlato.comensal"  /> </td>
-                            <td> 
+                            <td>
                                 <select  v-model="iPlato.alimentoId">
                                   <option v-for="rAlimento in lAlimentos" v-bind:value="rAlimento.alimentoId" >
                                       {{rAlimento.nombre}}
                                   </option>
-                                </select> 
+                                </select>
                             </td>
                             <td> <input type="text" v-model="iPlato.cantidad"  /> </td>
-                            <td> 
+                            <td>
                               <div class="btn-group" role="group" aria-label="Basic example">
                                 <button type="button" class="btn btn-primary waves-effect waves-light" @click="addPlato" > Agregar </button>
                               </div>
@@ -83,12 +83,12 @@
                           <tr v-for="row in item.resPlatos" v-bind:key="item.platoId" >
                           <td></td>
                           <td> <input type="text" v-model="row.comensal"  /> </td>
-                            <td> 
+                            <td>
                                 <select  v-model="row.alimentoId">
                                   <option v-for="rAlimento in lAlimentos" v-bind:value="rAlimento.alimentoId" >
                                       {{rAlimento.nombre}}
                                   </option>
-                                </select> 
+                                </select>
                             </td>
                             <td> <input type="text" v-model="row.cantidad"  /> </td>
 
@@ -118,7 +118,7 @@
 
             </div>
           </div>
-					
+
 				</main>
 			</div>
 		</div>
@@ -135,34 +135,34 @@ import ResAlimentos from '@/modules/restaurant/models/ResAlimentos.js';
 
 export default {
   name: 'viewResOrdenesEdit',
-  props:[
-    'ordenId'
+  props: [
+    'ordenId',
   ],
   data() {
-    let _this = this;
-    ResAlimentos.list({}, function(res){
+    const _this = this;
+    ResAlimentos.list({}, (res) => {
       console.log('resalimentos', res);
       _this.lAlimentos = res.data.items;
     });
     return {
-        title: 'Orden',
-        debug: process.env.VUE_APP_DEV,
-        isNew: this.alimentoId ? false : true,
-        item: ResOrdenes.init(this.ordenId, this.loadItem),
-        lAlimentos: [],
-        iPlato: ResPlatos.init()
-      };
+      title: 'Orden',
+      debug: process.env.VUE_APP_DEV,
+      isNew: !this.alimentoId,
+      item: ResOrdenes.init(this.ordenId, this.loadItem),
+      lAlimentos: [],
+      iPlato: ResPlatos.init(),
+    };
   },
   components: {
 	  SideMenu,
 	  TopBar,
   },
   methods: {
-    loadItem(res){
+    loadItem(res) {
       this.item = res.data.item;
       this.iPlato.ordenId = this.item.ordenId;
     },
-    randomFill(){
+    randomFill() {
       this.item = ResOrdenes.random();
     },
     save() {
@@ -172,16 +172,15 @@ export default {
       // if(this.isNew){
       //     ResPlatos.save(this.item.resPlatos);
       // }
-      
     },
-    addPlato(){
-      let plato = this.iPlato;
-      this.item.resPlatos.push( Object.assign({}, plato) );
+    addPlato() {
+      const plato = this.iPlato;
+      this.item.resPlatos.push(Object.assign({}, plato));
       this.iPlato = ResPlatos.init();
     },
-    deletePlato(id){
+    deletePlato(id) {
 
-    }
+    },
   },
 };
 </script>

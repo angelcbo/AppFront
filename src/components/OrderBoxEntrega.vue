@@ -21,14 +21,14 @@
 
 export default {
 
-    props:['value'],
-    
-    methods: {
-        atenderOrden(){
-            this.value.atendido = true;
-        },
-    }
-}
+  props: ['value'],
+
+  methods: {
+    atenderOrden() {
+      this.value.atendido = true;
+    },
+  },
+};
 
 </script>
 
@@ -48,7 +48,7 @@ export default {
         transition-property: box-shadow;
         transition-duration: .7s;
       }
-      
+
       .order-box:hover{
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
       }
@@ -67,8 +67,8 @@ export default {
       }
 
       .row.order-body{
-        justify-content: space-between; 
-        margin: 15px 0; 
+        justify-content: space-between;
+        margin: 15px 0;
         font-size: 16px
       }
 

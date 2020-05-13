@@ -53,42 +53,42 @@ import TopBar from '@/components/TopBar.vue';
 import FormUserModel from '@/modules/restaurant/models/FormUserModel.js';
 
 export default {
-    name: 'formulario',
-    data() {
-        return {
-            formNombre: '',
-            formPassword: '',
+  name: 'formulario',
+  data() {
+    return {
+      formNombre: '',
+      formPassword: '',
+    };
+  },
+  components: {
+    SideMenu,
+    TopBar,
+  },
+  computed: {
+    isValid() { return (this.formNombre.trim() != '' && this.formPassword.trim() != ''); },
+  },
+  methods: {
+    agregarUsuario() {
+      if (this.isValid) {
+        console.log('platillo', this.formNombre, this.formPassword);
+        const params = {
+          model: '',
+          data: { Username: this.formNombre, formPassword: this.formPassword },
         };
+        const _this = this;
+        FormUserModel.save(params)
+          .then((response) => {
+            console.log(response);
+            location.reload();
+          })
+          .catch((error) => {
+            console.log(error);
+            alert(`No fue posible agregar el usuario \n${error}`);
+          });
+      } else {
+        alert('false');
+      }
     },
-    components:{
-        SideMenu,
-        TopBar,
-    },
-    computed: {
-        isValid(){return (this.formNombre.trim() != ''  && this.formPassword.trim() != '')},
-    },
-    methods: {
-        agregarUsuario(){
-            if(this.isValid){
-                console.log("platillo", this.formNombre, this.formPassword);
-                let params = {
-                    model: "",
-                    data:{ Username: this.formNombre, formPassword: this.formPassword}
-                };
-                let _this = this;
-                FormUserModel.save(params)
-                .then(function (response) {
-                    console.log(response);
-                    location.reload();
-                })
-                .catch(function (error) {
-                    console.log(error);
-                    alert('No fue posible agregar el usuario \n'+error);
-                });
-            }else{
-                alert('false');
-            }
-        }
-    },
-}
+  },
+};
 </script>

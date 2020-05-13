@@ -54,7 +54,7 @@
 
             </div>
           </div>
-					
+
 				</main>
 			</div>
 		</div>
@@ -71,39 +71,39 @@ import ResRepartidores from '@/modules/restaurant/models/ResRepartidores.js';
 export default {
   name: 'viewResRepartidores',
   data() {
-	this.loadItems();
+    this.loadItems();
     return {
-        title: "Repartidores",
-		debug: process.env.VUE_APP_DEV,
-		items: []
-      };
+      title: 'Repartidores',
+      debug: process.env.VUE_APP_DEV,
+      items: [],
+    };
   },
   components: {
 	  SideMenu,
 	  TopBar,
   },
   methods: {
-	loadItems(){
-		let _this = this;
-		ResRepartidores.list({}, function(res){
-			console.log(res);
-			_this.items = res.data.items;
-		});
-	},
-	create(){
-		this.$router.push({ name: 'ResRepartidoresCreate'});
-	},
-	edit(id){
-		this.$router.push({ name: 'ResRepartidoresEdit', params: { repartidorId: id } });
-	},
-	delet(id){
-		let _this = this;
-		ResRepartidores.delete(id, function(res){
-			alert('elemento borrado');
-			_this.loadItems();
-		});
-	}
-   
+    loadItems() {
+      const _this = this;
+      ResRepartidores.list({}, (res) => {
+        console.log(res);
+        _this.items = res.data.items;
+      });
+    },
+    create() {
+      this.$router.push({ name: 'ResRepartidoresCreate' });
+    },
+    edit(id) {
+      this.$router.push({ name: 'ResRepartidoresEdit', params: { repartidorId: id } });
+    },
+    delet(id) {
+      const _this = this;
+      ResRepartidores.delete(id, (res) => {
+        alert('elemento borrado');
+        _this.loadItems();
+      });
+    },
+
   },
 };
 </script>

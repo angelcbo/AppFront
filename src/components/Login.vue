@@ -20,14 +20,14 @@
 						<div class="form-group">
 							<label for="user">Usuario </label>
 							<input v-model="Username" type="text" class="form-control" id="user" placeholder="Usuario">
-							
+
 						</div>
 						<div class="form-group">
 							<label for="password">Contraseña</label>
 							<input v-model="Password" type="password" class="form-control" id="password" placeholder="Contraseña">
 						</div>
-						
-						
+
+
 						<button type="button" id="btnLogin" class="btn btn-primary btn-block" @click="login" >
 							<i class="batch-icon batch-icon-key"></i>
 							Ingresar
@@ -41,8 +41,8 @@
 							<i class="batch-icon batch-icon-key"></i>
 							showtoken
 						</button>
-						
-						
+
+
 					</form>
 				</div>
 			</div>
@@ -57,41 +57,42 @@
 
 <script>
 import MasterModel from '@/modules/core/MasterModel.js';
+
 export default {
-	data() {
-		let res = {
-			Sistema: 'Nombre Sistema',
-			Username: '',
-			Password: '',
-		};
-		if( MasterModel.isDev ){
-			res.Username = "root";
-			res.Password = "root";
-		}
-		return res;
-	},
+  data() {
+    const res = {
+      Sistema: 'Nombre Sistema',
+      Username: '',
+      Password: '',
+    };
+    if (MasterModel.isDev) {
+      res.Username = 'root';
+      res.Password = 'root';
+    }
+    return res;
+  },
   methods: {
-	showToken(){
-		// console.log('token ', MasterModel.getAuthToken())
-		console.log(this.$store.getters.isLoggedIn);
-		console.log(this.$store.getters.authStatus)
-	},
+    showToken() {
+      // console.log('token ', MasterModel.getAuthToken())
+      console.log(this.$store.getters.isLoggedIn);
+      console.log(this.$store.getters.authStatus);
+    },
     login() {
       const { Username } = this;
       const { Password } = this;
       this.$store.dispatch('login', { Username, Password })
         .then(
-			() => this.$router.push('/')
-			// () => console.log('loged', this.$store.getters.isLoggedIn )
-		).catch(err => console.log(err));
-	},
-	logout(){
-		this.$store.dispatch('logout')
+          () => this.$router.push('/'),
+          // () => console.log('loged', this.$store.getters.isLoggedIn )
+        ).catch(err => console.log(err));
+    },
+    logout() {
+      this.$store.dispatch('logout')
         .then(
-			() => this.$router.push('/')
-			// () => console.log('loged', this.$store.getters.isLoggedIn )
-		).catch(err => console.log(err));
-	}
+          () => this.$router.push('/'),
+          // () => console.log('loged', this.$store.getters.isLoggedIn )
+        ).catch(err => console.log(err));
+    },
   },
 };
 </script>

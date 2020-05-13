@@ -47,7 +47,7 @@
 
             </div>
           </div>
-					
+
 				</main>
 			</div>
 		</div>
@@ -63,26 +63,26 @@ import ResAlimentos from '@/modules/restaurant/models/ResAlimentos.js';
 
 export default {
   name: 'viewResAlimentosEdit',
-  props:[
-    'alimentoId'
+  props: [
+    'alimentoId',
   ],
   data() {
     // console.log("alimentoId ",this.alimentoId)
     return {
-        debug: process.env.VUE_APP_DEV,
-        item: ResAlimentos.init(this.alimentoId, this.loadItem),
-        isNew: this.alimentoId ? false : true
-      };
+      debug: process.env.VUE_APP_DEV,
+      item: ResAlimentos.init(this.alimentoId, this.loadItem),
+      isNew: !this.alimentoId,
+    };
   },
   components: {
 	  SideMenu,
 	  TopBar,
   },
   methods: {
-    loadItem(res){
+    loadItem(res) {
       this.item = res.data.item;
     },
-    randomFill(){
+    randomFill() {
       this.item = ResAlimentos.random();
     },
     save() {
@@ -90,7 +90,7 @@ export default {
       // NomEmpleadoM.testpost(this.empleado);
       ResAlimentos.save(this.item);
     },
-   
+
   },
 };
 </script>
