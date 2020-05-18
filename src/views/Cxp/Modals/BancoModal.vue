@@ -13,7 +13,12 @@
             </button>
         </div>
         <div class="modal-body">
-            <input type="text" class="cep form-control" placeholder="" v-model="filterValue" @keyup="searchInList" >
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar..." aria-describedby="basic-addon2" v-model="filterValue" @keyup="searchInList">
+              <div class="input-group-append">
+                <button class="btn btn-primary waves-effect waves-light" type="button" @click="searchInList" > Buscar </button>
+              </div>
+            </div>
             <ul class="list-group">
                 <li class="list-group-item" v-for="(rBanco, idx) in items" v-bind:value="rBanco.idBanco"  ><a @click="setItemVaule(idx)">
                     {{rBanco.nombreCorto}}
@@ -78,3 +83,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+    .modal ul li a{
+        cursor: pointer;
+    }
+</style>

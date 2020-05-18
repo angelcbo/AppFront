@@ -1,6 +1,6 @@
 import MasterModel from '@/modules/core/MasterModel.js';
 
-const model = 'CxpCtasBancoProveedor';
+const model = 'Cxp/Proveedor/Banco';
 
 export default {
   list(params, callback) {

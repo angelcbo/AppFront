@@ -6,6 +6,10 @@ export default {
   list(params, callback) {
     MasterModel.get(model, params, callback);
   },
+  listPage(page, params, callback) {
+    const sModel = model+"/"+page;
+    MasterModel.get(sModel, params, callback);
+  },
   save(data, callback) {
     MasterModel.post(model, data, callback);
   },
@@ -15,9 +19,9 @@ export default {
   loadAll() {
 
   },
-  init(Id, callback) {
-    if (Id) {
-      MasterModel.get(model, { id: Id }, callback);
+  init(id, callback) {
+    if (id) {
+      MasterModel.get(model, { idProveedorConfig: id }, callback);
     }
     return {
       idProveedorConfig: '',

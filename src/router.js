@@ -231,7 +231,7 @@ const router = new Router({
       component: CxpCtasBancosProveedoresList,
     },
     {
-      path: '/cxp/CtasBancosProveedor/:Id',
+      path: '/cxp/CtasBancosProveedor/:id',
       name: 'CtasBancosProveedoresEdit',
       component: CxpCtasBancosProveedoresEdit,
       props: true,

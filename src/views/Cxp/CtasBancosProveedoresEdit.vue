@@ -11,18 +11,22 @@
           </div>
           <div class="card">
             <div class="card-body">
-              <!-- <h3>Empleado - Eduardo Berumen</h3> -->
-
+                <div class="row" >
+                    <h3> Proveedor </h3>
+                      <p>
+                        <!-- Basic table layout with only <code>.table</code> class. -->
+                      </p>
+                </div>
                 <div class="row mb-3">
 
                   <div class="form-group col-md-6">
                     <label>Rfc</label>
-                    <input type="text" class="cep form-control" autocomplete="off" placeholder="AAAA000000AA0" v-model="item.rfc" @keyup="showProvModal" @click="showProvModal" @focus="showProvModal">
+                    <input type="text" :disabled="!isNew" class="cep form-control" autocomplete="off" placeholder="" v-model="item.rfc" @keyup="showProvModal" @click="showProvModal" @focus="showProvModal">
                   </div>
 
                   <div class="form-group col-md-6">
                     <label>Nombre del proveedor</label>
-                    <input type="text" class="cep form-control" autocomplete="off" placeholder="" v-model="item.nombre" @keyup="showProvModal" @click="showProvModal" @focus="showProvModal" >
+                    <input type="text" :disabled="!isNew" class="cep form-control" autocomplete="off" placeholder="" v-model="item.nombre" @keyup="showProvModal" @click="showProvModal" @focus="showProvModal" >
                   </div>
                   <proveedor-modal v-on:change="changeProveedor" ></proveedor-modal>
 
@@ -37,7 +41,7 @@
 
                   <div class="form-group col-md-4">
                     <label for="itemBanco"> Importe Máximo Pago </label>
-                    <input type="text" class="cep form-control" autocomplete="off" placeholder="0000000000000000" v-model="item.importeMaximoPago"/>
+                    <input type="text" class="maskClabe form-control" autocomplete="off" placeholder="######" v-model="item.importeMaximoPago"/>
                   </div>
 
 
@@ -74,7 +78,7 @@
         <tr>
           <td> <input v-model="nuBanco.nombreCorto" type="text" class="cep form-control" autocomplete="off" placeholder=""  @keyup="showBancoModal" @click="showBancoModal" @focus="showBancoModal" >
                 <banco-modal v-on:change="changeBanco" ></banco-modal> </td>
-          <td> <input type="text" class="cep form-control" autocomplete="off" placeholder="0000000000000000" v-model="nuBanco.clabe"/> </td>
+          <td> <input type="text" class="cep form-control" autocomplete="off" placeholder="##################" v-model="nuBanco.clabe"/> </td>
           <td>
 
             <div class="form-check">
@@ -92,9 +96,9 @@
           </td>
         </tr>
 
-        <tr v-for="rBanco in cuentasBanco" >
-          <td> {{rBanco.nombreCorto}} </td>
-          <td> {{rBanco.clabe}} </td>
+        <tr v-for="rBanco, rIdx in cuentasBanco" >
+          <td> <input disabled type="text" class=" form-control" autocomplete="off" v-model="rBanco.nombreCorto"/>  </td>
+          <td> <input type="text" class=" form-control" autocomplete="off" v-model="rBanco.clabe"/> </td>
           <td>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="true" id="itemEstaActiva" v-model="rBanco.estaActiva">
@@ -105,7 +109,7 @@
           </td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-primary waves-effect waves-light"  > Eliminar </button>
+              <button type="button" class="btn btn-primary waves-effect waves-light" @click="deleteRowItem(rIdx)" > Eliminar </button>
             </div>
           </td>
         </tr>
@@ -155,6 +159,7 @@ import CxpCtasBancoProveedor from '@/modules/cxp/models/CxpCtasBancoProveedorMod
 import CxpProveedoresConfig from '@/modules/cxp/models/CxpProveedoresConfigModel.js';
 
 import DatosFis from '@/modules/cxp/models/DatosFisModel.js';
+import VPersonaEmpresa from '@/modules/cxp/models/VPersonaEmpresaModel.js';
 import CxpBanco from '@/modules/cxp/models/CxpBancoModel.js';
 
 import DominioPeriodoPagoCxp from '@/modules/cxp/models/DominioPeriodoPagoCxPModel.js';
@@ -165,28 +170,33 @@ import DominioTipoPersonaFiscal from '@/modules/cxp/models/DominioTipoPersonaFis
 let lstDatosFis = [];
 let lstBancos = [];
 
+let debug = false;
+
 export default {
   name: 'viewBancosProveedoresList',
   props: [
     'id',
   ],
   mounted() {
-    this.loadLists();
-    jQuery('.cep').mask('00000-000');
-    // this.$Jquery('#itemBanco').selectpicker();
-    // console.log("alimentoId ",this.alimentoId)
-    if (process.env.VUE_APP_DEV) { // debug
-      DatosFis.list({}, (res) => {
-        lstDatosFis = res.data.items;
-      });
-      CxpBanco.list({}, (res) => {
-        lstBancos = res.data.items;
-      });
-    }
+      this.loadLists();
+      // jQuery('.maskClabe').mask('000000000000000000');
+      // this.$Jquery('#itemBanco').selectpicker();
+      // console.log("alimentoId ",this.alimentoId)
+      console.log( 'VUE_APP_DEV', process.env.VUE_APP_DEV  )
+      if (debug) { // debug
+        VPersonaEmpresa.listPageSize(1, 100,{}, (res) => {
+          lstDatosFis = res.data.items;
+        });
+        CxpBanco.list({}, (res) => {
+          lstBancos = res.data.items;
+        });
+      }
+    
   },
   data() {
     return {
-      debug: process.env.VUE_APP_DEV,
+      debug: debug,
+      deleted:[],
       item: CxpProveedoresConfig.init(this.id, this.loadItem),
       cuentasBanco: [],
       nuBanco: CxpCtasBancoProveedor.init(),
@@ -213,7 +223,7 @@ export default {
       },
       periodoMaximoPago: {
         required,
-      },
+      }
     },
     nuBanco: {
       idBanco: {
@@ -223,6 +233,16 @@ export default {
         required,
       },
     },
+      cuentasBanco: {
+          $each: {
+              idBanco: {
+                required,
+              },
+              clabe: {
+                required,
+              },
+          }
+      }
   },
   components: {
     AlertModal,
@@ -266,37 +286,64 @@ export default {
       BancoModal.methods.showModal();
     },
     changeProveedor(prov) {
-      this.item.rfc = prov.rfc.trim();
-      this.item.nombre = prov.nombre.trim();
+      this.item.rfc = prov.rfc;
+      this.item.nombre = prov.nombre;
       console.log('changeprov ', prov);
     },
     loadItem(res) {
-      this.item = res.data.item;
+      const t = this;
+      t.item = res.data.item;
+      CxpCtasBancoProveedor.list({rfc: t.item.rfc}, function(res){
+          t.cuentasBanco = res.data.items;
+      })
     },
     randomFill() {
       this.item = CxpProveedoresConfig.random(lstDatosFis, this.lstTipoPersonaFiscal, this.lstPeriodoPago);
       this.cuentasBanco = CxpCtasBancoProveedor.arrRandom(this.item.rfc, lstBancos);
     },
     save() {
-      console.log('save', this.item);
+      const t = this;
+      console.log('save', t.item);
       this.$v.$touch();
-      console.log('is invalid', this.$v.item.$invalid);
-      if (this.$v.item.$invalid) {
-        this.alertMsg="Formulario no válido";
-        this.alertTipo="alert-danger";
+      console.log('is invalid', t.$v.item.$invalid);
+      if (t.$v.item.$invalid) {
+        t.alertMsg="Formulario no válido";
+        t.alertTipo="alert-danger";
         AlertModal.methods.showModal();
       } else {
         // NomEmpleadoM.testpost(this.empleado);
-        const saveItem = Object.assign({}, this.item);
+        const saveItem = Object.assign({}, t.item);
         saveItem.periodoMaximoPago = saveItem.periodoMaximoPago.trim();
         saveItem.tipoPersonaFiscal = saveItem.tipoPersonaFiscal.trim();
-        saveItem.cuentasBanco = this.cuentasBanco;
-        CxpProveedoresConfig.save(saveItem);
-        this.alertMsg="Registro guardado";
-        this.alertTipo="alert-success";
-        AlertModal.methods.showModal();
+        saveItem.cuentasBanco = t.cuentasBanco;
+        if(!t.isNew)
+            saveItem.deleted = t.deleted;
+        CxpProveedoresConfig.save(saveItem, function(res){
+            if( res.data.success ){
+                t.alertMsg = "Registro guardado";
+                t.alertTipo = "alert-success";
+                AlertModal.methods.showModal();
+                if(t.isNew){
+                    t.item = CxpProveedoresConfig.init();
+                    t.cuentasBanco = [];
+                    t.nuBanco = CxpCtasBancoProveedor.init();
+                }
+            }else{
+                
+                t.alertMsg = "Ha ocurrido un error: "+res.data.msg;
+                t.alertTipo = "alert-danger";
+                AlertModal.methods.showModal();
+            }
+            
+        });
+        
       }
-    },
+    }, // save
+    deleteRowItem(rIdx) {
+        console.log('row index', rIdx);
+        this.deleted.push( this.cuentasBanco[rIdx].idCuentaBancaria );
+        this.cuentasBanco.splice(rIdx, 1);
+    }
 
   },
 };

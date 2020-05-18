@@ -12,7 +12,12 @@
             </button>
         </div>
         <div class="modal-body">
-            <input type="text" class="cep form-control" placeholder="" v-model="filterValue" @keyup="searchInList" >
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar..." aria-describedby="basic-addon2" v-model="filterValue" @keyup="searchInList">
+              <div class="input-group-append">
+                <button class="btn btn-primary waves-effect waves-light" type="button" @click="searchInList" > Buscar </button>
+              </div>
+            </div>
             <ul class="list-group">
                 <li class="list-group-item" v-for="(rProv, idx) in items" v-bind:value="rProv.rfc"  ><a @click="setItemVaule(idx)">
                     {{ rProv.rfc+' '+rProv.nombre}}
@@ -33,8 +38,8 @@
 
 
 <script>
-import DatosFis from '@/modules/cxp/models/DatosFisModel.js';
-
+// import DatosFis from '@/modules/cxp/models/DatosFisModel.js';
+import VPersonaEmpresa from '@/modules/cxp/models/VPersonaEmpresaModel.js';
 // import Faker from 'faker';
 
 export default {
@@ -55,7 +60,7 @@ export default {
   mounted() {
     console.log('mounted');
     const _this = this;
-    DatosFis.list({}, (res) => {
+    VPersonaEmpresa.list({}, (res) => {
       _this.items = res.data.items;
     });
   },
@@ -75,10 +80,16 @@ export default {
     },
     searchInList() {
       const _this = this;
-      DatosFis.list({ search: _this.filterValue }, (res) => {
+      VPersonaEmpresa.list({ search: _this.filterValue }, (res) => {
         _this.items = res.data.items;
       });
     }, // end searchInList
   },
 };
 </script>
+
+<style scoped>
+    .modal ul li a{
+        cursor: pointer;
+    }
+</style>
