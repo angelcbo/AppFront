@@ -25,16 +25,19 @@ import HistorialAPI from './views/HistorialApi.vue';
 import OrdenV2 from './views/OrdenV2.vue';
 
 // views Restaurant
-import ResAlimentosEdit from './views/Restaurant/AlimentosEdit';
-import ResAlimentosList from './views/Restaurant/AlimentosList';
-import ResClientesEdit from './views/Restaurant/ClientesEdit';
-import ResClientesList from './views/Restaurant/ClientesList';
-import ResDomiciliosEdit from './views/Restaurant/DomiciliosEdit';
-import ResDomiciliosList from './views/Restaurant/DomiciliosList';
-import ResOrdenesEdit from './views/Restaurant/OrdenesEdit';
-import ResOrdenesList from './views/Restaurant/OrdenesList';
-import ResRepartidoresEdit from './views/Restaurant/RepartidoresEdit';
-import ResRepartidoresList from './views/Restaurant/RepartidoresList';
+import ResAlimentosEdit from './views/Restaurant/AlimentosEdit'
+import ResAlimentosList from './views/Restaurant/AlimentosList'
+import ResClientesEdit from './views/Restaurant/ClientesEdit'
+import ResClientesList from './views/Restaurant/ClientesList'
+import ResDomiciliosEdit from './views/Restaurant/DomiciliosEdit'
+import ResDomiciliosList from './views/Restaurant/DomiciliosList'
+import ResOrdenesEdit from './views/Restaurant/OrdenesEdit'
+import ResOrdenesList from './views/Restaurant/OrdenesList'
+import ResRepartidoresEdit from './views/Restaurant/RepartidoresEdit'
+import ResRepartidoresList from './views/Restaurant/RepartidoresList'
+import ResInicio from './views/Restaurant/Inicio.vue';
+import ResDashOrdenes from './views/Restaurant/DashOrdenes.vue';
+import ResCuenta from './views/Restaurant/Cuenta.vue';
 
 // views Restaurant
 import CxpCtasBancosProveedoresEdit from './views/Cxp/CtasBancosProveedoresEdit';
@@ -151,6 +154,22 @@ const router = new Router({
       component: OrdenV2,
     },
     // Restaurant
+    {
+      name: 'ResInicio',
+      path:'/restaurant/inicio',
+      component:ResInicio,
+    },
+    {
+      name: 'ResDashboardOrdenes',
+      path:'/restaurant/dashboardordenes',
+      component:ResDashOrdenes,
+    },    
+    {
+      path: '/restaurant/cuenta/:orderId',
+      name: 'ResCuenta',
+      props: true,
+      component:ResCuenta,      
+    },
     {
       name: 'ResAlimentosEdit',
       path: '/restaurant/alimento/:alimentoId',

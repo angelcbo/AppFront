@@ -43,7 +43,7 @@
 
             </div>
           </div>
-
+					
 				</main>
 			</div>
 		</div>
@@ -61,18 +61,18 @@ export default {
   name: 'viewResDomiciliosEdit',
   data() {
     return {
-      debug: true,
-      empleado: NomEmpleadoM.init(),
-      telefono: '',
-      cuenta: '',
-    };
+        debug: true,
+        empleado: NomEmpleadoM.init(),
+        telefono: '',
+        cuenta: '',
+      };
   },
   components: {
 	  SideMenu,
 	  TopBar,
   },
   methods: {
-    randomFill() {
+    randomFill(){
       this.empleado = NomEmpleadoM.random();
     },
     save() {
@@ -80,7 +80,7 @@ export default {
       // NomEmpleadoM.testpost(this.empleado);
       NomEmpleadoM.test(this.empleado);
     },
-
+   
   },
 };
 </script>

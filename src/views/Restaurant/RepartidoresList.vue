@@ -1,63 +1,65 @@
 <template>
-<div class="row">
+	<div class="row">
 		<SideMenu/>
-			<div class="right-column">
-				<TopBar/>
-				<main class="main-content p-5" role="main">
-					<div class="row">
-            <div class="col-md-12">
-              <h1> {{title}} </h1>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <!-- <h3>Empleado - Eduardo Berumen</h3> -->
-
-              <div class="row">
-                <div class="col-md-12 pb-5">
-                  <!-- <p class="lead">
-                    A demo list of all the types of tables included in QuillPro - Whether it's <strong>Basic</strong>, <strong>Fully Responsive</strong> or <strong>Datatables</strong>.
-                  </p> -->
-				  <div class="col-md-2 ">
-				  	<button class="btn btn-primary waves-effect waves-light" @click="create" > Agregar </button>
-				  </div>
-                </div>
-				<div class="col-md-12 pb-5">
-					<!-- <h2>1. Basic Table</h2>
-					<p>
-						Basic table layout with only <code>.table</code> class.
-					</p> -->
-					<table class="table">
-						<thead>
-							<tr>
-								<th>#</th>
-								<th> Nombre </th>
-								<th> Opciones </th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr v-for="row in items" v-bind:key="row.repartidorId" >
-							<td>{{row.repartidorId}}</td>
-							<td>{{row.nombre}}</td>
-							<td>
-								<div class="btn-group" role="group" aria-label="Basic example">
-									<button type="button" class="btn btn-primary waves-effect waves-light" @click="edit(row.repartidorId)" >Editar</button>
-									<button type="button" class="btn btn-primary waves-effect waves-light" @click="delet(row.repartidorId)" >Eliminar</button>
-								</div>
-							</td>
-							</tr>
-						</tbody>
-					</table>
+		<div class="right-column">
+			<TopBar/>
+			<main class="main-content p-5" role="main">
+				<div class="row">
+					<div class="col-md-12">
+						<h1> {{title}} </h1>
+					</div>
 				</div>
-              </div>
-
-
-            </div>
-          </div>
-
-				</main>
-			</div>
+				<div class="card">
+					<div class="card-body">              										                 
+						<div class="col-md-12 pb-3">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<div class="input-group-text"><i class="fa fa-motorcycle" aria-hidden="true"></i></div>
+										</div>
+										<input type="text" class="form-control" placeholder="Buscar un repartidor...">
+									</div>																		
+								</div>
+								<div class="col-md-4 offset-md-4">	
+									<div class="float-right">									
+										<div class="btn-group">
+											<button type="button" class="btn btn-primary" style="height: 33.84px;" @click="create()">Agregar<i class="fa fa-plus" aria-hidden="true" style="margin-left: 5px"></i></button>
+											<button type="button" class="btn btn-primary">Actualizar<i class="fa fa-refresh" aria-hidden="true" style="margin-left: 5px"></i></button>
+											<button type="button" class="btn btn-primary"><i class="fa fa-sliders" aria-hidden="true"></i></button>										
+										</div>		
+									</div>								
+								</div>
+							</div>
+						</div>						
+						<div class="col-md-12">					
+							<table class="table">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th> Nombre </th>
+										<th> Opciones </th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr v-for="row in items" v-bind:key="row.repartidorId" >
+										<td>{{row.repartidorId}}</td>
+										<td>{{row.nombre}}</td>
+										<td>
+											<div class="btn-group" role="group" aria-label="Basic example">
+												<button type="button" class="btn btn-primary waves-effect waves-light" @click="edit(row.repartidorId)" >Editar</button>
+												<button type="button" class="btn btn-primary waves-effect waves-light" @click="delet(row.repartidorId)" >Eliminar</button>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</main>								
 		</div>
+	</div>
 </template>
 
 
@@ -71,39 +73,39 @@ import ResRepartidores from '@/modules/restaurant/models/ResRepartidores.js';
 export default {
   name: 'viewResRepartidores',
   data() {
-    this.loadItems();
+	this.loadItems();
     return {
-      title: 'Repartidores',
-      debug: process.env.VUE_APP_DEV,
-      items: [],
-    };
+        title: "Repartidores",
+		debug: process.env.VUE_APP_DEV,
+		items: []
+      };
   },
   components: {
 	  SideMenu,
 	  TopBar,
   },
   methods: {
-    loadItems() {
-      const _this = this;
-      ResRepartidores.list({}, (res) => {
-        console.log(res);
-        _this.items = res.data.items;
-      });
-    },
-    create() {
-      this.$router.push({ name: 'ResRepartidoresCreate' });
-    },
-    edit(id) {
-      this.$router.push({ name: 'ResRepartidoresEdit', params: { repartidorId: id } });
-    },
-    delet(id) {
-      const _this = this;
-      ResRepartidores.delete(id, (res) => {
-        alert('elemento borrado');
-        _this.loadItems();
-      });
-    },
-
+	loadItems(){
+		let _this = this;
+		ResRepartidores.list({}, function(res){
+			console.log(res);
+			_this.items = res.data.items;
+		});
+	},
+	create(){
+		this.$router.push({ name: 'ResRepartidoresCreate'});
+	},
+	edit(id){
+		this.$router.push({ name: 'ResRepartidoresEdit', params: { repartidorId: id } });
+	},
+	delet(id){
+		let _this = this;
+		ResRepartidores.delete(id, function(res){
+			alert('elemento borrado');
+			_this.loadItems();
+		});
+	}
+   
   },
 };
 </script>

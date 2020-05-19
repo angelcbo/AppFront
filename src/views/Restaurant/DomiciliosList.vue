@@ -82,7 +82,7 @@
 
             </div>
           </div>
-
+					
 				</main>
 			</div>
 		</div>
@@ -99,24 +99,24 @@ import NomEmpleadoM from '@/modules/nomina/models/NomEmpleadoModel.js';
 export default {
   name: 'viewResDomicilios',
   data() {
-    this.loadItems();
+	this.loadItems();
     return {
-      title: 'Domicilios',
-      debug: true,
-      empleado: NomEmpleadoM.init(),
-      telefono: '',
-      cuenta: '',
-    };
+        title: "Domicilios",
+        debug: true,
+        empleado: NomEmpleadoM.init(),
+        telefono: '',
+        cuenta: '',
+      };
   },
   components: {
 	  SideMenu,
 	  TopBar,
   },
   methods: {
-    loadItems() {
+	loadItems(){
 
-    },
-    randomFill() {
+	},
+    randomFill(){
       this.empleado = NomEmpleadoM.random();
     },
     save() {
@@ -124,7 +124,7 @@ export default {
       // NomEmpleadoM.testpost(this.empleado);
       NomEmpleadoM.test(this.empleado);
     },
-
+   
   },
 };
 </script>

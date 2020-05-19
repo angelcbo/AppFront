@@ -5,8 +5,11 @@
 				<TopBar/>
 				<main class="main-content p-5" role="main">
 					<div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" v-if="isNew">
               <h1>Nuevo Alimento</h1>
+            </div>
+            <div class="col-md-12" v-else>
+              <h1>Editar Alimento</h1>
             </div>
           </div>
           <div class="card">
@@ -29,12 +32,12 @@
                   <div class="form-group col-md-4">
                     <label> Descripcion </label>
                     <input type="text" class="form-control" placeholder=" Descripcion " v-model="item.descripcion">
-                  </div>
+                  </div>                
                 </div>
 
                 <div class="row mb-5">
 										<div class="col-md-12">
-											<button type="button" class="btn btn-primary" @click="save" >Guardar</button>
+											<button type="button" class="btn btn-primary" @click="save">Guardar</button>
 										</div>
 									</div>
 
@@ -47,7 +50,7 @@
 
             </div>
           </div>
-
+					
 				</main>
 			</div>
 		</div>
@@ -63,34 +66,56 @@ import ResAlimentos from '@/modules/restaurant/models/ResAlimentos.js';
 
 export default {
   name: 'viewResAlimentosEdit',
-  props: [
-    'alimentoId',
+  props:[
+    'alimentoId'
   ],
   data() {
     // console.log("alimentoId ",this.alimentoId)
     return {
-      debug: process.env.VUE_APP_DEV,
-      item: ResAlimentos.init(this.alimentoId, this.loadItem),
-      isNew: !this.alimentoId,
-    };
+        debug: process.env.VUE_APP_DEV,
+        item: ResAlimentos.init(this.alimentoId, this.loadItem),
+        isNew: this.alimentoId ? false : true
+      };
   },
   components: {
 	  SideMenu,
 	  TopBar,
   },
   methods: {
-    loadItem(res) {
+    loadItem(res){
       this.item = res.data.item;
     },
-    randomFill() {
+    randomFill(){
       this.item = ResAlimentos.random();
     },
     save() {
       console.log('save', this.item);
       // NomEmpleadoM.testpost(this.empleado);
-      ResAlimentos.save(this.item);
+      let _this = this;   
+      ResAlimentos.save(this.item, function(){
+        if(_this.isNew){
+          toastr.success("Se ha guardado el alimento", "Guardado");
+        }else{
+          toastr.success("Se han relizado los cambios", "Cambios realizados");
+        }
+      });
     },
-
+    mounted() {
+	    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "positionClass": "toast-bottom-right",
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
+    }
   },
 };
 </script>

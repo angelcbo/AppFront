@@ -110,32 +110,32 @@ export default {
       ],
     }; // end restaurant menu
 
-    const DevMenu = {
-      title: 'Tacos Heris',
-      logo: '/img/logo.png',
-      mainMenu: [
-        {
-          link: '/',
-          slug: 'inicio',
-          icono: 'batch-icon-home',
-        },
-        {
-          link: '/restaurant/alimentos',
-          slug: 'Alimentos',
-          icono: 'batch-icon-folder-add',
-        },
-        {
-          link: '/restaurant/ordenes',
-          slug: 'Ordenes',
-          icono: 'batch-icon-users',
-        },
-        {
-          link: '/restaurant/repartidores',
-          slug: 'Respartidores',
-          icono: 'batch-icon-users',
-        },
-      ],
-    }; // end dev menu
+    // const DevMenu = {
+    //   title: 'Tacos Heris',
+    //   logo: '/img/logo.png',
+    //   mainMenu: [
+    //     {
+    //       link: '/',
+    //       slug: 'inicio',
+    //       icono: 'batch-icon-home',
+    //     },
+    //     {
+    //       link: '/restaurant/alimentos',
+    //       slug: 'Alimentos',
+    //       icono: 'batch-icon-folder-add',
+    //     },
+    //     {
+    //       link: '/restaurant/ordenes',
+    //       slug: 'Ordenes',
+    //       icono: 'batch-icon-users',
+    //     },
+    //     {
+    //       link: '/restaurant/repartidores',
+    //       slug: 'Respartidores',
+    //       icono: 'batch-icon-users',
+    //     },
+    //   ],
+    // }; // end dev menu
 
     const Ipa = {
       title: 'Cuentas por pagar',
@@ -154,7 +154,44 @@ export default {
       ],
     }; // end dev menu
 
-    return Ipa;
+    let DevMenu = {
+      title: 'Tacos Heris',
+      logo: '/img/logo.png',
+      mainMenu: [
+        {
+          link: '/',
+          slug: 'Inicio',
+          icono: 'batch-icon-home',
+        },
+        {
+          link: '/restaurant/inicio',
+          slug: 'Estadisticas',
+          icono: 'batch-icon-tilde',
+        },
+        {
+          link: '/restaurant/alimentos',
+          slug: 'Alimentos',
+          icono: 'batch-icon-tag-alt-2',
+        },
+        {
+          link: '/restaurant/ordenes',
+          slug: 'Ordenes',
+          icono: 'batch-icon-notes',
+        },
+        {
+          link: '/restaurant/DashboardOrdenes',
+          slug: 'Pendientes',
+          icono: 'batch-icon-paper-roll',
+        },
+        {
+          link: '/restaurant/repartidores',
+          slug: 'Repartidores',
+          icono: 'batch-icon-users',
+        },
+      ],
+    }; // end dev menu
+
+    return DevMenu;
   },
 };
 </script>
