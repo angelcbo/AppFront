@@ -6,28 +6,17 @@
 				<main class="main-content p-5" role="main">
 					<div class="row">
 						<div class="col-md-12">
-							<h1>Starter Kit</h1>
+							<h1>Bienvenido</h1>
 						</div>
 					</div>
 					<div class="row mb-4">
 						<div class="col-md-12">
 							<div class="card">
-								<div class="card-header">What is this?</div>
+								<div class="card-header">Soporte</div>
 								<div class="card-body">
 									<p>
-										This is a blank Starter Kit for you to jump start your project.
+										¿Tienes dudas, sugerencias o algun problema? te atendemos en el numero 618 138 68 16
 									</p>
-									<p>
-										It contains QuillPro's basic layout so you can populate it with your awesomeness!
-									</p>
-									<h4>How do I use this Starter Kit?</h4>
-									<ol>
-										<li>Simple! Just open up your root folder and locate <code>starter-kit.html</code></li>
-										<li>Copy it into your project folder</li>
-										<li>Rename it from <code>starter-kit.html</code> to <code>index.html</code> <i>(or whatever extension you require for your project)</i></li>
-										<li>Open your favorite text editor and start building your awesome app!</li>
-										<li>That's it!</li>
-									</ol>
 								</div>
 							</div>
 						</div>

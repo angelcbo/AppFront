@@ -53,6 +53,7 @@
 										<div class="btn-group" role="group" aria-label="Basic example">
 											<button type="button" class="btn btn-primary waves-effect waves-light" @click="edit(row.ordenId)" >Editar</button>
 											<button type="button" class="btn btn-primary waves-effect waves-light" @click="delet(row.ordenId)" >Eliminar</button>
+											<button type="button" class="btn btn-primary waves-effect waves-light" @click="pagar(row.ordenId)" >Pagar</button>
 										</div>
 									</td>
 									</tr>
@@ -101,6 +102,9 @@ export default {
 	},
 	edit(id){
 		this.$router.push({ name: 'ResOrdenesEdit', params: { ordenId: id } });
+	},
+	pagar(id){
+		this.$router.push({ name: 'ResCheckout', params: { ordenId: id } });
 	},
 	delet(id){
 		let _this = this;

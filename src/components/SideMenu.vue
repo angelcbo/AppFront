@@ -9,8 +9,8 @@
 		<li>
 			<h6 class="nav-header">Modulos</h6>
 		</li>
-		<li class="nav-item" v-for="(item, key) in mainMenu" :key="item.id">
-			<a class="nav-link" :class="{ active: key == 0 }" :href="item.link">
+		<li class="nav-item" v-for="(item) in mainMenu" :key="item.id">
+			<a class="nav-link" :class="{ active: isPath(item) }" :href="item.link">
 				<i class="batch-icon" :class="item.icono"></i> {{item.slug}}
 			</a>
 		</li>
@@ -164,6 +164,16 @@ export default {
           icono: 'batch-icon-home',
         },
         {
+          link: '/restaurant/heris/orden',
+          slug: 'Nueva Orden',
+          icono: 'batch-icon-notes',
+        },
+        {
+          link: '/restaurant/heris/ordenes',
+          slug: 'Ordenes',
+          icono: 'batch-icon-notes',
+        },
+        {
           link: '/restaurant/inicio',
           slug: 'Estadisticas',
           icono: 'batch-icon-tilde',
@@ -173,16 +183,12 @@ export default {
           slug: 'Alimentos',
           icono: 'batch-icon-tag-alt-2',
         },
-        {
-          link: '/restaurant/ordenes',
-          slug: 'Ordenes',
-          icono: 'batch-icon-notes',
-        },
-        {
-          link: '/restaurant/DashboardOrdenes',
-          slug: 'Pendientes',
-          icono: 'batch-icon-paper-roll',
-        },
+
+        // {
+        //   link: '/restaurant/DashboardOrdenes',
+        //   slug: 'Pendientes',
+        //   icono: 'batch-icon-paper-roll',
+        // },
         {
           link: '/restaurant/repartidores',
           slug: 'Repartidores',
@@ -191,7 +197,31 @@ export default {
       ],
     }; // end dev menu
 
-    return DevMenu;
+
+    let WooMenu = {
+      title: 'Tacos Heris',
+      logo: '/img/logo.png',
+      mainMenu: [
+        {
+          link: '/',
+          slug: 'Inicio',
+          icono: 'batch-icon-home',
+        },
+        {
+          link: '/ordenes',
+          slug: 'Ordenes',
+          icono: 'batch-icon-notes',
+        },
+      ],
+    }; // end dev menu
+
+    return WooMenu;
   },
+  methods:{
+    isPath(item){
+      // console.log('ispath', item.link, this.$route);
+      return item.link == this.$route.path;
+    }
+  }
 };
 </script>

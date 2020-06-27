@@ -67,16 +67,24 @@ import TopBar from '@/components/TopBar.vue';
 import OrderBoxLocal from '@/components/OrderBoxLocal.vue';
 import OrderBoxEntrega from '@/components/OrderBoxEntrega.vue';
 
+
+import ResOrdenes from '@/modules/restaurant/models/ResOrdenes.js';
+
 export default {
   name: 'catalogos',
+  mounted() {
+      let _this = this;
+		ResOrdenes.listAbiertas({}, function(res){
+			console.log(res);
+            _this.items = res.data.items;
+            _this.loadOrdenesLocal();
+		});
+
+  },
   data() {
       return {
+          items: [],
           ordenesLocal:[
-              {
-                  mesa: 1,
-                  total: 3500,
-                  atendido: false,
-              },
           ],
           ordenesEntrega: [
               {
@@ -110,8 +118,19 @@ export default {
       }
   },
   methods:{
+      loadOrdenesLocal(){
+          let _this = this;
+          _this.ordenesLocal = [];
+          _this.items.forEach(item => {
+              if(true){
+                  _this.ordenesLocal.push({ ordenId: item.ordenId, mesa: item.mesa, total: item.total, atendido: false});
+              }
+          });
+
+      },
       agregarMesa(){
-          this.ordenesLocal.push({ mesa: Math.floor(Math.random()*100), total: 2500, atendido: false});
+        //   this.ordenesLocal.push({ mesa: Math.floor(Math.random()*100), total: 2500, atendido: false});
+        this.$router.push({ name: 'ResOrdenesCreate'});
       },
       agregarEntrega(){
           this.ordenesEntrega.push({ id: Math.floor(Math.random()*100), colonia: 'Centro', calle: '20 de Noviembre', total: 2500, atendido: false});

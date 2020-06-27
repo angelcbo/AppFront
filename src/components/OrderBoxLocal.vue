@@ -22,7 +22,8 @@ export default {
 
   methods: {
     atenderOrden() {
-      this.value.atendido = true;
+      // this.value.atendido = true;
+      this.$router.push({ name: 'ResCheckout', params: { ordenId: this.value.ordenId } });
     },
   },
 };

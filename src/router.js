@@ -32,16 +32,21 @@ import ResClientesList from './views/Restaurant/ClientesList'
 import ResDomiciliosEdit from './views/Restaurant/DomiciliosEdit'
 import ResDomiciliosList from './views/Restaurant/DomiciliosList'
 import ResOrdenesEdit from './views/Restaurant/OrdenesEdit'
+import ResHerisOrdenesEdit from './views/Restaurant/Heris/HerisOrdenesEdit'
 import ResOrdenesList from './views/Restaurant/OrdenesList'
 import ResRepartidoresEdit from './views/Restaurant/RepartidoresEdit'
 import ResRepartidoresList from './views/Restaurant/RepartidoresList'
 import ResInicio from './views/Restaurant/Inicio.vue';
-import ResDashOrdenes from './views/Restaurant/DashOrdenes.vue';
+import ResHerisOrdenesGrid from './views/Restaurant/OrdenesGrid.vue';
 import ResCuenta from './views/Restaurant/Cuenta.vue';
+import ResCheckout from  './views/Restaurant/Checkout.vue';
 
 // views Restaurant
 import CxpCtasBancosProveedoresEdit from './views/Cxp/CtasBancosProveedoresEdit';
 import CxpCtasBancosProveedoresList from './views/Cxp/CtasBancosProveedoresList';
+
+// views Woocommerce
+import WooOrdersList from './views/Woocommerce/OrdersList';
 
 Vue.use(Router);
 
@@ -114,11 +119,11 @@ const router = new Router({
       name: 'reportes',
       component: Reportes,
     },
-    {
-      path: '/ordenes',
-      name: 'ordenes',
-      component: Ordenes,
-    },
+    // {
+    //   path: '/ordenes',
+    //   name: 'ordenes',
+    //   component: Ordenes,
+    // },
     {
       path: '/formusuario',
       name: 'formusuario',
@@ -159,11 +164,7 @@ const router = new Router({
       path:'/restaurant/inicio',
       component:ResInicio,
     },
-    {
-      name: 'ResDashboardOrdenes',
-      path:'/restaurant/dashboardordenes',
-      component:ResDashOrdenes,
-    },    
+      
     {
       path: '/restaurant/cuenta/:orderId',
       name: 'ResCuenta',
@@ -218,9 +219,32 @@ const router = new Router({
       component: ResOrdenesEdit,
     },
     {
+      name: 'ResHerisOrdenesGrid',
+      path:'/restaurant/heris/ordenes',
+      component:ResHerisOrdenesGrid,
+    },  
+    {
+      path: '/restaurant/heris/orden/:ordenId',
+      name: 'ResHerisOrdenesEdit',
+      component: ResHerisOrdenesEdit,
+      props: true,
+    },
+    {
+      path: '/restaurant/heris/orden/',
+      name: 'ResHerisOrdenesCreate',
+      component: ResHerisOrdenesEdit,
+      props: true,
+    },
+    {
       path: '/restaurant/ordenes',
       name: 'ResOrdenesList',
       component: ResOrdenesList,
+    },
+    {
+      path: '/restaurant/checkout/:ordenId',
+      name: 'ResCheckout',
+      component: ResCheckout,
+      props: true
     },
     {
       path: '/restaurant/repartidor/:repartidorId',
@@ -254,6 +278,15 @@ const router = new Router({
       name: 'CtasBancosProveedoresEdit',
       component: CxpCtasBancosProveedoresEdit,
       props: true,
+    },
+
+    {
+      path: '/ordenes',
+      name: 'WooOrders',
+      component: WooOrdersList,
+      meta: {
+        requiresAuth: true,
+      },
     },
   ],
 });

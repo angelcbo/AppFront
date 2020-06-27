@@ -5,7 +5,8 @@ import axios from 'axios';
 Vue.use(Vuex);
 
 const API_URL = process.env.VUE_APP_API_URL;
-const API_AUTH_ROUTE = `${API_URL}/api/authenticate`;
+// const API_AUTH_ROUTE = `${API_URL}/api/authenticate`;
+const API_AUTH_ROUTE = `${API_URL}/auth`;
 
 function setUserMeta(data) {
   localStorage.setItem('username', data.username);
@@ -53,10 +54,11 @@ export default new Vuex.Store({
         commit('auth_request');
         axios({ url: API_AUTH_ROUTE, data: user, method: 'POST' })
           .then((resp) => {
-            // console.log('resp', resp);
+            console.log('resp', resp);
             const { token } = resp.data;
             setUserMeta(resp.data);
             const bToken = `Bearer ${token}`;
+            console.log('token', bToken)
             localStorage.setItem('token', bToken);
             axios.defaults.headers.common.Authorization = bToken;
             commit('auth_success', bToken, user);

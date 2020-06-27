@@ -92,7 +92,7 @@ export default {
   methods: {
 	loadItems(){
 		let _this = this;
-		ResAlimentos.list({}, function(res){
+		ResAlimentos.list(100, {}, function(res){
 			console.log(res);
 			_this.items = res.data.items;
 		});

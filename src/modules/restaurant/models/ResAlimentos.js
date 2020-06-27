@@ -6,6 +6,9 @@ export default {
   list(params, callback) {
     MasterModel.get(model, params, callback);
   },
+  list(limit, params, callback) {
+    MasterModel.get(model+"/1/"+limit, params, callback);
+  },
   save(data, callback) {
     MasterModel.post(model, data, callback);
   },

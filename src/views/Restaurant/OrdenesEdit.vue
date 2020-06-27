@@ -11,7 +11,6 @@
           </div>
           <div class="card">
             <div class="card-body">
-              <!-- <h3>Empleado - Eduardo Berumen</h3> -->
 
                 <div class="row mb-3">
                   <div class="form-group col-md-4">

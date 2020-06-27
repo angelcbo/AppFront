@@ -19,7 +19,7 @@
                 <div class="row mb-3">
                   <div class="form-group col-md-4">
                     <label>Nombre</label>
-                    <input type="text" class="form-control" placeholder="Nombre" v-model="item.nombre">
+                    <input type="text" class="form-control" placeholder="Nombre" v-model="item.nombre" @keyup="copyNameDesc">
                   </div>
                   <div class="form-group col-md-4">
                     <label>Precio</label>
@@ -27,7 +27,12 @@
                   </div>
                   <div class="form-group col-md-4">
                     <label> Categoria </label>
-                    <input type="text" class="form-control" placeholder=" Categoria " v-model="item.categoria">
+                    <!-- <input type="text" class="form-control" placeholder=" Categoria " v-model="item.categoria"> -->
+                    <select class="form-control" v-model="item.categoria" >
+                      <option v-for="(cat, idx) in categorias" v-bind:value="cat" v-bind:key="idx">
+                          {{cat}}
+                      </option>
+                    </select> 
                   </div>
                   <div class="form-group col-md-4">
                     <label> Descripcion </label>
@@ -62,6 +67,16 @@ import SideMenu from '@/components/SideMenu.vue';
 import TopBar from '@/components/TopBar.vue';
 import ResAlimentos from '@/modules/restaurant/models/ResAlimentos.js';
 
+const categorias = [
+  'tacos',
+  'burritos',
+  'bebidas',
+  'cebollitas',
+  'especiales',
+  'otros',
+  'servicios'
+]
+
 // import Faker from 'faker';
 
 export default {
@@ -73,6 +88,7 @@ export default {
     // console.log("alimentoId ",this.alimentoId)
     return {
         debug: process.env.VUE_APP_DEV,
+        categorias: categorias,
         item: ResAlimentos.init(this.alimentoId, this.loadItem),
         isNew: this.alimentoId ? false : true
       };
@@ -87,6 +103,9 @@ export default {
     },
     randomFill(){
       this.item = ResAlimentos.random();
+    },
+    copyNameDesc(){
+      this.item.descripcion = this.item.nombre;
     },
     save() {
       console.log('save', this.item);

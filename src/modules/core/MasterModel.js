@@ -10,6 +10,16 @@ const APP_DEV = process.env.VUE_APP_DEV == 'true';
 
 console.log('APP_DEV', APP_DEV);
 
+function formatUrl(model){
+    var resUrl = ''
+    if (typeof model == "string")
+        resUrl = `${baseURI}/api/${model}`;
+    else if( typeof model == "object" )
+        resUrl = `${baseURI}/api/`+model.join("/");
+
+    return resUrl;
+}
+
 function catchError(error) {
   if (error.response) {
     // The request was made and the server responded with a status code
@@ -55,13 +65,16 @@ export default {
   },
   get(model, params, callback) {
     const _this = this;
-    return Axios.get(`${baseURI}/api/${model}`, { params })
+    const getUrl = formatUrl(model);
+    
+    return Axios.get(getUrl, { params })
       .then(callback)
       .catch(catchError);
   },
   post(model, data, callback) {
     const _this = this;
-    return Axios.post(`${baseURI}/api/${model}`, data)
+    const postUrl = formatUrl(model);
+    return Axios.post(postUrl, data)
       .then(callback)
       .catch(catchError);
   },

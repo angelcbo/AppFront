@@ -6,8 +6,14 @@ export default {
   list(params, callback) {
     MasterModel.get(model, params, callback);
   },
+  listAbiertas(params, callback) {
+    MasterModel.get(model+'/abiertas', params, callback);
+  },
   save(params, callback) {
     MasterModel.post(model, params, callback);
+  },
+  pagar(params, callback) {
+    MasterModel.post(model+'/pagar', params, callback);
   },
   delete(ordenId, callback) {
     MasterModel.delete(model, ordenId, callback);
