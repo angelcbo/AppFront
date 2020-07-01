@@ -58,6 +58,41 @@
     </div>
 </div>
 
+<br>
+<div v-show="isNew == false " class ="row">
+    <div class="col-lg-12 pb-5">
+        <h2> Pedido </h2>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Alimento </th>
+                        <th> Cantidad </th>
+                        <th> Opciones </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(trow, idx) in item.resPlatos" v-bind:key="idx" >
+                        <th scope="row">
+                            {{idx}}
+                        </th>
+                        <td>
+                            {{trow.alimento.nombre}}
+                        </td>
+                        <td>
+                           {{trow.cantidad}}
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-lg waves-effect waves-light" @click="removeTacosRow(idx)" > Eliminar </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
 <br>
 <div class ="row">
@@ -280,6 +315,7 @@
             </div>
         </main>
         </div>
+        <alert-modal v-bind:msg="alertMsg" v-bind:tipo="alertTipo"></alert-modal>
     </div> <!--end row -->
 </template>
 
@@ -290,6 +326,7 @@ import TopBar from '@/components/TopBar.vue';
 import ResOrdenes from '@/modules/restaurant/models/ResOrdenes.js';
 import ResPlatos from '@/modules/restaurant/models/ResPlatos.js';
 import ResAlimentos from '@/modules/restaurant/models/ResAlimentos.js';
+import AlertModal from '@/components/AlertModal.vue'; 
 // import Faker from 'faker';
 
 const tacosIds = {
@@ -312,12 +349,16 @@ export default {
             console.log('resalimentos', res);
             _this.lAlimentos = res.data.items;
         });
+        if(this.ordenId){
+            this.title+=" #"+this.ordenId;
+
+        }
   },
   data() {
     return {
         title: 'Orden',
         debug: process.env.VUE_APP_DEV,
-        isNew: this.alimentoId ? false : true,
+        isNew: this.ordenId ? false : true,
         orden:{
             consumo: 'sucursal',
             mesa:0,
@@ -331,16 +372,19 @@ export default {
             asada:{sq:'', cq:''},
             pastor:{sq:'', cq:''},
             molleja:{sq:'', cq:''}
-        },
-        
+        },      
         item: ResOrdenes.init(this.ordenId, this.loadItem),
         lAlimentos: [],
-        iPlato: ResPlatos.init()
+        iPlato: ResPlatos.init(),
+
+        alertMsg: 'error en algo',
+      alertTipo: 'alert-warning',
       };
   },
   components: {
 	  SideMenu,
-	  TopBar,
+      TopBar,
+      AlertModal
   },
   methods: {
     addTacosRow(){
@@ -357,8 +401,19 @@ export default {
         this.orden.tacos.splice(idx,1);
     },
     loadItem(res){
-      this.item = res.data.item;
-      this.iPlato.ordenId = this.item.ordenId;
+        // if(false){
+        if( res.data.item.status == 'abierta' ){
+            this.item = res.data.item;
+            console.log('load item ', this.item);
+            this.iPlato.ordenId = this.item.ordenId;
+            this.orden.consumo = this.item.consumo;
+            this.orden.mesa = this.item.mesa;
+        }else{
+            this.alertMsg="La orden no se encuentra abierta";
+            this.alertTipo="alert-danger";
+            AlertModal.methods.showModal();
+        }
+      
     },
     randomFill(){
       this.item = ResOrdenes.random();

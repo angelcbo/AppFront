@@ -7,6 +7,9 @@
             <div class="row order-body" style = "">
                 Total: <span>${{value.total}}</span>
             </div>
+            <div class="row mb-5" style = "justify-content: center">
+                <button class="btn btn-primary agregar" style = "max-width: 100%; flex-basis: 150px" type = "button" @click="agregarConsumo">Agregar consumo</button>
+            </div>
             <div class="row" style = "justify-content: center">
                 <button class="btn btn-primary agregar" style = "max-width: 100%; flex-basis: 150px" type = "button" @click="atenderOrden">Cobrar la Cuenta</button>
             </div>
@@ -25,6 +28,9 @@ export default {
       // this.value.atendido = true;
       this.$router.push({ name: 'ResCheckout', params: { ordenId: this.value.ordenId } });
     },
+    agregarConsumo(){
+      this.$router.push({ name: 'ResHerisOrdenesEdit', params: { ordenId: this.value.ordenId } });
+    }
   },
 };
 

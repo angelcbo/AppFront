@@ -110,33 +110,6 @@ export default {
       ],
     }; // end restaurant menu
 
-    // const DevMenu = {
-    //   title: 'Tacos Heris',
-    //   logo: '/img/logo.png',
-    //   mainMenu: [
-    //     {
-    //       link: '/',
-    //       slug: 'inicio',
-    //       icono: 'batch-icon-home',
-    //     },
-    //     {
-    //       link: '/restaurant/alimentos',
-    //       slug: 'Alimentos',
-    //       icono: 'batch-icon-folder-add',
-    //     },
-    //     {
-    //       link: '/restaurant/ordenes',
-    //       slug: 'Ordenes',
-    //       icono: 'batch-icon-users',
-    //     },
-    //     {
-    //       link: '/restaurant/repartidores',
-    //       slug: 'Respartidores',
-    //       icono: 'batch-icon-users',
-    //     },
-    //   ],
-    // }; // end dev menu
-
     const Ipa = {
       title: 'Cuentas por pagar',
       logo: '/img/logo.png',
@@ -215,7 +188,7 @@ export default {
       ],
     }; // end dev menu
 
-    return WooMenu;
+    return DevMenu;
   },
   methods:{
     isPath(item){
