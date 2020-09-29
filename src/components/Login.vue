@@ -1,6 +1,6 @@
 <template>
 
-	<div class="row">
+	<div class="row align-items">
 		<div class="right-column sisu">
 			<div class="row mx-0">
 				<div class="col-md-7 order-md-2 signin-right-column px-5 bg-dark">
