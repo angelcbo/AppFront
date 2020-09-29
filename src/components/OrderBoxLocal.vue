@@ -7,6 +7,9 @@
             <div class="row order-body" style = "">
                 Total: <span>${{value.total}}</span>
             </div>
+            <div class="row mb-5" style = "justify-content: center">
+                <button class="btn btn-primary agregar" style = "max-width: 100%; flex-basis: 150px" type = "button" @click="agregarConsumo">Agregar consumo</button>
+            </div>
             <div class="row" style = "justify-content: center">
                 <button class="btn btn-primary agregar" style = "max-width: 100%; flex-basis: 150px" type = "button" @click="atenderOrden">Cobrar la Cuenta</button>
             </div>
@@ -18,14 +21,18 @@
 
 export default {
 
-    props:['value'],
-    
-    methods: {
-        atenderOrden(){
-            this.value.atendido = true;
-        },
+  props: ['value'],
+
+  methods: {
+    atenderOrden() {
+      // this.value.atendido = true;
+      this.$router.push({ name: 'ResCheckout', params: { ordenId: this.value.ordenId } });
+    },
+    agregarConsumo(){
+      this.$router.push({ name: 'ResHerisOrdenesEdit', params: { ordenId: this.value.ordenId } });
     }
-}
+  },
+};
 
 </script>
 
@@ -45,7 +52,7 @@ export default {
         transition-property: box-shadow;
         transition-duration: .7s;
       }
-      
+
       .btn.btn-primary.agregar{
         height: 34px;
         width: 25%;
@@ -64,8 +71,8 @@ export default {
       }
 
       .row.order-body{
-        justify-content: space-between; 
-        margin: 15px 0; 
+        justify-content: space-between;
+        margin: 15px 0;
         font-size: 16px
       }
 

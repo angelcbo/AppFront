@@ -70,12 +70,12 @@ export default {
   },
   methods: {},
   mounted() {
-        let _this = this;
-        // console.log('mounted');
-        FormUserModel.loadAll(function (response) {
-            console.log(response);
-            _this.empleados = response.data;
-        });
+    const _this = this;
+    // console.log('mounted');
+    FormUserModel.loadAll((response) => {
+      console.log(response);
+      _this.empleados = response.data;
+    });
   },
 };
 </script>

@@ -5,8 +5,11 @@
 				<TopBar/>
 				<main class="main-content p-5" role="main">
 					<div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" v-if="isNew">
               <h1>Nuevo Alimento</h1>
+            </div>
+            <div class="col-md-12" v-else>
+              <h1>Editar Alimento</h1>
             </div>
           </div>
           <div class="card">
@@ -16,7 +19,7 @@
                 <div class="row mb-3">
                   <div class="form-group col-md-4">
                     <label>Nombre</label>
-                    <input type="text" class="form-control" placeholder="Nombre" v-model="item.nombre">
+                    <input type="text" class="form-control" placeholder="Nombre" v-model="item.nombre" @keyup="copyNameDesc">
                   </div>
                   <div class="form-group col-md-4">
                     <label>Precio</label>
@@ -24,17 +27,22 @@
                   </div>
                   <div class="form-group col-md-4">
                     <label> Categoria </label>
-                    <input type="text" class="form-control" placeholder=" Categoria " v-model="item.categoria">
+                    <!-- <input type="text" class="form-control" placeholder=" Categoria " v-model="item.categoria"> -->
+                    <select class="form-control" v-model="item.categoria" >
+                      <option v-for="(cat, idx) in categorias" v-bind:value="cat" v-bind:key="idx">
+                          {{cat}}
+                      </option>
+                    </select> 
                   </div>
                   <div class="form-group col-md-4">
                     <label> Descripcion </label>
                     <input type="text" class="form-control" placeholder=" Descripcion " v-model="item.descripcion">
-                  </div>
+                  </div>                
                 </div>
 
                 <div class="row mb-5">
 										<div class="col-md-12">
-											<button type="button" class="btn btn-primary" @click="save" >Guardar</button>
+											<button type="button" class="btn btn-primary" @click="save">Guardar</button>
 										</div>
 									</div>
 
@@ -59,6 +67,16 @@ import SideMenu from '@/components/SideMenu.vue';
 import TopBar from '@/components/TopBar.vue';
 import ResAlimentos from '@/modules/restaurant/models/ResAlimentos.js';
 
+const categorias = [
+  'tacos',
+  'burritos',
+  'bebidas',
+  'cebollitas',
+  'especiales',
+  'otros',
+  'servicios'
+]
+
 // import Faker from 'faker';
 
 export default {
@@ -70,6 +88,7 @@ export default {
     // console.log("alimentoId ",this.alimentoId)
     return {
         debug: process.env.VUE_APP_DEV,
+        categorias: categorias,
         item: ResAlimentos.init(this.alimentoId, this.loadItem),
         isNew: this.alimentoId ? false : true
       };
@@ -85,12 +104,37 @@ export default {
     randomFill(){
       this.item = ResAlimentos.random();
     },
+    copyNameDesc(){
+      this.item.descripcion = this.item.nombre;
+    },
     save() {
       console.log('save', this.item);
       // NomEmpleadoM.testpost(this.empleado);
-      ResAlimentos.save(this.item);
+      let _this = this;   
+      ResAlimentos.save(this.item, function(){
+        if(_this.isNew){
+          toastr.success("Se ha guardado el alimento", "Guardado");
+        }else{
+          toastr.success("Se han relizado los cambios", "Cambios realizados");
+        }
+      });
     },
-   
+    mounted() {
+	    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "positionClass": "toast-bottom-right",
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
+    }
   },
 };
 </script>

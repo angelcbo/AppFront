@@ -32,9 +32,21 @@ import ResClientesList from './views/Restaurant/ClientesList'
 import ResDomiciliosEdit from './views/Restaurant/DomiciliosEdit'
 import ResDomiciliosList from './views/Restaurant/DomiciliosList'
 import ResOrdenesEdit from './views/Restaurant/OrdenesEdit'
+import ResHerisOrdenesEdit from './views/Restaurant/Heris/HerisOrdenesEdit'
 import ResOrdenesList from './views/Restaurant/OrdenesList'
 import ResRepartidoresEdit from './views/Restaurant/RepartidoresEdit'
 import ResRepartidoresList from './views/Restaurant/RepartidoresList'
+import ResInicio from './views/Restaurant/Inicio.vue';
+import ResHerisOrdenesGrid from './views/Restaurant/OrdenesGrid.vue';
+import ResCuenta from './views/Restaurant/Cuenta.vue';
+import ResCheckout from  './views/Restaurant/Checkout.vue';
+
+// views Restaurant
+import CxpCtasBancosProveedoresEdit from './views/Cxp/CtasBancosProveedoresEdit';
+import CxpCtasBancosProveedoresList from './views/Cxp/CtasBancosProveedoresList';
+
+// views Woocommerce
+import WooOrdersList from './views/Woocommerce/OrdersList';
 
 Vue.use(Router);
 
@@ -107,11 +119,11 @@ const router = new Router({
       name: 'reportes',
       component: Reportes,
     },
-    {
-      path: '/ordenes',
-      name: 'ordenes',
-      component: Ordenes,
-    },
+    // {
+    //   path: '/ordenes',
+    //   name: 'ordenes',
+    //   component: Ordenes,
+    // },
     {
       path: '/formusuario',
       name: 'formusuario',
@@ -136,84 +148,145 @@ const router = new Router({
       path: '/RestaurantOrden2',
       name: 'Restaurant_Orden2',
       component: RO2,
-    },{
-      path:'/HistorialApi',
+    }, {
+      path: '/HistorialApi',
       name: 'HistorialApi',
       component: HistorialAPI,
     },
     {
-      path:'/Ordenv2',
-      name:'Orden2',
-      component:OrdenV2,
+      path: '/Ordenv2',
+      name: 'Orden2',
+      component: OrdenV2,
     },
     // Restaurant
     {
-      name: 'ResAlimentosEdit',
-      path:'/restaurant/alimento/:alimentoId',
+      name: 'ResInicio',
+      path:'/restaurant/inicio',
+      component:ResInicio,
+    },
+      
+    {
+      path: '/restaurant/cuenta/:orderId',
+      name: 'ResCuenta',
       props: true,
-      component:ResAlimentosEdit,
+      component:ResCuenta,      
+    },
+    {
+      name: 'ResAlimentosEdit',
+      path: '/restaurant/alimento/:alimentoId',
+      props: true,
+      component: ResAlimentosEdit,
     },
     {
       name: 'ResAlimentosCreate',
-      path:'/restaurant/alimento',
-      component:ResAlimentosEdit,
+      path: '/restaurant/alimento',
+      component: ResAlimentosEdit,
     },
     {
-      path:'/restaurant/alimentos',
-      name:'ResAlimentosList',
-      component:ResAlimentosList,
+      path: '/restaurant/alimentos',
+      name: 'ResAlimentosList',
+      component: ResAlimentosList,
     },
     {
-      path:'/restaurant/cliente',
-      name:'ResClientesEdit',
-      component:ResClientesEdit,
+      path: '/restaurant/cliente',
+      name: 'ResClientesEdit',
+      component: ResClientesEdit,
     },
     {
-      path:'/restaurant/clientes',
-      name:'ResClientesList',
-      component:ResClientesList,
+      path: '/restaurant/clientes',
+      name: 'ResClientesList',
+      component: ResClientesList,
     },
     {
-      path:'/restaurant/domicilios',
-      name:'ResDomiciliosEdit',
-      component:ResDomiciliosEdit,
+      path: '/restaurant/domicilios',
+      name: 'ResDomiciliosEdit',
+      component: ResDomiciliosEdit,
     },
     {
-      path:'/restaurant/domicilios',
-      name:'ResDomiciliosList',
-      component:ResDomiciliosList,
+      path: '/restaurant/domicilios',
+      name: 'ResDomiciliosList',
+      component: ResDomiciliosList,
     },
     {
-      path:'/restaurant/orden/:ordenId',
-      name:'ResOrdenesEdit',
-      component:ResOrdenesEdit,
+      path: '/restaurant/orden/:ordenId',
+      name: 'ResOrdenesEdit',
+      component: ResOrdenesEdit,
+      props: true,
+    },
+    {
+      path: '/restaurant/orden/',
+      name: 'ResOrdenesCreate',
+      component: ResOrdenesEdit,
+    },
+    {
+      name: 'ResHerisOrdenesGrid',
+      path:'/restaurant/heris/ordenes',
+      component:ResHerisOrdenesGrid,
+    },  
+    {
+      path: '/restaurant/heris/orden/:ordenId',
+      name: 'ResHerisOrdenesEdit',
+      component: ResHerisOrdenesEdit,
+      props: true,
+    },
+    {
+      path: '/restaurant/heris/orden/',
+      name: 'ResHerisOrdenesCreate',
+      component: ResHerisOrdenesEdit,
+      props: true,
+    },
+    {
+      path: '/restaurant/ordenes',
+      name: 'ResOrdenesList',
+      component: ResOrdenesList,
+    },
+    {
+      path: '/restaurant/checkout/:ordenId',
+      name: 'ResCheckout',
+      component: ResCheckout,
       props: true
     },
     {
-      path:'/restaurant/orden/',
-      name:'ResOrdenesCreate',
-      component:ResOrdenesEdit,
+      path: '/restaurant/repartidor/:repartidorId',
+      name: 'ResRepartidoresEdit',
+      component: ResRepartidoresEdit,
+      props: true,
     },
     {
-      path:'/restaurant/ordenes',
-      name:'ResOrdenesList',
-      component:ResOrdenesList,
+      path: '/restaurant/repartidor',
+      name: 'ResRepartidoresCreate',
+      component: ResRepartidoresEdit,
     },
     {
-      path:'/restaurant/repartidor/:repartidorId',
-      name:'ResRepartidoresEdit',
-      component:ResRepartidoresEdit,
-      props: true
+      path: '/restaurant/repartidores',
+      name: 'ResRepartidoresList',
+      component: ResRepartidoresList,
+    },
+
+    {
+      path: '/cxp/CtasBancosProveedor/',
+      name: 'CtasBancosProveedoresCreate',
+      component: CxpCtasBancosProveedoresEdit,
     },
     {
-      path:'/restaurant/repartidor',
-      name:'ResRepartidoresCreate',
-      component:ResRepartidoresEdit,
+      path: '/cxp/CtasBancosProveedores',
+      name: 'CtasBancosProveedoresList',
+      component: CxpCtasBancosProveedoresList,
     },
     {
-      path:'/restaurant/repartidores',
-      name:'ResRepartidoresList',
-      component:ResRepartidoresList,
+      path: '/cxp/CtasBancosProveedor/:id',
+      name: 'CtasBancosProveedoresEdit',
+      component: CxpCtasBancosProveedoresEdit,
+      props: true,
+    },
+
+    {
+      path: '/ordenes',
+      name: 'WooOrders',
+      component: WooOrdersList,
+      meta: {
+        requiresAuth: true,
+      },
     },
   ],
 });

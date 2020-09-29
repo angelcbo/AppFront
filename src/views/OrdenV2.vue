@@ -253,115 +253,116 @@
 </template>
 
 <script>
-import SideMenu from "@/components/SideMenu.vue";
-import TopBar from "@/components/TopBar.vue";
+import SideMenu from '@/components/SideMenu.vue';
+import TopBar from '@/components/TopBar.vue';
+
 export default {
-  name: "Orden2",
+  name: 'Orden2',
   data() {
     return {
-      message:"Haz click para abrir un submenu",
+      message: 'Haz click para abrir un submenu',
       OpcionMenu: 0,
-      OpcionTitulo: ["Menu", "Tacos", "Burritos", "Bebidas", "Otras"],
-      id: "1",
+      OpcionTitulo: ['Menu', 'Tacos', 'Burritos', 'Bebidas', 'Otras'],
+      id: '1',
       mesa: 4,
-      mesero: "David",
+      mesero: 'David',
       pedido: [
         {
           Cantidad: 4,
-          Descripcion: "Taco Asada",
-          Total: 45
+          Descripcion: 'Taco Asada',
+          Total: 45,
         },
         {
           Cantidad: 8,
-          Descripcion: "Taco Pastor",
-          Total: 45
-        }
+          Descripcion: 'Taco Pastor',
+          Total: 45,
+        },
       ],
       Tacos: [
         {
-          nombre: "Taco Asada",
+          nombre: 'Taco Asada',
           agregar: 0,
           cantidad: 1,
-          precio: 15
+          precio: 15,
         },
         {
-          nombre: "Taco Pastor",
+          nombre: 'Taco Pastor',
           agregar: 0,
           cantidad: 1,
-          precio: 15
+          precio: 15,
         },
         {
-          nombre: "Taco Molleja",
+          nombre: 'Taco Molleja',
           agregar: 0,
           cantidad: 1,
-          precio: 16
-        }
+          precio: 16,
+        },
       ],
       Burritos: [],
       Bebidas: [
         {
-          nombre: "Coca Cola",
+          nombre: 'Coca Cola',
           agregar: 0,
           cantidad: 1,
-          precio: 18
+          precio: 18,
         },
         {
-          nombre: "Fanta de Naranja",
+          nombre: 'Fanta de Naranja',
           agregar: 0,
           cantidad: 1,
-          precio: 15
+          precio: 15,
         },
         {
-          nombre: "Fanta de Naranja",
+          nombre: 'Fanta de Naranja',
           agregar: 0,
           cantidad: 1,
-          precio: 15
+          precio: 15,
         },
         {
-          nombre: "Fanta de Naranja",
+          nombre: 'Fanta de Naranja',
           agregar: 0,
           cantidad: 1,
-          precio: 15
+          precio: 15,
         },
         {
-          nombre: "Fanta de Naranja",
+          nombre: 'Fanta de Naranja',
           agregar: 0,
           cantidad: 1,
-          precio: 15
+          precio: 15,
         },
         {
-          nombre: "Fanta de Naranja",
+          nombre: 'Fanta de Naranja',
           agregar: 0,
           cantidad: 1,
-          precio: 15
+          precio: 15,
         },
         {
-          nombre: "Fanta de Naranja",
+          nombre: 'Fanta de Naranja',
           agregar: 0,
           cantidad: 1,
-          precio: 15
+          precio: 15,
         },
         {
-          nombre: "Fanta de Naranja",
+          nombre: 'Fanta de Naranja',
           agregar: 0,
           cantidad: 1,
-          precio: 15
+          precio: 15,
         },
         {
-          nombre: "Fanta de Naranja",
+          nombre: 'Fanta de Naranja',
           agregar: 0,
           cantidad: 1,
-          precio: 15
-        }
+          precio: 15,
+        },
       ],
       Otras: [],
-      isPressed: false
+      isPressed: false,
     };
   },
   mounted() {},
   components: {
     SideMenu,
-    TopBar
+    TopBar,
   },
   methods: {
     actualizarMenu(op) {
@@ -372,10 +373,10 @@ export default {
       const MENU_WRAPPER = document.getElementById(position);
       if (array[position].agregar === 0) {
         array[position].agregar = 1;
-        MENU_WRAPPER.classList.add("menu-wrapper-agregar");
+        MENU_WRAPPER.classList.add('menu-wrapper-agregar');
       } else {
         array[position].agregar = 0;
-        MENU_WRAPPER.classList.remove("menu-wrapper-agregar");
+        MENU_WRAPPER.classList.remove('menu-wrapper-agregar');
       }
       event.preventDefault();
     },
@@ -385,7 +386,7 @@ export default {
       event.preventDefault();
     },
     quitarAgregar(array) {
-      array.forEach(element => {
+      array.forEach((element) => {
         element.agregar = 0;
         element.cantidad = 1;
       });
@@ -395,7 +396,7 @@ export default {
     },
     sumarCantidadPresionado(array) {
       if (!this.isPressed) {
-        this.isPressed = setInterval(() => array.cantidad++, 120); //array.cantidad+=1;
+        this.isPressed = setInterval(() => array.cantidad++, 120); // array.cantidad+=1;
       }
     },
     detenerSumar() {
@@ -410,7 +411,7 @@ export default {
     restarCantidadPresionado(array) {
       if (!(array.cantidad === 1)) {
         if (!this.isPressed) {
-          this.isPressed = setInterval(() => (array.cantidad -= 1), 120); //array.cantidad+=1;
+          this.isPressed = setInterval(() => (array.cantidad -= 1), 120); // array.cantidad+=1;
         }
       }
     },
@@ -423,12 +424,12 @@ export default {
       this.pedido.push({
         Cantidad: array.cantidad,
         Descripcion: array.nombre,
-        Total: array.cantidad * array.precio
+        Total: array.cantidad * array.precio,
       });
       // array.agregar = 0;
       array.cantidad = 1;
-    }
-  }
+    },
+  },
 };
 </script>
 

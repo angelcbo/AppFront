@@ -1,6 +1,5 @@
 
 
-
 <template>
   <div class="row">
     <SideMenu />
@@ -190,16 +189,16 @@
 </template>
 
 
-
 <script>
-import SideMenu from "@/components/SideMenu.vue";
-import TopBar from "@/components/TopBar.vue";
+import SideMenu from '@/components/SideMenu.vue';
+import TopBar from '@/components/TopBar.vue';
+
 export default {
-  name: "curp",
+  name: 'curp',
   components: {
     SideMenu,
-    TopBar
+    TopBar,
   },
-  methods: {}
+  methods: {},
 };
 </script>

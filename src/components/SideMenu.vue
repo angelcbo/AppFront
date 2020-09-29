@@ -9,8 +9,8 @@
 		<li>
 			<h6 class="nav-header">Modulos</h6>
 		</li>
-		<li class="nav-item" v-for="(item, key) in mainMenu" :key="item.id">
-			<a class="nav-link" :class="{ active: key == 0 }" :href="item.link">
+		<li class="nav-item" v-for="(item) in mainMenu" :key="item.id">
+			<a class="nav-link" :class="{ active: isPath(item) }" :href="item.link">
 				<i class="batch-icon" :class="item.icono"></i> {{item.slug}}
 			</a>
 		</li>
@@ -26,7 +26,7 @@ export default {
     msg: String,
   },
   data() {
-    let NominaMenu = {
+    const NominaMenu = {
       title: 'Industrial Pinos Altos',
       logo: '/img/logo_ipa.png',
       mainMenu: [
@@ -83,7 +83,7 @@ export default {
       ],
     }; // end nomina menu
 
-    let RestaurantMenu = {
+    const RestaurantMenu = {
       title: 'Tacos Heris',
       logo: '/img/logo.png',
       mainMenu: [
@@ -110,8 +110,8 @@ export default {
       ],
     }; // end restaurant menu
 
-    let DevMenu = {
-      title: 'Tacos Heris',
+    const Ipa = {
+      title: 'Cuentas por pagar',
       logo: '/img/logo.png',
       mainMenu: [
         {
@@ -120,24 +120,81 @@ export default {
           icono: 'batch-icon-home',
         },
         {
-          link: '/restaurant/alimentos',
-          slug: 'Alimentos',
+          link: '/cxp/CtasBancosProveedores',
+          slug: 'Cuentas Bancos Proveedores',
           icono: 'batch-icon-folder-add',
         },
+      ],
+    }; // end dev menu
+
+    let DevMenu = {
+      title: 'Tacos Heris',
+      logo: '/img/logo.png',
+      mainMenu: [
         {
-          link: '/restaurant/ordenes',
-          slug: 'Ordenes',
-          icono: 'batch-icon-users',
+          link: '/',
+          slug: 'Inicio',
+          icono: 'batch-icon-home',
         },
         {
+          link: '/restaurant/heris/orden',
+          slug: 'Nueva Orden',
+          icono: 'batch-icon-notes',
+        },
+        {
+          link: '/restaurant/heris/ordenes',
+          slug: 'Ordenes',
+          icono: 'batch-icon-notes',
+        },
+        {
+          link: '/restaurant/inicio',
+          slug: 'Estadisticas',
+          icono: 'batch-icon-tilde',
+        },
+        {
+          link: '/restaurant/alimentos',
+          slug: 'Alimentos',
+          icono: 'batch-icon-tag-alt-2',
+        },
+
+        // {
+        //   link: '/restaurant/DashboardOrdenes',
+        //   slug: 'Pendientes',
+        //   icono: 'batch-icon-paper-roll',
+        // },
+        {
           link: '/restaurant/repartidores',
-          slug: 'Respartidores',
+          slug: 'Repartidores',
           icono: 'batch-icon-users',
+        },
+      ],
+    }; // end dev menu
+
+
+    let WooMenu = {
+      title: 'Tacos Heris',
+      logo: '/img/logo.png',
+      mainMenu: [
+        {
+          link: '/',
+          slug: 'Inicio',
+          icono: 'batch-icon-home',
+        },
+        {
+          link: '/ordenes',
+          slug: 'Ordenes',
+          icono: 'batch-icon-notes',
         },
       ],
     }; // end dev menu
 
     return DevMenu;
   },
+  methods:{
+    isPath(item){
+      // console.log('ispath', item.link, this.$route);
+      return item.link == this.$route.path;
+    }
+  }
 };
 </script>

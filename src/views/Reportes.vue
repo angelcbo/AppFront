@@ -71,25 +71,25 @@
                                                 <td v-else><div class="in-table"><input type="number" class="form-control" placeholder="Precio" :id="'mod-precio-'+i" :value="item.platillo.precio"/></div></td>
                                                 <td v-if="!item.editando">{{item.platillo.categoria}}</td>
                                                 <td v-else>
-                                                    <div class="in-table"> 
+                                                    <div class="in-table">
                                                         <div class="input-group">
                                                             <select class="custom-select" :id="'mod-cat-'+i" size="1" :value="item.platillo.categoria">
                                                                 <option>Categoría</option>
                                                                 <option :key="i" v-for="(item, i) in categorias">{{item.nombre}}</option>
                                                             </select>
-                                                        </div> 
+                                                        </div>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="cont" v-if="!item.editando">
                                                         <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;" @click="eliminarPlatillo(item.platillo.alimentoId)"><i class="fa fa-trash"></i></button>
-                                                        <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;" @click="function(){item.editando = true}"><i class="fa fa-edit"></i></button>                                             
+                                                        <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;" @click="function(){item.editando = true}"><i class="fa fa-edit"></i></button>
                                                     </div>
                                                     <div class="cont" v-else>
                                                         <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;"><i class="fa fa-save"></i></button>
-                                                        <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;" @click="function(){item.editando = false}"><i class="fa fa-times"></i></button>                                             
-                                                    </div>                                       
-                                                </td> 
+                                                        <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;" @click="function(){item.editando = false}"><i class="fa fa-times"></i></button>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -116,7 +116,7 @@
                                 <form>
                                     <div class="row">
                                         <div class="col">
-                                            <div class="input-group mb-3">                                                   
+                                            <div class="input-group mb-3">
                                                 <input type="text" class="form-control" placeholder="Nombre" id = "add-catt" v-model="addCategoria" aria-label="Agregar" aria-describedby="Agregar una categoría">
                                                 <div class="input-group-prepend">
                                                     <button class="btn btn-primary" type="button" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px" @click="agregarCategoria()">Agregar</button>
@@ -141,13 +141,13 @@
                                             <td>
                                                 <div class="cont" v-if="!item.editando">
                                                     <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;" @click="eliminarCategoria(i)"><i class="fa fa-trash"></i></button>
-                                                    <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;" @click="function(){categorias[i].editando = true}"><i class="fa fa-edit"></i></button>                                             
+                                                    <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;" @click="function(){categorias[i].editando = true}"><i class="fa fa-edit"></i></button>
                                                 </div>
                                                 <div class="cont" v-else>
                                                     <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;"><i class="fa fa-save"></i></button>
-                                                    <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;" @click="function(){categorias[i].editando = false}"><i class="fa fa-times"></i></button>                                             
-                                                </div>           
-                                            </td> 
+                                                    <button type="button" class="btn btn-primary" style ="flex: 1 1 20px; margin: 1px; padding: 3px 4px; max-width: 50px;" @click="function(){categorias[i].editando = false}"><i class="fa fa-times"></i></button>
+                                                </div>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -171,130 +171,132 @@ import Platillo from '@/modules/restaurant/models/ResPlatilloModel.js';
 export default {
   name: 'catalogos',
   data() {
-      return {
-          categorias:[
-              {
-                  nombre: 'Tacos',
-                  editando: false,
-              }
-          ],
-          platillos:[],
-          seen: false,
-          addCategoria: '',
-          platNombre: '',
-          platDescripcion: '',
-          platPrecio: '',
-          platCategoria: 'Categoría',
-          screenWidth: 0,
-      };
+    return {
+      categorias: [
+        {
+          nombre: 'Tacos',
+          editando: false,
+        },
+      ],
+      platillos: [],
+      seen: false,
+      addCategoria: '',
+      platNombre: '',
+      platDescripcion: '',
+      platPrecio: '',
+      platCategoria: 'Categoría',
+      screenWidth: 0,
+    };
   },
   components: {
-      SideMenu,
-      TopBar,
+    SideMenu,
+    TopBar,
   },
   methods: {
-      actualizarPlatillos(){
-        let _this = this;
-        console.log('mounted');
-        Platillo.loadAll()
-        .then(function (response) {
+    actualizarPlatillos() {
+      const _this = this;
+      console.log('mounted');
+      Platillo.loadAll()
+        .then((response) => {
           console.log(response);
-          for(var i = 0; i < response.data.length; i++) {
+          for (let i = 0; i < response.data.length; i++) {
             _this.platillos.push(
-                {
-                    platillo: response.data[i], 
-                    editando: false,
-                }
+              {
+                platillo: response.data[i],
+                editando: false,
+              },
             );
           }
         })
-        .catch(function (error) {
+        .catch((error) => {
           console.log(error);
         });
-      },
-      agregarCategoria(){
-        if(this.addCategoria == ''){
-            alert('Ingresa una categoría');
-            return;
+    },
+    agregarCategoria() {
+      if (this.addCategoria == '') {
+        alert('Ingresa una categoría');
+        return;
+      }
+      this.categorias.push({ nombre: this.addCategoria, editando: false });
+      this.addCategoria = '';
+    },
+    eliminarCategoria(index) {
+      this.$delete(this.categorias, index);
+    },
+    agregarPlatillo() {
+      if (this.platNombre == '' || this.platDescripcion == '' || this.platPrecio == '') {
+        alert('Ingresa todos los campos');
+        return;
+      }
+      if (this.platCategoria == 'Categoría') {
+        if (this.categorias.length == 0) {
+          alert('Crea una categoria en la parte de abajo');
+        } else {
+          alert('Selecciona una categoria');
         }
-        this.categorias.push( {nombre: this.addCategoria, editando: false});
-        this.addCategoria = '';
-      },
-      eliminarCategoria(index){
-          this.$delete(this.categorias, index);
-      },
-      agregarPlatillo(){
-        if(this.platNombre == '' || this.platDescripcion == '' || this.platPrecio == ''){
-            alert('Ingresa todos los campos');
-            return;
-        }
-        if(this.platCategoria == 'Categoría'){
-            if(this.categorias.length == 0){
-                alert('Crea una categoria en la parte de abajo');
-            }else{
-                alert('Selecciona una categoria');
-            }
-            return;
-        }
-        if(parseInt(this.platPrecio)<0){
-            alert('Ingresa un precio válido');
-            return;
-        }
+        return;
+      }
+      if (parseInt(this.platPrecio) < 0) {
+        alert('Ingresa un precio válido');
+        return;
+      }
 
-        console.log("platillo", this.platNombre, this.platDescripcion, this.platPrecio, this.platCategoria);
-        let params = {
-            model: "",
-            data:{ nombre: this.platNombre, slug: this.platNombre, precio: this.platPrecio, categoria: this.platCategoria, descripcion: this.platDescripcion }
-        };
-        let _this = this;
-        Platillo.save(params)
-        .then(function (response) {
-            console.log(response);
-            _this.actualizarPlatillos();
+      console.log('platillo', this.platNombre, this.platDescripcion, this.platPrecio, this.platCategoria);
+      const params = {
+        model: '',
+        data: {
+          nombre: this.platNombre, slug: this.platNombre, precio: this.platPrecio, categoria: this.platCategoria, descripcion: this.platDescripcion,
+        },
+      };
+      const _this = this;
+      Platillo.save(params)
+        .then((response) => {
+          console.log(response);
+          _this.actualizarPlatillos();
         })
-        .catch(function (error) {
-            console.log(error);
+        .catch((error) => {
+          console.log(error);
         });
-        this.platNombre = '';
-        this.platDescripcion = '';
-        this.platPrecio = '';
-        this.platCategoria = 'Categoría';
-      },
-      eliminarPlatillo(idAlimento){
-          console.log('del platillo ',idAlimento);
-          let params = {
-            model: "",
-            data:{ id: idAlimento }
-          };
-          let _this = this;
-          Platillo.delete(params)
-          .then(function (response) {
-            console.log(response);
-            _this.actualizarPlatillos();
-          })
-          .catch(function (error) {
-              console.log(error);
-          });
-      },
+      this.platNombre = '';
+      this.platDescripcion = '';
+      this.platPrecio = '';
+      this.platCategoria = 'Categoría';
+    },
+    eliminarPlatillo(idAlimento) {
+      console.log('del platillo ', idAlimento);
+      const params = {
+        model: '',
+        data: { id: idAlimento },
+      };
+      const _this = this;
+      Platillo.delete(params)
+        .then((response) => {
+          console.log(response);
+          _this.actualizarPlatillos();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   mounted() {
-        let _this = this;
-        console.log('mounted');
-        Platillo.loadAll()
-        .then(function (response) {
-          console.log(response);
-          for(var i = 0; i < response.data.length; i++) {
-            _this.platillos.push(
-                {
-                    platillo: response.data[i], 
-                    editando: false,
-                }
-            );
-          }
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+    const _this = this;
+    console.log('mounted');
+    Platillo.loadAll()
+      .then((response) => {
+        console.log(response);
+        for (let i = 0; i < response.data.length; i++) {
+          _this.platillos.push(
+            {
+              platillo: response.data[i],
+              editando: false,
+            },
+          );
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
 };
 </script>
@@ -318,7 +320,7 @@ export default {
         display: block;
         margin-top: auto;
         margin-bottom: auto;
-        width: 120px; 
+        width: 120px;
         overflow: auto;
       }
 

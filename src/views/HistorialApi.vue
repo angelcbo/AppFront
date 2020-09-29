@@ -105,105 +105,106 @@
 
 
 <script>
-import SideMenu from "@/components/SideMenu.vue";
-import TopBar from "@/components/TopBar.vue";
-import ModelHistorialApi from "@/modules/core/HistorialApi.js";
+import SideMenu from '@/components/SideMenu.vue';
+import TopBar from '@/components/TopBar.vue';
+import ModelHistorialApi from '@/modules/core/HistorialApi.js';
+
 export default {
-  name: "HistorialApi",
+  name: 'HistorialApi',
   data() {
     return {
       requests: [],
       checkboxInfo: [
         {
-          id: "username",
-          text: "Nombre de usuario"
+          id: 'username',
+          text: 'Nombre de usuario',
         },
         {
-          id: "path",
-          text: "Direccion"
+          id: 'path',
+          text: 'Direccion',
         },
         {
-          id: "type",
-          text: "Tipo"
+          id: 'type',
+          text: 'Tipo',
         },
         {
-          id: "date",
-          text: "Fecha"
-        }
+          id: 'date',
+          text: 'Fecha',
+        },
       ],
-      isFiltrar: false
+      isFiltrar: false,
     };
   },
   mounted() {
-    let _this = this;
+    const _this = this;
     ModelHistorialApi.loadAll()
-      .then(function(response) {
+      .then((response) => {
         _this.requests = response.data;
         // _this.requests.userId = response.date.userId;
         // _this.requests.requestPath = response.data.requestPath;
         // _this.requests.requestMethod = response.data.requestMethod;
         // _this.requests.fecha = response.data.created;
       })
-      .catch(function(error) {
+      .catch((error) => {
         console.log(error);
       });
   },
   components: {
     SideMenu,
-    TopBar
+    TopBar,
   },
   methods: {
     expandirBuscar() {
-      const Icon_Left = document.getElementById("i-left");
-      const Icon_Right = document.getElementById("i-right");
-      const DivWrapper = document.getElementById("wrapper");
-      const Searcher = document.getElementById("searcher");
-      Icon_Left.classList.add("hide");
-      Icon_Right.classList.remove("hide");
-      DivWrapper.classList.add("expand");
+      const Icon_Left = document.getElementById('i-left');
+      const Icon_Right = document.getElementById('i-right');
+      const DivWrapper = document.getElementById('wrapper');
+      const Searcher = document.getElementById('searcher');
+      Icon_Left.classList.add('hide');
+      Icon_Right.classList.remove('hide');
+      DivWrapper.classList.add('expand');
       Searcher.select();
     },
     toggleExpandir() {
-      const DivWrapper = document.getElementById("wrapper");
-      const Icon_Left = document.getElementById("i-left");
-      const Icon_Right = document.getElementById("i-right");
-      if (DivWrapper.classList.contains("expand")) {
-        DivWrapper.classList.remove("expand");
-        Icon_Left.classList.remove("hide");
-        Icon_Right.classList.add("hide");
+      const DivWrapper = document.getElementById('wrapper');
+      const Icon_Left = document.getElementById('i-left');
+      const Icon_Right = document.getElementById('i-right');
+      if (DivWrapper.classList.contains('expand')) {
+        DivWrapper.classList.remove('expand');
+        Icon_Left.classList.remove('hide');
+        Icon_Right.classList.add('hide');
       }
     },
     showOpciones() {
-      const opcionesFiltro = document.getElementById("Opciones");
+      const opcionesFiltro = document.getElementById('Opciones');
       if (this.isFiltroDesplayed(opcionesFiltro)) {
-        opcionesFiltro.classList.add("hide");
+        opcionesFiltro.classList.add('hide');
       } else {
-        opcionesFiltro.classList.remove("hide");
+        opcionesFiltro.classList.remove('hide');
       }
     },
     isFiltroDesplayed(opcionesFiltro) {
-      if (opcionesFiltro.classList.contains("hide")) {
+      if (opcionesFiltro.classList.contains('hide')) {
         return false;
       }
       return true;
     },
     toogleExpandirFiltro() {
-      const opcionesFiltro = document.getElementById("Opciones");
+      const opcionesFiltro = document.getElementById('Opciones');
       if (this.isFiltroDesplayed) {
-        opcionesFiltro.classList.add("hide");
+        opcionesFiltro.classList.add('hide');
       }
     },
     toogles() {
-      const target = event.target;
+      const { target } = event;
 
-      if (!target.classList.contains("toogle-buscar")) {
+      if (!target.classList.contains('toogle-buscar')) {
         this.toggleExpandir();
       }
-      if (!target.classList.contains("Filtro-container")) {
+      if (!target.classList.contains('Filtro-container')) {
         this.toogleExpandirFiltro();
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
