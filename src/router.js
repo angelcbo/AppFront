@@ -40,6 +40,7 @@ import ResInicio from './views/Restaurant/Inicio.vue';
 import ResHerisOrdenesGrid from './views/Restaurant/OrdenesGrid.vue';
 import ResCuenta from './views/Restaurant/Cuenta.vue';
 import ResCheckout from  './views/Restaurant/Checkout.vue';
+// import ResTicket from  './views/Restaurant/Ticket.vue';
 
 // views Restaurant
 import CxpCtasBancosProveedoresEdit from './views/Cxp/CtasBancosProveedoresEdit';
@@ -62,9 +63,9 @@ const router = new Router({
       path: '/',
       name: 'demo',
       component: Demo,
-      meta: {
-        requiresAuth: true,
-      },
+      // meta: {
+      //   requiresAuth: true,
+      // },
     },
     {
       path: '/login',
@@ -246,6 +247,13 @@ const router = new Router({
       component: ResCheckout,
       props: true
     },
+    // {
+    //   path: '/restaurant/ticket/:ordenId',
+    //   name: 'ResTicket',
+    //   component: ResTicket,
+    //   props: true
+    // },
+    
     {
       path: '/restaurant/repartidor/:repartidorId',
       name: 'ResRepartidoresEdit',
@@ -284,9 +292,9 @@ const router = new Router({
       path: '/ordenes',
       name: 'WooOrders',
       component: WooOrdersList,
-      meta: {
-        requiresAuth: true,
-      },
+      // meta: {
+      //   requiresAuth: true,
+      // },
     },
   ],
 });

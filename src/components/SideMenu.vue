@@ -19,6 +19,9 @@
 </template>
 
 <script>
+
+const PROJECT = process.env.VUE_APP_PROJECT;
+
 export default {
   name: 'SideMenu',
 
@@ -171,24 +174,10 @@ export default {
     }; // end dev menu
 
 
-    let WooMenu = {
-      title: 'Tacos Heris',
-      logo: '/img/logo.png',
-      mainMenu: [
-        {
-          link: '/',
-          slug: 'Inicio',
-          icono: 'batch-icon-home',
-        },
-        {
-          link: '/ordenes',
-          slug: 'Ordenes',
-          icono: 'batch-icon-notes',
-        },
-      ],
-    }; // end dev menu
-
+ 
     return DevMenu;
+
+    
   },
   methods:{
     isPath(item){
