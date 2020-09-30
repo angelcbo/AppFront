@@ -9,6 +9,9 @@ export default {
   listAbiertas(params, callback) {
     MasterModel.get(model+'/abiertas', params, callback);
   },
+  listMesas( callback) {
+    MasterModel.get(model+'/mesas',{},  callback);
+  },
   save(params, callback) {
     MasterModel.post(model, params, callback);
   },

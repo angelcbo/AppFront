@@ -8,10 +8,13 @@ import router from './router';
 import store from './store';
 import './registerServiceWorker';
 
+const APP_DEV = process.env.VUE_APP_DEV == 'true';
+
 Vue.use(Vuelidate);
 
 Vue.prototype.$http = Axios;
 Vue.prototype.$faker = Faker;
+Vue.prototype.APP_DEV = APP_DEV;
 
 const token = localStorage.getItem('token');
 if (token) {

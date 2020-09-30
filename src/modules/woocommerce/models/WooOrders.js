@@ -6,9 +6,17 @@ export default {
   list(params, callback) {
     MasterModel.get([model,"orders"], params, callback);
   },
- 
+  servedNotification(params, callback){
+    MasterModel.get(["chatfuel","served-notification"], params, callback);
+  },
+  loadConversacion(params, callback){
+    MasterModel.get(["chatfuel","mensajes"], params, callback);
+  },
   save(params, callback) {
     MasterModel.post([model,"orders"], params, callback);
+  },
+  mensajeRespuesta(params, callback) {
+    MasterModel.post(["chatfuel","mensajes-resp"], params, callback);
   },
 
   loadAll() {

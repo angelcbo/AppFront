@@ -16,7 +16,7 @@
 <!-- { code -->
 
 <div class="col-lg-12 pb-5">
-    <h2> Cuenta # {{ordenId}} </h2>
+    <h2> Cuenta # {{orden.folioDiario}} </h2>
     <!-- <p>
         Add <code>.table-responsive</code> the container holding the <code>.table</code> to make them scroll horizontally on small devices. Resize your window to see it in action.
     </p>
@@ -143,7 +143,8 @@ export default {
         debug: process.env.VUE_APP_DEV,
         orden: ResOrdenes.init(),
         aPagarTotal: 0,
-        cuentas:{}
+        cuentas:{},
+        cantidadEntregada: null
       };
   },
   components: {
@@ -208,9 +209,10 @@ export default {
       pagar(){
           this.orden['tipoPago'] = 'efectivo'
           this.orden['cantidadEntregada'] = 100
-                
+          const ordenId = this.ordenId;      
           ResOrdenes.pagar(this.orden, res => {
             this.$router.push({ name: 'ResHerisOrdenesGrid'});
+                window.open("/restaurant/ticket/"+ordenId, '_blank');
           });
       }
 
