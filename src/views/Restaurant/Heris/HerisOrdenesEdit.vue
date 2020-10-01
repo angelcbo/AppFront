@@ -1,4 +1,5 @@
 <template>
+<!-- hola alexisk -->
     <div class="row">
         <SideMenu/>
         <div class="right-column">
