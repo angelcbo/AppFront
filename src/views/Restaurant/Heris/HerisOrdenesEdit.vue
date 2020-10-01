@@ -1,6 +1,10 @@
 <template>
 <!-- hola alexisk -->
+<<<<<<< HEAD
 <!-- Agregado por Angelll -->
+=======
+<!-- hola angelx -->
+>>>>>>> d4fe593830e289803a46c199aa28b085ca3d59fe
     <div class="row">
         <SideMenu/>
         <div class="right-column">
