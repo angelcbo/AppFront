@@ -1,5 +1,6 @@
 <template>
 <!-- hola alexisk -->
+<!-- Agregado por Angelll -->
     <div class="row">
         <SideMenu/>
         <div class="right-column">
