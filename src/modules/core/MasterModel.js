@@ -7,6 +7,7 @@ import router from '@/router';
 
 const baseURI = process.env.VUE_APP_API_URL;
 const APP_DEV = process.env.VUE_APP_DEV == 'true';
+const printURI = process.env.VUE_APP_PRINTER_URL;
 
 console.log('APP_DEV', APP_DEV);
 
