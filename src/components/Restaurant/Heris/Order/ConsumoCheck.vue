@@ -1,9 +1,9 @@
 <template>
 <div class="row">
-    <div class="col-lg-12">
-    <h2> {{title}} </h2>
-    </div>
-    <div class="col-lg-12">
+    <!-- <div class="col-lg-6">
+    <h2> {{order.consumo}} </h2>
+    </div> -->
+    <div class="col-lg-6">
         <div class="form-check form-check-inline">
             <input v-model="order.consumo" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="sucursal">
             <label class="form-check-label" for="inlineRadio1">Consumo en local</label>

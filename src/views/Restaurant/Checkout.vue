@@ -89,7 +89,7 @@
                     </div>
                     <input
                       v-model="cantidadEntregada"
-                      type="text"
+                      type="number"
                       class="form-control"
                       aria-label="Amount (to the nearest dollar)"
                     />
@@ -165,6 +165,7 @@ import ResOrdenes from "@/modules/restaurant/models/ResOrdenes.js";
 import PrintCuenta from "@/modules/printer/models/PrintCuenta.js";
 import ResPlatos from "@/modules/restaurant/models/ResPlatos.js";
 import ResAlimentos from "@/modules/restaurant/models/ResAlimentos.js";
+import Alert from '@/components/Alert.vue';
 // import Faker from 'faker';
 
 export default {
@@ -188,6 +189,7 @@ export default {
   components: {
     SideMenu,
     TopBar,
+    Alert,
   },
   methods: {
     loadOrden(res) {
@@ -247,6 +249,15 @@ export default {
       return total;
     },
     pagar() {
+      if (this.cantidadEntregada == null || this.cantidadEntregada == 0) {
+        // Alert.methods.showAlertTimeout(this.alertId, "Agregado");
+        return;
+      }
+      console.log("Cuentas");
+      console.log(this.cuentas);
+      console.log("Orden");
+      console.log(this.orden);
+
       this.orden["tipoPago"] = "efectivo";
       this.orden["cantidadEntregada"] = 100;
       const ordenId = this.ordenId;
@@ -255,33 +266,46 @@ export default {
 
       //         window.open("/restaurant/ticket/"+ordenId, '_blank');
       //   });
+      let date = new Date();
+
+      let day = date.getDate();
+      let month = date.getMonth() + 1;
+      let year = date.getFullYear();
+      let hour = date.getHours();
+      let minute = date.getMinutes();
+      let dateTime
+      if (month < 10) {
+        dateTime=`${day}-0${month}-${year} ${hour}:${minute}`;
+      } else {
+        dateTime=`${day}-${month}-${year} ${hour}:${minute}`;
+      }
+      let group = this.orden.resPlatos.reduce((r, a) => {
+          console.log("a", a);
+          console.log('r', r);
+          r[a.alimento.descripcion] = [r[a.alimento.descripcion] || [], a];
+           return r;
+          }, {});
+          console.log(group)
       let params = {
         orden: {
-          id: "4",
-          datetime: "27/08/2020 02:30: PM",
-          cliente: "0",
+          id: ordenId.toString(),
+          datetime: dateTime.toString(),
+          cliente: this.orden.mesa,
         },
         items: ["1 ORDEN ASADA", "1 ORDEN PASTOR", "1 BURRITO ASADA"],
       };
-      console.log("Parametroooos");
-      console.log(params);
+
       PrintCuenta.pagar(params, (resPDF) => {
-        console.log(resPDF);
         // this.$router.push({ name: "ResHerisOrdenesGrid" });
-        // window.open("data:application/pdf," + encodeURI(resPDF.data));
-        
-        
-        let pdfWindow = window.open("")
+        //window.open("/restaurant/ticket/"+ordenId, '_blank');
+
+        let pdfWindow = window.open("");
         pdfWindow.document.write(
-        "<iframe width='100%' height='100%' src='data:application/pdf, " +
-        escape(resPDF.data) + "'></iframe>"
-)
-
-        
+          "<iframe width='100%' height='100%' src='data:application/pdf, " +
+            escape(resPDF.data) +
+            "'></iframe>"
+        );
         //window.open("data:application/pdf," + escape(resPDF.data));SIIIIII
-
-        // window.open("data:application/pdf," + encodeURI(resPDF.data)); 
-
       });
     },
   },

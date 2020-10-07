@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-lg-12">
 <!-- code -->
-<order-consumo v-bind:order="order" />
+<order-consumo title="Consumo"  v-bind:order="order" />
 
 <alert v-bind:containerid="alertMesa"/>
 <div v-show="order.consumo == 'sucursal'" class="row">
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div> <!-- end card-body -->
-            </div>
+            </div> <!-- End card div  -->
         </main>
         </div>
     </div> <!--end row -->
