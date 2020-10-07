@@ -7,15 +7,15 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <!-- <th>#</th> -->
                         <th>Especial</th>
                         <th>Cantidad</th>
-                        <th> Opciones </th>
+                        <th width="120px"> Opciones </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="(rEspecial, idx) in orden.especiales" v-bind:key="idx" >
-                        <th scope="row"> {{idx + 1 }}  </th>
+                        <!-- <th scope="row"> {{idx + 1 }}  </th> -->
                         <td>
                             <div class="form-group">
                                
@@ -30,15 +30,15 @@
                             <input v-model="rEspecial.cantidad" type="text" class="form-control" placeholder=""  >
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary btn-lg waves-effect waves-light" @click="removePlato(idx)" > Eliminar </button>
+                            <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light" @click="removePlato(idx)" style="height:34.32px; margin:0px; width:100%"> Eliminar </button>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"></th>
+                        <!-- <th scope="row"></th> -->
                         <td>
                             <div class="form-group">
                                
-                                <select class="form-control" v-model="iPlato.alimentoId" >
+                                <select class="form-control" v-model="iPlato.alimentoId" style="height: 34px; border-radius: 5px;">
                                   <option v-for="rAlimento in lAlimentos" v-bind:value="rAlimento.alimentoId" v-bind:key="rAlimento.alimentoId">
                                       {{rAlimento.nombre}}
                                   </option>
@@ -49,7 +49,7 @@
                             <input v-model="iPlato.cantidad" type="text" class="form-control" placeholder=""   @keyup.enter="addPlato" >
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary btn-lg waves-effect waves-light" @click="addPlato" > Agregar </button>
+                            <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light" @click="addPlato" style="height:34.32px; margin:0px; width:100%"> Agregar </button>                            
                         </td>
                     </tr>
 
