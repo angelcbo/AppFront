@@ -7,9 +7,9 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th v-for="(tag, idx) in ordenRows.tags" > {{tag}} </th>
-                        <th> Opciones </th>
+                        <!-- <th width="0px">#</th> -->
+                        <th height="50px" v-for="(tag, idx) in ordenRows.tags"> {{tag}} </th>
+                        <th width="120px"> Opciones </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,23 +53,23 @@
                     </tr> -->
                     <!-- add row -->
                     <tr>
-                        <th scope="row"></th>
+                        <!-- <th scope="row"></th> -->
                         <td v-for="(tag, idx) in ordenRows.tags" >  
                             <div class="form-row">
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="#" v-model="rowValues[idx]" @keyup.enter="addRow" >
+                                <div class="col" style="padding:0px">
+                                    <input style="width:100%" type="text" class="form-control" placeholder="#" v-model="rowValues[idx]" @keyup.enter="addRow" >
                                 </div>
-                                <div v-show="hasCQueso()" class="col">
+                                <div v-show="hasCQueso()" class="col-sm-auto" style="padding: 5px 0px 5px 8px">                                   
                                     <!-- <input type="text" class="form-control" placeholder="c/q" v-model="nuTacos.asada.cq" @keyup.enter="addRow"> -->
-                                    <div class="custom-control custom-checkbox mb-3">
+                                    <div class="custom-control custom-checkbox center-block">
                                         <input type="checkbox" class="custom-control-input" v-bind:id="'nu-'+ordenRows.title+'-'+tag+'-'+idx" v-model="rowValuesQueso[idx]">
                                         <label class="custom-control-label" v-bind:for="'nu-'+ordenRows.title+'-'+tag+'-'+idx" > C/Q </label>
-                                    </div>
+                                    </div>                                  
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary btn-lg waves-effect waves-light" @click="addRow" > Agregar </button>
+                            <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light" @click="addRow" style="height:34.32px; margin:0px; width:100%"> Agregar </button>
                         </td>
                     </tr>
 
@@ -140,3 +140,13 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .cont{
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-around;
+        min-width: 150px;
+    }
+</style>

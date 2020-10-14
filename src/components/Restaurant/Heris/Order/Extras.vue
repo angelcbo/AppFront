@@ -1,6 +1,6 @@
 <template>
 <div class="row">
-    <div class="col-lg-3 pb-5">
+    <div class="col-lg-4 pb-2">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Cebollitas comp.</span>
@@ -9,7 +9,7 @@
         </div>
         <br>
     </div>
-    <div class="col-lg-3 pb-5">
+    <div class="col-lg-4 pb-2">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Cebollitas 1/2 </span>
@@ -18,7 +18,7 @@
         </div>
         <br>
     </div>
-    <div class="col-lg-3 pb-5">
+    <div class="col-lg-4 pb-2">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Bebidas</span>

@@ -8,8 +8,8 @@
                     <tr>
                         <th>#</th>
                         <th>Platillo</th>
-                        <th>Cantidad</th>
-                        <th> Opciones </th>
+                        <th width="75px">Cantidad</th>
+                        <th width="35px">Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -18,7 +18,7 @@
                         <td>
                             <div class="form-group">
                                
-                                <select class="form-control" v-model="rEspecial.alimentoId" >
+                                <select class="form-control" v-model="rEspecial.alimentoId" style="height: 34px; border-radius: 5px;">
                                   <option v-for="rAlimento in lAlimentos" v-bind:value="rAlimento.alimentoId" v-bind:key="rAlimento.alimentoId" >
                                       {{rAlimento.nombre}}
                                   </option>
@@ -26,10 +26,10 @@
                             </div>
                         </td>
                         <td>
-                            <input v-model="rEspecial.cantidad" type="text" class="form-control" placeholder=""  >
+                            <input v-model="rEspecial.cantidad" type="text" class="form-control" placeholder=""  style="width:100%">
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary btn-lg waves-effect waves-light" @click="removePlato(idx)" > Eliminar </button>
+                            <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light" style="height:34.32px; margin:0px; width:100%" @click="removePlato(idx)" > <i class="fa fa-trash"/> </button>
                         </td>
                     </tr>
                     

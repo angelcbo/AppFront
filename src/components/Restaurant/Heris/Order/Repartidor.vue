@@ -1,5 +1,5 @@
 <template>
-<div class="col-lg-6">
+<div class="col-lg-12">
     <div class="input-group mb-3">
         <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">Repartidor</label>

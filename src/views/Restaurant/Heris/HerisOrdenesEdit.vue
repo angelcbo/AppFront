@@ -1,76 +1,91 @@
 <template>
-<!-- hola alexisk -->
-<!-- Agregado por Angelll -->
-<!-- hola angelx -->
     <div class="row">
         <SideMenu/>
         <div class="right-column">
         <TopBar/>
         <main class="main-content p-5" role="main">
             <div class="row">
-            <div class="col-md-12">
-                <h1> {{title}} </h1>
-            </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row align-items-end">
+                                <div class="col-lg-9">
+                                    <order-consumo title="Consumo" v-bind:order="order" />
+                                </div>
+                                <div v-show="order.consumo == 'sucursal'" class="col-lg-3 align-bottom">                                        
+                                    <div class="input-group input-group-lg">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-lg">Mesa #</span>
+                                        </div>
+                                        <input style="width:100%" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="item.mesa" @change="onChangeMesa" >
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+
+
+                            <div class="row">
+                                <div class="col-lg-12">
+        <!-- code -->
+
+        <alert v-bind:containerid="alertMesa"/>    
+
+        <div v-show="order.consumo == 'domicilio'" class="row">
+            <order-domicilio v-bind:order="order" />
+        </div>
+
+        <order-row v-bind:ordenRows="tacosRows" v-bind:alertId="'alert-taco-row'" v-on:addRow="onAddRow" />
+
+        <order-row v-bind:ordenRows="burritosRows" v-bind:alertId="'alert-burrito-row'" v-on:addRow="onAddRow" />
+
+        <order-row v-bind:ordenRows="mgpRows" v-bind:alertId="'alert-mgp-row'" v-on:addRow="onAddRow" />
+
+        <order-platillos v-on:addRow="onAddRow" />
+
+        <order-extras v-bind:order="order" />
+
+        <!-- {{order}} -->
+
+        <!-- {{item}} -->
+
+        <!-- end code -->
+                                </div>
+                            </div>
+                        </div> <!-- end card-body -->
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-3">
+                    <div class="row" style="height:60%">
                         <div class="col-lg-12">
-<!-- code -->
-<order-consumo title="Consumo"  v-bind:order="order" />
+                            <div class="card">                                
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <order-list v-bind:order="order" />                                        
+                                        </div>
+                                    </div>
 
-<alert v-bind:containerid="alertMesa"/>
-<div v-show="order.consumo == 'sucursal'" class="row">
-    
-    <div class="col-lg-3">
-        <div class="input-group input-group-lg">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-lg">Mesa #</span>
-            </div>
-            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="item.mesa" @change="onChangeMesa" >
-        </div>
-    </div>
-</div>
+                                    <div v-show="order.consumo == 'domicilio'" class="row">
+                                        <order-repartidor v-bind:order="order" />
+                                    </div>
 
-<div v-show="order.consumo == 'domicilio'" class="row">
-    <order-domicilio v-bind:order="order" />
-</div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <alert v-bind:containerid="alertId"/>                                        
+                                        </div>
+                                    </div>                            
 
-<order-row v-bind:ordenRows="tacosRows" v-bind:alertId="'alert-taco-row'" v-on:addRow="onAddRow" />
-
-<order-row v-bind:ordenRows="burritosRows" v-bind:alertId="'alert-burrito-row'" v-on:addRow="onAddRow" />
-
-<order-row v-bind:ordenRows="mgpRows" v-bind:alertId="'alert-mgp-row'" v-on:addRow="onAddRow" />
-
-<order-platillos v-on:addRow="onAddRow" />
-
-<order-extras v-bind:order="order" />
-
-<order-list v-bind:order="order" />
-
-<div v-show="order.consumo == 'domicilio'" class="row">
-    <order-repartidor v-bind:order="order" />
-</div>
-
-<alert v-bind:containerid="alertId"/>
-
-<div class="row">
-    <div class="row mb-5">
-        <div class="col-md-12">
-            <button @click="cancel" type="button" class="btn btn-secondary btn-lg waves-effect waves-light"> Cancelar </button>
-            <button @click="save" type="button" class="btn btn-secondary btn-lg waves-effect waves-light"> Aceptar </button>
-            <br>
-
-        </div>
-    </div>
-</div>
-
-
-<!-- {{order}} -->
-
-<!-- {{item}} -->
-
-<!-- end code -->
+                                    <div class="row justify-content-end">                                                                                                                                             
+                                        <div class="col-md-6">
+                                            <div class="d-flex flex-row-reverse bd-highlight">
+                                                <button @click="save" type="button" class="btn btn-secondary waves-effect waves-light" style="margin-left:5px"> Aceptar </button>                                            
+                                                <button @click="cancel" type="button" class="btn btn-secondary waves-effect waves-light"> Cancelar </button>                                            
+                                            </div>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div> <!-- end card-body -->
@@ -164,21 +179,21 @@ export default {
         },
         tacosRows:{
             title: 'Tacos',
-            tags:["asada", "pastor", "molleja"],
+            tags:["Asada", "Pastor", "Molleja"],
             alimentoIds:[[1,2],[3,4],[5,6]],
             cqueso : true,
             rows: []
         },
         burritosRows:{
             title: 'Burritos',
-            tags:["asada", "pastor", "molleja", "deshebrada", "combinado"],
+            tags:["Asada", "Pastor", "Molleja", "Deshebrada", "Combinado"],
             alimentoIds:[[1,2],[3,4],[5,6]],
             cqueso : true,
             rows: []
         },
         mgpRows:{
-            title: 'mexicana gringa pocha',
-            tags:["mexicana", "gringa", "pocha"],
+            title: 'Mexicana - Gringa - Pocha',
+            tags:["Mexicana", "Gringa", "Pocha"],
             alimentoIds:[[1,2],[3,4],[5,6]],
             cqueso : false,
             rows: []

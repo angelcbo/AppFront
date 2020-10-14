@@ -165,7 +165,7 @@ import ResOrdenes from "@/modules/restaurant/models/ResOrdenes.js";
 import PrintCuenta from "@/modules/printer/models/PrintCuenta.js";
 import ResPlatos from "@/modules/restaurant/models/ResPlatos.js";
 import ResAlimentos from "@/modules/restaurant/models/ResAlimentos.js";
-import Alert from '@/components/Alert.vue';
+import Alert from "@/components/Alert.vue";
 // import Faker from 'faker';
 
 export default {
@@ -273,26 +273,60 @@ export default {
       let year = date.getFullYear();
       let hour = date.getHours();
       let minute = date.getMinutes();
-      let dateTime
+      let dateTime;
       if (month < 10) {
-        dateTime=`${day}-0${month}-${year} ${hour}:${minute}`;
+        dateTime = `${day}-0${month}-${year} ${hour}:${minute}`;
       } else {
-        dateTime=`${day}-${month}-${year} ${hour}:${minute}`;
+        dateTime = `${day}-${month}-${year} ${hour}:${minute}`;
       }
+
+      let ejemplo = this.orden.resPlatos.reduce((acumulador, current) => {
+        console.log("Acumulador", acumulador);
+        console.log("Current", current);
+      });
+      console.log("FINEJEMPLOOOOOOOO");
+
       let group = this.orden.resPlatos.reduce((r, a) => {
-          console.log("a", a);
-          console.log('r', r);
-          r[a.alimento.descripcion] = [r[a.alimento.descripcion] || [], a];
-           return r;
-          }, {});
-          console.log(group)
+        //  debugger
+        console.log("a", a);
+        console.log("r", r);
+        r[a.alimento.descripcion] = [...(r[a.alimento.descripcion] || []), a];
+        // r[a.alimento.descripcion].cantidad =
+
+        return r;
+      }, {});
+
+      console.log("********GROUP*************");
+      console.log(group);
+      console.log(typeof group);
+      // for (let current in group){
+      //   let cantidad = current.reduce((total,subCurrent)=>total.cantidad+subCurrent.cantidad)
+      // }
+      Object.keys(group).forEach((current) => {
+        let acum = group[current].reduce((total, subCurrent) => {
+          debugger;
+          if (typeof total === "number") return total + subCurrent.cantidad;
+          else return subCurrent.cantidad;
+        }, {});
+        group[current].cantidad = acum;
+        group[current].total = group[current][0].alimento.precio * group[current].cantidad 
+      });
+      console.log("********GROUP22222*************");
+      console.log(group);
+      
+      let pedido = Object.keys(group).map((current) => {
+        return `${group[current].cantidad} ${current.toUpperCase()}`
+      });
+      console.log(pedido);
+
       let params = {
         orden: {
           id: ordenId.toString(),
           datetime: dateTime.toString(),
           cliente: this.orden.mesa,
         },
-        items: ["1 ORDEN ASADA", "1 ORDEN PASTOR", "1 BURRITO ASADA"],
+        items: pedido
+        // items: ["1 ORDEN ASADA", "1 ORDEN PASTOR", "1 BURRITO ASADA"],
       };
 
       PrintCuenta.pagar(params, (resPDF) => {
@@ -305,6 +339,7 @@ export default {
             escape(resPDF.data) +
             "'></iframe>"
         );
+
         //window.open("data:application/pdf," + escape(resPDF.data));SIIIIII
       });
     },
