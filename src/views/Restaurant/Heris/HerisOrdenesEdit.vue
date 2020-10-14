@@ -226,8 +226,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> <!-- end card-body -->
+            </div> <!-- End card div  -->
         </main>
         </div>
     </div> <!--end row -->
