@@ -100,6 +100,7 @@ export default {
   methods: {
     loadItem(res){
       this.item = res.data.item;
+      console.log(item);
     },
     randomFill(){
       this.item = ResAlimentos.random();

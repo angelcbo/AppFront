@@ -12,6 +12,9 @@ export default {
   especiales( callback) {
     MasterModel.get(model+"/especiales", {}, callback);
   },
+  categoria( params, callback) {
+    MasterModel.get(model+"/categoria/"+params, {}, callback);
+  },
   save(data, callback) {
     MasterModel.post(model, data, callback);
   },
