@@ -10,6 +10,7 @@
                         <div class="card-header">
                             {{title}}
                             <button class="float-right" @click="openOpciones()">Prueba Opciones</button>
+                            
                         </div>
                         <div class="card-body">
 
