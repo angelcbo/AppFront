@@ -1,9 +1,9 @@
 <template>
- <nav id="sidebar" class="px-0 bg-dark bg-gradient sidebar">
+ <nav id="sidebar" class="px-0 sidebar">
 	<ul class="nav nav-pills flex-column">
 		<li class="logo-nav-item">
-			<a class="navbar-brand" href="#">
-				<img :src="logo" width="34" height="68" :alt="title">
+			<a class="navbar-brand" href="#" style="width:100%">
+				<img :src="logo" width="99" :alt="title" style="margin:auto">
 			</a>
 		</li>
 		<li>
@@ -88,7 +88,7 @@ export default {
 
     const RestaurantMenu = {
       title: 'Tacos Heris',
-      logo: '/img/logo.png',
+      logo: '/img/LogoB.png',
       mainMenu: [
         {
           link: '/',
@@ -132,7 +132,7 @@ export default {
 
     let DevMenu = {
       title: 'Tacos Heris',
-      logo: '/img/logo.png',
+      logo: '/img/LogoW.svg',
       mainMenu: [
         {
           link: '/',
@@ -187,3 +187,15 @@ export default {
   }
 };
 </script>
+
+<style>
+.nav-link.active{  
+  background: #e52d27;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #b31217, #e52d27);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #b31217, #e52d27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.sidebar{
+  background: #232b2b;
+}
+</style>

@@ -8,9 +8,22 @@
                 <div class="col-lg-8 mb-4">
                     <div class="card">
                         <div class="card-header">
-                            {{title}}
-                            <button class="float-right" @click="openOpciones()">Prueba Opciones</button>
-                            
+                            <div class="row">
+                                <div class="col-md-8">
+                                    {{title}}
+                                    <p class="task-list-stats">
+                                        <span class="task-list-total">Selecciona los platillos del menu.</span>
+                                    </p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-end float-right" style="height:100%">
+                                    <div class="btn-group mt-auto pb-2">
+                                        <button type="button" class="btn btn-secondary btn-sm" @click="openOpciones()">Detalles de Orden<i class="fa fa-sliders" aria-hidden="true" style="margin-left: 5px"></i></button>
+                                        <button type="button" class="btn btn-secondary btn-sm"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
 
@@ -20,36 +33,37 @@
         <!-- code -->
 
                      
-
-        <div class="btn-group btn-group-toggle pb-3" data-toggle="buttons">
-            <label class="btn btn-danger active" @click="changeCategoria(0)">
+        <div class="d-flex pb-3">
+        <div class="btn-group btn-group-toggle btn-group-justified col-md-12" data-toggle="buttons" style="padding:0">
+            <label class="btn btn-danger col-md-4 active" @click="changeCategoria(0)">
                 <input type="radio" name="options" id="option1" autocomplete="off" checked> 
                 <h6 style="color:white">
                     <i class="fa fa-cutlery"></i>
                     Principales 
                 </h6>
             </label>
-            <label class="btn btn-danger"  @click="changeCategoria(1)">
+            <label class="btn btn-danger col-md-4"  @click="changeCategoria(1)">
                 <input type="radio" name="options" id="option2" autocomplete="off">
                 <h6 style="color:white">
                     <i class="fa fa-star"></i>
                     Especiales
                 </h6>
             </label>
-            <label class="btn btn-danger"  @click="changeCategoria(2)">
+            <label class="btn btn-danger col-md-4"  @click="changeCategoria(2)">
                 <input type="radio" name="options" id="option3" autocomplete="off"> 
                 <h6 style="color:white">
                     <i class="fa fa-glass"></i>
                     Bebidas
                 </h6>
             </label>
-            <label class="btn btn-danger"  @click="changeCategoria(3)">
+            <label class="btn btn-danger col-md-4"  @click="changeCategoria(3)">
                 <input type="radio" name="options" id="option4" autocomplete="off"> 
                 <h6 style="color:white">
                     <i class="fa fa-cube"></i>
                     Otros
                 </h6>
             </label>
+        </div>
         </div>
 
         <div v-if="categoriaSelect === 0">
@@ -90,44 +104,57 @@
                 </button>
             </div>
             <!--Body-->
-            <div class="modal-body">      
+            <div class="modal-body">  
                 <div class="row">
-                    <div class="col-md-12 pb-2">
-                        <h5> {{ seleccion.nombre }} </h5>
+
+                    <div class="col-md-4">
+                        IMG
                     </div>
-                </div>
-                <div class="d-flex bd-highlight mb-3">
-                    <div class="p-2 bd-highlight align-self-center">OPCIONES </div>
-                    <div class="mr-auto p-2 align-self-center">
-                        <a href="#">
-                            <span class="badge badge-danger">S/N MAYONESA</span>
-                        </a>
-                        <a href="#" style="margin: 0px 10px 0px 10px">
-                            <span class="badge badge-danger" >CON PIÑA</span>
-                        </a>
-                        <a href="#">
-                            <span class="badge badge-danger">C/QUESO</span>
-                        </a>
-                    </div>
-                    <div class="p-2 bd-highlight">
-                        <div class="input-group input-group-sm" style="height: 28px">
+                    
+                    <div class="col-md-8">
+                        <h4 class="pb-2"> {{ seleccion.nombre }} </h4>
+                        
+                        <div class="input-group input-group-sm pb-2" style="height: 35px">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad</span>
                             </div>
-                            <input type="number" class="form-control" min=1 aria-label="Small" aria-describedby="inputGroup-sizing-sm" v-model="cantidad">
+                            <input type="number" class="form-control" min="1" maxlength="3"
+                                oninput="var newValue = this.value.replace(new RegExp(/[^\d]/,'ig'), ''); this.value = newValue;"
+                                aria-label="Small" aria-describedby="inputGroup-sizing-sm" v-model="cantidad">
                         </div>
-                    </div>
+                        
+                        <alert v-bind:containerid="alertCantidad"/>
+
+                        <div class="d-flex mb-2">
+                            <div class="align-self-start" style="padding-top: .5rem; padding-right: .5rem;">
+                                OPCIONES 
+                            </div>
+                            <div class="mr-auto p-2 align-self-center">
+                                <a href="#">
+                                    <span class="badge badge-danger">S/N MAYONESA</span>
+                                </a>
+                                <a href="#" style="margin: 0px 10px 0px 10px">
+                                    <span class="badge badge-danger" >CON PIÑA</span>
+                                </a>                                
+                                <a href="#">
+                                    <span class="badge badge-danger">C/QUESO</span>
+                                </a>
+                            </div>                                                
+                        </div>                        
+                        <div class="form-group">
+                            <textarea style="resize:none; min-height:6rem" class="form-control form-control-sm" id="exampleFormControlTextarea1" max-rows="2" placeholder="Detalles deL Platillo..."></textarea>
+                        </div>
+                    </div>       
                 </div>
             </div>
             <!--Footer-->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" tabindex="-1">Cancelar</button>
                 <button type="button" class="btn btn-secondary" style="margin: 0px;" @click="onAddRow()">Agregar<i class="fa fa-plus" aria-hidden="true" style="margin-left: 5px"></i></button>
             </div>
             </div>
         </div>
         </div>
-        <!-- Modal: modalCart -->
 
         <!-- Modal: modalCart -->
         <div class="modal fade" id="modalOpciones" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -135,7 +162,7 @@
             <div class="modal-content">
             <!--Header-->
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Opciones de Orden</h4>
+                <h4 class="modal-title" id="myModalLabel">Detalles de Orden</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="-1">
                 <span aria-hidden="true">×</span>
                 </button>
@@ -154,7 +181,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-lg">Mesa #</span>
                         </div>
-                        <input style="width:100%" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="item.mesa" @change="onChangeMesa" >
+                        <input style="width:100%" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="order.mesa" @change="onChangeMesa" >
                     </div>                 
                     </div>               
                 </div>    
@@ -281,10 +308,13 @@ export default {
       ResAlimentos,
       AlimentoSquare
   },
+
   mounted() {
       let _this = this;
         if(this.ordenId){
             this.title+=" #"+this.ordenId;
+        }else{
+            this.title = "Nueva Orden";
         }
 
         ResOrdenes.listMesas(function(res){
@@ -295,31 +325,28 @@ export default {
      
         ResAlimentos.categoria("Tacos", function(res){
             _this.tacos = res.data.items;
-            console.log("Tacos", _this.tacos);
         }); 
         ResAlimentos.categoria("Burritos", function(res){
             _this.burritos = res.data.items;
-            console.log("Burritos", _this.burritos);
         });  
         ResAlimentos.categoria("Especiales", function(res){
             _this.especiales = res.data.items;
-            console.log("Especiales", _this.especiales);
         });           
         ResAlimentos.categoria("Bebidas", function(res){
             _this.bebidas = res.data.items;
-            console.log("Bebidas", _this.bebidas);
         });   
         ResAlimentos.categoria("Otros", function(res){
             _this.otros = res.data.items;
-            console.log("Otros", _this.especiales);
         });   
   },
+  
   data() {
     return {
         title: "Orden",
         mesasOcupadas:[],
         order:{
             consumo: "sucursal",
+            mesa : 0,
             domicilio: {
                 calle: "",
                 colonia: "",
@@ -363,6 +390,7 @@ export default {
         item: ResOrdenes.init(this.ordenId, this.loadItem),
         alertId: 'alert-1',
         alertMesa: 'alert-mesa',
+        alertCantidad: 'alert-cantidad',
         seleccion: {
             alimentoid: -1,
             nombre: "Sin selección"
@@ -379,52 +407,59 @@ export default {
         bebidas:[],
         especiales:[],
         otros:[],
-        cantidad : 0,
+        cantidad : 1,
         categoriaSelect: 0
       };
   },
   
-  methods: {
-      onChangeMesa(){
-          if(this.mesasOcupadas.indexOf( this.item.mesa ) > 0){
-              Alert.methods.showAlertTimeout(this.alertMesa, "Mesa ocupada", 'alert-warning');
-          }
-      },
-      onConsumoChange(consumo){
-          this.item.consumo = consumo;
-      },
-      openOpciones(){
-          $('#modalOpciones').modal('show');
-      },
-      onOpcionesChange(){
-          $('#modalOpciones').modal('hide');
-      },
-      onAddRow(){
-          let item = {
-                "cantidad": this.cantidad,
-                "comensal": 0,
-                "alimentoId": this.seleccion.alimentoId
-            }
-          console.log('add item', item);
-          this.order.list.push(item);
-          
-          this.cantidad = 1
-          $('#modalCart').modal('hide');
-      },
-      loadItem(){
+methods: {
+    onChangeMesa(){
+        if(this.mesasOcupadas.indexOf( this.order.mesa ) > 0){
+            Alert.methods.showAlertTimeout(this.alertMesa, "Mesa ocupada", 'alert-warning');
+        }
+    },
+    onConsumoChange(consumo){
+        this.item.consumo = consumo;
+    },
+    openOpciones(){
+        $('#modalOpciones').modal('show');
+    },
+    onOpcionesChange(){
+        $('#modalOpciones').modal('hide');
+    },
+    onAddRow(){
+        if(!this.verificarCantidad()){
+            this.cantidad = 0;
+            Alert.methods.showAlertTimeout(this.alertCantidad, "Ingresa una cantidad valida.", 'alert-warning');
+            return;
+        }
+        console.log(this.verificarCantidad());
+        let item = {
+            "cantidad": this.cantidad,
+            "comensal": 0,
+            "alimentoId": this.seleccion.alimentoId
+        }
+        console.log('add item', item);
+        this.order.list.push(item);
+        
+        this.cantidad = 1
+        $('#modalCart').modal('hide');
+    },
+    loadItem(res){
         if( res.data.item.status == 'abierta' ){
-            this.item = res.data.item;
+            this.item = res.data.item;                      
+            this.order.consumo = this.item.consumo;
+            this.order.mesa = this.item.mesa;
+            this.order.list = this.item.resPlatos;
+
             console.log('load item ', this.item);
-            this.iPlato.ordenId = this.item.ordenId;
-            this.orden.consumo = this.item.consumo;
-            this.orden.mesa = this.item.mesa;
         }else{
             this.alertMsg="La orden no se encuentra abierta";
             this.alertTipo="alert-danger";
             AlertModal.methods.showModal();
         }
-      },
-      setExtras(){
+    },
+    setExtras(){
         // console.log('orden', this.orden);
 
         for( let i = 0 ; i < parseInt(this.order.cebollitas); i++ )
@@ -436,46 +471,48 @@ export default {
         for( let i = 0; i < parseInt(this.order.bebidas); i++ )
             this.item.resPlatos.push( Object.assign({}, {alimentoId: bebidasId, cantidad: 1, comensal:0 }) );
     },
-      save(){
-            const _this = this;
-            this.item.resPlatos = this.order.list;
-            this.setExtras();
-            this.item.consumo = this.order.consumo;
-            if(this.order.mesa)
-                this.item.mesa = this.order.mesa;
-            else
+    save(){
+        const _this = this;
+        this.item.resPlatos = this.order.list;
+        this.setExtras();
+        this.item.consumo = this.order.consumo;
+        if(this.order.mesa)
+            this.item.mesa = this.order.mesa;
+        else
             this.item.mesa = 0;
-            // this.item.status = '';
-            this.item.tipoPago = ''
-            // this.item.consumo = '';
-            this.item.repartidorId = 0;
-            // ordenId: 0,
+        // this.item.status = '';
+        this.item.tipoPago = ''
+        // this.item.consumo = '';
+        this.item.repartidorId = 0;
+        // ordenId: 0,
+    
+        // console.log('save', this.item);
+        // NomEmpleadoM.testpost(this.empleado);
         
-            // console.log('save', this.item);
-            // NomEmpleadoM.testpost(this.empleado);
-            
-            if( this.item.resPlatos.length < 1 ){
-                Alert.methods.showAlertTimeout(this.alertId, "No se han agregado productos", 'alert-warning');
-            }else{
-                Alert.methods.showAlert(this.alertId, "Guardando");
-                ResOrdenes.save(this.item, function(res){
-                    console.log('res', res);
-                    if( res.data.success == true )
-                        _this.$router.push({ name: 'ResHerisOrdenesGrid'});
-                });
-            }
-                
-      },
-        cancel(){
-            this.$router.push({ name: 'catalogos'});
-        },
-        changeCategoria(cat){
-            this.categoriaSelect = cat;
-        },
-        triggerModal(item){
-            this.seleccion = item;
-            $('#modalCart').modal('show');
-        }
+        if( this.item.resPlatos.length < 1 ){
+            Alert.methods.showAlertTimeout(this.alertId, "No se han agregado productos", 'alert-warning');
+        }else{
+            Alert.methods.showAlert(this.alertId, "Guardando");
+            ResOrdenes.save(this.item, function(res){
+                console.log('res', res);
+                if( res.data.success == true )
+                    _this.$router.push({ name: 'ResHerisOrdenesGrid'});
+            });
+        }            
+    },
+    cancel(){
+        this.$router.push({ name: 'catalogos'});
+    },
+    changeCategoria(cat){
+        this.categoriaSelect = cat;
+    },
+    verificarCantidad(){
+        return (this.cantidad > 0 && parseInt(this.cantidad) != NaN);
+    },
+    triggerModal(item){
+        this.seleccion = item;
+        $('#modalCart').modal('show');
+    }
   },
 };
 </script>

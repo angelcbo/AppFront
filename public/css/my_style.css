@@ -16,6 +16,9 @@ a:hover{
 .card_menu:hover{
     box-shadow: 0 9px 23px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12) !important;
 }
+.card .card-header{
+    color: #DC143C;
+}
 .card-header a, .card_menu a, .card_menu a:hover i{
     color: #fff !important;
 }
