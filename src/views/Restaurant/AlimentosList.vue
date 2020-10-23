@@ -24,9 +24,9 @@
 								<div class="col pb-3">
 									<div class="float-right">									
 										<div class="btn-group">
-											<button type="button" class="btn btn-primary" style="height: 33.84px;" @click="create()">Agregar<i class="fa fa-plus" aria-hidden="true" style="margin-left: 5px"></i></button>
-											<button type="button" class="btn btn-primary" @click="loadItems()">Actualizar<i class="fa fa-refresh" aria-hidden="true" style="margin-left: 5px"></i></button>
-											<button type="button" class="btn btn-primary"><i class="fa fa-sliders" aria-hidden="true"></i></button>										
+											<button type="button" class="btn btn-secondary btn-sm" style="height: 33.84px;" @click="create()">Agregar<i class="fa fa-plus" aria-hidden="true" style="margin-left: 5px"></i></button>
+											<button type="button" class="btn btn-secondary btn-sm" @click="loadItems()">Actualizar<i class="fa fa-refresh" aria-hidden="true" style="margin-left: 5px"></i></button>
+											<button type="button" class="btn btn-secondary btn-sm"><i class="fa fa-sliders" aria-hidden="true"></i></button>										
 										</div>		
 									</div>
 								</div>																																
@@ -44,15 +44,15 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr v-for="(row, index) in filteredItems" v-bind:key="row.id" >
+									<tr v-for="(row, index) in filteredItems" v-bind:key="row.aliemntoId" >
 										<td>{{index+1}}</td>
 										<td>{{row.nombre}}</td>
 										<td>{{row.precio}}</td>
 										<td>{{row.categoria}}</td>
 										<td>
 											<div class="btn-group" role="group" aria-label="Basic example">
-												<button type="button" class="btn btn-primary waves-effect waves-light" @click="edit(row.id)" >Editar</button>
-												<button type="button" class="btn btn-primary waves-effect waves-light" @click="delet(row.id)" >Eliminar</button>
+												<button type="button" class="btn btn-secondary btn-sm" @click="edit(row.alimentoId)" >Editar</button>
+												<button type="button" class="btn btn-danger btn-sm" @click="delet(row.alimentoId)" >Eliminar</button>
 											</div>
 										</td>
 									</tr>
@@ -138,3 +138,10 @@ export default {
   }
 };
 </script>
+
+<style>
+
+.btn.btn-secondary.btn-sm, .btn.btn-danger.btn-sm{
+	margin: 0px;
+}
+</style>

@@ -2,12 +2,16 @@
     <li tabindex="0" @click="click" @keypress="click"> 
     <div class="alimento_rectangle">
         <div class="square d-flex flex-row-reverse">              
-            <div :class="alimento.categoria"/>                                                          
+            <div class="category_label">
+                <span class="dot" :class="alimento.categoria">
+                    <img class="img_dot" src="/img/BlackH.svg">
+                </span>
+            </div>                                                          
         </div>
         <div class="alimento_footer">
             <div class="start_label flex-fill">
                 {{ alimento.nombre }}
-            </div>   
+            </div>
         </div>    
     </div>
     </li>
@@ -42,6 +46,11 @@ export default {
         "footer";    
 }
 
+.alimento_rectangle:hover{
+    box-shadow: 0px 10px 13px -7px #000000, 8px 8px 47px 26px rgba(140,140,140,0);
+    filter : brightness(110%);
+}
+
 .square {
     background: url("https://i.blogs.es/8e3e94/tacos-suadero-la-vicenta-1/1366_2000.jpg");                
     width: 100%;
@@ -51,6 +60,48 @@ export default {
     grid-area: "square";
     border-radius: .5vw .5vw 0 0;
     transition: filter .3s;    
+}
+
+.category_label{
+    width: 3vw;
+    height: 3vw;
+    padding: .3vw;
+    border-radius: 0 0.5vw 0 0;  
+    background: transparent;      
+}
+ 
+.dot {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 50%;    
+    display: flex;
+}
+
+.img_dot{
+    width: 2vw;
+    height: 2vw;
+    margin: auto;
+}
+
+.tacos{
+    background-color: rgba(255, 24, 0, 0.75);
+}
+
+.burritos{    
+    background-color: rgba(243, 19, 73, 0.75);
+}
+
+.especiales{
+    background-color: rgba(248, 255, 0, 0.75);
+}
+
+.bebidas{
+    background-color: rgba(0, 199, 255, 0.75);
+}
+
+.otros{
+    background-color: rgba(55, 255, 0, 0.75);
 }
 
 .alimento_footer{
@@ -65,47 +116,8 @@ export default {
     text-align: center;
     text-transform: capitalize;
     border-radius: 0 0 0.5vw 0.5vw;
-}
-
-.alimento_rectangle:hover{
-    box-shadow: 0px 10px 13px -7px #000000, 8px 8px 47px 26px rgba(140,140,140,0);
-    filter : brightness(110%);
-}
-
-.burritos, .bebidas, .tacos, .especiales, .otros{
-    margin: 0;
-    width: 0;
-    height: 0;
-    border-radius: 0 0.5vw 0 0;  
-    border-right: 1.75vw solid;
-    border-top: 1.75vw solid; 
-    border-left: 1.75vw solid transparent;
-    border-bottom: 1.75vw solid transparent;     
-}
-
-.tacos{
-    border-top-color: red;
-    border-right-color: red;
-}
-
-.burritos{
-    border-top-color: crimson;
-    border-right-color: crimson;
-}
-
-.especiales{
-    border-top-color: darkred;
-    border-right-color: darkred;
-}
-
-.bebidas{
-    border-top-color: tomato;
-    border-right-color: tomato;
-}
-
-.otros{
-    border-top-color: orangered;
-    border-right-color: orangered;
+    font-family: 'Roboto Condensed', sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 </style>

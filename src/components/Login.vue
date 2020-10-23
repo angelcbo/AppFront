@@ -1,21 +1,26 @@
 <template>
-
-	<div class="row align-items">
-		<div class="right-column sisu">
-			<div class="row mx-0">
-				<div class="col-md-7 order-md-2 signin-right-column px-5 bg-dark">
+	<div class="row fill-height">
+		<div class="col-md-7 order-md-2 signin-right-column px-5 bg-dark">
+			<div class="d-flex align-items-center fill-height">
+				<div>
 					<a class="signin-logo d-sm-block d-md-none" href="#">
-						<img src="assets/img/logo-white.png" width="145" height="32.3" v-bind:alt="Sistema">
+						<img src="/img/LogoB.svg" width="145" height="32.3" v-bind:alt="Sistema">
 					</a>
 					<h1 class="display-4">{{Sistema}}</h1>
 					<p class="lead mb-5">
 						Ingresa tu usuario y contraseña.
 					</p>
 				</div>
-				<div class="col-md-5 order-md-1 signin-left-column bg-white px-5">
-					<a class="signin-logo d-sm-none d-md-block" href="#">
-						<img src="assets/img/logo-dark.png" width="145" height="32.3" v-bind:alt="Sistema">
-					</a>
+			</div>
+		</div>
+		<div class="col-md-5 order-md-1 signin-left-column bg-white px-5">
+			<div class="d-flex align-items-center fill-height">
+				<div class="col-md-12">		
+					<div class="d-flex flex-column align-items-center mb-3">
+						<a href="#">			
+							<img src="/img/LogoB.svg" height="150" v-bind:alt="Sistema">
+						</a>
+					</div>
 					<form>
 						<div class="form-group">
 							<label for="user">Usuario </label>
@@ -48,7 +53,6 @@
 			</div>
 		</div>
 	</div>
-
 </template>
 
 <style>
@@ -96,3 +100,15 @@ export default {
   },
 };
 </script>
+
+<style>
+html, body, .container-fluid{
+    height: 100%;
+}
+
+.fill-height {
+    min-height: 100%;
+    height:auto !important; /* cross-browser */
+    height: 100%; /* cross-browser */
+}
+</style>

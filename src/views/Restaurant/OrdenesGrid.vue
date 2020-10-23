@@ -34,17 +34,9 @@
                 <div class="col d-flex " style="align-items:center;justify-content:center">
                   <button
                     v-show="order.consumo == 'sucursal'"
-                    class="btn btn-primary agregar"
+                    class="btn btn-secondary agregar"
                     type="button"
                     @click="agregarMesa"
-                  >
-                    Agregar
-                  </button>
-                  <button
-                    v-show="order.consumo != 'sucursal'"
-                    class="btn btn-primary agregar"
-                    type="button"
-                    @click="agregarEntrega"
                   >
                     Agregar
                   </button>
@@ -56,7 +48,7 @@
                 <div class="container">
                   <transition-group name="ordenes" tag="div" class="row">
                     <OrderBoxLocal
-                      :key="index"
+                      :key="ordenes.ordenId"
                       v-for="(ordenes, index) in localFaltantes"
                       v-model="localFaltantes[index]"
                     />
@@ -184,7 +176,7 @@ export default {
     },
     agregarMesa() {
       //   this.ordenesLocal.push({ mesa: Math.floor(Math.random()*100), total: 2500, atendido: false});
-      this.$router.push({ name: "ResOrdenesCreate" });
+      this.$router.push({ name: "ResHerisOrdenesEdit" });
     },
     agregarEntrega() {
       this.ordenesEntrega.push({
@@ -236,10 +228,7 @@ export default {
   padding: 15px;
 }
 
-.btn.btn-primary.agregar {
-  height: 34px;
-  width: 25%;
-  min-width: 75px;
-  max-width: 150px;
+.agregar {
+  min-width: 150px;
 }
 </style>
