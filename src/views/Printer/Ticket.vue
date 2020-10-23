@@ -3,6 +3,14 @@
     <div id="Ticket" class="row ticket">
       <div ref="content" class="ticket col">
         <div class="row">
+          <div class="col-12">
+            <a class="navbar-brand" href="#" style="width: 100%">
+              <img :src="logo" width="99" :alt="title" style="margin: auto" />
+            </a>
+            <!-- <img :src="logo" :alt="title" style="margin:auto; color:black;"> -->
+          </div>
+        </div>
+        <div class="row">
           <div class="col-12 d-flex justify-content-center">
             <h1>TACOS HERIS</h1>
           </div>
@@ -94,6 +102,7 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 export default {
   name: "PrintTicket",
+
   props: ["orden", "cuentas"],
   mounted() {
     let _this = this;
@@ -105,6 +114,7 @@ export default {
   data() {
     return {
       title: "Cerrar cuenta",
+      logo: "/img/LogoW.svg",
     };
   },
   components: {
@@ -132,12 +142,10 @@ export default {
       });
       return detalleConcepto;
     },
-    home(){
-       this.$router.push({ name: "ResHerisOrdenesGrid" });
-    }
-    ,
+    home() {
+      this.$router.push({ name: "ResHerisOrdenesGrid" });
+    },
     guardar() {
-
       document.getElementById("Ticket").focus();
       // html2canvas(document.body).then(function (canvas) {
       //   var imgData = canvas.toDataURL("image/jpeg", 1.0);
@@ -189,22 +197,20 @@ export default {
       // WinPrint.print();
       WinPrint.close();
       let bodyFormData = new FormData();
-      bodyFormData.append('html',WinPrint)
+      bodyFormData.append("html", WinPrint);
 
       let params = {
-        html:bodyFormData
-      }
-      console.log('BodyFormData')
-      console.log(bodyFormData)
+        html: bodyFormData,
+      };
+      console.log("BodyFormData");
+      console.log(bodyFormData);
       PrintCuenta.pagarV2(bodyFormData, (resPDF) => {
-
         let pdfWindow = window.open("");
         pdfWindow.document.write(
           "<iframe width='100%' height='100%' src='data:application/pdf, " +
             escape(resPDF.data) +
             "'></iframe>"
         );
-
       });
     },
   },
