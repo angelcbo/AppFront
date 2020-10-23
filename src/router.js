@@ -24,6 +24,8 @@ import RO2 from './views/Restaurant_Orden2.vue';
 import HistorialAPI from './views/HistorialApi.vue';
 import OrdenV2 from './views/OrdenV2.vue';
 
+import PrintTicket from './views/Printer/Ticket.vue'
+
 // views Restaurant
 import ResAlimentosEdit from './views/Restaurant/AlimentosEdit'
 import ResAlimentosList from './views/Restaurant/AlimentosList'
@@ -40,6 +42,7 @@ import ResInicio from './views/Restaurant/Inicio.vue';
 import ResHerisOrdenesGrid from './views/Restaurant/OrdenesGrid.vue';
 import ResCuenta from './views/Restaurant/Cuenta.vue';
 import ResCheckout from  './views/Restaurant/Checkout.vue';
+
 // import ResTicket from  './views/Restaurant/Ticket.vue';
 
 // views Restaurant
@@ -54,6 +57,12 @@ Vue.use(Router);
 const router = new Router({
   mode: 'history',
   routes: [
+    {
+      path: '/ticket',
+      name: 'PrintTicket',
+      component: PrintTicket,
+      props:true,
+    },
     {
       path: '/home',
       name: 'home',
