@@ -2,14 +2,14 @@
   <div class="row">
     <div id="Ticket" class="row ticket">
       <div ref="content" class="ticket col">
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-12">
-            <a class="navbar-brand" href="#" style="width: 100%">
-              <img :src="logo" width="99" :alt="title" style="margin: auto" />
-            </a>
-            <!-- <img :src="logo" :alt="title" style="margin:auto; color:black;"> -->
-          </div>
-        </div>
+            
+              <img :src="logo" height="100%" width="100%" :alt="title" style="margin: auto" />
+            
+             <img :src="logo" :alt="title" style="margin:auto; color:black;"> -->
+         <!-- </div>
+        </div> -->
         <div class="row">
           <div class="col-12 d-flex justify-content-center">
             <h1>TACOS HERIS</h1>
@@ -43,10 +43,10 @@
         >
           <thead>
             <tr>
-              <th class="text-center">Cantidad</th>
-              <th class="text-center">Concepto</th>
+              <th style="font-weight: unset!important" class="text-center">Cantidad</th>
+              <th style="font-weight: unset!important" class="text-center">Concepto</th>
               <!-- <th class="text-right">Precio</th> -->
-              <th class="text-right">Total</th>
+              <th style="font-weight: unset!important" class="text-right">Total</th>
             </tr>
           </thead>
           <tbody>
@@ -55,14 +55,14 @@
               <td>{{ plato.nombre }}</td>
 
               <td class="text-right">
-                ${{ calculaPrecio(plato.precio, plato.cantidad) }}
+                ${{ calculaPrecio(plato.precio, plato.cantidad) }}.00
               </td>
             </tr>
             <tr>
               <td></td>
               <td class="text-right">Total</td>
               <td class="text-right">
-                <strong>$ {{ orden.aPagarTotal }}</strong>
+                <strong> {{ orden.aPagarTotal }}</strong>
               </td>
             </tr>
           </tbody>
@@ -245,7 +245,7 @@ table,
 th,
 td {
   font-size: 12px !important;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Courier New', Courier, monospace;
   text-transform: uppercase;
 }
 .detalle {
