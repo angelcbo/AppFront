@@ -160,48 +160,52 @@ export default {
       // });
       // doc.save("sample.pdf");
 
-      // let prtHtml = document.querySelector("#Ticket").innerHTML;
-      // let stylesHtml = "";
-      // for (const node of [
-      //   ...document.querySelectorAll('link[rel="stylesheet"], style'),
-      // ]) {
-      //   stylesHtml += node.outerHTML;
-      // }
+      let prtHtml = document.querySelector("#Ticket").innerHTML;
+      let stylesHtml = "";
+      for (const node of [
+        ...document.querySelectorAll('link[rel="stylesheet"], style'),
+      ]) {
+        stylesHtml += node.outerHTML;
+      }
 
-      // const WinPrint = window.open(
-      //   "",
-      //   "",
-      //   "left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0"
-      // );
+      const WinPrint = window.open(
+        "",
+        "",
+        "left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0"
+      );
 
-      // WinPrint.document.write(`<!DOCTYPE html>
-      //    <html>
-      //    <head>
-      //       ${stylesHtml}
-      //   </head>
-      //   <body>
-      //   ${prtHtml}
-      //   </body>
-      //   </html>`);
+      WinPrint.document.write(`<!DOCTYPE html>
+         <html>
+         <head>
+            ${stylesHtml}
+        </head>
+        <body>
+        ${prtHtml}
+        </body>
+        </html>`);
 
-      // WinPrint.document.close();
-      // WinPrint.focus();
-      // // WinPrint.print();
-      // WinPrint.close();
-      // let params = {
-      //   html:WinPrint
-      // }
-      // console.log(params)
-      // PrintCuenta.pagarV2(params, (resPDF) => {
+      WinPrint.document.close();
+      WinPrint.focus();
+      // WinPrint.print();
+      WinPrint.close();
+      let bodyFormData = new FormData();
+      bodyFormData.append('html',WinPrint)
 
-      //   let pdfWindow = window.open("");
-      //   pdfWindow.document.write(
-      //     "<iframe width='100%' height='100%' src='data:application/pdf, " +
-      //       escape(resPDF.data) +
-      //       "'></iframe>"
-      //   );
+      let params = {
+        html:bodyFormData
+      }
+      console.log('BodyFormData')
+      console.log(bodyFormData)
+      PrintCuenta.pagarV2(bodyFormData, (resPDF) => {
 
-      // });
+        let pdfWindow = window.open("");
+        pdfWindow.document.write(
+          "<iframe width='100%' height='100%' src='data:application/pdf, " +
+            escape(resPDF.data) +
+            "'></iframe>"
+        );
+
+      });
     },
   },
 };

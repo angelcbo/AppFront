@@ -30,7 +30,7 @@
                         v-bind:key="cIdx"
                         class="table table-hover"
                       >
-                      <!-- <caption>Comensal {{cIdx}}</caption> -->
+                      <caption id="cap1">Comensal {{cIdx}}</caption>
                         <thead>
                           <tr>
                             <th>#</th>
@@ -543,3 +543,10 @@ export default {
   },
 };
 </script>
+<style lang="css" scoped>
+
+
+#cap1{
+   caption-side: top;
+}
+</style>
