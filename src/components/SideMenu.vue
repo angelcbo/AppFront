@@ -2,9 +2,9 @@
  <nav id="sidebar" class="px-0 sidebar">
 	<ul class="nav nav-pills flex-column">
 		<li class="logo-nav-item">
-			<a class="navbar-brand" href="#" style="width:100%">
-				<img :src="logo" width="99" :alt="title" style="margin:auto">
-			</a>
+			<div class="d-flex justify-content-center" style="padding-top:10px">
+        <img :src="logo" width="99" alt="logo">
+      </div>
 		</li>
 		<li>
 			<h6 class="nav-header">Modulos</h6>

@@ -1,7 +1,7 @@
 <template>
     <li tabindex="0" @click="click" @keypress="click"> 
     <div class="alimento_rectangle">
-        <div class="square d-flex flex-row-reverse">              
+        <div class="square d-flex flex-row-reverse" v-bind:style="{ 'background-image' : 'url('+ require('../../../../assets/'+alimento.categoria+'.jpg') +')' }">              
             <div class="category_label">
                 <span class="dot" :class="alimento.categoria">
                     <img class="img_dot" src="/img/BlackH.svg">
@@ -119,5 +119,7 @@ export default {
     font-family: 'Roboto Condensed', sans-serif;
     -webkit-font-smoothing: antialiased;
 }
+
+
 
 </style>

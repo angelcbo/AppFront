@@ -16,6 +16,7 @@
     "html2canvas": "^1.0.0-rc.7",
     "jQuery": "^1.7.4",
     "jsdom": "^15.1.1",
+    "jspdf": "^2.1.1",
     "location": "0.0.1",
     "moment": "^2.27.0",
     "moment-timezone": "^0.5.31",
