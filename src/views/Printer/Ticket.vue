@@ -55,14 +55,14 @@
               <td>{{ plato.nombre }}</td>
 
               <td class="text-right">
-                ${{ calculaPrecio(plato.precio, plato.cantidad) }}.00
+                {{ calculaPrecio(plato.precio, plato.cantidad) }}.00
               </td>
             </tr>
             <tr>
               <td></td>
               <td class="text-right">Total</td>
               <td class="text-right">
-                <strong> {{ orden.aPagarTotal }}</strong>
+                <strong> ${{ orden.aPagarTotal }}.00 nb</strong>
               </td>
             </tr>
           </tbody>
