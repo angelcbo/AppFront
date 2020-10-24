@@ -2,14 +2,20 @@
   <div class="row">
     <div id="Ticket" class="row ticket">
       <div ref="content" class="ticket col">
-        <!-- <div class="row">
+         <div class="row">
           <div class="col-12">
-            
+        <!--    
               <img :src="logo" height="100%" width="100%" :alt="title" style="margin: auto" />
             
              <img :src="logo" :alt="title" style="margin:auto; color:black;"> -->
          <!-- </div>
         </div> -->
+            <div class="d-flex justify-content-center" style="margin-top: 20px; margin-bottom:5px">
+              <img :src="logo" width="99" alt="Cerrar cuenta">
+            </div>
+            <!-- <img :src="logo" :alt="title" style="margin:auto; color:black;"> -->
+          </div>
+        </div>
         <div class="row">
           <div class="col-12 d-flex justify-content-center">
             <h1>TACOS HERIS</h1>
@@ -34,12 +40,14 @@
           <div class="col-12 d-flex justify-content-center">
             <h3>{{ orden.orden.datetime }}</h3>
           </div>
+        
+        
         </div>
 
         <table
           v-for="(cuenta, cIdx) in cuentas"
           v-bind:key="cIdx"
-          class="detalle"
+          class="detalle mb-5"
         >
           <thead>
             <tr>
@@ -67,7 +75,7 @@
             </tr>
           </tbody>
         </table>
-
+        <span class="mb-3"></span>
         <!-- <div class="row detalle" v-for="(cuenta, cIdx) in cuentas" v-bind:key="cIdx">
         <div class="row detalle" v-for="(plato, pIdx) in cuenta" v-bind:key="pIdx">
           <div class="col-3">
@@ -106,15 +114,15 @@ export default {
   props: ["orden", "cuentas"],
   mounted() {
     let _this = this;
-    console.log("orden", this.orden);
-    this.cuentas = cuentas;
-    console.log("cuentas", this.cuentas);
+    // console.log("orden", this.orden);
+    // this.cuentas = cuentas;
+    // console.log("cuentas", this.cuentas);
     // ResOrdenes.init(this.ordenId, this.loadOrden);
   },
   data() {
     return {
       title: "Cerrar cuenta",
-      logo: "/img/LogoW.svg",
+      logo: "/img/LogoB.svg",
     };
   },
   components: {
@@ -227,6 +235,7 @@ export default {
   width: 80mm;
   border: 1px solid black;
 }
+
 h1,
 h2,
 h3 {
