@@ -39,3 +39,37 @@ a:hover{
 .radio_btn{
     border-radius: 0 5px 5px 0 !important;
 }
+
+
+/* Ticket!!!!!! */
+
+.ticket {
+    width: 80mm;
+    border: 1px solid black;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+  }
+  h2,
+  h3,
+  h4,
+  .detalle,
+  table,
+  th,
+  td {
+    font-size: 12px !important;
+    font-family: "Courier New", Courier, monospace;
+    text-transform: uppercase;
+  }
+  .detalle {
+    /* padding: 0!important; */
+    margin: 0 auto;
+  }

@@ -1,17 +1,21 @@
 <template>
   <div class="row">
-    <div id="Ticket" class="row ticket">
+    <div id= "Ticket">
+    <div class="row ticket">
       <div ref="content" class="ticket col">
-         <div class="row">
+        <div class="row">
           <div class="col-12">
-        <!--    
+            <!--    
               <img :src="logo" height="100%" width="100%" :alt="title" style="margin: auto" />
             
              <img :src="logo" :alt="title" style="margin:auto; color:black;"> -->
-         <!-- </div>
+            <!-- </div>
         </div> -->
-            <div class="d-flex justify-content-center" style="margin-top: 20px; margin-bottom:5px">
-              <img :src="logo" width="99" alt="Cerrar cuenta">
+            <div
+              class="d-flex justify-content-center"
+              style="margin-top: 20px; margin-bottom: 5px"
+            >
+              <img :src="logo" width="99" alt="Cerrar cuenta" />
             </div>
             <!-- <img :src="logo" :alt="title" style="margin:auto; color:black;"> -->
           </div>
@@ -40,8 +44,6 @@
           <div class="col-12 d-flex justify-content-center">
             <h3>{{ orden.orden.datetime }}</h3>
           </div>
-        
-        
         </div>
 
         <table
@@ -51,10 +53,16 @@
         >
           <thead>
             <tr>
-              <th style="font-weight: unset!important" class="text-center">Cantidad</th>
-              <th style="font-weight: unset!important" class="text-center">Concepto</th>
+              <th style="font-weight: unset !important" class="text-center">
+                Cantidad
+              </th>
+              <th style="font-weight: unset !important" class="text-center">
+                Concepto
+              </th>
               <!-- <th class="text-right">Precio</th> -->
-              <th style="font-weight: unset!important" class="text-right">Total</th>
+              <th style="font-weight: unset !important" class="text-right">
+                Total
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -70,30 +78,18 @@
               <td></td>
               <td class="text-right">Total</td>
               <td class="text-right">
-                <strong> ${{ orden.aPagarTotal }}.00 nb</strong>
+                <strong> ${{ orden.aPagarTotal }}.00</strong>
               </td>
             </tr>
           </tbody>
         </table>
         <span class="mb-3"></span>
-        <!-- <div class="row detalle" v-for="(cuenta, cIdx) in cuentas" v-bind:key="cIdx">
-        <div class="row detalle" v-for="(plato, pIdx) in cuenta" v-bind:key="pIdx">
-          <div class="col-3">
-            {{ plato.cantidad }}
-          </div>
-          <div class="col-6">
-            {{ plato.nombre }}
-          </div>
-          <div class="col-3">
-            {{ plato.precio }}
-          </div>
-        </div>
-      </div> -->
       </div>
     </div>
+  </div>
     <div class="col ml-5">
       <button
-        @click="home"
+        @click="guardar"
         type="button"
         class="btn btn-secondary btn-lg waves-effect waves-light"
       >
@@ -108,6 +104,7 @@ import Alert from "@/components/Alert.vue";
 import PrintCuenta from "@/modules/printer/models/PrintCuenta.js";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+
 export default {
   name: "PrintTicket",
 
@@ -154,7 +151,10 @@ export default {
       this.$router.push({ name: "ResHerisOrdenesGrid" });
     },
     guardar() {
-      document.getElementById("Ticket").focus();
+      // var ePosDev = new epson.ePOSDevice();
+      // console.log(ePosDev);
+        // this.$htmlToPaper('printMe');
+
       // html2canvas(document.body).then(function (canvas) {
       //   var imgData = canvas.toDataURL("image/jpeg", 1.0);
       //   var pdf = new jsPDF("p", "mm", [400, 480]);
@@ -176,6 +176,7 @@ export default {
       // });
       // doc.save("sample.pdf");
 
+      // ***************************************************************************************
       let prtHtml = document.querySelector("#Ticket").innerHTML;
       let stylesHtml = "";
       for (const node of [
@@ -193,8 +194,18 @@ export default {
       WinPrint.document.write(`<!DOCTYPE html>
          <html>
          <head>
-            ${stylesHtml}
+            <link rel="stylesheet" href="http://localhost:8080/css/boostrap.min.css/">
+            <link rel="stylesheet" href="http://localhost:8080/css/hamburguesa.css/">
+            <link rel="stylesheet" href="http://localhost:8080/css/style.css/">
+            <link rel="stylesheet" href="http://localhost:8080/css/my_style.css/">
+        <style>
+        * {
+            background: white !important;
+            color: black !important;
+          }
+        </style>
         </head>
+        
         <body>
         ${prtHtml}
         </body>
@@ -202,8 +213,12 @@ export default {
 
       WinPrint.document.close();
       WinPrint.focus();
+      // setTimeout(function(){ 
       // WinPrint.print();
-      WinPrint.close();
+      // WinPrint.close(); }, 2000);
+
+      // WinPrint.print();
+      // WinPrint.close();
       let bodyFormData = new FormData();
       bodyFormData.append("html", WinPrint);
 
@@ -254,7 +269,7 @@ table,
 th,
 td {
   font-size: 12px !important;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   text-transform: uppercase;
 }
 .detalle {
