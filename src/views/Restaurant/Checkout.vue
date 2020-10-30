@@ -10,7 +10,162 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-8">
+
+
+
+          <div v-if="dividirCuenta" class="col-lg-8">
+
+              <div class="card">
+              <div class="card-body">
+                <div class="row mb-5">
+                  <div class="col-lg-12">
+                    <!-- { code -->
+
+                    <h2>Cuenta # {{ orden.folioDiario }}</h2>
+                                <!-- 
+                                <p>
+                                    Add <code>.table-responsive</code> the container holding the <code>.table</code> to make them scroll horizontally on small devices. Resize your window to see it in action.
+                                </p>
+                                <p>
+                                  You can take responsiveness to a new level by using breakpoint specific classes. Use <code>.table-responsive{-sm|-md|-lg|-xl}</code>, instead of just <code>.table-responsive</code>, as needed to create responsive tables up to a particular breakpoint. From that breakpoint and up, the table will behave normally and not scroll horizontally.
+                                </p> 
+                                -->
+                    <div class="card-table table-responsive">
+                      <table
+                        v-for="(cuenta, cIdx) in cuentas"
+                        v-bind:key="cIdx"
+                        class="table table-hover"
+                      >
+                      <caption id="cap1">Comensal {{cIdx}}</caption>
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Concepto</th>
+                            <th class="text-right">Precio U.</th>
+                            <th class="text-center">Cantidad</th>
+                            <th class="text-right">Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr v-for="(plato, pIdx) in cuenta" v-bind:key="pIdx">
+                            <td>
+                              <!-- <input
+                              v-model="plato.comensal"
+                              @keyup="changeComensal(plato)"
+                            /> -->
+                              {{ pIdx + 1 }}
+                            </td>
+                            <td>{{ plato.nombre }}</td>
+                            <td class="text-right">{{ plato.precio }}</td>
+                            <td class="text-center">{{ plato.cantidad }}</td>
+                            <td class="text-right">
+                              {{ calculaPrecio(plato.precio, plato.cantidad) }}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="text-right">Total</td>
+                            <td class="table-secondary text-right">
+                              <strong>$ {{ aPagar(cIdx) }}</strong>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <!-- <div class="col-lg-12 pb-5">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input
+                        v-model="aPagarTotal"
+                        type="text"
+                        class="form-control"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                      <div class="input-group-append">
+                        <span class="input-group-text">.00</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-12 pb-5">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input
+                        v-model="cantidadEntregada"
+                        type="number"
+                        class="form-control"
+                        aria-label="Amount (to the nearest dollar)"
+                      />
+                    </div>
+                  </div> -->
+
+                    <!-- <div class="row">
+                      <div class="col-lg-12">
+                        <h2>Tipo de pago</h2>
+                      </div>
+                      <div class="col-lg-12">
+                        <div class="form-check form-check-inline">
+                          <input
+                            v-model="orden.tipoPago"
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="inlineRadio1"
+                            value="efectivo"
+                          />
+                          <label class="form-check-label" for="inlineRadio1">
+                            Efectivo
+                          </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            v-model="orden.tipoPago"
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="inlineRadio2"
+                            value="tarjeta"
+                          />
+                          <label class="form-check-label" for="inlineRadio2">
+                            Tarjeta
+                          </label>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- 
+                    <div class="row">
+                      <div class="row mb-5">
+                        <div class="col-md-12">
+                          <button
+                            @click="pagar"
+                            type="button"
+                            class="btn btn-secondary btn-lg waves-effect waves-light"
+                          >
+                            Pagar
+                          </button>
+                          <br />
+                        </div>
+                      </div>
+                    </div> -->
+
+                    <!-- } code -->
+                  </div>
+                </div>
+              </div>
+              <!-- end card-body -->
+            </div>
+
+
+          </div>
+                  <!-- CUENTA NO DIVIDIDA -->
+          <div v-else class="col-lg-8">
             <div class="card">
               <div class="card-body">
                 <div class="row mb-5">
@@ -18,12 +173,14 @@
                     <!-- { code -->
 
                     <h2>Cuenta # {{ orden.folioDiario }}</h2>
-                    <!-- <p>
-        Add <code>.table-responsive</code> the container holding the <code>.table</code> to make them scroll horizontally on small devices. Resize your window to see it in action.
-    </p>
-    <p>
-        You can take responsiveness to a new level by using breakpoint specific classes. Use <code>.table-responsive{-sm|-md|-lg|-xl}</code>, instead of just <code>.table-responsive</code>, as needed to create responsive tables up to a particular breakpoint. From that breakpoint and up, the table will behave normally and not scroll horizontally.
-    </p> -->
+                                <!-- 
+                                <p>
+                                    Add <code>.table-responsive</code> the container holding the <code>.table</code> to make them scroll horizontally on small devices. Resize your window to see it in action.
+                                </p>
+                                <p>
+                                  You can take responsiveness to a new level by using breakpoint specific classes. Use <code>.table-responsive{-sm|-md|-lg|-xl}</code>, instead of just <code>.table-responsive</code>, as needed to create responsive tables up to a particular breakpoint. From that breakpoint and up, the table will behave normally and not scroll horizontally.
+                                </p> 
+                                -->
                     <div class="card-table table-responsive">
                       <table
                         v-for="(cuenta, cIdx) in cuentas"
@@ -345,6 +502,8 @@ export default {
       cuentas: {},
       cantidadEntregada: null,
       alertId: "alert-1",
+      dividirCuenta: true,
+
     };
   },
   components: {
