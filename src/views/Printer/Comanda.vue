@@ -4,45 +4,8 @@
     <div class="row ticket">
       <div ref="content" class="ticket col">
         <div class="row">
-          <div class="col-12">
-            <!--    
-              <img :src="logo" height="100%" width="100%" :alt="title" style="margin: auto" />
-            
-             <img :src="logo" :alt="title" style="margin:auto; color:black;"> -->
-            <!-- </div>
-        </div> -->
-            <div
-              class="d-flex justify-content-center"
-              style="margin-top: 20px; margin-bottom: 5px"
-            >
-              <img :src="logo" width="99" alt="Cerrar cuenta" />
-            </div>
-            <!-- <img :src="logo" :alt="title" style="margin:auto; color:black;"> -->
-          </div>
-        </div>
-        <div class="row">
           <div class="col-12 d-flex justify-content-center">
             <h1>TACOS HERIS</h1>
-          </div>
-          <div class="col-12 d-flex justify-content-center">
-            <h2>JULIETA ESTEFANIA ARRIETA CASTAÑEDA</h2>
-          </div>
-          <div class="col-12 d-flex justify-content-center">
-            <h3>RFC: AICJ920927E11</h3>
-          </div>
-          <div class="col-12 d-flex justify-content-center">
-            <h3>
-              ALBERTO TERRONES BENITEZ NUM 406 SUR ZONA CENTRO DURANGO DURANGO
-            </h3>
-          </div>
-          <div class="col-12 d-flex justify-content-center">
-            <h3>TICKET CONSUMO</h3>
-          </div>
-          <div class="col-12 d-flex justify-content-center">
-            <h3>ORDEN:{{ orden.orden.id }}</h3>
-          </div>
-          <div class="col-12 d-flex justify-content-center">
-            <h3>{{ orden.orden.datetime }}</h3>
           </div>
         </div>
 
@@ -54,14 +17,14 @@
           <thead>
             <tr>
               <th style="font-weight: unset !important" class="text-center">
-                Cantidad
+                
               </th>
               <th style="font-weight: unset !important" class="text-center">
-                Concepto
+                
               </th>
               <!-- <th class="text-right">Precio</th> -->
               <th style="font-weight: unset !important" class="text-right">
-                Total
+                
               </th>
             </tr>
           </thead>
@@ -79,20 +42,6 @@
               <td class="text-right">Total</td>
               <td class="text-right">
                 <strong> ${{ orden.aPagarTotal }}.00</strong>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="text-right">Recibido</td>
-              <td class="text-right">
-                <strong> ${{ orden.cantidadEntregada }}.00</strong>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="text-right">Cambio</td>
-              <td class="text-right">
-                <strong> ${{ orden.cambio }}.00</strong>
               </td>
             </tr>
           </tbody>
