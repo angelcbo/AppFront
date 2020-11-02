@@ -21,16 +21,16 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 d-flex justify-content-center">
+          <!-- <div class="col-12 d-flex justify-content-center">
             <h1>TACOS HERIS</h1>
-          </div>
+          </div> -->
           <div class="col-12 d-flex justify-content-center">
             <h2>JULIETA ESTEFANIA ARRIETA CASTAÑEDA</h2>
           </div>
           <div class="col-12 d-flex justify-content-center">
             <h3>RFC: AICJ920927E11</h3>
           </div>
-          <div class="col-12 d-flex justify-content-center">
+          <div style="padding-left: 16px" class="col-12 d-flex justify-content-center">
             <h3>
               ALBERTO TERRONES BENITEZ NUM 406 SUR ZONA CENTRO DURANGO DURANGO
             </h3>
