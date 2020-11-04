@@ -212,6 +212,8 @@ export default {
 .ticket {
   width: 80mm;
   border: 1px solid black;
+  padding-left: 15px;
+  margin-left: 10px;
 }
 
 h1,

@@ -40,7 +40,6 @@
                       </div> 
 
                     </div>
-                   
                     </div>
                     <div v-if="dividirCuenta" class="card-table table-responsive">
                       <table
@@ -151,14 +150,6 @@
                     <!-- { code -->
 
                     <h2>Cuenta # {{ orden.folioDiario }}</h2>
-                                <!-- 
-                                <p>
-                                    Add <code>.table-responsive</code> the container holding the <code>.table</code> to make them scroll horizontally on small devices. Resize your window to see it in action.
-                                </p>
-                                <p>
-                                  You can take responsiveness to a new level by using breakpoint specific classes. Use <code>.table-responsive{-sm|-md|-lg|-xl}</code>, instead of just <code>.table-responsive</code>, as needed to create responsive tables up to a particular breakpoint. From that breakpoint and up, the table will behave normally and not scroll horizontally.
-                                </p> 
-                                -->
                     <div class="card-table table-responsive">
                       <table
                         v-for="(cuenta, cIdx) in cuentas"
@@ -203,88 +194,6 @@
                         </tbody>
                       </table>
                     </div>
-
-                    <!-- <div class="col-lg-12 pb-5">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">$</span>
-                      </div>
-                      <input
-                        v-model="aPagarTotal"
-                        type="text"
-                        class="form-control"
-                        aria-label="Amount (to the nearest dollar)"
-                      />
-                      <div class="input-group-append">
-                        <span class="input-group-text">.00</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-12 pb-5">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">$</span>
-                      </div>
-                      <input
-                        v-model="cantidadEntregada"
-                        type="number"
-                        class="form-control"
-                        aria-label="Amount (to the nearest dollar)"
-                      />
-                    </div>
-                  </div> -->
-
-                    <!-- <div class="row">
-                      <div class="col-lg-12">
-                        <h2>Tipo de pago</h2>
-                      </div>
-                      <div class="col-lg-12">
-                        <div class="form-check form-check-inline">
-                          <input
-                            v-model="orden.tipoPago"
-                            class="form-check-input"
-                            type="radio"
-                            name="inlineRadioOptions"
-                            id="inlineRadio1"
-                            value="efectivo"
-                          />
-                          <label class="form-check-label" for="inlineRadio1">
-                            Efectivo
-                          </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input
-                            v-model="orden.tipoPago"
-                            class="form-check-input"
-                            type="radio"
-                            name="inlineRadioOptions"
-                            id="inlineRadio2"
-                            value="tarjeta"
-                          />
-                          <label class="form-check-label" for="inlineRadio2">
-                            Tarjeta
-                          </label>
-                        </div>
-                      </div>
-                    </div> -->
-                    <!-- 
-                    <div class="row">
-                      <div class="row mb-5">
-                        <div class="col-md-12">
-                          <button
-                            @click="pagar"
-                            type="button"
-                            class="btn btn-secondary btn-lg waves-effect waves-light"
-                          >
-                            Pagar
-                          </button>
-                          <br />
-                        </div>
-                      </div>
-                    </div> -->
-
-                    <!-- } code -->
                   </div>
                 </div>
               </div>
@@ -302,13 +211,6 @@
                         <h2>Resumen</h2>
                       </div>
                     </div>
-
-                    <!-- <div class="row">
-                    <div class="col-md-12">
-                      <alert v-bind:containerid="alertId" />
-                    </div>
-                  </div> -->
-
                     <div class="card-table table-responsive">
                       <table class="table table-hover">
                         <thead>
@@ -517,9 +419,8 @@ export default {
     unirCuentas(){
       const t = this;
       t.cuentas = {};
-      
       this.orden.resPlatos.forEach((item, idx) => {
-        console.log("itemUnirCuentas", item);
+      
         let nuItem = {
           idx: idx,
           cantidad: item.cantidad,
@@ -531,7 +432,12 @@ export default {
         else t.cuentas[1] = [nuItem];
         
       });
-      console.log("cuentasssss", t.cuentas);
+
+      console.log("CUENTAS");
+      console.log(this.cuentas);
+
+      console.log("RESPLATOS");
+      console.log(this.orden.resPlatos);
     },
     calculaPrecio(precio, cantidad) {
       return parseFloat(precio) * parseFloat(cantidad);
@@ -546,6 +452,7 @@ export default {
       this.separarCuentas();
     },
     aPagar(cIdx) {
+
       const t = this;
       let totalComensal = 0;
       let aPagarTotal = 0;
@@ -558,6 +465,7 @@ export default {
           );
       });
       this.aPagarTotal = aPagarTotal;
+      
       return totalComensal;
     },
     aPagarTotal() {

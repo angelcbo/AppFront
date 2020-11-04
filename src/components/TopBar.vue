@@ -13,7 +13,7 @@
             <ul class="navbar-nav navbar-language-translation mr-auto"></ul>
 
             <ul class="navbar-nav ml-5 navbar-profile">
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbar-dropdown-navbar-profile" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
                         <div class="profile-name">
                             {{username}}
@@ -30,10 +30,10 @@
                             <a class="dropdown-item" href="">Cerrar Sesión</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" @click="logout" >
-                       logout
+                       Salir
                     </a>
                 </li>
             </ul>
