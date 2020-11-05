@@ -332,10 +332,12 @@
                     <div class="row">
                       <div class="col-lg-12" @click="pagar">
                         <a
+                        style="color:#fff!important;"
                           class="btn btn-primary btn-gradient waves-effect waves-light btn-block btn-lg float-right"
                         >
+                        <span class="gradient">
                           <i class="batch-icon batch-icon-tag-alt-2"></i>
-                          <span class="gradient">Pagar</span>
+                          Pagar</span>
                         </a>
                       </div>
                     </div>
@@ -417,27 +419,26 @@ export default {
       });
     },
     unirCuentas(){
-      const t = this;
-      t.cuentas = {};
-      this.orden.resPlatos.forEach((item, idx) => {
+      // const t = this;
+      // t.cuentas = {};
+      // this.orden.resPlatos.forEach((item, idx) => {
       
-        let nuItem = {
-          idx: idx,
-          cantidad: item.cantidad,
-          nombre: item.alimento.nombre,
-          precio: item.alimento.precio,
-          comensal: item.comensal,
-        };
-        if (t.cuentas[1]) t.cuentas[1].push(nuItem);
-        else t.cuentas[1] = [nuItem];
+      //   let nuItem = {
+      //     idx: idx,
+      //     cantidad: item.cantidad,
+      //     nombre: item.alimento.nombre,
+      //     precio: item.alimento.precio,
+      //     comensal: item.comensal,
+      //   };
+      //   if (t.cuentas[1]) t.cuentas[1].push(nuItem);
+      //   else t.cuentas[1] = [nuItem];
         
+      // });
+
+      this.orden.resPlatos.forEach((plato) => {
+        plato.comensal=1;
       });
-
-      console.log("CUENTAS");
-      console.log(this.cuentas);
-
-      console.log("RESPLATOS");
-      console.log(this.orden.resPlatos);
+      this.separarCuentas();
     },
     calculaPrecio(precio, cantidad) {
       return parseFloat(precio) * parseFloat(cantidad);

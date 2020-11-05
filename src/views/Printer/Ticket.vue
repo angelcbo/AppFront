@@ -177,8 +177,11 @@ export default {
     console.log("cuentas", this.cuentas);
     // ResOrdenes.init(this.ordenId, this.loadOrden);
     this.unirCuentas();
-    window.print()
-    this.home();
+    setTimeout(()=>{
+      window.print()
+    },500);
+    
+    // this.home();
   },
   data() {
     return {
