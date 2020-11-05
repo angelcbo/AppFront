@@ -12,14 +12,12 @@
             </div>                                                          
         </div>
         <div class="row special_footer">                    
-            <div class="col">
-                <input class="cantidad_input" type="number" placeholder="#" min="1" v-model="alimento.cantidad">
-            </div>
-            <div class="col-auto">                
-                <div class="opt_container">
+            <div class="d-flex last_selector">
+                <input class="cantidad_input flex-grow-1" type="number" placeholder="#" min="1" v-model="alimento['cantidad']">
+                <div v-if="'opciones' in alimento" class="opt_container">
                     <button v-for="(opt, index) in alimento.opciones" v-bind:key="index" class="opt_button" :class="opt.class" @click="click(opt)">{{opt.tag}}</button>                                                            
                 </div>                
-            </div>                     
+            </div>                    
         </div>          
     </div>
     </li>
@@ -121,6 +119,10 @@ export default {
     background-color: rgba(55, 255, 0, 0.75);
 }
 
+.mgp{
+    background-color: rgba(255, 128, 0, 0.75);
+}
+
 .special_header{
     width: 100%;
     padding: 0.25vw;
@@ -203,6 +205,10 @@ export default {
     border: 0px solid gray !important;
     border-radius: 0 0 0 0.5vw !important;
     padding: 0px 5px 0 8px;
+}
+
+.last_selector > *:only-child{
+    border-radius: 0 0 0.5vw 0.5vw !important;
 }
 
 input::-webkit-outer-spin-button,
