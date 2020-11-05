@@ -72,32 +72,30 @@
             </ul>                        
             <ul class="alimentosCont">
                 <TacoSquare v-for="(item, id) in burritos" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
-            </ul>  
+            </ul>
+            <ul class="alimentosCont">
+                <TacoSquare v-for="(item, id) in mgp" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
+            </ul>   
         </div>
 
         <div v-if="categoriaSelect === 1">
             <div class="alimentosCont">
-                <AlimentoSquare v-for="(item, id) in especiales" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></AlimentoSquare>
+                <TacoSquare v-for="(item, id) in especiales" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
             </div>  
         </div>
 
         <div v-if="categoriaSelect === 2">
             <div class="alimentosCont">
-                <AlimentoSquare v-for="(item, id) in bebidas" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></AlimentoSquare>
+                <TacoSquare v-for="(item, id) in bebidas" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
             </div>  
         </div>
         <div v-if="categoriaSelect === 3">
             <div class="alimentosCont">
-                <AlimentoSquare v-for="(item, id) in otros" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></AlimentoSquare>
+                <TacoSquare v-for="(item, id) in otros" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
             </div> 
         </div>
 
-        <div class="card-footer">
-            <div class="float-right">
-                <button type="button" class="btn btn-danger">Cancelar</button>
-                <button type="button" class="btn btn-secondary" style="margin-left: 10px;" @click="addToOrder()">Agregar<i class="fa fa-plus" aria-hidden="true" style="margin-left: 5px"></i></button>
-            </div>
-        </div>
+        
 
         <!-- Modal: modalOpciones -->
         <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -236,6 +234,12 @@
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
+                        <div class="card-footer">
+                            <div class="float-right">
+                                <button type="button" class="btn btn-danger" @click="resetControls()">Cancelar</button>
+                                <button type="button" class="btn btn-secondary" style="margin-left: 10px;" @click="addToOrder()">Agregar<i class="fa fa-plus" aria-hidden="true" style="margin-left: 5px"></i></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-3">
@@ -332,13 +336,53 @@ export default {
                 console.log('mesas', _this.mesasOcupadas);
             });
         ResAlimentos.categoria("Especiales", function(res){
-            _this.especiales = res.data.items;
+            var items = res.data.items;
+            items.forEach(e => {
+                let x = {
+                    alimentoId : e.alimentoId,
+                    categoria : e.categoria,
+                    cantidad : 0,
+                    nombre : e.nombre,
+                }   
+                _this.especiales.push(x)                            
+            });            
         });           
         ResAlimentos.categoria("Bebidas", function(res){
-            _this.bebidas = res.data.items;
+            var items = res.data.items;
+            items.forEach(e => {
+                let x = {
+                    alimentoId : e.alimentoId,
+                    categoria : e.categoria,
+                    cantidad : 0,
+                    nombre : e.nombre,
+                }   
+                _this.bebidas.push(x)                            
+            });  
         });   
         ResAlimentos.categoria("Otros", function(res){
-            _this.otros = res.data.items;
+            var items = res.data.items;
+            items.forEach(e => {
+                let x = {
+                    alimentoId : e.alimentoId,
+                    categoria : e.categoria,
+                    cantidad : 0,
+                    nombre : e.nombre,
+                }   
+                _this.otros.push(x)                            
+            });  
+        });  
+        ResAlimentos.categoria("mgp", function(res){
+            var items = res.data.items;
+            items.forEach(e => {
+                let x = {
+                    alimentoId : e.alimentoId,
+                    categoria : e.categoria,
+                    cantidad : 0,
+                    nombre : e.nombre,
+                }   
+                _this.mgp.push(x)                            
+            });  
+            console.log("mgp", _this.mgp);
         });   
   },
   
@@ -406,7 +450,7 @@ export default {
         ],
         tacos:[
             {
-                nombre: "Taco de Asada",
+                nombre: "Molleja",
                 categoria: "tacos",
                 cantidad : 0,
                 opciones : [
@@ -415,11 +459,11 @@ export default {
                         estado : 0,
                         tag : "Q",
                         class : ""
-                    }
+                    }            
                 ]
             },
             {
-                nombre: "Taco de Pastor",
+                nombre: "Pastor",
                 categoria: "tacos",      
                 cantidad : 0,          
                 opciones : [
@@ -436,9 +480,9 @@ export default {
                         class : ""
                     }
                 ]
-            },
+            },                        
             {
-                nombre: "Taco de Molleja",
+                nombre: "Asada",
                 categoria: "tacos",
                 cantidad : 0,
                 opciones : [
@@ -447,77 +491,109 @@ export default {
                         estado : 0,
                         tag : "Q",
                         class : ""
+                    }
+                ]
+            },
+        ],
+        burritos:[  
+            {
+                nombre: "Molleja",
+                categoria: "burritos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Mayonesa",
+                        estado : 1,
+                        tag : "M",
+                        class : "active_m"
+                    },
+                    {
+                        
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },          
+            {
+                nombre: "Pastor",
+                categoria: "burritos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Mayonesa",
+                        estado : 1,
+                        tag : "M",
+                        class : "active_m"
+                    },
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },            
+            {
+                nombre: "Asada",
+                categoria: "burritos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Mayonesa",
+                        estado : 1,
+                        tag : "M",
+                        class : "active_m"
+                    },
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },
+            {
+                nombre: "Deshebrada",
+                categoria: "burritos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Mayonesa",
+                        estado : 1,
+                        tag : "M",
+                        class : "active_m"
+                    },
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },
+            {
+                nombre: "Combinado",
+                categoria: "burritos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Mayonesa",
+                        estado : 1,
+                        tag : "M",
+                        class : "active_m"
+                    },  
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
                     }            
                 ]
             },
         ],
-        burritos:[
-            {
-                nombre: "Burrito de Asada",
-                categoria: "burritos",
-                cantidad : 0,
-                opciones : [
-                    {
-                        nombre : "Con Queso",
-                        estado : 0,
-                        tag : "Q",
-                        class : ""
-                    }            
-                ]
-            },
-            {
-                nombre: "Burrito de Pastor",
-                categoria: "burritos",
-                cantidad : 0,
-                opciones : [
-                    {
-                        nombre : "Con Queso",
-                        estado : 0,
-                        tag : "Q",
-                        class : ""
-                    }            
-                ]
-            },
-            {
-                nombre: "Burrito de Molleja",
-                categoria: "burritos",
-                cantidad : 0,
-                opciones : [
-                    {
-                        nombre : "Con Queso",
-                        estado : 0,
-                        tag : "Q",
-                        class : ""
-                    }            
-                ]
-            },
-            {
-                nombre: "Burrito de Deshebrada",
-                categoria: "burritos",
-                cantidad : 0,
-                opciones : [
-                    {
-                        nombre : "Con Queso",
-                        estado : 0,
-                        tag : "Q",
-                        class : ""
-                    }            
-                ]
-            },
-            {
-                nombre: "Burrito Combinado",
-                categoria: "burritos",
-                cantidad : 0,
-                opciones : [
-                    {
-                        nombre : "Con Queso",
-                        estado : 0,
-                        tag : "Q",
-                        class : ""
-                    }            
-                ]
-            },
-        ],
+        mgp:[],
         bebidas:[],
         especiales:[],
         otros:[],
@@ -614,7 +690,7 @@ methods: {
         }            
     },
     cancel(){
-        this.$router.push({ name: 'catalogos'});
+        this.$router.push({ name: 'ResHerisOrdenesGrid'});
     },
     changeCategoria(cat){
         this.categoriaSelect = cat;
@@ -630,13 +706,13 @@ methods: {
         this.tacos.forEach(element => {
             let id = -1;
             switch(element.nombre){
-                case "Taco de Asada":
+                case "Asada":
                     id = 1;
                     if(element.opciones[0].estado == 1 ){
                         id = 2;
                     }                    
                     break;
-                case "Taco de Pastor":
+                case "Pastor":
                     id = 3
                     if(element.opciones[0].estado == 1 && element.opciones[1].estado == 1){
                         id = 50
@@ -666,34 +742,54 @@ methods: {
         this.burritos.forEach(element => {
             let id = -1;
             switch(element.nombre){
-                case "Burrito de Asada":
-                    id = 7;
-                    if(element.opciones[0].estado == 1 ){
-                        id = 8;
-                    }                    
+                case "Asada":
+                    id = 51 //Sin Mayonesa
+                    if(element.opciones[0].estado == 1 && element.opciones[1].estado == 1){
+                        id = 8 //Con Queso
+                    } else if (element.opciones[0].estado == 1){
+                        id = 7 //Normal
+                    } else if (element.opciones[1].estado == 1){
+                        id = 52 //Sin Mayonesa y Con Queso
+                    }               
                     break;
-                case "Burrito de Pastor":
-                    id = 9;
-                    if(element.opciones[0].estado == 1 ){
-                        id = 10;
-                    }  
+                case "Pastor":
+                    id = 53 //Sin Mayonesa
+                    if(element.opciones[0].estado == 1 && element.opciones[1].estado == 1){
+                        id = 10 //Con Queso
+                    } else if (element.opciones[0].estado == 1){
+                        id = 9 //Normal
+                    } else if (element.opciones[1].estado == 1){
+                        id = 54 //Sin Mayonesa Con Queso
+                    }       
                     break;
-                case "Burrito de Molleja":
-                    id = 11;
-                    if(element.opciones[0].estado == 1 ){
-                        id = 12;
-                    }  
+                case "Molleja":
+                    id = 55 //Sin Mayonesa
+                    if(element.opciones[0].estado == 1 && element.opciones[1].estado == 1){
+                        id = 12 //Con Queso
+                    } else if (element.opciones[0].estado == 1){
+                        id = 11 //Normal
+                    } else if (element.opciones[1].estado == 1){
+                        id = 56 //Sin Mayonesa y Con Queso                        
+                    }    
                     break;
-                case "Burrito de Deshebrada":
-                    id = 13;
-                    if(element.opciones[0].estado == 1 ){
-                        id = 14;
-                    }  
+                case "Deshebrada":
+                    id = 57 //Sin Mayonesa
+                    if(element.opciones[0].estado == 1 && element.opciones[1].estado == 1){
+                        id = 14 //Con Queso
+                    } else if (element.opciones[0].estado == 1){
+                        id = 13 //Normal
+                    } else if (element.opciones[1].estado == 1){
+                        id = 58 //Sin Mayonesa y Con Queso
+                    }    
                     break;
                 default:
-                    id = 15;
-                    if(element.opciones[0].estado == 1){
-                        id = 16;
+                    id = 59 //Sin Mayonesa
+                    if(element.opciones[0].estado == 1 && element.opciones[1].estado == 1){
+                        id = 16 //Con Queso
+                    } else if (element.opciones[0].estado == 1){
+                        id = 15 //Normal
+                    } else if (element.opciones[1].estado == 1){
+                        id = 60 //Sin Mayonesa y Con Queso
                     }    
                     break;                
             }
@@ -707,6 +803,220 @@ methods: {
                 this.order.list.push(item);                                 
             }
         });
+        this.bebidas.forEach(element => {
+            if(element.cantidad>0){
+                let item = {
+                    "cantidad": element.cantidad,
+                    "comensal": 0,
+                    "alimentoId": element.alimentoId
+                }
+                console.log('add item', item);
+                this.order.list.push(item);                                 
+            }
+        });
+        this.especiales.forEach(element => {
+            if(element.cantidad>0){
+                let item = {
+                    "cantidad": element.cantidad,
+                    "comensal": 0,
+                    "alimentoId": element.alimentoId
+                }
+                console.log('add item', item);
+                this.order.list.push(item);                                 
+            }
+        });
+        this.otros.forEach(element => {
+            if(element.cantidad>0){
+                let item = {
+                    "cantidad": element.cantidad,
+                    "comensal": 0,
+                    "alimentoId": element.alimentoId
+                }
+                console.log('add item', item);
+                this.order.list.push(item);                                 
+            }
+        });
+        this.mgp.forEach(element => {
+            if(element.cantidad>0){
+                let item = {
+                    "cantidad": element.cantidad,
+                    "comensal": 0,
+                    "alimentoId": element.alimentoId
+                }
+                console.log('add item', item);
+                this.order.list.push(item);                                 
+            }
+        });
+        this.resetControls();
+    },    
+    resetControls(){
+        this.tacos = [
+            {
+                nombre: "Molleja",
+                categoria: "tacos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },
+            {
+                nombre: "Pastor",
+                categoria: "tacos",      
+                cantidad : 0,          
+                opciones : [
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    },
+                    {
+                        nombre : "Con Piña",
+                        estado : 0,
+                        tag : "P",
+                        class : ""
+                    }
+                ]
+            },                        
+            {
+                nombre: "Asada",
+                categoria: "tacos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }
+                ]
+            },
+        ]
+        this.burritos = [  
+            {
+                nombre: "Molleja",
+                categoria: "burritos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Mayonesa",
+                        estado : 1,
+                        tag : "M",
+                        class : "active_m"
+                    },
+                    {
+                        
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },          
+            {
+                nombre: "Pastor",
+                categoria: "burritos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Mayonesa",
+                        estado : 1,
+                        tag : "M",
+                        class : "active_m"
+                    },
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },            
+            {
+                nombre: "Asada",
+                categoria: "burritos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Mayonesa",
+                        estado : 1,
+                        tag : "M",
+                        class : "active_m"
+                    },
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },
+            {
+                nombre: "Deshebrada",
+                categoria: "burritos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Mayonesa",
+                        estado : 1,
+                        tag : "M",
+                        class : "active_m"
+                    },
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },
+            {
+                nombre: "Combinado",
+                categoria: "burritos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Mayonesa",
+                        estado : 1,
+                        tag : "M",
+                        class : "active_m"
+                    },  
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },
+        ]
+        this.especiales.forEach(e => {
+            if(e["cantidad"]>0){
+                e["cantidad"] = 0;                
+            }                            
+        });
+        this.bebidas.forEach(e => {
+            if(e["cantidad"]>0){
+                e["cantidad"] = 0;
+                console.log("cantidad", e)
+            }                            
+        });
+        this.mgp.forEach(e => {
+            if(e["cantidad"]>0){
+                e["cantidad"] = 0;
+                console.log("cantidad", e)
+            }                            
+        });
+        this.otros.forEach(e => {
+            if(e["cantidad"]>0){
+                e["cantidad"] = 0;                
+            }                            
+        });
     }
   },
 };
@@ -719,7 +1029,6 @@ methods: {
   grid-gap: 1rem;
   justify-content: space-between;
   
-  /* boring properties */
   list-style: none;
   padding: 1rem 0rem;
   margin: 0 auto;
