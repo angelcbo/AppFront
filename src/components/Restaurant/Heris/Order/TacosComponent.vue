@@ -4,7 +4,8 @@
         <div class="special_header">
             {{ alimento.nombre }}            
         </div>  
-        <div class="special_square d-flex flex-row-reverse" v-bind:style="{ 'background-image' : 'url('+ require('../../../../assets/'+alimento.categoria+'.jpg') +')' }">              
+        <div class="special_square d-flex flex-row-reverse" v-bind:style="{ 'background-image' : 'url('+ require('../../../../assets/'+alimento.categoria+'.jpg') +')' }"
+            @click="targetInput(alimento.nombre+alimento.categoria)">              
             <div class="category_label">
                 <span class="dot" :class="alimento.categoria">
                     <img class="img_dot" src="/img/BlackH.svg">
@@ -13,7 +14,8 @@
         </div>
         <div class="row special_footer">                    
             <div class="d-flex last_selector">
-                <input class="cantidad_input flex-grow-1" type="number" placeholder="#" min="1" v-model="alimento['cantidad']">
+                <input class="cantidad_input flex-grow-1" type="number" placeholder="#" min="1" v-model="alimento['cantidad']" :id="alimento.nombre+alimento.categoria"
+                @focus="focusInput()" @blur="blurInput()">
                 <div v-if="'opciones' in alimento" class="opt_container">
                     <button v-for="(opt, index) in alimento.opciones" v-bind:key="index" class="opt_button" :class="opt.class" @click="click(opt)">{{opt.tag}}</button>                                                            
                 </div>                
@@ -27,7 +29,7 @@
 
 export default {
     props: ['alimento'],
-
+    
     methods: {
         click(opt) {                        
             if(opt.estado == 0){
@@ -38,7 +40,20 @@ export default {
                 opt.estado = 0;
                 opt.class = "";
             }
-        },        
+        },      
+        targetInput(name){
+            document.getElementById(name).focus();
+        },
+        focusInput(){
+            if(this.alimento.cantidad  <= 0 ){
+                this.alimento.cantidad = '';
+            }
+        },
+        blurInput(){
+            if(this.alimento.cantidad == ''){
+                this.alimento.cantidad = 0;
+            }
+        }
     },
 }
 </script>
@@ -61,8 +76,8 @@ export default {
 }
 
 .special_rectangle:hover{
-    box-shadow: 0px 10px 13px -7px #000000, 8px 8px 47px 26px rgba(140,140,140,0);
-    filter : brightness(110%);
+    box-shadow: 0px 10px 13px -7px rgba(0, 0, 0, 0.8), 8px 8px 47px 26px rgba(140,140,140,0);
+    filter : brightness(105%);
 }
 
 .special_square {
@@ -71,7 +86,7 @@ export default {
     height: 100%;     
     background-repeat: no-repeat;
     background-size: cover;
-    grid-area: "square";    
+    grid-area: square;    
     transition: filter .3s;
     border-left: darkgrey 1px solid;;    
     border-right: darkgrey 1px solid;;    
@@ -108,7 +123,7 @@ export default {
 }
 
 .especiales{
-    background-color: rgba(248, 255, 0, 0.75);
+    background-color: rgba(163, 18, 47, 0.8);
 }
 
 .bebidas{
@@ -116,7 +131,7 @@ export default {
 }
 
 .otros{
-    background-color: rgba(55, 255, 0, 0.75);
+    background-color: rgba(128, 0, 128, 0.75);
 }
 
 .mgp{
@@ -126,7 +141,7 @@ export default {
 .special_header{
     width: 100%;
     padding: 0.25vw;
-    grid-area: "header";
+    grid-area: header;
     background:rgba(0, 0, 0, 1);
     color: white;
     font-size: 0.8vw;
@@ -142,7 +157,7 @@ export default {
 .special_footer{
     width: 100%;
     padding: 0;
-    grid-area: "footer";
+    grid-area: footer;
     background-color: transparent;
     border: darkgrey 1px solid;
     border-radius: 0 0 0.5vw 0.5vw;

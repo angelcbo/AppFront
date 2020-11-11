@@ -26,211 +26,227 @@
                             </div>
                         </div>
                         <div class="card-body">
-
-
                             <div class="row">
                                 <div class="col-lg-12">
-        <!-- code -->
+                                    <!-- code -->
+                                    <div class="d-flex pb-3">
+                                    <div class="btn-group btn-group-toggle btn-group-justified col-md-12" data-toggle="buttons" style="padding:0">
+                                        <label class="btn btn-danger col-md-4 active" @click="changeCategoria(0)">
+                                            <input type="radio" name="options" id="option1" autocomplete="off" checked> 
+                                            <h6 style="color:white">
+                                                <i class="fa fa-cutlery"></i>
+                                                Principales 
+                                            </h6>
+                                        </label>
+                                        <label class="btn btn-danger col-md-4"  @click="changeCategoria(1)">
+                                            <input type="radio" name="options" id="option2" autocomplete="off">
+                                            <h6 style="color:white">
+                                                <i class="fa fa-star"></i>
+                                                Especiales
+                                            </h6>
+                                        </label>
+                                        <label class="btn btn-danger col-md-4"  @click="changeCategoria(2)">
+                                            <input type="radio" name="options" id="option3" autocomplete="off"> 
+                                            <h6 style="color:white">
+                                                <i class="fa fa-glass"></i>
+                                                Bebidas
+                                            </h6>
+                                        </label>
+                                        <label class="btn btn-danger col-md-4"  @click="changeCategoria(3)">
+                                            <input type="radio" name="options" id="option4" autocomplete="off"> 
+                                            <h6 style="color:white">
+                                                <i class="fa fa-cube"></i>
+                                                Otros
+                                            </h6>
+                                        </label>
+                                    </div>
+                                    </div>
 
-                     
-        <div class="d-flex pb-3">
-        <div class="btn-group btn-group-toggle btn-group-justified col-md-12" data-toggle="buttons" style="padding:0">
-            <label class="btn btn-danger col-md-4 active" @click="changeCategoria(0)">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked> 
-                <h6 style="color:white">
-                    <i class="fa fa-cutlery"></i>
-                    Principales 
-                </h6>
-            </label>
-            <label class="btn btn-danger col-md-4"  @click="changeCategoria(1)">
-                <input type="radio" name="options" id="option2" autocomplete="off">
-                <h6 style="color:white">
-                    <i class="fa fa-star"></i>
-                    Especiales
-                </h6>
-            </label>
-            <label class="btn btn-danger col-md-4"  @click="changeCategoria(2)">
-                <input type="radio" name="options" id="option3" autocomplete="off"> 
-                <h6 style="color:white">
-                    <i class="fa fa-glass"></i>
-                    Bebidas
-                </h6>
-            </label>
-            <label class="btn btn-danger col-md-4"  @click="changeCategoria(3)">
-                <input type="radio" name="options" id="option4" autocomplete="off"> 
-                <h6 style="color:white">
-                    <i class="fa fa-cube"></i>
-                    Otros
-                </h6>
-            </label>
-        </div>
-        </div>
+                                    <div v-if="categoriaSelect === 0">
+                                        
+                                        <div class="categoria-cont tacos">
+                                            <div class="categoria-tag">
+                                                <i class="fa fa-circle-thin"></i>
+                                                Tacos
+                                            </div>
+                                            <ul class="alimentos-cont">
+                                                <TacoSquare v-for="(item, id) in tacos" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
+                                            </ul>
+                                        </div>       
 
-        <div v-if="categoriaSelect === 0">
-            <ul class="alimentosCont">
-                <TacoSquare v-for="(item, id) in tacos" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
-            </ul>                        
-            <ul class="alimentosCont">
-                <TacoSquare v-for="(item, id) in burritos" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
-            </ul>
-            <ul class="alimentosCont">
-                <TacoSquare v-for="(item, id) in mgp" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
-            </ul>   
-        </div>
+                                        <div class="categoria-cont burritos">
+                                            <div class="categoria-tag">
+                                                <i class="fa fa-circle-thin"></i>
+                                                Burritos
+                                            </div>
+                                            <ul class="alimentos-cont">
+                                                <TacoSquare v-for="(item, id) in burritos" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
+                                            </ul>
+                                        </div>
+                                        <div class="categoria-cont mgp">
+                                            <div class="categoria-tag">
+                                                <i class="fa fa-circle-thin"></i>
+                                                Mexicana - Gringa - Pocha
+                                            </div>
+                                            <ul class="alimentos-cont">
+                                                <TacoSquare v-for="(item, id) in mgp" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
+                                            </ul>   
+                                        </div>
+                                    </div>
 
-        <div v-if="categoriaSelect === 1">
-            <div class="alimentosCont">
-                <TacoSquare v-for="(item, id) in especiales" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
-            </div>  
-        </div>
+                                    <div v-if="categoriaSelect === 1">
+                                        <div class="categoria-cont especiales">
+                                            <div class="categoria-tag">
+                                                <i class="fa fa-circle-thin"></i>
+                                                Especiales
+                                            </div>
+                                            <div class="alimentos-cont">
+                                                <TacoSquare v-for="(item, id) in especiales" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
+                                            </div>  
+                                        </div>
+                                    </div>
 
-        <div v-if="categoriaSelect === 2">
-            <div class="alimentosCont">
-                <TacoSquare v-for="(item, id) in bebidas" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
-            </div>  
-        </div>
-        <div v-if="categoriaSelect === 3">
-            <div class="alimentosCont">
-                <TacoSquare v-for="(item, id) in otros" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
-            </div> 
-        </div>
+                                    <div v-if="categoriaSelect === 2">
+                                        <div class="categoria-cont bebidas">
+                                            <div class="categoria-tag">
+                                                <i class="fa fa-circle-thin"></i>
+                                                Bebidas
+                                            </div>
+                                            <div class="alimentos-cont">
+                                                <TacoSquare v-for="(item, id) in bebidas" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
+                                            </div>  
+                                        </div>
+                                    </div>
 
-        
+                                    <div v-if="categoriaSelect === 3">
+                                        <div class="categoria-cont otros">
+                                            <div class="categoria-tag">
+                                                <i class="fa fa-circle-thin"></i>
+                                                Otros
+                                            </div>
+                                            <div class="alimentos-cont">
+                                                <TacoSquare v-for="(item, id) in otros" v-bind:key="id" v-bind:alimento="item" @click="triggerModal"></TacoSquare>
+                                            </div> 
+                                        </div>
+                                    </div>        
 
-        <!-- Modal: modalOpciones -->
-        <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-            <!--Header-->
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Agregar Platillo</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="-1">
-                <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <!--Body-->
-            <div class="modal-body">  
-                <div class="row">
+                                    <!-- Modal: modalOpciones -->
+                                    <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                        <!--Header-->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="myModalLabel">Agregar Platillo</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="-1">
+                                            <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <!--Body-->
+                                        <div class="modal-body">  
+                                            <div class="row">
 
-                    <div class="col-md-4">
-                        IMG
-                    </div>
-                    
-                    <div class="col-md-8">
-                        <h4 class="pb-2"> {{ seleccion.nombre }} </h4>
-                        
-                        <div class="input-group input-group-sm pb-2" style="height: 35px">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad</span>
-                            </div>
-                            <input type="number" class="form-control" min="1" maxlength="3"
-                                oninput="var newValue = this.value.replace(new RegExp(/[^\d]/,'ig'), ''); this.value = newValue;"
-                                aria-label="Small" aria-describedby="inputGroup-sizing-sm" v-model="cantidad">
-                        </div>
-                        
-                        <alert v-bind:containerid="alertCantidad"/>
+                                                <div class="col-md-4">
+                                                    IMG
+                                                </div>
+                                                
+                                                <div class="col-md-8">
+                                                    <h4 class="pb-2"> {{ seleccion.nombre }} </h4>
+                                                    
+                                                    <div class="input-group input-group-sm pb-2" style="height: 35px">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad</span>
+                                                        </div>
+                                                        <input type="number" class="form-control" min="1" maxlength="3"
+                                                            oninput="var newValue = this.value.replace(new RegExp(/[^\d]/,'ig'), ''); this.value = newValue;"
+                                                            aria-label="Small" aria-describedby="inputGroup-sizing-sm" v-model="cantidad">
+                                                    </div>
+                                                    
+                                                    <alert v-bind:containerid="alertCantidad"/>
 
-                        <div class="d-flex mb-2">
-                            <div class="align-self-start" style="padding-top: .5rem; padding-right: .5rem;">
-                                OPCIONES 
-                            </div>
-                            <div class="mr-auto p-2 align-self-center">
-                                <a href="#">
-                                    <span class="badge badge-danger">S/N MAYONESA</span>
-                                </a>
-                                <a href="#" style="margin: 0px 10px 0px 10px">
-                                    <span class="badge badge-danger" >CON PIÑA</span>
-                                </a>                                
-                                <a href="#">
-                                    <span class="badge badge-danger">C/QUESO</span>
-                                </a>
-                            </div>                                                
-                        </div>                        
-                        <div class="form-group">
-                            <textarea style="resize:none; min-height:6rem" class="form-control form-control-sm" id="exampleFormControlTextarea1" max-rows="2" placeholder="Detalles deL Platillo..."></textarea>
-                        </div>
-                    </div>       
-                </div>
-            </div>
-            <!--Footer-->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal" tabindex="-1">Cancelar</button>
-                <button type="button" class="btn btn-secondary" style="margin: 0px;" @click="onAddRow()">Agregar<i class="fa fa-plus" aria-hidden="true" style="margin-left: 5px"></i></button>
-            </div>
-            </div>
-        </div>
-        </div>
+                                                    <div class="d-flex mb-2">
+                                                        <div class="align-self-start" style="padding-top: .5rem; padding-right: .5rem;">
+                                                            OPCIONES 
+                                                        </div>
+                                                        <div class="mr-auto p-2 align-self-center">
+                                                            <a href="#">
+                                                                <span class="badge badge-danger">S/N MAYONESA</span>
+                                                            </a>
+                                                            <a href="#" style="margin: 0px 10px 0px 10px">
+                                                                <span class="badge badge-danger" >CON PIÑA</span>
+                                                            </a>                                
+                                                            <a href="#">
+                                                                <span class="badge badge-danger">C/QUESO</span>
+                                                            </a>
+                                                        </div>                                                
+                                                    </div>                        
+                                                    <div class="form-group">
+                                                        <textarea style="resize:none; min-height:6rem" class="form-control form-control-sm" id="exampleFormControlTextarea1" max-rows="2" placeholder="Detalles deL Platillo..."></textarea>
+                                                    </div>
+                                                </div>       
+                                            </div>
+                                        </div>
+                                        <!--Footer-->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal" tabindex="-1">Cancelar</button>
+                                            <button type="button" class="btn btn-secondary" style="margin: 0px;" @click="onAddRow()">Agregar<i class="fa fa-plus" aria-hidden="true" style="margin-left: 5px"></i></button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
 
-        <!-- Modal: modalCart -->
-        <div class="modal fade" id="modalOpciones" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <!--Header-->
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Detalles de Orden</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="-1">
-                <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <!--Body-->
-            <div class="modal-body">      
+                                    <!-- Modal: modalCart -->
+                                    <div class="modal fade" id="modalOpciones" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                        <!--Header-->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="myModalLabel">Detalles de Orden</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="-1">
+                                            <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <!--Body-->
+                                        <div class="modal-body">      
 
-                <div class="row align-items-end">
-                    <div class="col-lg-12">
-                        <order-consumo v-bind:order="order" />
-                    </div>                    
-                </div>
-                <div v-show="order.consumo == 'sucursal'" class="row" style="margin:15px 0"> 
-                    <div class="col-md-12">
-                    <div class="input-group input-group-lg">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-lg">Mesa #</span>
-                        </div>
-                        <input style="width:100%" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="order.mesa" @change="onChangeMesa" >
-                    </div>                 
-                    </div>               
-                </div>    
-                <alert v-bind:containerid="alertMesa"/>   
-                  
-                <div v-show="order.consumo == 'domicilio'" class="row" style="margin:15px 0px">
-                    <order-domicilio v-bind:order="order" />
+                                            <div class="row align-items-end">
+                                                <div class="col-lg-12">
+                                                    <order-consumo v-bind:order="order" />
+                                                </div>                    
+                                            </div>
+                                            <div v-show="order.consumo == 'sucursal'" class="row" style="margin:15px 0"> 
+                                                <div class="col-md-12">
+                                                <div class="input-group input-group-lg">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="inputGroup-sizing-lg">Mesa #</span>
+                                                    </div>
+                                                    <input style="width:100%" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="order.mesa" @change="onChangeMesa" >
+                                                </div>                 
+                                                </div>               
+                                            </div>    
+                                            <alert v-bind:containerid="alertMesa"/>   
+                                            
+                                            <div v-show="order.consumo == 'domicilio'" class="row" style="margin:15px 0px">
+                                                <order-domicilio v-bind:order="order" />
 
-                    <order-repartidor v-bind:order="order" />
+                                                <order-repartidor v-bind:order="order" />
 
-                     <div class="row">
-                        <div class="col-md-12">
-                            <alert v-bind:containerid="alertId"/>                                        
-                        </div>
-                    </div>  
-                </div>                                                                             
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <alert v-bind:containerid="alertId"/>                                        
+                                                    </div>
+                                                </div>  
+                                            </div>                                                                             
 
-            </div>
-            <!--Footer-->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-secondary" style="margin: 0px;" @click="onOpcionesChange()">Aceptar</button>
-            </div>
-            </div>
-        </div>
-        </div>
-        <!-- Modal: modalOpciones -->
-
-       <div v-if="false">
-        <order-row v-bind:ordenRows="tacosRows" v-bind:alertId="'alert-taco-row'" v-on:addRow="onAddRow" />
-
-        <order-row v-bind:ordenRows="burritosRows" v-bind:alertId="'alert-burrito-row'" v-on:addRow="onAddRow" />
-
-        <order-row v-bind:ordenRows="mgpRows" v-bind:alertId="'alert-mgp-row'" v-on:addRow="onAddRow" />
-
-        <order-platillos v-on:addRow="onAddRow" />
-
-        <order-extras v-bind:order="order" />
-       </div>
-        <!-- {{order}} -->
-
-        <!-- {{item}} -->
-
-        <!-- end code -->
+                                        </div>
+                                        <!--Footer-->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-secondary" style="margin: 0px;" @click="onOpcionesChange()">Aceptar</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <!-- Modal: modalOpciones -->
                                 </div>
                             </div>
                         </div> <!-- end card-body -->
@@ -448,20 +464,7 @@ export default {
             "bebidas",
             "otros"
         ],
-        tacos:[
-            {
-                nombre: "Molleja",
-                categoria: "tacos",
-                cantidad : 0,
-                opciones : [
-                    {
-                        nombre : "Con Queso",
-                        estado : 0,
-                        tag : "Q",
-                        class : ""
-                    }            
-                ]
-            },
+        tacos:[            
             {
                 nombre: "Pastor",
                 categoria: "tacos",      
@@ -480,7 +483,20 @@ export default {
                         class : ""
                     }
                 ]
-            },                        
+            },           
+            {
+                nombre: "Molleja",
+                categoria: "tacos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },             
             {
                 nombre: "Asada",
                 categoria: "tacos",
@@ -495,7 +511,26 @@ export default {
                 ]
             },
         ],
-        burritos:[  
+        burritos:[                      
+            {
+                nombre: "Pastor",
+                categoria: "burritos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Mayonesa",
+                        estado : 1,
+                        tag : "M",
+                        class : "active_m"
+                    },
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },      
             {
                 nombre: "Molleja",
                 categoria: "burritos",
@@ -515,26 +550,7 @@ export default {
                         class : ""
                     }            
                 ]
-            },          
-            {
-                nombre: "Pastor",
-                categoria: "burritos",
-                cantidad : 0,
-                opciones : [
-                    {
-                        nombre : "Con Mayonesa",
-                        estado : 1,
-                        tag : "M",
-                        class : "active_m"
-                    },
-                    {
-                        nombre : "Con Queso",
-                        estado : 0,
-                        tag : "Q",
-                        class : ""
-                    }            
-                ]
-            },            
+            },        
             {
                 nombre: "Asada",
                 categoria: "burritos",
@@ -633,7 +649,7 @@ methods: {
         
         this.cantidad = 1
         $('#modalCart').modal('hide');
-    },
+    },  
     loadItem(res){
         if( res.data.item.status == 'abierta' ){
             this.item = res.data.item;                      
@@ -852,19 +868,6 @@ methods: {
     resetControls(){
         this.tacos = [
             {
-                nombre: "Molleja",
-                categoria: "tacos",
-                cantidad : 0,
-                opciones : [
-                    {
-                        nombre : "Con Queso",
-                        estado : 0,
-                        tag : "Q",
-                        class : ""
-                    }            
-                ]
-            },
-            {
                 nombre: "Pastor",
                 categoria: "tacos",      
                 cantidad : 0,          
@@ -882,7 +885,20 @@ methods: {
                         class : ""
                     }
                 ]
-            },                        
+            },      
+            {
+                nombre: "Molleja",
+                categoria: "tacos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },                              
             {
                 nombre: "Asada",
                 categoria: "tacos",
@@ -897,7 +913,26 @@ methods: {
                 ]
             },
         ]
-        this.burritos = [  
+        this.burritos = [                   
+            {
+                nombre: "Pastor",
+                categoria: "burritos",
+                cantidad : 0,
+                opciones : [
+                    {
+                        nombre : "Con Mayonesa",
+                        estado : 1,
+                        tag : "M",
+                        class : "active_m"
+                    },
+                    {
+                        nombre : "Con Queso",
+                        estado : 0,
+                        tag : "Q",
+                        class : ""
+                    }            
+                ]
+            },         
             {
                 nombre: "Molleja",
                 categoria: "burritos",
@@ -917,26 +952,7 @@ methods: {
                         class : ""
                     }            
                 ]
-            },          
-            {
-                nombre: "Pastor",
-                categoria: "burritos",
-                cantidad : 0,
-                opciones : [
-                    {
-                        nombre : "Con Mayonesa",
-                        estado : 1,
-                        tag : "M",
-                        class : "active_m"
-                    },
-                    {
-                        nombre : "Con Queso",
-                        estado : 0,
-                        tag : "Q",
-                        class : ""
-                    }            
-                ]
-            },            
+            },   
             {
                 nombre: "Asada",
                 categoria: "burritos",
@@ -1023,14 +1039,87 @@ methods: {
 </script>
 
 <style>
-.alimentosCont {
+.alimentos-cont {
   display: grid;
   grid-template-columns: repeat(auto-fill, 8.5vw);
   grid-gap: 1rem;
   justify-content: space-between;
   
   list-style: none;
-  padding: 1rem 0rem;
+  padding: 1rem;
   margin: 0 auto;
+
+  border-radius: 5px;
+  background-color: transparent !important;
+  border: 3px solid;
 }
+
+.categoria-cont{
+    margin: 1em 0 2em 0;
+    background-color: transparent !important;
+}
+
+.categoria-tag{
+    width: 25%;
+    padding: 5px 5px 5px 15px;
+    margin-left: 1em;
+    border-radius: 5px 5px 0 0;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.categoria-tag > .fa{
+    margin-right: 5px;
+}
+
+.categoria-cont.tacos > .alimentos-cont{    
+    border-color: rgba(255, 0, 0, 0.8);    
+}
+
+.categoria-cont.burritos > .alimentos-cont{
+    border-color: rgba(243, 19, 73, 0.8);
+}
+
+.categoria-cont.especiales > .alimentos-cont{
+    border-color:  rgba(163, 18, 47, 0.8);
+}
+
+.categoria-cont.bebidas > .alimentos-cont{
+    border-color: rgba(0, 199, 255, 0.8);
+}
+
+.categoria-cont.otros > .alimentos-cont{
+    border-color: rgba(128, 0, 128, 0.8);
+}
+
+.categoria-cont.mgp > .alimentos-cont{
+    border-color: rgba(255, 128, 0, 0.8);
+}
+
+.categoria-cont.tacos > .categoria-tag{    
+    background-color: rgba(255, 0, 0, 0.8);    
+}
+
+.categoria-cont.burritos > .categoria-tag{
+    background-color: rgba(243, 19, 73, 0.8);
+}
+
+.categoria-cont.especiales > .categoria-tag{
+    background-color: rgba(163, 18, 47, 0.8);
+}
+
+.categoria-cont.bebidas > .categoria-tag{
+    background-color: rgba(0, 199, 255, 0.8);
+}
+
+.categoria-cont.otros > .categoria-tag{
+    background-color: rgba(128, 0, 128, 0.8);
+}
+
+.categoria-cont.mgp > .categoria-tag{
+    background-color: rgba(255, 128, 0, 0.8);
+}
+
 </style>
