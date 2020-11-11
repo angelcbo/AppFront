@@ -1,0 +1,75 @@
+a:hover{
+    text-decoration: none;
+}
+.card_menu{
+    height: 95px;
+    margin-bottom: 3rem!important;
+    box-shadow: 0 9px 23px rgba(0, 0, 0, 0.09), 0 5px 5px rgba(0, 0, 0, 0.06) !important;
+    color: #FFFFFF !important;
+    transition: .5s;
+    border-radius: 0.4167rem;
+    background: #4f5b60;
+    background: -moz-linear-gradient(-45deg, #4f5b60 0%, #97a9b2 100%);
+    background: -webkit-linear-gradient(-45deg, #4f5b60 0%, #97a9b2 100%);
+    background: linear-gradient(135deg, #4f5b60 0%, #97a9b2 100%);
+}
+.card_menu:hover{
+    box-shadow: 0 9px 23px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12) !important;
+}
+.card .card-header{
+    color: #DC143C;
+}
+.card-header a, .card_menu a, .card_menu a:hover i{
+    color: #fff !important;
+}
+.card_menu i{
+    color: #fff;
+    opacity: 0.75;
+    transition: .5s;
+    font-size: 30px;
+    margin-top: 7px;
+}
+.card_menu:hover i{
+    color: #fff;
+    opacity: 1;
+}
+.card_menu p{
+    color: #fff;
+}
+.radio_btn{
+    border-radius: 0 5px 5px 0 !important;
+}
+
+
+/* Ticket!!!!!! */
+/* 
+.ticket {
+    width: 80mm;
+    border: 1px solid black;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+  }
+  h2,
+  h3,
+  h4,
+  .detalle,
+  table,
+  th,
+  td {
+    font-size: 12px !important;
+    font-family: "Courier New", Courier, monospace;
+    text-transform: uppercase;
+  }
+  .detalle {
+    padding: 0!important;NOOOOOO
+    margin: 0 auto;
+  } */

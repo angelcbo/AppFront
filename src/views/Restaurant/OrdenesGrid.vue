@@ -24,11 +24,25 @@
                     {{ this.pendientesLocal }}
                   </p>
                   <p
-                    v-show="order.consumo != 'sucursal'"
+                    v-show="order.consumo == 'domicilio'"
                     class="task-list-stats"
                   >
                     <span class="task-list-total">Entregas pendientes: </span>
                     {{ this.pendientesEntrega }}
+                  </p>
+                  <p
+                    v-show="order.consumo == 'llevar'"
+                    class="task-list-stats"
+                  >
+                    <span class="task-list-total">Para llevar pendientes: </span>
+                    {{ this.pendientesLlevar }}
+                  </p>
+                  <p
+                    v-show="order.consumo == 'recoger'"
+                    class="task-list-stats"
+                  >
+                    <span class="task-list-total">Para recoger pendientes: </span>
+                    {{ this.pendientesRecoger }}
                   </p>
                 </div>
                 <div class="col d-flex " style="align-items:center;justify-content:center">
@@ -63,6 +77,39 @@
                     :key="index"
                     v-for="(ordenes, index) in entregasFaltantes"
                     v-model="entregasFaltantes[index]"
+                  />
+                </transition-group>
+              </div>
+            </div>
+            <div v-show="order.consumo == 'domicilio'" class="row">
+              <div class="card-body">
+                <transition-group name="ordenes" tag="div" class="order-flex">
+                  <OrderBoxEntrega
+                    :key="index"
+                    v-for="(ordenes, index) in entregasFaltantes"
+                    v-model="entregasFaltantes[index]"
+                  />
+                </transition-group>
+              </div>
+            </div>
+            <div v-show="order.consumo == 'llevar'" class="row">
+              <div class="card-body">
+                <transition-group name="ordenes" tag="div" class="order-flex">
+                  <OrderBoxEntrega
+                    :key="index"
+                    v-for="(ordenes, index) in llevarFaltantes"
+                    v-model="llevarFaltantes[index]"
+                  />
+                </transition-group>
+              </div>
+            </div>
+            <div v-show="order.consumo == 'recoger'" class="row">
+              <div class="card-body">
+                <transition-group name="ordenes" tag="div" class="order-flex">
+                  <OrderBoxEntrega
+                    :key="index"
+                    v-for="(ordenes, index) in recogerFaltantes"
+                    v-model="recogerFaltantes[index]"
                   />
                 </transition-group>
               </div>
@@ -118,6 +165,9 @@ export default {
       console.log(res);
       _this.items = res.data.items;
       _this.loadOrdenesLocal();
+      _this.loadOrdenesEntrega();
+      _this.loadOrdenesLlevar();
+      _this.loadOrdenesRecoger();
     });
   },
   data() {
@@ -136,8 +186,12 @@ export default {
           atendido: false,
         },
       ],
+      ordenesLlevar:[],
+      ordenesRecoger:[],
       pendientesLocal: 0,
       pendientesEntrega: 0,
+      pendientesLlevar: 0,
+      pendientesRecoger: 0,
     };
   },
   components: {
@@ -158,14 +212,66 @@ export default {
       this.pendientesEntrega = c.length;
       return c;
     },
+    llevarFaltantes() {
+      let c = this.ordenesLlevar.filter((exp) => !exp.atendido);
+      this.pendientesLlevar = c.length;
+      return c;
+    },
+    recogerFaltantes() {
+      let c = this.ordenesRecoger.filter((exp) => !exp.atendido);
+      this.pendientesRecoger = c.length;
+      return c;
+    },
   },
   methods: {
     loadOrdenesLocal() {
       let _this = this;
       _this.ordenesLocal = [];
       _this.items.forEach((item) => {
-        if (true) {
+        if (item.consumo==='sucursal') {
           _this.ordenesLocal.push({
+            ordenId: item.ordenId,
+            mesa: item.mesa,
+            total: item.total,
+            atendido: false,
+          });
+        }
+      });
+    },
+    loadOrdenesEntrega() {
+      let _this = this;
+      _this.ordenesEntrega = [];
+      _this.items.forEach((item) => {
+        if (item.consumo==='domicilio') {
+          _this.ordenesEntrega.push({
+            ordenId: item.ordenId,
+            mesa: item.mesa,
+            total: item.total,
+            atendido: false,
+          });
+        }
+      });
+    },
+    loadOrdenesLlevar() {
+      let _this = this;
+      _this.ordenesLlevar = [];
+      _this.items.forEach((item) => {
+        if (item.consumo==='llevar') {
+          _this.ordenesLlevar.push({
+            ordenId: item.ordenId,
+            mesa: item.mesa,
+            total: item.total,
+            atendido: false,
+          });
+        }
+      });
+    },
+    loadOrdenesRecoger() {
+      let _this = this;
+      _this.ordenesRecoger = [];
+      _this.items.forEach((item) => {
+        if (item.consumo==='recoger') {
+          _this.ordenesRecoger.push({
             ordenId: item.ordenId,
             mesa: item.mesa,
             total: item.total,
