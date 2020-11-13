@@ -11,7 +11,7 @@
       <div class="row order-body">
         Total: <span>${{ value.total }}</span>
       </div>
-       <div class="row" style="justify-content: center">
+      <div class="row" style="justify-content: center">
         <button
           class="btn btn-secondary agregar"
           style="max-width: 100%; flex-basis: 150px"
@@ -38,9 +38,8 @@
 <script>
 export default {
   props: ["value"],
-
   methods: {
-   atenderOrden() {
+    atenderOrden() {
       // this.value.atendido = true;
       this.$router.push({
         name: "ResCheckout",

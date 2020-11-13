@@ -81,21 +81,10 @@
                 </transition-group>
               </div>
             </div>
-            <div v-show="order.consumo == 'domicilio'" class="row">
-              <div class="card-body">
-                <transition-group name="ordenes" tag="div" class="order-flex">
-                  <OrderBoxEntrega
-                    :key="index"
-                    v-for="(ordenes, index) in entregasFaltantes"
-                    v-model="entregasFaltantes[index]"
-                  />
-                </transition-group>
-              </div>
-            </div>
             <div v-show="order.consumo == 'llevar'" class="row">
               <div class="card-body">
                 <transition-group name="ordenes" tag="div" class="order-flex">
-                  <OrderBoxEntrega
+                  <OrderBoxLlevar
                     :key="index"
                     v-for="(ordenes, index) in llevarFaltantes"
                     v-model="llevarFaltantes[index]"
@@ -106,7 +95,7 @@
             <div v-show="order.consumo == 'recoger'" class="row">
               <div class="card-body">
                 <transition-group name="ordenes" tag="div" class="order-flex">
-                  <OrderBoxEntrega
+                  <OrderBoxRecoger
                     :key="index"
                     v-for="(ordenes, index) in recogerFaltantes"
                     v-model="recogerFaltantes[index]"
@@ -154,6 +143,8 @@ import TopBar from "@/components/TopBar.vue";
 import OrderConsumo from "@/components/Restaurant/Heris/Order/ConsumoCheck.vue";
 import OrderBoxLocal from "@/components/OrderBoxLocal.vue";
 import OrderBoxEntrega from "@/components/OrderBoxEntrega.vue";
+import OrderBoxLlevar from "@/components/OrderBoxLlevar.vue";
+import OrderBoxRecoger from "@/components/OrderBoxRecoger.vue";
 
 import ResOrdenes from "@/modules/restaurant/models/ResOrdenes.js";
 
@@ -200,6 +191,8 @@ export default {
     OrderConsumo,
     OrderBoxLocal,
     OrderBoxEntrega,
+    OrderBoxLlevar,
+    OrderBoxRecoger,
   },
   computed: {
     localFaltantes() {
@@ -248,6 +241,8 @@ export default {
             mesa: item.mesa,
             total: item.total,
             atendido: false,
+            calle:item.calle,
+            colonia:item.colonia
           });
         }
       });
