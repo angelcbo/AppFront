@@ -1,12 +1,12 @@
 <template>
   <div class="order-box">
     <div class="col">
-      <div class="order-title">Orden # {{ value.orden }}</div>
+      <div class="order-title">Orden # {{ value.ordenId }}</div>
       <div class="row order-body" style="">
-        Nombre: <span>${{ value.Nombre }}</span>
+        Nombre: <span>{{ value.nombre }}</span>
       </div>
       <div class="row order-body" style="">
-        Numero: <span>${{ value.Nombre }}</span>
+        Telefono: <span>{{ value.telefono }}</span>
       </div>
       <div class="row order-body" style="">
         Total: <span>${{ value.total }}</span>

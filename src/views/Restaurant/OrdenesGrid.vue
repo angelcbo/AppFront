@@ -242,6 +242,8 @@ export default {
             total: item.total,
             atendido: false,
             calle:item.calle,
+            numeroExt: item.numeroExt,
+            numeroInt: item.numeroInt,
             colonia:item.colonia
           });
         }
@@ -257,6 +259,7 @@ export default {
             mesa: item.mesa,
             total: item.total,
             atendido: false,
+            
           });
         }
       });
@@ -271,6 +274,8 @@ export default {
             mesa: item.mesa,
             total: item.total,
             atendido: false,
+            nombre: item.nombre,
+            telefono: item.telefono
           });
         }
       });

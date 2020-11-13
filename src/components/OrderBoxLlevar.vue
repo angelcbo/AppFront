@@ -1,7 +1,7 @@
 <template>
   <div class="order-box">
     <div class="col">
-      <div class="order-title">Pedido # {{ value.pedido }}</div>
+      <div class="order-title">Pedido # {{ value.ordenId }}</div>
       <div class="row order-body" style="">
         Total: <span>${{ value.total }}</span>
       </div>
