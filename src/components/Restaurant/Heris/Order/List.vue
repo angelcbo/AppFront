@@ -16,13 +16,12 @@
                     <tr v-for="(rEspecial, idx) in order.list" v-bind:key="idx" >
                         <th scope="row"> {{idx + 1 }}  </th>
                         <td>
-                            <div class="form-group">
-                               
+                            <div class="form-group">                                                        
                                 <select class="form-control" v-model="rEspecial.alimentoId" style="height: 34px; border-radius: 5px;">
                                   <option v-for="rAlimento in lAlimentos" v-bind:value="rAlimento.alimentoId" v-bind:key="rAlimento.alimentoId" >
                                       {{rAlimento.nombre}}
                                   </option>
-                                </select> 
+                                </select>
                             </div>
                         </td>
                         <td>
@@ -48,18 +47,31 @@ import ResAlimentos from '@/modules/restaurant/models/ResAlimentos.js';
 export default {
     name: 'Lista',
     props: {
-        order: Object
+        order: Object,        
     },
     mounted(){
         let _this = this;
-        ResAlimentos.list(100, {}, function(res){
+        ResAlimentos.list(150, {}, function(res){
             console.log('resalimentos', res);
             _this.lAlimentos = res.data.items;
         });
     },
+    data() {
+        return {
+            lAlimentos: []
+        }
+    },
     methods:{
         removePlato(idx){
             this.order.list.splice(idx,1);
+        },
+        getName(id){
+            this.lAlimentos.forEach(element => {
+                if(element.alimentoId == id){
+                    console.log(element.nombre)
+                    return element.nombre;
+                }
+            });
         }
     }
 }

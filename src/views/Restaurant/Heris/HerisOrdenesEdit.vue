@@ -264,13 +264,16 @@
                             <div class="card">                                
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 mb-2">
                                             <order-list v-bind:order="order" />                                 
                                         </div>
                                     </div>                                                             
 
                                     <div class="row justify-content-end">                                                                                                                                             
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <div class="form-group mb-2">
+                                                <textarea class="form-control form-control-sm" rows="2" style="max-height : 80px" placeholder="Anotaciones del Pedido..." v-model="order.detalles"></textarea>
+                                            </div>
                                             <div class="d-flex flex-row-reverse">
                                                 <button @click="save" type="button" class="btn btn-secondary waves-effect waves-light" style="margin-left:5px"> Aceptar </button>                                            
                                                 <button @click="cancel" type="button" class="btn btn-secondary waves-effect waves-light"> Cancelar </button>                                            
@@ -409,6 +412,7 @@ export default {
         order:{
             consumo: "sucursal",
             mesa : 0,
+            detalles : "",
             domicilio: {
                 calle: "",
                 colonia: "",
@@ -518,10 +522,10 @@ export default {
                 cantidad : 0,
                 opciones : [
                     {
-                        nombre : "Con Mayonesa",
-                        estado : 1,
-                        tag : "M",
-                        class : "active_m"
+                        nombre : "Sin Mayonesa",
+                        estado : 0,
+                        tag : "S/M",
+                        class : ""
                     },
                     {
                         nombre : "Con Queso",
@@ -537,10 +541,10 @@ export default {
                 cantidad : 0,
                 opciones : [
                     {
-                        nombre : "Con Mayonesa",
-                        estado : 1,
-                        tag : "M",
-                        class : "active_m"
+                        nombre : "Sin Mayonesa",
+                        estado : 0,
+                        tag : "S/M",
+                        class : ""
                     },
                     {
                         
@@ -557,10 +561,10 @@ export default {
                 cantidad : 0,
                 opciones : [
                     {
-                        nombre : "Con Mayonesa",
-                        estado : 1,
-                        tag : "M",
-                        class : "active_m"
+                        nombre : "Sin Mayonesa",
+                        estado : 0,
+                        tag : "S/M",
+                        class : ""
                     },
                     {
                         nombre : "Con Queso",
@@ -576,10 +580,10 @@ export default {
                 cantidad : 0,
                 opciones : [
                     {
-                        nombre : "Con Mayonesa",
+                        nombre : "Sin Mayonesa",
                         estado : 1,
-                        tag : "M",
-                        class : "active_m"
+                        tag : "S/M",
+                        class : ""
                     },
                     {
                         nombre : "Con Queso",
@@ -593,28 +597,53 @@ export default {
                 nombre: "Combinado",
                 categoria: "burritos",
                 cantidad : 0,
+                espacio: "span_2",
                 opciones : [
                     {
-                        nombre : "Con Mayonesa",
-                        estado : 1,
-                        tag : "M",
-                        class : "active_m"
+                        nombre : "Sin Mayonesa",
+                        estado : 0,
+                        tag : "S/M",
+                        class : ""
                     },  
                     {
                         nombre : "Con Queso",
                         estado : 0,
                         tag : "Q",
                         class : ""
-                    }            
+                    },
+                    {
+                        nombre : "Pastor",
+                        estado : 0,
+                        tag : "P",
+                        class : ""
+                    },
+                    {
+                        nombre : "Molleja",
+                        estado : 0,
+                        tag : "M",
+                        class : ""
+                    },
+                    {
+                        nombre : "Asada",
+                        estado : 0,
+                        tag : "A",
+                        class : ""
+                    },       
+                    {
+                        nombre : "Deshebrada",
+                        estado : 0,
+                        tag : "D",
+                        class : ""
+                    }          
                 ]
             },
         ],
         mgp:[],
         bebidas:[],
         especiales:[],
-        otros:[],
-        cantidad : 1,
-        categoriaSelect: 0
+        otros:[],        
+        categoriaSelect: 0,
+        cantidad : 0
       };
   },
   
@@ -656,7 +685,7 @@ methods: {
             this.order.consumo = this.item.consumo;
             this.order.mesa = this.item.mesa;
             this.order.list = this.item.resPlatos;
-
+            this.order.detalles = this.item.detalles;
             console.log('load item ', this.item);
         }else{
             this.alertMsg="La orden no se encuentra abierta";
@@ -681,6 +710,7 @@ methods: {
         this.item.resPlatos = this.order.list;
         this.setExtras();
         this.item.consumo = this.order.consumo;
+        this.item.detalles = this.order.detalles;
         if(this.order.mesa)
             this.item.mesa = this.order.mesa;
         else
@@ -759,57 +789,50 @@ methods: {
             let id = -1;
             switch(element.nombre){
                 case "Asada":
-                    id = 51 //Sin Mayonesa
+                    id = 7 //Normal
                     if(element.opciones[0].estado == 1 && element.opciones[1].estado == 1){
-                        id = 8 //Con Queso
+                        id = 52 //sin Mayonesa y Con Queso
                     } else if (element.opciones[0].estado == 1){
-                        id = 7 //Normal
+                        id = 51 //Sin Mayonesa
                     } else if (element.opciones[1].estado == 1){
-                        id = 52 //Sin Mayonesa y Con Queso
+                        id = 8 //Con Queso
                     }               
                     break;
-                case "Pastor":
-                    id = 53 //Sin Mayonesa
-                    if(element.opciones[0].estado == 1 && element.opciones[1].estado == 1){
-                        id = 10 //Con Queso
-                    } else if (element.opciones[0].estado == 1){
-                        id = 9 //Normal
-                    } else if (element.opciones[1].estado == 1){
+                case "Pastor":                    
+                    id = 9 //Normal
+                    if(element.opciones[0].estado == 1 && element.opciones[1].estado == 1){                        
                         id = 54 //Sin Mayonesa Con Queso
+                    } else if (element.opciones[0].estado == 1){
+                        id = 53 //Sin Mayonesa
+                    } else if (element.opciones[1].estado == 1){
+                        id = 10 //Con Queso
                     }       
                     break;
                 case "Molleja":
-                    id = 55 //Sin Mayonesa
+                    id = 11 //Normal
                     if(element.opciones[0].estado == 1 && element.opciones[1].estado == 1){
-                        id = 12 //Con Queso
-                    } else if (element.opciones[0].estado == 1){
-                        id = 11 //Normal
-                    } else if (element.opciones[1].estado == 1){
-                        id = 56 //Sin Mayonesa y Con Queso                        
+                        id = 56 //Sin Mayonesa y Con Queso   
+                    } else if (element.opciones[0].estado == 1){                        
+                        id = 55 //Sin Mayonesa
+                    } else if (element.opciones[1].estado == 1){                              
+                        id = 12 //Con Queso               
                     }    
                     break;
-                case "Deshebrada":
-                    id = 57 //Sin Mayonesa
-                    if(element.opciones[0].estado == 1 && element.opciones[1].estado == 1){
-                        id = 14 //Con Queso
-                    } else if (element.opciones[0].estado == 1){
-                        id = 13 //Normal
-                    } else if (element.opciones[1].estado == 1){
+                case "Deshebrada":                    
+                    id = 13 //Normal
+                    if(element.opciones[0].estado == 1 && element.opciones[1].estado == 1){                        
                         id = 58 //Sin Mayonesa y Con Queso
+                    } else if (element.opciones[0].estado == 1){
+                        id = 57 //Sin Mayonesa
+                    } else if (element.opciones[1].estado == 1){
+                        id = 14 //Con Queso
                     }    
                     break;
                 default:
-                    id = 59 //Sin Mayonesa
-                    if(element.opciones[0].estado == 1 && element.opciones[1].estado == 1){
-                        id = 16 //Con Queso
-                    } else if (element.opciones[0].estado == 1){
-                        id = 15 //Normal
-                    } else if (element.opciones[1].estado == 1){
-                        id = 60 //Sin Mayonesa y Con Queso
-                    }    
+                    id = this.getBurritoc(element)
                     break;                
             }
-            if(element.cantidad>0){
+            if(element.cantidad>0 && id >= 0){
                 let item = {
                     "cantidad": element.cantidad,
                     "comensal": 0,
@@ -817,6 +840,8 @@ methods: {
                 }
                 console.log('add item', item);
                 this.order.list.push(item);                                 
+            }else if(id == -1){
+
             }
         });
         this.bebidas.forEach(element => {
@@ -913,17 +938,17 @@ methods: {
                 ]
             },
         ]
-        this.burritos = [                   
+        this.burritos = [                      
             {
                 nombre: "Pastor",
                 categoria: "burritos",
                 cantidad : 0,
                 opciones : [
                     {
-                        nombre : "Con Mayonesa",
-                        estado : 1,
-                        tag : "M",
-                        class : "active_m"
+                        nombre : "Sin Mayonesa",
+                        estado : 0,
+                        tag : "S/M",
+                        class : ""
                     },
                     {
                         nombre : "Con Queso",
@@ -932,17 +957,17 @@ methods: {
                         class : ""
                     }            
                 ]
-            },         
+            },      
             {
                 nombre: "Molleja",
                 categoria: "burritos",
                 cantidad : 0,
                 opciones : [
                     {
-                        nombre : "Con Mayonesa",
-                        estado : 1,
-                        tag : "M",
-                        class : "active_m"
+                        nombre : "Sin Mayonesa",
+                        estado : 0,
+                        tag : "S/M",
+                        class : ""
                     },
                     {
                         
@@ -952,17 +977,17 @@ methods: {
                         class : ""
                     }            
                 ]
-            },   
+            },        
             {
                 nombre: "Asada",
                 categoria: "burritos",
                 cantidad : 0,
                 opciones : [
                     {
-                        nombre : "Con Mayonesa",
-                        estado : 1,
-                        tag : "M",
-                        class : "active_m"
+                        nombre : "Sin Mayonesa",
+                        estado : 0,
+                        tag : "S/M",
+                        class : ""
                     },
                     {
                         nombre : "Con Queso",
@@ -978,10 +1003,10 @@ methods: {
                 cantidad : 0,
                 opciones : [
                     {
-                        nombre : "Con Mayonesa",
+                        nombre : "Sin Mayonesa",
                         estado : 1,
-                        tag : "M",
-                        class : "active_m"
+                        tag : "S/M",
+                        class : ""
                     },
                     {
                         nombre : "Con Queso",
@@ -995,22 +1020,47 @@ methods: {
                 nombre: "Combinado",
                 categoria: "burritos",
                 cantidad : 0,
+                espacio: "span_2",
                 opciones : [
                     {
-                        nombre : "Con Mayonesa",
-                        estado : 1,
-                        tag : "M",
-                        class : "active_m"
+                        nombre : "Sin Mayonesa",
+                        estado : 0,
+                        tag : "S/M",
+                        class : ""
                     },  
                     {
                         nombre : "Con Queso",
                         estado : 0,
                         tag : "Q",
                         class : ""
-                    }            
+                    },
+                    {
+                        nombre : "Pastor",
+                        estado : 0,
+                        tag : "P",
+                        class : ""
+                    },
+                    {
+                        nombre : "Molleja",
+                        estado : 0,
+                        tag : "M",
+                        class : ""
+                    },
+                    {
+                        nombre : "Asada",
+                        estado : 0,
+                        tag : "A",
+                        class : ""
+                    },       
+                    {
+                        nombre : "Deshebrada",
+                        estado : 0,
+                        tag : "D",
+                        class : ""
+                    }          
                 ]
             },
-        ]
+        ],
         this.especiales.forEach(e => {
             if(e["cantidad"]>0){
                 e["cantidad"] = 0;                
@@ -1033,6 +1083,73 @@ methods: {
                 e["cantidad"] = 0;                
             }                            
         });
+    },
+    getBurritoc(element){
+        let combinacion = ""
+        element.opciones.forEach(opt => {
+            if(opt.estado == 1){
+                combinacion += opt.tag.substring(0,1)
+            }
+        });
+        console.log(combinacion)
+        switch(combinacion){
+            case "PM": return 67;
+            case "QPM": return 68;
+            case "SPM": return 69;
+            case "SQPM": return 70;
+            
+            case "PA": return 71;
+            case "QPA": return 72;
+            case "SPA": return 73;
+            case "SQPA": return 74;
+
+            case "PD": return 75;
+            case "QPD": return 76;
+            case "SPD": return 77;
+            case "SQPD": return 78;
+
+            case "MA": return 79;
+            case "QMA": return 80;
+            case "SMA": return 81;
+            case "SQMA": return 82;
+
+            case "MD": return 83;
+            case "QMD": return 84;
+            case "SMD": return 85;
+            case "SQMD": return 86;
+
+            case "AD": return 87;
+            case "QAD": return 88;
+            case "SAD": return 89;
+            case "SQAD": return 90;
+
+            case "PMA": return 91;
+            case "QPMA": return 92;
+            case "SPMA": return 93;
+            case "SQPMA": return 94;
+
+            case "PMD": return 95;
+            case "QPMD": return 96;
+            case "SPMD": return 97;
+            case "SQPMD": return 98;
+
+            case "PAD": return 99;
+            case "QPAD": return 100; 
+            case "SPAD": return 101;
+            case "SQPAD": return 102;
+
+            case "MAD": return 103;
+            case "QMAD": return 104;
+            case "SMAD": return 105;
+            case "SQMAD": return 106;
+
+            case "PMAD": return 107;
+            case "QPMAD": return 107;
+            case "SPMAD": return 107;
+            case "SQPMAD": return 107;
+
+            default: return -1;
+        }        
     }
   },
 };
@@ -1041,7 +1158,7 @@ methods: {
 <style>
 .alimentos-cont {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 8.5vw);
+  grid-template-columns: repeat(auto-fill, 10vw);
   grid-gap: 1rem;
   justify-content: space-between;
   
@@ -1074,12 +1191,14 @@ methods: {
     margin-right: 5px;
 }
 
+/*Parte 1*/ 
+
 .categoria-cont.tacos > .alimentos-cont{    
     border-color: rgba(255, 0, 0, 0.8);    
 }
 
 .categoria-cont.burritos > .alimentos-cont{
-    border-color: rgba(243, 19, 73, 0.8);
+    border-color: rgba(122, 199, 79, 0.8);
 }
 
 .categoria-cont.especiales > .alimentos-cont{
@@ -1098,12 +1217,18 @@ methods: {
     border-color: rgba(255, 128, 0, 0.8);
 }
 
+.categoria-cont.vampiro > .alimentos-cont{
+    border-color: rgba(216, 71, 39, 0.8);
+}
+
+/*Parte 2*/
+
 .categoria-cont.tacos > .categoria-tag{    
     background-color: rgba(255, 0, 0, 0.8);    
 }
 
 .categoria-cont.burritos > .categoria-tag{
-    background-color: rgba(243, 19, 73, 0.8);
+    background-color: rgba(122, 199, 79, 0.8);
 }
 
 .categoria-cont.especiales > .categoria-tag{
@@ -1120,6 +1245,10 @@ methods: {
 
 .categoria-cont.mgp > .categoria-tag{
     background-color: rgba(255, 128, 0, 0.8);
+}
+
+.categoria-cont.vampiro > .categoria-cont{
+    background-color: rgba(216, 71, 39, 0.8);
 }
 
 </style>

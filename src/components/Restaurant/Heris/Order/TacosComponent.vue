@@ -1,5 +1,5 @@
 <template>
-    <li tabindex="-1"> 
+    <li :class="alimento.espacio" tabindex="-1"> 
     <div class="special_rectangle">
         <div class="special_header">
             {{ alimento.nombre }}            
@@ -14,7 +14,7 @@
         </div>
         <div class="row special_footer">                    
             <div class="d-flex last_selector">
-                <input class="cantidad_input flex-grow-1" type="number" placeholder="#" min="1" v-model="alimento['cantidad']" :id="alimento.nombre+alimento.categoria"
+                <input class="cantidad_input flex-fill" type="number" placeholder="#" min="1" v-model="alimento['cantidad']" :id="alimento.nombre+alimento.categoria"
                 @focus="focusInput()" @blur="blurInput()">
                 <div v-if="'opciones' in alimento" class="opt_container">
                     <button v-for="(opt, index) in alimento.opciones" v-bind:key="index" class="opt_button" :class="opt.class" @click="click(opt)">{{opt.tag}}</button>                                                            
@@ -33,8 +33,12 @@ export default {
     methods: {
         click(opt) {                        
             if(opt.estado == 0){
-                opt.class = "active_"+opt.tag.toLowerCase();
-                console.log(opt.class);
+                var letterClass = opt.tag.toLowerCase().replace("/", "");                
+                if(this.alimento.categoria == "burritos" && letterClass == "p"){
+                    letterClass = "pa"
+                }
+                opt.class = "active_"+letterClass;
+                //console.log(opt.class);
                 opt.estado = 1;
             }else{
                 opt.estado = 0;
@@ -60,9 +64,13 @@ export default {
 
 <style>
 
+.span_2{
+    grid-column: span 2;
+}
+
 .special_rectangle{
-    display: grid;
-    grid-template-rows: 2vw 8.5vw 2vw;
+    display: grid;    
+    grid-template-rows: 2vw 10vw 2vw;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.06); 
     border: line transparent 1px;
     border-radius: 0.5vw;
@@ -86,6 +94,7 @@ export default {
     height: 100%;     
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     grid-area: square;    
     transition: filter .3s;
     border-left: darkgrey 1px solid;;    
@@ -119,11 +128,11 @@ export default {
 }
 
 .burritos{    
-    background-color: rgba(243, 19, 73, 0.75);
+    background-color: rgba(122, 199, 79, 0.75);
 }
 
 .especiales{
-    background-color: rgba(163, 18, 47, 0.8);
+    background-color: rgba(163, 18, 47, 0.75);
 }
 
 .bebidas{
@@ -198,20 +207,32 @@ export default {
 
 .opt_button.active_p,
 .opt_button.active_q,
-.opt_button.active_m{
+.opt_button.active_m,
+.opt_button.active_sm,
+.opt_button.active_m,
+.opt_button.active_a,
+.opt_button.active_d,
+.opt_button.active_pa{
     color: white;
 }
 
 .opt_button.active_p{
-    background-color: #ffc54c;
+    background-color: #e3b505;
 }
 
 .opt_button.active_q{
-    background-color: #dfdc2e;
+    background-color: #FFC60A;
 }
 
-.opt_button.active_m{
-    background-color: red;
+.opt_button.active_sm{
+    background-color: orange;
+}
+
+.opt_button.active_m,
+.opt_button.active_a,
+.opt_button.active_d,
+.opt_button.active_pa{
+    background-color: #D62828;
 }
 
 .cantidad_input{
@@ -220,6 +241,10 @@ export default {
     border: 0px solid gray !important;
     border-radius: 0 0 0 0.5vw !important;
     padding: 0px 5px 0 8px;
+}
+
+.d-flex.last_selector{
+    width: 100%;
 }
 
 .last_selector > *:only-child{
