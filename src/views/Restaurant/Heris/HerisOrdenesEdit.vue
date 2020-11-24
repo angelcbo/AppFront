@@ -236,6 +236,15 @@
                                                     </div>
                                                 </div>  
                                             </div>                                                                             
+                                            <div v-show="order.consumo == 'recoger'" class="row" style="margin:15px 0px">
+                                                <order-recoger v-bind:order="order" />
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <alert v-bind:containerid="alertId"/>                                        
+                                                    </div>
+                                                </div>  
+                                            </div>                                                                             
 
                                         </div>
                                         <!--Footer-->
@@ -303,6 +312,7 @@ import AlimentoSquare from '@/components/Restaurant/Heris/Order/AlimentoSquare.v
 import TacoSquare from '@/components/Restaurant/Heris/Order/TacosComponent.vue';
 
 import OrderDomicilio from '@/components/Restaurant/Heris/Order/Domicilio.vue';
+import OrderRecoger from '@/components/Restaurant/Heris/Order/Recoger.vue';
 
 import ResOrdenes from '@/modules/restaurant/models/ResOrdenes.js';
 import ResPlatos from '@/modules/restaurant/models/ResPlatos.js';
@@ -327,6 +337,7 @@ export default {
       AlertModal,
       Alert,
       OrderDomicilio,
+      OrderRecoger,
       OrderRow,
       OrderPlatillos,
       OrderExtras,
