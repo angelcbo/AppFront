@@ -67,7 +67,7 @@ export default {
   get(model, params, callback) {
     const _this = this;
     const getUrl = formatUrl(model);
-    
+    console.log(getUrl);
     return Axios.get(getUrl, { params })
       .then(callback)
       .catch(catchError);
