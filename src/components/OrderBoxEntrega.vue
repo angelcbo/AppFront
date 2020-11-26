@@ -9,7 +9,7 @@
         Calle: <span>{{ value.calle }} {{value.numeroExt}} {{value.numeroInt}} </span>
       </div>
       <div class="row order-body">
-        Total: <span>${{ value.total }}</span>
+        Total: <span>${{ value.total + value.cobroEnvio }}</span>
       </div>
       <div class="row" style="justify-content: center">
         <button

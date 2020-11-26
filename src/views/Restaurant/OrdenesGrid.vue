@@ -244,7 +244,8 @@ export default {
             calle:item.calle,
             numeroExt: item.numeroExt,
             numeroInt: item.numeroInt,
-            colonia:item.colonia
+            colonia:item.colonia,
+            cobroEnvio: item.cobroEnvio,
           });
         }
       });

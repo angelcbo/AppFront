@@ -414,9 +414,26 @@ export default {
           precio: item.alimento.precio,
           comensal: item.comensal,
         };
+        
         if (t.cuentas[item.comensal]) t.cuentas[item.comensal].push(nuItem);
         else t.cuentas[item.comensal] = [nuItem];
       });
+      if(this.orden.consumo==="domicilio"){
+        console.log("t.cuentas");
+        console.log(t.cuentas);
+
+
+        let CobroEnvio = {
+          idx: 1000,
+          cantidad: 1,
+          nombre: 'Cobro Envio',
+          precio: this.orden.cobroEnvio,
+          comensal: 0,
+        };
+        t.cuentas[0].push(CobroEnvio);
+       
+
+      }
     },
     unirCuentas(){
       // const t = this;
@@ -453,7 +470,7 @@ export default {
       this.separarCuentas();
     },
     aPagar(cIdx) {
-
+      
       const t = this;
       let totalComensal = 0;
       let aPagarTotal = 0;
@@ -465,6 +482,12 @@ export default {
             plato.cantidad
           );
       });
+
+      if(this.orden.consumo==='domicilio'){
+        aPagarTotal+=this.orden.cobroEnvio
+        totalComensal+=this.orden.cobroEnvio
+      }
+
       this.aPagarTotal = aPagarTotal;
       
       return totalComensal;
@@ -602,9 +625,15 @@ export default {
         group[current].total =
           group[current][0].alimento.precio * group[current].cantidad;
       });
+      if(this.orden.consumo==="domicilio"){
+        group.CobroEnvio = {};
+        group['CobroEnvio'].cantidad=1;
+        group['CobroEnvio'].precioUnitario=this.orden.cobroEnvio;
+        group['CobroEnvio'].total=this.orden.cobroEnvio;
+
+      }
       console.log("********GROUP22222*************");
       console.log(group);
-
       // let pedido = Object.keys(group).map((current) => {
       //   return `${group[current].cantidad} ${current.toUpperCase()}`;
       // });
